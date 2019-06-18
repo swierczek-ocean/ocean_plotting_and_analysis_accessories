@@ -3,20 +3,20 @@
 
 tfield122 = 1;
 sfield122 = 2;
-wfield122 = 5;
+wfield122 = 3;
 tffield122 = 1;
 sffield122 = 2;
 cfield122 = 3;
 ofield122 = 4;
 efield122 = 1;
 
-THETA_Series122 = zeros(756,512,395);
-SALT_Series122 = zeros(756,512,395);
+THETA_Series122 = zeros(756,512,13);
+SALT_Series122 = zeros(756,512,13);
 WVEL_Series122 = zeros(756,512,395);
-TFLUX_Series122 = zeros(756,512,395);
-SFLUX_Series122 = zeros(756,512,395);
-CFLUX_Series122 = zeros(756,512,395);
-OFLUX_Series122 = zeros(756,512,395);
+TFLUX_Series122 = zeros(756,512,13);
+SFLUX_Series122 = zeros(756,512,13);
+CFLUX_Series122 = zeros(756,512,13);
+OFLUX_Series122 = zeros(756,512,13);
 ETAN_Series122 = zeros(756,512,395);
 
 HC = rdmds('../MITgcm/verification/SO12_20190513/run/hFacC');
@@ -24,19 +24,10 @@ depth122 = 1;
 str = '../MITgcm/verification/SO12_20190513/diag/';
 
 for ii=1:4
-    char122state = [str,'diag_state.0000000',num2str(240*ii)];
+    char122state = [str,'diag_vel.0000000',num2str(240*ii)];
     temp122state = rdmds(char122state);
-    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
-    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
-    WVEL_Series122(:,:,ii) = temp122state(:,:,depth122,wfield122);
+    WVEL_Series122(:,:,ii) = temp122state(:,:,wfield122);
     clear temp122state
-    char122airsea = [str,'diag_airsea.0000000',num2str(240*ii)];
-    temp122airsea = rdmds(char122airsea); 
-    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
-    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
-    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
-    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
-    clear temp122airsea
     char122surf = [str,'diag_surf.0000000',num2str(240*ii)];
     temp122surf = rdmds(char122surf); 
     ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
@@ -44,19 +35,10 @@ for ii=1:4
 end
 
 for ii=5:41
-    char122state = [str,'diag_state.000000',num2str(240*ii)];
+    char122state = [str,'diag_vel.000000',num2str(240*ii)];
     temp122state = rdmds(char122state);
-    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
-    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
-    WVEL_Series122(:,:,ii) = temp122state(:,:,depth122,wfield122);
+    WVEL_Series122(:,:,ii) = temp122state(:,:,wfield122);
     clear temp122state
-    char122airsea = [str,'diag_airsea.000000',num2str(240*ii)];
-    temp122airsea = rdmds(char122airsea); 
-    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
-    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
-    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
-    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
-    clear temp122airsea
     char122surf = [str,'diag_surf.000000',num2str(240*ii)];
     temp122surf = rdmds(char122surf); 
     ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
@@ -64,55 +46,76 @@ for ii=5:41
 end
 
 for ii=42:395
-    char122state = [str,'diag_state.00000',num2str(240*ii)];
+    char122state = [str,'diag_vel.00000',num2str(240*ii)];
     temp122state = rdmds(char122state);
-    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
-    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
-    WVEL_Series122(:,:,ii) = temp122state(:,:,depth122,wfield122);
+    WVEL_Series122(:,:,ii) = temp122state(:,:,wfield122);
     clear temp122state
-    char122airsea = [str,'diag_airsea.00000',num2str(240*ii)];
-    temp122airsea = rdmds(char122airsea); 
-    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
-    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
-    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
-    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
-    clear temp122airsea
     char122surf = [str,'diag_surf.00000',num2str(240*ii)];
     temp122surf = rdmds(char122surf); 
     ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
     clear temp122surf
 end
 
-THETA_122_DJF_avg = mean(THETA_Series122(:,:,1:91),3);
-SALT_122_DJF_avg = mean(SALT_Series122(:,:,1:91),3);
+for ii=1:1
+    char122state = [str,'diag_state.000000',num2str(7300*ii)];
+    temp122state = rdmds(char122state);
+    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
+    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
+    clear temp122state
+    char122airsea = [str,'diag_airsea.000000',num2str(7300*ii)];
+    temp122airsea = rdmds(char122airsea); 
+    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
+    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
+    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
+    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
+    clear temp122airsea
+end
+
+for ii=2:12
+    char122state = [str,'diag_state.00000',num2str(7300*ii)];
+    temp122state = rdmds(char122state);
+    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
+    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
+    clear temp122state
+    char122airsea = [str,'diag_airsea.00000',num2str(7300*ii)];
+    temp122airsea = rdmds(char122airsea); 
+    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
+    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
+    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
+    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
+    clear temp122airsea
+end
+
+THETA_122_DJF_avg = mean(THETA_Series122(:,:,1:3),3);
+SALT_122_DJF_avg = mean(SALT_Series122(:,:,1:3),3);
 WVEL_122_DJF_avg = mean(WVEL_Series122(:,:,1:91),3);
 WVEL_122_DJF_std = std(WVEL_Series122(:,:,1:91),0,3);
-THETA_122_DM_avg = mean(THETA_Series122(:,:,1:182),3);
-SALT_122_DM_avg = mean(SALT_Series122(:,:,1:182),3);
+THETA_122_DM_avg = mean(THETA_Series122(:,:,1:6),3);
+SALT_122_DM_avg = mean(SALT_Series122(:,:,1:6),3);
 WVEL_122_DM_avg = mean(WVEL_Series122(:,:,1:182),3);
 WVEL_122_DM_std = std(WVEL_Series122(:,:,1:182),0,3);
-THETA_122_DD_avg = mean(THETA_Series122(:,:,1:364),3);
-SALT_122_DD_avg = mean(SALT_Series122(:,:,1:364),3);
+THETA_122_DD_avg = mean(THETA_Series122(:,:,1:12),3);
+SALT_122_DD_avg = mean(SALT_Series122(:,:,1:12),3);
 WVEL_122_DD_avg = mean(WVEL_Series122(:,:,1:364),3);
 WVEL_122_DD_std = std(WVEL_Series122(:,:,1:364),0,3);
-TFLUX_122_DJF_avg = mean(TFLUX_Series122(:,:,1:91),3);
-SFLUX_122_DJF_avg = mean(SFLUX_Series122(:,:,1:91),3);
-ETAN_122_DJF_avg = mean(ETAN_Series(:,:,1:91),3);
-ETAN_122_DJF_std = std(ETAN_Series(:,:,1:91),0,3);
-TFLUX_122_DM_avg = mean(TFLUX_Series122(:,:,1:182),3);
-SFLUX_122_DM_avg = mean(SFLUX_Series122(:,:,1:182),3);
-ETAN_122_DM_avg = mean(ETAN_Series(:,:,1:182),3);
-ETAN_122_DM_std = std(ETAN_Series(:,:,1:182),0,3);
-TFLUX_122_DD_avg = mean(TFLUX_Series122(:,:,1:364),3);
-SFLUX_122_DD_avg = mean(SFLUX_Series122(:,:,1:364),3);
-ETAN_122_DD_avg = mean(ETAN_Series(:,:,1:364),3);
-ETAN_122_DD_std = std(ETAN_Series(:,:,1:364),0,3);
-CFLUX_122_DJF_avg = mean(CFLUX_Series122(:,:,1:91),3);
-OFLUX_122_DJF_avg = mean(OFLUX_Series122(:,:,1:91),3);
-CFLUX_122_DM_avg = mean(CFLUX_Series122(:,:,1:182),3);
-OFLUX_122_DM_avg = mean(OFLUX_Series122(:,:,1:182),3);
-CFLUX_122_DD_avg = mean(CFLUX_Series122(:,:,1:364),3);
-OFLUX_122_DD_avg = mean(OFLUX_Series122(:,:,1:364),3);
+TFLUX_122_DJF_avg = mean(TFLUX_Series122(:,:,1:3),3);
+SFLUX_122_DJF_avg = mean(SFLUX_Series122(:,:,1:3),3);
+ETAN_122_DJF_avg = mean(ETAN_Series122(:,:,1:91),3);
+ETAN_122_DJF_std = std(ETAN_Series122(:,:,1:91),0,3);
+TFLUX_122_DM_avg = mean(TFLUX_Series122(:,:,1:6),3);
+SFLUX_122_DM_avg = mean(SFLUX_Series122(:,:,1:6),3);
+ETAN_122_DM_avg = mean(ETAN_Series122(:,:,1:182),3);
+ETAN_122_DM_std = std(ETAN_Series122(:,:,1:182),0,3);
+TFLUX_122_DD_avg = mean(TFLUX_Series122(:,:,1:12),3);
+SFLUX_122_DD_avg = mean(SFLUX_Series122(:,:,1:12),3);
+ETAN_122_DD_avg = mean(ETAN_Series122(:,:,1:364),3);
+ETAN_122_DD_std = std(ETAN_Series122(:,:,1:364),0,3);
+CFLUX_122_DJF_avg = mean(CFLUX_Series122(:,:,1:3),3);
+OFLUX_122_DJF_avg = mean(OFLUX_Series122(:,:,1:3),3);
+CFLUX_122_DM_avg = mean(CFLUX_Series122(:,:,1:6),3);
+OFLUX_122_DM_avg = mean(OFLUX_Series122(:,:,1:6),3);
+CFLUX_122_DD_avg = mean(CFLUX_Series122(:,:,1:12),3);
+OFLUX_122_DD_avg = mean(OFLUX_Series122(:,:,1:12),3);
 
 
 [m122,n122] = size(THETA_122_DJF_avg);
@@ -245,7 +248,7 @@ fid = fopen('OFLUX_122_DD_avg.bin','w','b');
 fwrite(fid,OFLUX_122_DD_avg,'single');
 fclose(fid);
 
-clear char122state temp122state *Series122 n122 m122  
+clear char122* temp122* *Series122 n122 m122  
 save SO3_122_output
 
 fprintf('finished 122 \n')

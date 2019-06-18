@@ -12,7 +12,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,THETA_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,THETA_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -20,13 +20,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,THETA_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,THETA_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -35,13 +35,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,THETA_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,THETA_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -50,14 +50,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,THETA_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,THETA_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -66,11 +66,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JJASON','-dpng')
+print('THETA_AVG_DM','-dpng')
 close all
 %% END THETA
 
@@ -89,7 +89,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,SALT_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,SALT_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -97,13 +97,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean SSS','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean SSS','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,SALT_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,SALT_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -112,13 +112,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean SSS','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean SSS','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,SALT_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,SALT_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -127,14 +127,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean SSS','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean SSS','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,SALT_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,SALT_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -143,11 +143,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean SSS','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean SSS','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('SALT_AVG_JJASON','-dpng')
+print('SALT_AVG_DM','-dpng')
 %% END SALT
 
 %% ETAN
@@ -160,13 +160,13 @@ nlvls = 126;
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
-ETAN_mu = mean(ETAN_BSOSE_JN_avg(ETAN_BSOSE_JN_avg<1000));
-ETAN_BSOSE_JN_avg = ETAN_BSOSE_JN_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_DM_avg(ETAN_BSOSE_DM_avg<1000));
+ETAN_BSOSE_DM_avg = ETAN_BSOSE_DM_avg - ETAN_mu;
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,ETAN_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,ETAN_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -174,13 +174,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,ETAN_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -189,13 +189,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,ETAN_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -204,14 +204,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -220,11 +220,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean SSH anomaly','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_AVG_JJASON','-dpng')
+print('ETAN_AVG_DM','-dpng')
 %% END ETAN
 
 %% TFLUX
@@ -241,7 +241,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,TFLUX_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,TFLUX_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -249,13 +249,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean heat flux','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,TFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,TFLUX_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -264,13 +264,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean heat flux','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,TFLUX_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,TFLUX_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -279,14 +279,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean heat flux','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,TFLUX_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,TFLUX_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -295,11 +295,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean heat flux','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('TFLUX_AVG_JJASON','-dpng')
+print('TFLUX_AVG_DM','-dpng')
 %% END TFLUX
 
 %% SFLUX
@@ -316,7 +316,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,SFLUX_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,SFLUX_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -324,13 +324,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean salt flux','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean salt flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,SFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,SFLUX_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -339,13 +339,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean salt flux','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean salt flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,SFLUX_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,SFLUX_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -354,14 +354,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean salt flux','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean salt flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,SFLUX_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,SFLUX_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -370,11 +370,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean salt flux','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean salt flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('SFLUX_AVG_JJASON','-dpng')
+print('SFLUX_AVG_DM','-dpng')
 %% END SFLUX
 
 %% CFLUX
@@ -391,7 +391,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,CFLUX_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,CFLUX_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -399,13 +399,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,CFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,CFLUX_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -414,13 +414,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,CFLUX_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,CFLUX_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -429,14 +429,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,CFLUX_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,CFLUX_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -445,11 +445,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean CO2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('CFLUX_AVG_JJASON','-dpng')
+print('CFLUX_AVG_DM','-dpng')
 %% END CFLUX
 
 %% OFLUX
@@ -466,7 +466,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,OFLUX_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,OFLUX_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -474,13 +474,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,OFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,OFLUX_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -489,13 +489,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,OFLUX_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,OFLUX_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -504,14 +504,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,OFLUX_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,OFLUX_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -520,11 +520,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('OFLUX_AVG_JJASON','-dpng')
+print('OFLUX_AVG_DM','-dpng')
 %% END OFLUX
 
 %% WVEL
@@ -541,7 +541,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,WVEL_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,WVEL_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -549,13 +549,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,WVEL_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,WVEL_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -564,13 +564,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,WVEL_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,WVEL_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -579,14 +579,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,WVEL_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,WVEL_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -595,11 +595,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL_AVG_JJASON','-dpng')
+print('WVEL_AVG_DM','-dpng')
 %% END WVEL
 
 %% WVEL STD
@@ -616,7 +616,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,WVEL_BSOSE_JN_std,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,WVEL_BSOSE_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -624,13 +624,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,WVEL_34_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,WVEL_34_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -639,13 +639,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,WVEL_64_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,WVEL_64_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -654,14 +654,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,WVEL_124_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,WVEL_124_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -670,11 +670,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL_std_JJASON','-dpng')
+print('WVEL_std_DM','-dpng')
 %% END WVEL STD
 
 %% ETAN STD
@@ -691,7 +691,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,ETAN_BSOSE_JN_std,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,ETAN_BSOSE_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -699,13 +699,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,ETAN_34_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -714,13 +714,13 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,ETAN_64_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -729,14 +729,14 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_124_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -745,11 +745,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 SSH anomaly stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_std_JJASON','-dpng')
+print('ETAN_std_DM','-dpng')
 %% END ETAN STD
 
 %% WVEL
@@ -766,7 +766,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,WVEL_BSOSE_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,WVEL_BSOSE_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -774,13 +774,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(outside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,WVEL_34_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,WVEL_34_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -789,13 +789,13 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,WVEL_64_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,WVEL_64_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -804,14 +804,14 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,WVEL_124_JN_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,WVEL_124_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -820,12 +820,13 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 mean vertical velocity','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL_AVG_JJASON_outside','-dpng')
+print('WVEL_AVG_DM_outside','-dpng')
 %% END WVEL
+
 
 %% WVEL STD
 close all
@@ -841,7 +842,7 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 subplot(2,2,1);
-contourf(XCS,YCS,WVEL_BSOSE_JN_std,'LineStyle','none','LevelList',z);
+contourf(XCS,YCS,WVEL_BSOSE_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -849,13 +850,13 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(outside_coords)
 ytickformat('degrees')
-title('1/6 B-SOSE JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
 
 subplot(2,2,2);
-contourf(XC3,YC3,WVEL_34_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,WVEL_34_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -864,13 +865,13 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
 
 subplot(2,2,3);
-contourf(XC6,YC6,WVEL_64_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,WVEL_64_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -879,14 +880,14 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
 
 
 subplot(2,2,4);
-contourf(XC12,YC12,WVEL_124_JN_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,WVEL_124_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
 hold on
@@ -895,9 +896,10 @@ caxis([lb ub])
 axis(outside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm + BLING JJASON 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm + BLING DJFMAM 2017 vertical velocity stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL_std_JJASON_outside','-dpng')
+print('WVEL_std_DM_outside','-dpng')
 %% END WVEL STD
+
