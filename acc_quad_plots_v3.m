@@ -1,5 +1,6 @@
 ax = gca;
 colorbar('off')
+colormap(ax3,cm)
 outerpos = ax.OuterPosition;
 ti = ax.TightInset;
 left = outerpos(1)-0.04;

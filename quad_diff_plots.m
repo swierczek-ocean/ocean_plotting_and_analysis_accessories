@@ -23,7 +23,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% THETA
-cm = acc_colormap('bluered');
+cm = acc_colormap('thermal');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -3;
 ub = 28;
@@ -49,7 +49,7 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -11;
 ub = 11;
@@ -108,7 +108,7 @@ close all
 
 %% SALT
 close all
-cm = flipud(acc_colormap('haline'));
+cm = acc_colormap('haline');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 32.2;
 ub = 36.7;
@@ -134,7 +134,7 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2.5;
 ub = 2.5;
@@ -192,7 +192,7 @@ print('SALT_AVG_JJA_diff','-dpng')
 
 %% ETAN
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -219,7 +219,7 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -277,7 +277,7 @@ print('ETAN_AVG_JJA_diff','-dpng')
 
 %% TFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -310;
 ub = 310;
@@ -302,7 +302,7 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -200;
 ub = 200;
@@ -360,7 +360,7 @@ print('TFLUX_AVG_JJA_diff','-dpng')
 
 %% SFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -0.0025;
 ub = 0.0025;
@@ -385,10 +385,10 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -0.002;
-ub = 0.002;
+lb = -0.0025;
+ub = 0.0025;
 nlvls = 126;
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
@@ -443,7 +443,7 @@ print('SFLUX_AVG_JJA_diff','-dpng')
 
 %% CFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -8e-7;
 ub = 8e-7;
@@ -468,7 +468,7 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -5e-7;
 ub = 5e-7;
@@ -526,7 +526,7 @@ print('CFLUX_AVG_JJA_diff','-dpng')
 
 %% OFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-6;
 ub = 2e-6;
@@ -551,10 +551,10 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -1e-6;
-ub = 1e-6;
+lb = -2e-6;
+ub = 2e-6;
 nlvls = 126;
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
@@ -609,7 +609,7 @@ print('OFLUX_AVG_JJA_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -634,7 +634,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JJA_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -709,7 +717,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JJA_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -762,7 +778,7 @@ close all
 cm = acc_colormap('fire');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 0;
-ub = 0.5;
+ub = 0.6;
 nlvls = 126;
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
@@ -784,7 +800,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -0.5;
+ub = 0.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_34_JJA_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -834,7 +858,7 @@ print('ETAN_std_JJA_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -859,7 +883,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JJA_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -934,7 +966,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JJA_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -983,7 +1023,7 @@ print('WVEL_std_JJA_outside_diff','-dpng')
 %% END WVEL STD
 
 %% THETA
-cm = acc_colormap('bluered');
+cm = acc_colormap('thermal');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -3;
 ub = 28;
@@ -1009,7 +1049,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -11;
+ub = 11;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,THETA_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1060,7 +1108,7 @@ close all
 
 %% SALT
 close all
-cm = flipud(acc_colormap('haline'));
+cm = acc_colormap('haline');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 32.2;
 ub = 36.7;
@@ -1086,7 +1134,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2.5;
+ub = 2.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SALT_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1136,7 +1192,7 @@ print('SALT_AVG_JJASON_diff','-dpng')
 
 %% ETAN
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -1163,7 +1219,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -2;
+ub = 2;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1213,7 +1277,7 @@ print('ETAN_AVG_JJASON_diff','-dpng')
 
 %% TFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -310;
 ub = 310;
@@ -1238,7 +1302,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -200;
+ub = 200;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,TFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1288,7 +1360,7 @@ print('TFLUX_AVG_JJASON_diff','-dpng')
 
 %% SFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -0.0025;
 ub = 0.0025;
@@ -1313,7 +1385,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -0.0025;
+ub = 0.0025;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1363,7 +1443,7 @@ print('SFLUX_AVG_JJASON_diff','-dpng')
 
 %% CFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -8e-7;
 ub = 8e-7;
@@ -1388,7 +1468,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -5e-7;
+ub = 5e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,CFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1438,7 +1526,7 @@ print('CFLUX_AVG_JJASON_diff','-dpng')
 
 %% OFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-6;
 ub = 2e-6;
@@ -1463,7 +1551,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2e-6;
+ub = 2e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,OFLUX_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1513,7 +1609,7 @@ print('OFLUX_AVG_JJASON_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -1538,7 +1634,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1613,7 +1717,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JN_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1688,7 +1800,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -0.5;
+ub = 0.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_34_JN_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1738,7 +1858,7 @@ print('ETAN_std_JJASON_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -1763,7 +1883,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JN_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1838,7 +1966,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_34_JN_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1887,7 +2023,7 @@ print('WVEL_std_JJASON_outside_diff','-dpng')
 %% END WVEL STD
 
 %% THETA
-cm = acc_colormap('bluered');
+cm = acc_colormap('thermal');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -3;
 ub = 28;
@@ -1913,7 +2049,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -11;
+ub = 11;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,THETA_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -1964,7 +2108,7 @@ close all
 
 %% SALT
 close all
-cm = flipud(acc_colormap('haline'));
+cm = acc_colormap('haline');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 32.2;
 ub = 36.7;
@@ -1990,7 +2134,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2.5;
+ub = 2.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SALT_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2040,7 +2192,7 @@ print('SALT_AVG_DJF_diff','-dpng')
 
 %% ETAN
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -2067,7 +2219,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2;
+ub = 2;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2117,7 +2277,7 @@ print('ETAN_AVG_DJF_diff','-dpng')
 
 %% TFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -310;
 ub = 310;
@@ -2142,7 +2302,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -200;
+ub = 200;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,TFLUX_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2192,7 +2360,7 @@ print('TFLUX_AVG_DJF_diff','-dpng')
 
 %% SFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -0.0025;
 ub = 0.0025;
@@ -2217,7 +2385,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -0.0025;
+ub = 0.0025;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SFLUX_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2267,7 +2443,7 @@ print('SFLUX_AVG_DJF_diff','-dpng')
 
 %% CFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -8e-7;
 ub = 8e-7;
@@ -2296,7 +2472,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -5e-7;
+ub = 5e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,CFLUX_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2346,7 +2530,7 @@ print('CFLUX_AVG_DJF_diff','-dpng')
 
 %% OFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-6;
 ub = 2e-6;
@@ -2371,7 +2555,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2e-6;
+ub = 2e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,OFLUX_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2421,7 +2613,7 @@ print('OFLUX_AVG_DJF_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -2446,7 +2638,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2521,7 +2721,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DJF_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2596,7 +2804,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -0.5;
+ub = 0.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DJF_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2646,7 +2862,7 @@ print('ETAN_std_DJF_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -2671,7 +2887,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DJF_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2746,7 +2970,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DJF_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2795,7 +3027,7 @@ print('WVEL_std_DJF_outside_diff','-dpng')
 %% END WVEL STD
 
 %% THETA
-cm = acc_colormap('bluered');
+cm = acc_colormap('thermal');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -3;
 ub = 28;
@@ -2821,7 +3053,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -11;
+ub = 11;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,THETA_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2872,7 +3112,7 @@ close all
 
 %% SALT
 close all
-cm = flipud(acc_colormap('haline'));
+cm = acc_colormap('haline');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 32.2;
 ub = 36.7;
@@ -2898,7 +3138,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2.5;
+ub = 2.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SALT_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -2948,7 +3196,7 @@ print('SALT_AVG_DD_diff','-dpng')
 
 %% ETAN
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -2975,7 +3223,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2;
+ub = 2;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3025,7 +3281,7 @@ print('ETAN_AVG_DD_diff','-dpng')
 
 %% TFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -310;
 ub = 310;
@@ -3050,7 +3306,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -200;
+ub = 200;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,TFLUX_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3100,7 +3364,7 @@ print('TFLUX_AVG_DD_diff','-dpng')
 
 %% SFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -0.0025;
 ub = 0.0025;
@@ -3125,7 +3389,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -0.0025;
+ub = 0.0025;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SFLUX_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3175,7 +3447,7 @@ print('SFLUX_AVG_DD_diff','-dpng')
 
 %% CFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -8e-7;
 ub = 8e-7;
@@ -3200,7 +3472,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -5e-7;
+ub = 5e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,CFLUX_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3250,7 +3530,7 @@ print('CFLUX_AVG_DD_diff','-dpng')
 
 %% OFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-6;
 ub = 2e-6;
@@ -3275,7 +3555,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2e-6;
+ub = 2e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,OFLUX_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3325,7 +3613,7 @@ print('OFLUX_AVG_DD_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -3350,7 +3638,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3425,7 +3721,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DD_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3500,7 +3804,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -0.5;
+ub = 0.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DD_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3550,7 +3862,7 @@ print('ETAN_std_DD_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -3575,7 +3887,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DD_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3650,7 +3970,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DD_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3699,7 +4027,7 @@ print('WVEL_std_DD_outside_diff','-dpng')
 %% END WVEL STD
 
 %% THETA
-cm = acc_colormap('bluered');
+cm = acc_colormap('thermal');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -3;
 ub = 28;
@@ -3725,7 +4053,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -11;
+ub = 11;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,THETA_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3776,7 +4112,7 @@ close all
 
 %% SALT
 close all
-cm = flipud(acc_colormap('haline'));
+cm = acc_colormap('haline');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = 32.2;
 ub = 36.7;
@@ -3802,7 +4138,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2.5;
+ub = 2.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SALT_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3852,7 +4196,7 @@ print('SALT_AVG_DM_diff','-dpng')
 
 %% ETAN
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -2;
 ub = 2;
@@ -3879,7 +4223,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2;
+ub = 2;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -3929,7 +4281,7 @@ print('ETAN_AVG_DM_diff','-dpng')
 
 %% TFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,46)';cm;Color(:,46)'];
 lb = -310;
 ub = 310;
@@ -3954,7 +4306,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -200;
+ub = 200;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,TFLUX_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4004,7 +4364,7 @@ print('TFLUX_AVG_DM_diff','-dpng')
 
 %% SFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -0.0025;
 ub = 0.0025;
@@ -4029,7 +4389,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -0.0025;
+ub = 0.0025;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,SFLUX_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4079,7 +4447,7 @@ print('SFLUX_AVG_DM_diff','-dpng')
 
 %% CFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -8e-7;
 ub = 8e-7;
@@ -4104,7 +4472,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -5e-7;
+ub = 5e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,CFLUX_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4154,7 +4530,7 @@ print('CFLUX_AVG_DM_diff','-dpng')
 
 %% OFLUX
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-6;
 ub = 2e-6;
@@ -4179,7 +4555,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,46)';cm;Color(:,46)'];
+lb = -2e-6;
+ub = 2e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,OFLUX_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4229,7 +4613,7 @@ print('OFLUX_AVG_DM_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -4254,7 +4638,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4329,7 +4721,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4404,7 +4804,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -0.5;
+ub = 0.5;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,ETAN_32_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4454,7 +4862,7 @@ print('ETAN_std_DM_diff','-dpng')
 
 %% WVEL
 close all
-cm = acc_colormap('bluered');
+cm = acc_colormap('balance');
 cm = [Color(:,13)';cm;Color(:,46)'];
 lb = -2e-7;
 ub = 2e-7;
@@ -4479,7 +4887,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -3e-7;
+ub = 3e-7;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DM_avg,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
@@ -4553,7 +4969,15 @@ acc_movie
 acc_quad_plots_v1
 hold off
 
+cm = acc_colormap('balance');
+cm = [Color(:,13)';cm;Color(:,46)'];
+lb = -1.5e-6;
+ub = 1.5e-6;
+nlvls = 126;
+z = linspace(lb,ub,nlvls);
+z = [-100000,z,9999998];
 subplot(2,2,2);
+colormap(cm)
 contourf(XCS,YCS,WVEL_32_DM_std,'LineStyle','none','LevelList',z);
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);

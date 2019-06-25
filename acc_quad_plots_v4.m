@@ -1,6 +1,6 @@
 ax = gca;
 yticklabels({})
-% colorbar('off')
+colormap(ax4,cm)
 outerpos = ax.OuterPosition;
 ti = ax.TightInset;
 % left = outerpos(1)-0.026;
