@@ -8,7 +8,7 @@ ax.TickDir = 'out';
 ax.TickLength = [0.005 0.035];
 % makes the tick marks a little shorter than usual
 
-set(ax,'yticklabel',num2str(abs(get(ax,'ytick').')))
+% set(ax,'yticklabel',num2str(abs(get(ax,'ytick').')))
 % gets rid of the negative signs on the y axis, so depth reads as positive
 
 ax.LineWidth = 1.5;

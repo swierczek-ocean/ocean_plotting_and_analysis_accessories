@@ -11,19 +11,18 @@ load XY3
 load XY6 
 load XY12 
 load BSOSE_surf_avgs
-load SO3_34_output
-load SO3_64_output
-load SO3_124_output
-load SO3_32_output
-load SO3_62_output
-load SO3_122_output
+load AB34_output
+load AB64_output
+load AB124_output
+load AB32_output
+load AB62_output
+load AB122_output
 %%
 
 %%
 mask = permute(mask,[2,1,3]);
 outside_coords = [288.8 351.6 -59.6 -30.6];
 inside_coords = [290.5 350.2 -58.7 -32];
-cm = [Color(:,46)';cm;Color(:,46)'];
 [XC3,YC3] = ndgrid(XC3,YC3);
 [XC6,YC6] = ndgrid(XC6,YC6);
 [XC12,YC12] = ndgrid(XC12,YC12);

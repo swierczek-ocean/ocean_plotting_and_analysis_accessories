@@ -3,8 +3,8 @@ function output_num = acc_convert_time_19000101(num)
 %%
 
 ref_date = datenum('19000101','yyyymmdd');
-num = num./86400;
-output_num = num + ref_date;
+num = num/86400;
+output_num = ref_date + num;
 
 end
 

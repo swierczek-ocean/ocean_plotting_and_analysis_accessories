@@ -108,11 +108,11 @@ for ii=1:7
     temp124bgc = rdmds(char124bgc); 
     DIC_Series124(:,:,ii) = temp124bgc(:,:,1,dfield124);
     ALK_Series124(:,:,ii) = temp124bgc(:,:,1,afield124);
-    AGE_Series124(:,:,ii) = temp122bgc(:,:,depth122,agfield122);
-    AGE200_Series124(:,:,ii) = temp122bgc(:,:,40,agfield122);
-    AGE500_Series124(:,:,ii) = temp122bgc(:,:,60,agfield122);
-    AGE1000_Series124(:,:,ii) = temp122bgc(:,:,72,agfield122);
-    AGE2000_Series124(:,:,ii) = temp122bgc(:,:,84,agfield122);
+    AGE_Series124(:,:,ii) = temp124bgc(:,:,depth124,agfield124);
+    AGE200_Series124(:,:,ii) = temp124bgc(:,:,40,agfield124);
+    AGE500_Series124(:,:,ii) = temp124bgc(:,:,60,agfield124);
+    AGE1000_Series124(:,:,ii) = temp124bgc(:,:,72,agfield124);
+    AGE2000_Series124(:,:,ii) = temp124bgc(:,:,84,agfield124);
     clear temp124bgc
 end
 
@@ -237,31 +237,14 @@ DIC_124_JASOND_avg = mean(DIC_Series124(:,:,2:7),3);
 ALK_124_JASOND_avg = mean(ALK_Series124(:,:,2:7),3);
 
 
-
 [m124,n124] = size(THETA_124_JJA_avg);
 
 parfor ii=1:m124
     for jj=1:n124
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             THETA_124_JJA_avg(ii,jj) = 99999999;
             SALT_124_JJA_avg(ii,jj) = 99999999;
-            THETA105_124_JJA_avg(ii,jj) = 99999999;
-            SALT105_124_JJA_avg(ii,jj) = 99999999;
-            THETA200_124_JJA_avg(ii,jj) = 99999999;
-            SALT200_124_JJA_avg(ii,jj) = 99999999;
-            THETA300_124_JJA_avg(ii,jj) = 99999999;
-            SALT300_124_JJA_avg(ii,jj) = 99999999;
             AGE_124_JJA_avg(ii,jj) = 99999999;
-            AGE200_124_JJA_avg(ii,jj) = 99999999;
-            AGE500_124_JJA_avg(ii,jj) = 99999999;
-            AGE1000_124_JJA_avg(ii,jj) = 99999999;
-            AGE2000_124_JJA_avg(ii,jj) = 99999999;
-            WVEL100_124_JJA_avg(ii,jj) = 99999999;
-            WVEL100_124_JJA_std(ii,jj) = 99999999;
-            WVEL190_124_JJA_avg(ii,jj) = 99999999;
-            WVEL190_124_JJA_std(ii,jj) = 99999999;
-            WVEL290_124_JJA_avg(ii,jj) = 99999999;
-            WVEL290_124_JJA_std(ii,jj) = 99999999;
             TFLUX_124_JJA_avg(ii,jj) = 99999999;
             SFLUX_124_JJA_avg(ii,jj) = 99999999;
             ETAN_124_JJA_avg(ii,jj) = 99999999;
@@ -274,23 +257,7 @@ parfor ii=1:m124
             ALK_124_JJA_avg(ii,jj) = 99999999;
             THETA_124_JAS_avg(ii,jj) = 99999999;
             SALT_124_JAS_avg(ii,jj) = 99999999;
-            THETA105_124_JAS_avg(ii,jj) = 99999999;
-            SALT105_124_JAS_avg(ii,jj) = 99999999;
-            THETA200_124_JAS_avg(ii,jj) = 99999999;
-            SALT200_124_JAS_avg(ii,jj) = 99999999;
-            THETA300_124_JAS_avg(ii,jj) = 99999999;
-            SALT300_124_JAS_avg(ii,jj) = 99999999;
             AGE_124_JAS_avg(ii,jj) = 99999999;
-            AGE200_124_JAS_avg(ii,jj) = 99999999;
-            AGE500_124_JAS_avg(ii,jj) = 99999999;
-            AGE1000_124_JAS_avg(ii,jj) = 99999999;
-            AGE2000_124_JAS_avg(ii,jj) = 99999999;
-            WVEL100_124_JAS_avg(ii,jj) = 99999999;
-            WVEL100_124_JAS_std(ii,jj) = 99999999;
-            WVEL190_124_JAS_avg(ii,jj) = 99999999;
-            WVEL190_124_JAS_std(ii,jj) = 99999999;
-            WVEL290_124_JAS_avg(ii,jj) = 99999999;
-            WVEL290_124_JAS_std(ii,jj) = 99999999;
             TFLUX_124_JAS_avg(ii,jj) = 99999999;
             SFLUX_124_JAS_avg(ii,jj) = 99999999;
             ETAN_124_JAS_avg(ii,jj) = 99999999;
@@ -303,23 +270,7 @@ parfor ii=1:m124
             ALK_124_JAS_avg(ii,jj) = 99999999;
             THETA_124_JJASON_avg(ii,jj) = 99999999;
             SALT_124_JJASON_avg(ii,jj) = 99999999;
-            THETA105_124_JJASON_avg(ii,jj) = 99999999;
-            SALT105_124_JJASON_avg(ii,jj) = 99999999;
-            THETA200_124_JJASON_avg(ii,jj) = 99999999;
-            SALT200_124_JJASON_avg(ii,jj) = 99999999;
-            THETA300_124_JJASON_avg(ii,jj) = 99999999;
-            SALT300_124_JJASON_avg(ii,jj) = 99999999;
             AGE_124_JJASON_avg(ii,jj) = 99999999;
-            AGE200_124_JJASON_avg(ii,jj) = 99999999;
-            AGE500_124_JJASON_avg(ii,jj) = 99999999;
-            AGE1000_124_JJASON_avg(ii,jj) = 99999999;
-            AGE2000_124_JJASON_avg(ii,jj) = 99999999;
-            WVEL100_124_JJASON_avg(ii,jj) = 99999999;
-            WVEL100_124_JJASON_std(ii,jj) = 99999999;
-            WVEL190_124_JJASON_avg(ii,jj) = 99999999;
-            WVEL190_124_JJASON_std(ii,jj) = 99999999;
-            WVEL290_124_JJASON_avg(ii,jj) = 99999999;
-            WVEL290_124_JJASON_std(ii,jj) = 99999999;
             TFLUX_124_JJASON_avg(ii,jj) = 99999999;
             SFLUX_124_JJASON_avg(ii,jj) = 99999999;
             ETAN_124_JJASON_avg(ii,jj) = 99999999;
@@ -332,23 +283,7 @@ parfor ii=1:m124
             ALK_124_JJASON_avg(ii,jj) = 99999999;
             THETA_124_JASOND_avg(ii,jj) = 99999999;
             SALT_124_JASOND_avg(ii,jj) = 99999999;
-            THETA105_124_JASOND_avg(ii,jj) = 99999999;
-            SALT105_124_JASOND_avg(ii,jj) = 99999999;
-            THETA200_124_JASOND_avg(ii,jj) = 99999999;
-            SALT200_124_JASOND_avg(ii,jj) = 99999999;
-            THETA300_124_JASOND_avg(ii,jj) = 99999999;
-            SALT300_124_JASOND_avg(ii,jj) = 99999999;
             AGE_124_JASOND_avg(ii,jj) = 99999999;
-            AGE200_124_JASOND_avg(ii,jj) = 99999999;
-            AGE500_124_JASOND_avg(ii,jj) = 99999999;
-            AGE1000_124_JASOND_avg(ii,jj) = 99999999;
-            AGE2000_124_JASOND_avg(ii,jj) = 99999999;
-            WVEL100_124_JASOND_avg(ii,jj) = 99999999;
-            WVEL100_124_JASOND_std(ii,jj) = 99999999;
-            WVEL190_124_JASOND_avg(ii,jj) = 99999999;
-            WVEL190_124_JASOND_std(ii,jj) = 99999999;
-            WVEL290_124_JASOND_avg(ii,jj) = 99999999;
-            WVEL290_124_JASOND_std(ii,jj) = 99999999;
             TFLUX_124_JASOND_avg(ii,jj) = 99999999;
             SFLUX_124_JASOND_avg(ii,jj) = 99999999;
             ETAN_124_JASOND_avg(ii,jj) = 99999999;
@@ -360,101 +295,87 @@ parfor ii=1:m124
             DIC_124_JASOND_avg(ii,jj) = 99999999;
             ALK_124_JASOND_avg(ii,jj) = 99999999;
         end
+        if (HC(ii,jj,26)==0)
+            THETA105_124_JJA_avg(ii,jj) = 99999999;
+            SALT105_124_JJA_avg(ii,jj) = 99999999;
+            WVEL100_124_JJA_avg(ii,jj) = 99999999;
+            WVEL100_124_JJA_std(ii,jj) = 99999999;
+            THETA105_124_JAS_avg(ii,jj) = 99999999;
+            SALT105_124_JAS_avg(ii,jj) = 99999999;
+            WVEL100_124_JAS_avg(ii,jj) = 99999999;
+            WVEL100_124_JAS_std(ii,jj) = 99999999;
+            THETA105_124_JJASON_avg(ii,jj) = 99999999;
+            SALT105_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL100_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL100_124_JJASON_std(ii,jj) = 99999999;
+            THETA105_124_JASOND_avg(ii,jj) = 99999999;
+            SALT105_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL100_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL100_124_JASOND_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,40)==0)
+            THETA200_124_JJA_avg(ii,jj) = 99999999;
+            SALT200_124_JJA_avg(ii,jj) = 99999999;
+            AGE200_124_JJA_avg(ii,jj) = 99999999;
+            WVEL190_124_JJA_avg(ii,jj) = 99999999;
+            WVEL190_124_JJA_std(ii,jj) = 99999999;
+            THETA200_124_JAS_avg(ii,jj) = 99999999;
+            SALT200_124_JAS_avg(ii,jj) = 99999999;
+            AGE200_124_JAS_avg(ii,jj) = 99999999;
+            WVEL190_124_JAS_avg(ii,jj) = 99999999;
+            WVEL190_124_JAS_std(ii,jj) = 99999999;
+            THETA200_124_JJASON_avg(ii,jj) = 99999999;
+            SALT200_124_JJASON_avg(ii,jj) = 99999999;
+            AGE200_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL190_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL190_124_JJASON_std(ii,jj) = 99999999;
+            THETA200_124_JASOND_avg(ii,jj) = 99999999;
+            SALT200_124_JASOND_avg(ii,jj) = 99999999;
+            AGE200_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL190_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL190_124_JASOND_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,50)==0)
+            THETA300_124_JJA_avg(ii,jj) = 99999999;
+            SALT300_124_JJA_avg(ii,jj) = 99999999;
+            WVEL290_124_JJA_avg(ii,jj) = 99999999;
+            WVEL290_124_JJA_std(ii,jj) = 99999999;
+            THETA300_124_JAS_avg(ii,jj) = 99999999;
+            SALT300_124_JAS_avg(ii,jj) = 99999999;
+            WVEL290_124_JAS_avg(ii,jj) = 99999999;
+            WVEL290_124_JAS_std(ii,jj) = 99999999;
+            THETA300_124_JJASON_avg(ii,jj) = 99999999;
+            SALT300_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL290_124_JJASON_avg(ii,jj) = 99999999;
+            WVEL290_124_JJASON_std(ii,jj) = 99999999;
+            THETA300_124_JASOND_avg(ii,jj) = 99999999;
+            SALT300_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL290_124_JASOND_avg(ii,jj) = 99999999;
+            WVEL290_124_JASOND_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,60)==0)
+            AGE500_124_JJA_avg(ii,jj) = 99999999;
+            AGE500_124_JAS_avg(ii,jj) = 99999999;
+            AGE500_124_JJASON_avg(ii,jj) = 99999999;
+            AGE500_124_JASOND_avg(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,72)==0)
+            AGE1000_124_JJA_avg(ii,jj) = 99999999;
+            AGE1000_124_JAS_avg(ii,jj) = 99999999;
+            AGE1000_124_JJASON_avg(ii,jj) = 99999999;
+            AGE1000_124_JASOND_avg(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,84)==0)
+            AGE2000_124_JJA_avg(ii,jj) = 99999999;
+            AGE2000_124_JAS_avg(ii,jj) = 99999999;
+            AGE2000_124_JJASON_avg(ii,jj) = 99999999;
+            AGE2000_124_JASOND_avg(ii,jj) = 99999999;
+        end
     end
 end
 
-% fid = fopen('THETA_124_JJA_avg.bin','w','b');
-% fwrite(fid,THETA_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_124_JJA_avg.bin','w','b');
-% fwrite(fid,SALT_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_JJA_avg.bin','w','b');
-% fwrite(fid,WVEL_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_JJA_std.bin','w','b');
-% fwrite(fid,WVEL_124_JJA_std,'single');
-% fclose(fid);
-% fid = fopen('THETA_124_DM_avg.bin','w','b');
-% fwrite(fid,THETA_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_124_DM_avg.bin','w','b');
-% fwrite(fid,SALT_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_DM_avg.bin','w','b');
-% fwrite(fid,WVEL_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_DM_std.bin','w','b');
-% fwrite(fid,WVEL_124_DM_std,'single');
-% fclose(fid);
-% fid = fopen('THETA_124_DN_avg.bin','w','b');
-% fwrite(fid,THETA_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_124_DN_avg.bin','w','b');
-% fwrite(fid,SALT_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_DN_avg.bin','w','b');
-% fwrite(fid,WVEL_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_124_DN_std.bin','w','b');
-% fwrite(fid,WVEL_124_DN_std,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_124_JJA_avg.bin','w','b');
-% fwrite(fid,TFLUX_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_124_JJA_avg.bin','w','b');
-% fwrite(fid,SFLUX_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_JJA_avg.bin','w','b');
-% fwrite(fid,ETAN_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_JJA_std.bin','w','b');
-% fwrite(fid,ETAN_124_JJA_std,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_124_DM_avg.bin','w','b');
-% fwrite(fid,TFLUX_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_124_DM_avg.bin','w','b');
-% fwrite(fid,SFLUX_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_DM_avg.bin','w','b');
-% fwrite(fid,ETAN_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_DM_std.bin','w','b');
-% fwrite(fid,ETAN_124_DM_std,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_124_DN_avg.bin','w','b');
-% fwrite(fid,TFLUX_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_124_DN_avg.bin','w','b');
-% fwrite(fid,SFLUX_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_DN_avg.bin','w','b');
-% fwrite(fid,ETAN_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_124_DN_std.bin','w','b');
-% fwrite(fid,ETAN_124_DN_std,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_124_JJA_avg.bin','w','b');
-% fwrite(fid,CFLUX_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_124_JJA_avg.bin','w','b');
-% fwrite(fid,OFLUX_124_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_124_DM_avg.bin','w','b');
-% fwrite(fid,CFLUX_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_124_DM_avg.bin','w','b');
-% fwrite(fid,OFLUX_124_DM_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_124_DN_avg.bin','w','b');
-% fwrite(fid,CFLUX_124_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_124_DN_avg.bin','w','b');
-% fwrite(fid,OFLUX_124_DN_avg,'single');
-% fclose(fid);
 
-clear char124* temp124* *Series124 n124 m124 *field124 ii 
+clear char124* temp124* *Series124 n124 m124 *field124 ii
 save AB124_output
 
 fprintf('finished 124 \n')
