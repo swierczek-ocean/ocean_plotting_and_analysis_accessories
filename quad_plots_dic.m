@@ -16,6 +16,7 @@ load AB122_output
 %%
 
 %%
+option = 6;
 mask = permute(mask,[2,1,3]);
 inside_coords = [290.5 350.2 -58.7 -32];
 [XC3,YC3] = ndgrid(XC3,YC3);
@@ -25,11 +26,11 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JJA_avg,...
+    DIC_34_JJA_avg,DIC_64_JJA_avg,DIC_124_JJA_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -38,8 +39,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -52,8 +51,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_34_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -67,8 +64,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_64_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -82,9 +77,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_124_JJA_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -99,11 +94,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JAS_avg,...
+    DIC_34_JAS_avg,DIC_64_JAS_avg,DIC_124_JAS_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -112,8 +107,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -126,8 +119,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_34_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -141,8 +132,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_64_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -156,9 +145,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_124_JAS_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -173,11 +162,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JJASON_avg,...
+    DIC_34_JJASON_avg,DIC_64_JJASON_avg,DIC_124_JJASON_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -186,8 +175,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -200,8 +187,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_34_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -215,8 +200,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_64_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -230,9 +213,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_124_JJASON_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -247,11 +230,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JASOND_avg,...
+    DIC_34_JASOND_avg,DIC_64_JASOND_avg,DIC_124_JASOND_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -260,8 +243,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -274,8 +255,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_34_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -289,8 +268,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_64_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -304,9 +281,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_124_JASOND_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -321,11 +298,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DN_avg,...
+    DIC_32_DN_avg,DIC_62_DN_avg,DIC_122_DN_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -334,8 +311,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -348,8 +323,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_32_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -363,8 +336,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_62_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -378,9 +349,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_122_DN_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -395,11 +366,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JD_avg,...
+    DIC_32_JD_avg,DIC_62_JD_avg,DIC_122_JD_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -408,8 +379,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -422,8 +391,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,DIC_32_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -437,8 +404,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,DIC_62_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -452,9 +417,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,DIC_122_JD_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -469,11 +434,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DJF_avg,...
+    DIC_32_DJF_avg,DIC_62_DJF_avg,DIC_122_DJF_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -482,8 +447,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -495,9 +458,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,DIC_34_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,DIC_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -510,9 +471,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,DIC_64_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,DIC_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -525,10 +484,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,DIC_124_DJF_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,DIC_122_DJF_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -543,11 +502,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JFM_avg,...
+    DIC_32_JFM_avg,DIC_62_JFM_avg,DIC_122_JFM_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -556,8 +515,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -569,9 +526,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,DIC_34_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,DIC_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -584,9 +539,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,DIC_64_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,DIC_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -599,10 +552,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,DIC_124_JFM_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,DIC_122_JFM_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -617,11 +570,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JFMAMJ_avg,...
+    DIC_32_JFMAMJ_avg,DIC_62_JFMAMJ_avg,DIC_122_JFMAMJ_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -630,8 +583,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -643,9 +594,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,DIC_34_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,DIC_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -658,9 +607,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,DIC_64_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,DIC_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -673,10 +620,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,DIC_124_JFMAMJ_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,DIC_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -691,11 +638,11 @@ close all
 %% END DIC
 
 %% DIC
-cm = acc_colormap('ice');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 2;
-ub = 2.3;
-nlvls = 40*(ub - lb) + 1;
+cm = flipud(acc_colormap('cmice'));
+cm = [Color(:,33)';cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DJFMAM_avg,...
+    DIC_32_DJFMAM_avg,DIC_62_DJFMAM_avg,DIC_122_DJFMAM_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -704,8 +651,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,DIC_BSOSE_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -717,9 +662,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,DIC_34_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,DIC_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -732,9 +675,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,DIC_64_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,DIC_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -747,10 +688,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,DIC_124_DJFMAM_avg,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,DIC_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)

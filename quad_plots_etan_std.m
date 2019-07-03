@@ -6,7 +6,7 @@ load mask
 load XY3 
 load XY6 
 load XY12 
-load BSOSE_surf_stds
+load BSOSE_surf_avgs
 load AB34_output
 load AB64_output
 load AB124_output
@@ -16,6 +16,7 @@ load AB122_output
 %%
 
 %%
+option = 8;
 mask = permute(mask,[2,1,3]);
 inside_coords = [290.5 350.2 -58.7 -32];
 [XC3,YC3] = ndgrid(XC3,YC3);
@@ -26,10 +27,10 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJA_std,...
+    ETAN_34_JJA_std,ETAN_64_JJA_std,ETAN_124_JJA_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -38,8 +39,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JJA_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -52,8 +51,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_34_JJA_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -67,8 +64,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_64_JJA_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -82,9 +77,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_124_JJA_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -100,10 +95,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JAS_std,...
+    ETAN_34_JAS_std,ETAN_64_JAS_std,ETAN_124_JAS_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -112,8 +107,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JAS_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -126,8 +119,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_34_JAS_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -141,8 +132,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_64_JAS_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -156,9 +145,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_124_JAS_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -174,10 +163,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJASON_std,...
+    ETAN_34_JJASON_std,ETAN_64_JJASON_std,ETAN_124_JJASON_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -186,8 +175,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JJASON_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -200,8 +187,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_34_JJASON_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -215,8 +200,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_64_JJASON_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -230,9 +213,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_124_JJASON_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -248,10 +231,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JASOND_std,...
+    ETAN_34_JASOND_std,ETAN_64_JASOND_std,ETAN_124_JASOND_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -260,8 +243,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JASOND_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -274,8 +255,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_34_JASOND_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -289,8 +268,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_64_JASOND_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -304,9 +281,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_124_JASOND_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -322,10 +299,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DN_std,...
+    ETAN_32_DN_std,ETAN_62_DN_std,ETAN_122_DN_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -334,8 +311,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_DN_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -348,8 +323,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_32_DN_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -363,8 +336,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_62_DN_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -378,9 +349,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_122_DN_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -396,10 +367,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JD_std,...
+    ETAN_32_JD_std,ETAN_62_JD_std,ETAN_122_JD_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -408,8 +379,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JD_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -422,8 +391,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,ETAN_32_JD_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -437,8 +404,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,ETAN_62_JD_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -452,9 +417,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,ETAN_122_JD_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -470,10 +435,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJF_std,...
+    ETAN_32_DJF_std,ETAN_62_DJF_std,ETAN_122_DJF_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -482,8 +447,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_DJF_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -495,9 +458,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_DJF_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,ETAN_32_DJF_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -510,9 +471,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_DJF_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,ETAN_62_DJF_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -525,10 +484,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_DJF_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_122_DJF_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -544,10 +503,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFM_std,...
+    ETAN_32_JFM_std,ETAN_62_JFM_std,ETAN_122_JFM_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -556,8 +515,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JFM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -569,9 +526,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_JFM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,ETAN_32_JFM_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -584,9 +539,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_JFM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,ETAN_62_JFM_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -599,10 +552,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_JFM_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_122_JFM_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -618,10 +571,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFMAMJ_std,...
+    ETAN_32_JFMAMJ_std,ETAN_62_JFMAMJ_std,ETAN_122_JFMAMJ_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -630,8 +583,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_JFMAMJ_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -643,9 +594,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_JFMAMJ_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,ETAN_32_JFMAMJ_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -658,9 +607,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_JFMAMJ_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,ETAN_62_JFMAMJ_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -673,10 +620,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_JFMAMJ_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_122_JFMAMJ_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -692,10 +639,10 @@ close all
 
 %% ETAN
 cm = acc_colormap('fire');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = 0;
-ub = 0.4;
-nlvls = 40*(ub - lb) + 1;
+cm = [cm;Color(:,46)'];
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJFMAM_std,...
+    ETAN_32_DJFMAM_std,ETAN_62_DJFMAM_std,ETAN_122_DJFMAM_std,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -704,8 +651,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,ETAN_BSOSE_DJFMAM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -717,9 +662,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,ETAN_34_DJFMAM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,ETAN_32_DJFMAM_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -732,9 +675,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,ETAN_64_DJFMAM_std,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,ETAN_62_DJFMAM_std,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -747,10 +688,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,ETAN_124_DJFMAM_std,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,ETAN_122_DJFMAM_std,'LineStyle','none','LevelList',z);
+hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)

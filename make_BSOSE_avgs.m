@@ -40,7 +40,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+HC = hFacC(lox:hix,loy:hiy,:);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -112,35 +112,35 @@ THETA500_BSOSE_JD_avg = mean(THETA_temp(:,:,2:13),3);
 
 THETA_temp = ncread(str,'THETA',[lox,loy,36,sd],[nn,mm,1,nd]);
 
-THETA100_BSOSE00_DJF_avg = mean(THETA_temp(:,:,1:3),3);
-THETA100_BSOSE00_DJFMAM_avg = mean(THETA_temp(:,:,1:6),3);
-THETA100_BSOSE00_DN_avg = mean(THETA_temp(:,:,1:12),3);
-THETA100_BSOSE00_JJA_avg = mean(THETA_temp(:,:,7:9),3);
-THETA100_BSOSE00_JAS_avg = mean(THETA_temp(:,:,8:10),3);
-THETA100_BSOSE00_JJASON_avg = mean(THETA_temp(:,:,7:12),3);
-THETA100_BSOSE00_JASOND_avg = mean(THETA_temp(:,:,8:13),3);
-THETA100_BSOSE00_JFM_avg = mean(THETA_temp(:,:,2:4),3);
-THETA100_BSOSE00_JFMAMJ_avg = mean(THETA_temp(:,:,2:7),3);
-THETA100_BSOSE00_JD_avg = mean(THETA_temp(:,:,2:13),3);
+THETA1000_BSOSE_DJF_avg = mean(THETA_temp(:,:,1:3),3);
+THETA1000_BSOSE_DJFMAM_avg = mean(THETA_temp(:,:,1:6),3);
+THETA1000_BSOSE_DN_avg = mean(THETA_temp(:,:,1:12),3);
+THETA1000_BSOSE_JJA_avg = mean(THETA_temp(:,:,7:9),3);
+THETA1000_BSOSE_JAS_avg = mean(THETA_temp(:,:,8:10),3);
+THETA1000_BSOSE_JJASON_avg = mean(THETA_temp(:,:,7:12),3);
+THETA1000_BSOSE_JASOND_avg = mean(THETA_temp(:,:,8:13),3);
+THETA1000_BSOSE_JFM_avg = mean(THETA_temp(:,:,2:4),3);
+THETA1000_BSOSE_JFMAMJ_avg = mean(THETA_temp(:,:,2:7),3);
+THETA1000_BSOSE_JD_avg = mean(THETA_temp(:,:,2:13),3);
 
 THETA_temp = ncread(str,'THETA',[lox,loy,42,sd],[nn,mm,1,nd]);
 
-THETA200_BSOSE0_DJF_avg = mean(THETA_temp(:,:,1:3),3);
-THETA200_BSOSE0_DJFMAM_avg = mean(THETA_temp(:,:,1:6),3);
-THETA200_BSOSE0_DN_avg = mean(THETA_temp(:,:,1:12),3);
-THETA200_BSOSE0_JJA_avg = mean(THETA_temp(:,:,7:9),3);
-THETA200_BSOSE0_JAS_avg = mean(THETA_temp(:,:,8:10),3);
-THETA200_BSOSE0_JJASON_avg = mean(THETA_temp(:,:,7:12),3);
-THETA200_BSOSE0_JASOND_avg = mean(THETA_temp(:,:,8:13),3);
-THETA200_BSOSE0_JFM_avg = mean(THETA_temp(:,:,2:4),3);
-THETA200_BSOSE0_JFMAMJ_avg = mean(THETA_temp(:,:,2:7),3);
-THETA200_BSOSE0_JD_avg = mean(THETA_temp(:,:,2:13),3);
+THETA2000_BSOSE_DJF_avg = mean(THETA_temp(:,:,1:3),3);
+THETA2000_BSOSE_DJFMAM_avg = mean(THETA_temp(:,:,1:6),3);
+THETA2000_BSOSE_DN_avg = mean(THETA_temp(:,:,1:12),3);
+THETA2000_BSOSE_JJA_avg = mean(THETA_temp(:,:,7:9),3);
+THETA2000_BSOSE_JAS_avg = mean(THETA_temp(:,:,8:10),3);
+THETA2000_BSOSE_JJASON_avg = mean(THETA_temp(:,:,7:12),3);
+THETA2000_BSOSE_JASOND_avg = mean(THETA_temp(:,:,8:13),3);
+THETA2000_BSOSE_JFM_avg = mean(THETA_temp(:,:,2:4),3);
+THETA2000_BSOSE_JFMAMJ_avg = mean(THETA_temp(:,:,2:7),3);
+THETA2000_BSOSE_JD_avg = mean(THETA_temp(:,:,2:13),3);
 
 [m64,n64] = size(THETA_BSOSE_JJA_avg);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             THETA_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        THETA_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             THETA_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -150,7 +150,9 @@ for ii=1:m64
             THETA_BSOSE_JASOND_avg(ii,jj) = 9999999;
             THETA_BSOSE_JFM_avg(ii,jj) = 9999999;
             THETA_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            THETA_BSOSE_JD_avg(ii,jj) = 9999999;
+            THETA_BSOSE_JD_avg(ii,jj) = 9999999;            
+        end
+        if (HC(ii,jj,13)==0)
             THETA105_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        THETA105_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             THETA105_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -161,6 +163,8 @@ for ii=1:m64
             THETA105_BSOSE_JFM_avg(ii,jj) = 9999999;
             THETA105_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
             THETA105_BSOSE_JD_avg(ii,jj) = 9999999;
+        end
+        if (HC(ii,jj,20)==0)
             THETA200_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        THETA200_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             THETA200_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -171,6 +175,8 @@ for ii=1:m64
             THETA200_BSOSE_JFM_avg(ii,jj) = 9999999;
             THETA200_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
             THETA200_BSOSE_JD_avg(ii,jj) = 9999999;
+        end
+        if (HC(ii,jj,25)==0)
             THETA300_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        THETA300_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             THETA300_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -181,6 +187,8 @@ for ii=1:m64
             THETA300_BSOSE_JFM_avg(ii,jj) = 9999999;
             THETA300_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
             THETA300_BSOSE_JD_avg(ii,jj) = 9999999;
+        end
+        if (HC(ii,jj,30)==0)
             THETA500_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        THETA500_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             THETA500_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -190,48 +198,36 @@ for ii=1:m64
             THETA500_BSOSE_JASOND_avg(ii,jj) = 9999999;
             THETA500_BSOSE_JFM_avg(ii,jj) = 9999999;
             THETA500_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            THETA500_BSOSE_JD_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_DJF_avg(ii,jj) = 9999999;
-	        THETA100_BSOSE00_DJFMAM_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_DN_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JJA_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JAS_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JJASON_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JASOND_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JFM_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JFMAMJ_avg(ii,jj) = 9999999;
-            THETA100_BSOSE00_JD_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_DJF_avg(ii,jj) = 9999999;
-	        THETA200_BSOSE0_DJFMAM_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_DN_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JJA_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JAS_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JJASON_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JASOND_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JFM_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JFMAMJ_avg(ii,jj) = 9999999;
-            THETA200_BSOSE0_JD_avg(ii,jj) = 9999999;            
+            THETA500_BSOSE_JD_avg(ii,jj) = 9999999;            
+        end
+        if (HC(ii,jj,36)==0)
+            THETA1000_BSOSE_DJF_avg(ii,jj) = 9999999;
+	        THETA1000_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_DN_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JJA_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JAS_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JJASON_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JASOND_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JFM_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
+            THETA1000_BSOSE_JD_avg(ii,jj) = 9999999;     
+        end
+        if (HC(ii,jj,42)==0)
+            THETA2000_BSOSE_DJF_avg(ii,jj) = 9999999;
+	        THETA2000_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_DN_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JJA_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JAS_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JJASON_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JASOND_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JFM_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
+            THETA2000_BSOSE_JD_avg(ii,jj) = 9999999;            
         end
     end
 end
 
 clear THETA_temp
-
-% fid = fopen('THETA_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,THETA_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('THETA_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,THETA_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('THETA_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,THETA_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('THETA_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,THETA_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('THETA_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,THETA_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished THETA \n')
 
@@ -256,6 +252,27 @@ ETAN_BSOSE_JD_avg = mean(ETAN_temp(:,:,32:(DD_length_time+30)),3);
 ETAN_BSOSE_JAS_avg = mean(ETAN_temp(:,:,(JN_length_time+30):(JN_length_time+121)),3);
 ETAN_BSOSE_JASOND_avg = mean(ETAN_temp(:,:,(JN_length_time+30):(DD_length_time+30)),3);
 
+ETAN_mu = mean(ETAN_BSOSE_JJA_avg(isnan(ETAN_BSOSE_JJA_avg)==0));
+ETAN_BSOSE_JJA_avg = ETAN_BSOSE_JJA_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JAS_avg(isnan(ETAN_BSOSE_JAS_avg)==0));
+ETAN_BSOSE_JAS_avg = ETAN_BSOSE_JAS_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JJASON_avg(isnan(ETAN_BSOSE_JJASON_avg)==0));
+ETAN_BSOSE_JJASON_avg = ETAN_BSOSE_JJASON_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JASOND_avg(isnan(ETAN_BSOSE_JASOND_avg)==0));
+ETAN_BSOSE_JASOND_avg = ETAN_BSOSE_JASOND_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_DJF_avg(isnan(ETAN_BSOSE_DJF_avg)==0));
+ETAN_BSOSE_DJF_avg = ETAN_BSOSE_DJF_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JFM_avg(isnan(ETAN_BSOSE_JFM_avg)==0));
+ETAN_BSOSE_JFM_avg = ETAN_BSOSE_JFM_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_DN_avg(isnan(ETAN_BSOSE_DN_avg)==0));
+ETAN_BSOSE_DN_avg = ETAN_BSOSE_DN_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JD_avg(isnan(ETAN_BSOSE_JD_avg)==0));
+ETAN_BSOSE_JD_avg = ETAN_BSOSE_JD_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_DJFMAM_avg(isnan(ETAN_BSOSE_DJFMAM_avg)==0));
+ETAN_BSOSE_DJFMAM_avg = ETAN_BSOSE_DJFMAM_avg - ETAN_mu;
+ETAN_mu = mean(ETAN_BSOSE_JFMAMJ_avg(isnan(ETAN_BSOSE_JFMAMJ_avg)==0));
+ETAN_BSOSE_JFMAMJ_avg = ETAN_BSOSE_JFMAMJ_avg - ETAN_mu;
+
 ETAN_BSOSE_DJF_std = std(ETAN_temp(:,:,1:DJF_length_time),0,3);
 ETAN_BSOSE_DJFMAM_std = std(ETAN_temp(:,:,1:DM_length_time),0,3);
 ETAN_BSOSE_DN_std = std(ETAN_temp(:,:,1:DD_length_time),0,3);
@@ -271,7 +288,7 @@ clear ETAN_temp
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             ETAN_BSOSE_JJA_avg(ii,jj) = 99999999;
             ETAN_BSOSE_JJASON_avg(ii,jj) = 99999999;
             ETAN_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -295,37 +312,6 @@ for ii=1:m64
         end
     end
 end
-
-% fid = fopen('ETAN_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_DN_std.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DN_std,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_DJFMAM_std.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DJFMAM_std,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_DJF_std.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_DJF_std,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_JJASON_std.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_JJASON_std,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('ETAN_BSOSE_JJA_std.bin','w','b');
-% fwrite(fid,ETAN_BSOSE_JJA_std,'single');
-% fclose(fid);
 
 fprintf('finished ETAN \n')
 
@@ -364,7 +350,7 @@ clear MLD_temp
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             MLD_BSOSE_JJA_avg(ii,jj) = 99999999;
             MLD_BSOSE_JJASON_avg(ii,jj) = 99999999;
             MLD_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -388,37 +374,6 @@ for ii=1:m64
         end
     end
 end
-
-% fid = fopen('MLD_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_DN_std.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DN_std,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_DJFMAM_std.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DJFMAM_std,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_DJF_std.bin','w','b');
-% fwrite(fid,MLD_BSOSE_DJF_std,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,MLD_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_JJASON_std.bin','w','b');
-% fwrite(fid,MLD_BSOSE_JJASON_std,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,MLD_BSOSE_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('MLD_BSOSE_JJA_std.bin','w','b');
-% fwrite(fid,MLD_BSOSE_JJA_std,'single');
-% fclose(fid);
 
 fprintf('finished MLD \n')
 
@@ -578,7 +533,7 @@ clear WVEL_temp
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             WVEL_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -599,6 +554,8 @@ for ii=1:m64
             WVEL_BSOSE_JD_std(ii,jj) = 99999999;
             WVEL_BSOSE_JFM_std(ii,jj) = 99999999;
             WVEL_BSOSE_JFMAMJ_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,13)==0)
             WVEL100_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL100_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL100_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -619,6 +576,8 @@ for ii=1:m64
             WVEL100_BSOSE_JD_std(ii,jj) = 99999999;
             WVEL100_BSOSE_JFM_std(ii,jj) = 99999999;
             WVEL100_BSOSE_JFMAMJ_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,20)==0)
             WVEL190_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL190_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL190_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -639,6 +598,8 @@ for ii=1:m64
             WVEL190_BSOSE_JD_std(ii,jj) = 99999999;
             WVEL190_BSOSE_JFM_std(ii,jj) = 99999999;
             WVEL190_BSOSE_JFMAMJ_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,25)==0)
             WVEL290_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL290_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL290_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -659,6 +620,8 @@ for ii=1:m64
             WVEL290_BSOSE_JD_std(ii,jj) = 99999999;
             WVEL290_BSOSE_JFM_std(ii,jj) = 99999999;
             WVEL290_BSOSE_JFMAMJ_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,30)==0)
             WVEL475_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL475_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL475_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -679,6 +642,8 @@ for ii=1:m64
             WVEL475_BSOSE_JD_std(ii,jj) = 99999999;
             WVEL475_BSOSE_JFM_std(ii,jj) = 99999999;
             WVEL475_BSOSE_JFMAMJ_std(ii,jj) = 99999999;
+        end
+        if (HC(ii,jj,36)==0)
             WVEL950_BSOSE_JJA_avg(ii,jj) = 99999999;
             WVEL950_BSOSE_JJASON_avg(ii,jj) = 99999999;
             WVEL950_BSOSE_DN_avg(ii,jj) = 99999999;
@@ -703,37 +668,6 @@ for ii=1:m64
     end
 end
 
-% fid = fopen('WVEL_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_DN_std.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DN_std,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_DJFMAM_std.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DJFMAM_std,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_DJF_std.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_DJF_std,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_JJASON_std.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_JJASON_std,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_JJA_avg,'single');
-% fclose(fid);
-% fid = fopen('WVEL_BSOSE_JJA_std.bin','w','b');
-% fwrite(fid,WVEL_BSOSE_JJA_std,'single');
-% fclose(fid);
-
 fprintf('finished WVEL \n')
 
 %% WVEL
@@ -754,7 +688,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+HC = hFacC(lox:hix,loy:hiy,:);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -826,35 +760,35 @@ SALT500_BSOSE_JD_avg = mean(SALT_temp(:,:,2:13),3);
 
 SALT_temp = ncread(str,'SALT',[lox,loy,36,sd],[nn,mm,1,nd]);
 
-SALT100_BSOSE00_DJF_avg = mean(SALT_temp(:,:,1:3),3);
-SALT100_BSOSE00_DJFMAM_avg = mean(SALT_temp(:,:,1:6),3);
-SALT100_BSOSE00_DN_avg = mean(SALT_temp(:,:,1:12),3);
-SALT100_BSOSE00_JJA_avg = mean(SALT_temp(:,:,7:9),3);
-SALT100_BSOSE00_JAS_avg = mean(SALT_temp(:,:,8:10),3);
-SALT100_BSOSE00_JJASON_avg = mean(SALT_temp(:,:,7:12),3);
-SALT100_BSOSE00_JASOND_avg = mean(SALT_temp(:,:,8:13),3);
-SALT100_BSOSE00_JFM_avg = mean(SALT_temp(:,:,2:4),3);
-SALT100_BSOSE00_JFMAMJ_avg = mean(SALT_temp(:,:,2:7),3);
-SALT100_BSOSE00_JD_avg = mean(SALT_temp(:,:,2:13),3);
+SALT1000_BSOSE_DJF_avg = mean(SALT_temp(:,:,1:3),3);
+SALT1000_BSOSE_DJFMAM_avg = mean(SALT_temp(:,:,1:6),3);
+SALT1000_BSOSE_DN_avg = mean(SALT_temp(:,:,1:12),3);
+SALT1000_BSOSE_JJA_avg = mean(SALT_temp(:,:,7:9),3);
+SALT1000_BSOSE_JAS_avg = mean(SALT_temp(:,:,8:10),3);
+SALT1000_BSOSE_JJASON_avg = mean(SALT_temp(:,:,7:12),3);
+SALT1000_BSOSE_JASOND_avg = mean(SALT_temp(:,:,8:13),3);
+SALT1000_BSOSE_JFM_avg = mean(SALT_temp(:,:,2:4),3);
+SALT1000_BSOSE_JFMAMJ_avg = mean(SALT_temp(:,:,2:7),3);
+SALT1000_BSOSE_JD_avg = mean(SALT_temp(:,:,2:13),3);
 
 SALT_temp = ncread(str,'SALT',[lox,loy,42,sd],[nn,mm,1,nd]);
 
-SALT200_BSOSE0_DJF_avg = mean(SALT_temp(:,:,1:3),3);
-SALT200_BSOSE0_DJFMAM_avg = mean(SALT_temp(:,:,1:6),3);
-SALT200_BSOSE0_DN_avg = mean(SALT_temp(:,:,1:12),3);
-SALT200_BSOSE0_JJA_avg = mean(SALT_temp(:,:,7:9),3);
-SALT200_BSOSE0_JAS_avg = mean(SALT_temp(:,:,8:10),3);
-SALT200_BSOSE0_JJASON_avg = mean(SALT_temp(:,:,7:12),3);
-SALT200_BSOSE0_JASOND_avg = mean(SALT_temp(:,:,8:13),3);
-SALT200_BSOSE0_JFM_avg = mean(SALT_temp(:,:,2:4),3);
-SALT200_BSOSE0_JFMAMJ_avg = mean(SALT_temp(:,:,2:7),3);
-SALT200_BSOSE0_JD_avg = mean(SALT_temp(:,:,2:13),3);
+SALT2000_BSOSE_DJF_avg = mean(SALT_temp(:,:,1:3),3);
+SALT2000_BSOSE_DJFMAM_avg = mean(SALT_temp(:,:,1:6),3);
+SALT2000_BSOSE_DN_avg = mean(SALT_temp(:,:,1:12),3);
+SALT2000_BSOSE_JJA_avg = mean(SALT_temp(:,:,7:9),3);
+SALT2000_BSOSE_JAS_avg = mean(SALT_temp(:,:,8:10),3);
+SALT2000_BSOSE_JJASON_avg = mean(SALT_temp(:,:,7:12),3);
+SALT2000_BSOSE_JASOND_avg = mean(SALT_temp(:,:,8:13),3);
+SALT2000_BSOSE_JFM_avg = mean(SALT_temp(:,:,2:4),3);
+SALT2000_BSOSE_JFMAMJ_avg = mean(SALT_temp(:,:,2:7),3);
+SALT2000_BSOSE_JD_avg = mean(SALT_temp(:,:,2:13),3);
 
 [m64,n64] = size(SALT_BSOSE_JJA_avg);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             SALT_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SALT_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SALT_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -864,7 +798,9 @@ for ii=1:m64
             SALT_BSOSE_JASOND_avg(ii,jj) = 9999999;
             SALT_BSOSE_JFM_avg(ii,jj) = 9999999;
             SALT_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT_BSOSE_JD_avg(ii,jj) = 9999999;
+            SALT_BSOSE_JD_avg(ii,jj) = 9999999;           
+        end
+        if (HC(ii,jj,13)==0)
             SALT105_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SALT105_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SALT105_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -874,7 +810,9 @@ for ii=1:m64
             SALT105_BSOSE_JASOND_avg(ii,jj) = 9999999;
             SALT105_BSOSE_JFM_avg(ii,jj) = 9999999;
             SALT105_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT105_BSOSE_JD_avg(ii,jj) = 9999999;
+            SALT105_BSOSE_JD_avg(ii,jj) = 9999999;      
+        end
+        if (HC(ii,jj,20)==0)
             SALT200_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SALT200_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SALT200_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -884,7 +822,9 @@ for ii=1:m64
             SALT200_BSOSE_JASOND_avg(ii,jj) = 9999999;
             SALT200_BSOSE_JFM_avg(ii,jj) = 9999999;
             SALT200_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT200_BSOSE_JD_avg(ii,jj) = 9999999;
+            SALT200_BSOSE_JD_avg(ii,jj) = 9999999;        
+        end
+        if (HC(ii,jj,25)==0)
             SALT300_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SALT300_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SALT300_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -894,7 +834,9 @@ for ii=1:m64
             SALT300_BSOSE_JASOND_avg(ii,jj) = 9999999;
             SALT300_BSOSE_JFM_avg(ii,jj) = 9999999;
             SALT300_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT300_BSOSE_JD_avg(ii,jj) = 9999999;
+            SALT300_BSOSE_JD_avg(ii,jj) = 9999999;          
+        end
+        if (HC(ii,jj,30)==0)
             SALT500_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SALT500_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SALT500_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -904,48 +846,36 @@ for ii=1:m64
             SALT500_BSOSE_JASOND_avg(ii,jj) = 9999999;
             SALT500_BSOSE_JFM_avg(ii,jj) = 9999999;
             SALT500_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT500_BSOSE_JD_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_DJF_avg(ii,jj) = 9999999;
-	        SALT100_BSOSE00_DJFMAM_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_DN_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JJA_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JAS_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JJASON_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JASOND_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JFM_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT100_BSOSE00_JD_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_DJF_avg(ii,jj) = 9999999;
-	        SALT200_BSOSE0_DJFMAM_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_DN_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JJA_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JAS_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JJASON_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JASOND_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JFM_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JFMAMJ_avg(ii,jj) = 9999999;
-            SALT200_BSOSE0_JD_avg(ii,jj) = 9999999;            
+            SALT500_BSOSE_JD_avg(ii,jj) = 9999999;       
+        end
+        if (HC(ii,jj,36)==0)
+            SALT1000_BSOSE_DJF_avg(ii,jj) = 9999999;
+	        SALT1000_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_DN_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JJA_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JAS_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JJASON_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JASOND_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JFM_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
+            SALT1000_BSOSE_JD_avg(ii,jj) = 9999999;      
+        end
+        if (HC(ii,jj,42)==0)
+            SALT2000_BSOSE_DJF_avg(ii,jj) = 9999999;
+	        SALT2000_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_DN_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JJA_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JAS_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JJASON_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JASOND_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JFM_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JFMAMJ_avg(ii,jj) = 9999999;
+            SALT2000_BSOSE_JD_avg(ii,jj) = 9999999;            
         end
     end
 end
 
 clear SALT_temp
-
-% fid = fopen('SALT_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,SALT_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,SALT_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,SALT_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,SALT_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('SALT_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,SALT_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished SALT \n')
 
@@ -967,7 +897,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -989,7 +919,7 @@ TFLUX_BSOSE_JD_avg = mean(TFLUX_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             TFLUX_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        TFLUX_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             TFLUX_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1005,22 +935,6 @@ for ii=1:m64
 end
 
 clear TFLUX_temp
-
-% fid = fopen('TFLUX_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,TFLUX_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,TFLUX_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,TFLUX_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,TFLUX_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('TFLUX_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,TFLUX_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished TFLUX \n')
 
@@ -1042,7 +956,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -1064,7 +978,7 @@ SFLUX_BSOSE_JD_avg = mean(SFLUX_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             SFLUX_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        SFLUX_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             SFLUX_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1080,22 +994,6 @@ for ii=1:m64
 end
 
 clear SFLUX_temp
-
-% fid = fopen('SFLUX_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,SFLUX_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,SFLUX_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,SFLUX_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,SFLUX_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('SFLUX_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,SFLUX_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished SFLUX \n')
 
@@ -1117,7 +1015,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -1139,7 +1037,7 @@ CFLUX_BSOSE_JD_avg = mean(CFLUX_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             CFLUX_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        CFLUX_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             CFLUX_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1155,22 +1053,6 @@ for ii=1:m64
 end
 
 clear CFLUX_temp
-
-% fid = fopen('CFLUX_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,CFLUX_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,CFLUX_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,CFLUX_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,CFLUX_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('CFLUX_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,CFLUX_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished CFLUX \n')
 
@@ -1193,7 +1075,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -1215,7 +1097,7 @@ OFLUX_BSOSE_JD_avg = mean(OFLUX_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             OFLUX_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        OFLUX_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             OFLUX_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1232,21 +1114,6 @@ end
 
 clear OFLUX_temp
 
-% fid = fopen('OFLUX_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,OFLUX_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,OFLUX_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,OFLUX_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,OFLUX_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('OFLUX_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,OFLUX_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished OFLUX \n')
 
@@ -1268,7 +1135,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -1290,7 +1157,7 @@ DIC_BSOSE_JD_avg = mean(DIC_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             DIC_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        DIC_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             DIC_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1306,22 +1173,6 @@ for ii=1:m64
 end
 
 clear DIC_temp
-
-% fid = fopen('DIC_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,DIC_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('DIC_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,DIC_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('DIC_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,DIC_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('DIC_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,DIC_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('DIC_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,DIC_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished DIC \n')
 
@@ -1343,7 +1194,7 @@ loy = find(Y>-60,1)-1;
 hiy = find(Y>-30,1)+1;
 XCS = XCS(lox:hix);
 YCS = YCS(loy:hiy);
-HC = hFacC(lox:hix,loy:hiy,1);
+% HC = hFacC(lox:hix,loy:hiy,1);
 nn = length(XCS);
 mm = length(YCS);
 [XCS,YCS] = ndgrid(XCS,YCS);
@@ -1365,7 +1216,7 @@ ALK_BSOSE_JD_avg = mean(ALK_temp(:,:,2:13),3);
 
 for ii=1:m64
     for jj=1:n64
-        if (HC(ii,jj)==0)
+        if (HC(ii,jj,1)==0)
             ALK_BSOSE_DJF_avg(ii,jj) = 9999999;
 	        ALK_BSOSE_DJFMAM_avg(ii,jj) = 9999999;
             ALK_BSOSE_DN_avg(ii,jj) = 9999999;
@@ -1382,21 +1233,6 @@ end
 
 clear ALK_temp
 
-% fid = fopen('ALK_BSOSE_DN_avg.bin','w','b');
-% fwrite(fid,ALK_BSOSE_DN_avg,'single');
-% fclose(fid);
-% fid = fopen('ALK_BSOSE_DJFMAM_avg.bin','w','b');
-% fwrite(fid,ALK_BSOSE_DJFMAM_avg,'single');
-% fclose(fid);
-% fid = fopen('ALK_BSOSE_DJF_avg.bin','w','b');
-% fwrite(fid,ALK_BSOSE_DJF_avg,'single');
-% fclose(fid);
-% fid = fopen('ALK_BSOSE_JJASON_avg.bin','w','b');
-% fwrite(fid,ALK_BSOSE_JJASON_avg,'single');
-% fclose(fid);
-% fid = fopen('ALK_BSOSE_JJA_avg.bin','w','b');
-% fwrite(fid,ALK_BSOSE_JJA_avg,'single');
-% fclose(fid);
 
 fprintf('finished ALK \n')
 

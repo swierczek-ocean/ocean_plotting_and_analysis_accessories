@@ -1,6 +1,6 @@
-function [lb,ub,nlvls] = get_color_bounds_standard(A,B,C,D,option)
+function [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(A,B,C,D,option)
 %% calculates lower and upper bounds for colorbar
-DIST = [A(A<9900000);B(B<9900000);C(C<9900000);D(D<9900000)];
+DIST = [A(A<100000);B(B<100000);C(C<100000);D(D<100000)];
 DIST = sort(DIST);
 len = length(DIST);
 
@@ -18,7 +18,7 @@ end
 
 %% 1st to 99th percentile range
 if option==2
-    ind1 = ceil(len*0.006);
+    ind1 = ceil(len*0.005);
     DIST2 = DIST(ind1:(len-ind1));
     lb = DIST2(1);
     ub = DIST2(end);
@@ -107,6 +107,21 @@ if option==9
 end
 %%
 
+%% trim first 2400 measurements (sflux)
+if option==10
+    lb = DIST(2400); 
+    ub = DIST(len);
+end
+%%
+
+
+lbcb = lb;
+ubcb = ub;
+
+maxb = max([abs(lb),abs(ub)]);
+lb = -maxb;
+ub = maxb;
+
 range = ub - lb;
 
 if range>12&&range<30
@@ -146,4 +161,6 @@ else
 end
    
 end
+
+
 

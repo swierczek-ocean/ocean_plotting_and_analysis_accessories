@@ -16,6 +16,7 @@ load AB122_output
 %%
 
 %%
+option = 3;
 mask = permute(mask,[2,1,3]);
 inside_coords = [290.5 350.2 -58.7 -32];
 [XC3,YC3] = ndgrid(XC3,YC3);
@@ -26,10 +27,10 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JJA_avg,...
+    TFLUX_34_JJA_avg,TFLUX_64_JJA_avg,TFLUX_124_JJA_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -38,8 +39,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -52,8 +51,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_34_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -67,8 +64,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_64_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -82,9 +77,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_124_JJA_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -92,7 +87,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JJA 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JJA','-dpng')
 close all
@@ -100,10 +95,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JAS_avg,...
+    TFLUX_34_JAS_avg,TFLUX_64_JAS_avg,TFLUX_124_JAS_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -112,8 +107,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -126,8 +119,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_34_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -141,8 +132,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_64_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -156,9 +145,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_124_JAS_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -166,7 +155,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JAS 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JAS','-dpng')
 close all
@@ -174,10 +163,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JJASON_avg,...
+    TFLUX_34_JJASON_avg,TFLUX_64_JJASON_avg,TFLUX_124_JJASON_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -186,8 +175,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -200,8 +187,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_34_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -215,8 +200,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_64_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -230,9 +213,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_124_JJASON_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -240,7 +223,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JJASON 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JJASON','-dpng')
 close all
@@ -248,10 +231,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JASOND_avg,...
+    TFLUX_34_JASOND_avg,TFLUX_64_JASOND_avg,TFLUX_124_JASOND_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -260,8 +243,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -274,8 +255,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_34_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -289,8 +268,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_64_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -304,9 +281,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_124_JASOND_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -314,7 +291,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JASOND 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JASOND','-dpng')
 close all
@@ -322,10 +299,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_DN_avg,...
+    TFLUX_32_DN_avg,TFLUX_62_DN_avg,TFLUX_122_DN_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -334,8 +311,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -348,8 +323,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_32_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -363,8 +336,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_62_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -378,9 +349,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_122_DN_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -388,7 +359,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING DN 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_DN','-dpng')
 close all
@@ -396,10 +367,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JD_avg,...
+    TFLUX_32_JD_avg,TFLUX_62_JD_avg,TFLUX_122_JD_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -408,8 +379,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -422,8 +391,6 @@ hold off
 
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,TFLUX_32_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -437,8 +404,6 @@ hold off
 
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,TFLUX_62_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -452,9 +417,9 @@ hold off
 
 ax4 = subplot(2,2,4);
 contourf(XC12,YC12,TFLUX_122_JD_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -462,7 +427,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JD 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JD','-dpng')
 close all
@@ -470,10 +435,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_DJF_avg,...
+    TFLUX_32_DJF_avg,TFLUX_62_DJF_avg,TFLUX_122_DJF_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -482,8 +447,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -495,9 +458,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,TFLUX_34_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,TFLUX_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -510,9 +471,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,TFLUX_64_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,TFLUX_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -525,10 +484,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,TFLUX_124_DJF_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC12,YC12,TFLUX_122_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -536,7 +495,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING DJF 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_DJF','-dpng')
 close all
@@ -544,10 +503,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JFM_avg,...
+    TFLUX_32_JFM_avg,TFLUX_62_JFM_avg,TFLUX_122_JFM_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -556,8 +515,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -569,9 +526,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,TFLUX_34_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,TFLUX_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -584,9 +539,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,TFLUX_64_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,TFLUX_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -599,10 +552,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,TFLUX_124_JFM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC12,YC12,TFLUX_122_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -610,7 +563,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JFM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JFM','-dpng')
 close all
@@ -618,10 +571,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_JFMAMJ_avg,...
+    TFLUX_32_JFMAMJ_avg,TFLUX_62_JFMAMJ_avg,TFLUX_122_JFMAMJ_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -630,8 +583,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -643,9 +594,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,TFLUX_34_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,TFLUX_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -658,9 +607,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,TFLUX_64_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,TFLUX_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -673,10 +620,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,TFLUX_124_JFMAMJ_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC12,YC12,TFLUX_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -684,7 +631,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING JFMAMJ 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_JFMAMJ','-dpng')
 close all
@@ -692,10 +639,10 @@ close all
 
 %% TFLUX
 cm = acc_colormap('balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
-lb = -300;
-ub = -lb;
-nlvls = (ub - lb)/25 + 1;
+cm = [Color(:,13)';cm;Color(:,46)'];
+[lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(TFLUX_BSOSE_DJFMAM_avg,...
+    TFLUX_32_DJFMAM_avg,TFLUX_62_DJFMAM_avg,TFLUX_122_DJFMAM_avg,option);
+
 z = linspace(lb,ub,nlvls);
 z = [-100000,z,9999998];
 
@@ -704,8 +651,6 @@ set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(XCS,YCS,TFLUX_BSOSE_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -717,9 +662,7 @@ acc_quad_plots_v1
 hold off
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,TFLUX_34_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC3,YC3,TFLUX_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -732,9 +675,7 @@ acc_quad_plots_v2
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,TFLUX_64_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC6,YC6,TFLUX_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
@@ -747,10 +688,10 @@ acc_quad_plots_v3
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,TFLUX_124_DJFMAM_avg,'LineStyle','none','LevelList',z);
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
+contourf(XC12,YC12,TFLUX_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lbcb ubcb]);
 contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
@@ -758,7 +699,7 @@ xtickformat('degrees')
 ytickformat('degrees')
 title('1/12 MITgcm+BLING DJFMAM 2017 mean heat flux','FontWeight','Normal','FontSize',16)
 acc_movie
-acc_quad_plots_v4
+acc_quad_plots_v8
 hold off
 print('TFLUX_AVG_DJFMAM','-dpng')
 close all

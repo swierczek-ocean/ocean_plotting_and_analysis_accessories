@@ -7,8 +7,8 @@
 % 
 % load BSOSE_surf_avgs
 close all
-A = ALK_BSOSE_JAS_avg;
-A = A(A<10000);
+A = CFLUX_BSOSE_DJF_avg;
+A = A(A<1000000);
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 750])
