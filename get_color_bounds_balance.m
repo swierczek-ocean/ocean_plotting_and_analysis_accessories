@@ -114,6 +114,22 @@ if option==10
 end
 %%
 
+%% trim first and last 300 measurements
+if option==11
+    lb = DIST(700);
+    ub = DIST(end-150);    
+end
+%%
+
+%% 1st to 99th percentile range
+if option==12
+    ind1 = ceil(len*0.006);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
 
 lbcb = lb;
 ubcb = ub;

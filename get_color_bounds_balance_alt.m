@@ -1,6 +1,6 @@
-function [lb,ub,nlvls] = get_color_bounds_standard(A,B,C,D,option)
+function [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(A,B,C,D,option)
 %% calculates lower and upper bounds for colorbar
-DIST = [A(A<990000000);B(B<990000000);C(C<990000000);D(D<990000000)];
+DIST = [A(A<10000000);B(B<10000000);C(C<10000000);D(D<10000000)];
 DIST = sort(DIST);
 len = length(DIST);
 
@@ -18,7 +18,7 @@ end
 
 %% 1st to 99th percentile range
 if option==2
-    ind1 = ceil(len*0.006);
+    ind1 = ceil(len*0.005);
     DIST2 = DIST(ind1:(len-ind1));
     lb = DIST2(1);
     ub = DIST2(end);
@@ -107,9 +107,57 @@ if option==9
 end
 %%
 
+%% trim first 2400 measurements (sflux)
+if option==10
+    lb = DIST(2400); 
+    ub = DIST(len);
+end
+%%
+
+%% trim first and last 300 measurements
+if option==11
+    lb = DIST(700);
+    ub = DIST(end-150);    
+end
+%%
+
+%% 1st to 99th percentile range
+if option==12
+    ind1 = ceil(len*0.006);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
+%% 1st to 99th percentile range
+if option==13
+    ind1 = ceil(len*0.01);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
+%% 1st to 99th percentile range (etan)
+if option==14
+    ind1 = ceil(len*0.02);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
+lbcb = lb;
+ubcb = ub;
+
+maxb = max([abs(lb),abs(ub)]);
+lb = -maxb;
+ub = maxb;
+
 range = ub - lb;
 
-if range>12&&range<30
+if range>6&&range<30
     lb = floor(lb);
     ub = ceil(ub);
     nlvls = ub - lb +1;
@@ -133,17 +181,17 @@ elseif range>500&&range<1000
     lb = 50*floor(lb/50);
     ub = 50*ceil(ub/50);
     nlvls = (ub - lb)/50 + 1;
-elseif range>6&&range<12
+elseif range>2&&range<6
     lb = 0.5*floor(lb*2);
     ub = 0.5*ceil(ub*2);
     nlvls = 2*(ub - lb) + 1;
-elseif range>2&&range<6
-    lb = 0.25*floor(lb*4);
-    ub = 0.25*ceil(ub*4);
-    nlvls = 4*(ub - lb) + 1;  
 else
     nlvls = 21;
 end
    
 end
+
+
+
+
 

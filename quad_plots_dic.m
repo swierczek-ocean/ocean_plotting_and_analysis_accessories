@@ -27,7 +27,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JJA_avg,...
     DIC_34_JJA_avg,DIC_64_JJA_avg,DIC_124_JJA_avg,option);
 
@@ -95,7 +95,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JAS_avg,...
     DIC_34_JAS_avg,DIC_64_JAS_avg,DIC_124_JAS_avg,option);
 
@@ -163,7 +163,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JJASON_avg,...
     DIC_34_JJASON_avg,DIC_64_JJASON_avg,DIC_124_JJASON_avg,option);
 
@@ -231,7 +231,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JASOND_avg,...
     DIC_34_JASOND_avg,DIC_64_JASOND_avg,DIC_124_JASOND_avg,option);
 
@@ -299,7 +299,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DN_avg,...
     DIC_32_DN_avg,DIC_62_DN_avg,DIC_122_DN_avg,option);
 
@@ -367,7 +367,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JD_avg,...
     DIC_32_JD_avg,DIC_62_JD_avg,DIC_122_JD_avg,option);
 
@@ -435,7 +435,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DJF_avg,...
     DIC_32_DJF_avg,DIC_62_DJF_avg,DIC_122_DJF_avg,option);
 
@@ -503,7 +503,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JFM_avg,...
     DIC_32_JFM_avg,DIC_62_JFM_avg,DIC_122_JFM_avg,option);
 
@@ -571,7 +571,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_JFMAMJ_avg,...
     DIC_32_JFMAMJ_avg,DIC_62_JFMAMJ_avg,DIC_122_JFMAMJ_avg,option);
 
@@ -639,7 +639,7 @@ close all
 
 %% DIC
 cm = flipud(acc_colormap('cmice'));
-cm = [Color(:,33)';cm;Color(:,46)'];
+cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(DIC_BSOSE_DJFMAM_avg,...
     DIC_32_DJFMAM_avg,DIC_62_DJFMAM_avg,DIC_122_DJFMAM_avg,option);
 
