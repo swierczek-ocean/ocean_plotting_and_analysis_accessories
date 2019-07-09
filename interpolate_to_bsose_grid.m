@@ -249,6 +249,31 @@ MLD_BSOSE_JJASON_std(MLD_BSOSE_JJASON_std>100000) = NaN;
 DIC_BSOSE_JJASON_avg(DIC_BSOSE_JJASON_avg>100000) = NaN;
 ALK_BSOSE_JJASON_avg(ALK_BSOSE_JJASON_avg>100000) = NaN;
 
+CFLUX_BSOSE_JASOND_avg(CFLUX_BSOSE_JASOND_avg>100000) = NaN;
+OFLUX_BSOSE_JASOND_avg(OFLUX_BSOSE_JASOND_avg>100000) = NaN;
+TFLUX_BSOSE_JASOND_avg(TFLUX_BSOSE_JASOND_avg>100000) = NaN;
+SFLUX_BSOSE_JASOND_avg(SFLUX_BSOSE_JASOND_avg>100000) = NaN;
+THETA_BSOSE_JASOND_avg(THETA_BSOSE_JASOND_avg>100000) = NaN;
+THETA105_BSOSE_JASOND_avg(THETA105_BSOSE_JASOND_avg>100000) = NaN;
+THETA200_BSOSE_JASOND_avg(THETA200_BSOSE_JASOND_avg>100000) = NaN;
+THETA300_BSOSE_JASOND_avg(THETA300_BSOSE_JASOND_avg>100000) = NaN;
+SALT_BSOSE_JASOND_avg(SALT_BSOSE_JASOND_avg>100000) = NaN;
+SALT105_BSOSE_JASOND_avg(SALT105_BSOSE_JASOND_avg>100000) = NaN;
+SALT200_BSOSE_JASOND_avg(SALT200_BSOSE_JASOND_avg>100000) = NaN;
+SALT300_BSOSE_JASOND_avg(SALT300_BSOSE_JASOND_avg>100000) = NaN;
+WVEL100_BSOSE_JASOND_avg(WVEL100_BSOSE_JASOND_avg>100000) = NaN;
+WVEL190_BSOSE_JASOND_avg(WVEL190_BSOSE_JASOND_avg>100000) = NaN;
+WVEL290_BSOSE_JASOND_avg(WVEL290_BSOSE_JASOND_avg>100000) = NaN;
+WVEL100_BSOSE_JASOND_std(WVEL100_BSOSE_JASOND_std>100000) = NaN;
+WVEL190_BSOSE_JASOND_std(WVEL190_BSOSE_JASOND_std>100000) = NaN;
+WVEL290_BSOSE_JASOND_std(WVEL290_BSOSE_JASOND_std>100000) = NaN;
+ETAN_BSOSE_JASOND_avg(ETAN_BSOSE_JASOND_avg>100000) = NaN;
+ETAN_BSOSE_JASOND_std(ETAN_BSOSE_JASOND_std>100000) = NaN;
+MLD_BSOSE_JASOND_avg(MLD_BSOSE_JASOND_avg>100000) = NaN;
+MLD_BSOSE_JASOND_std(MLD_BSOSE_JASOND_std>100000) = NaN;
+DIC_BSOSE_JASOND_avg(DIC_BSOSE_JASOND_avg>100000) = NaN;
+ALK_BSOSE_JASOND_avg(ALK_BSOSE_JASOND_avg>100000) = NaN;
+
 CFLUX_32_DJF_avg(CFLUX_32_DJF_avg>100000) = NaN;
 OFLUX_32_DJF_avg(OFLUX_32_DJF_avg>100000) = NaN;
 TFLUX_32_DJF_avg(TFLUX_32_DJF_avg>100000) = NaN;
@@ -1003,88 +1028,88 @@ ALK_124_JASOND_avg(ALK_124_JASOND_avg>100000) = NaN;
 %% End NaNs
 
 %% Fix ETAN
-ETAN_mu = mean(ETAN_BSOSE_JJA_avg(isnan(ETAN_BSOSE_JJA_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JJA_avg(isnan(ETAN_BSOSE_JJA_avg)==0));
 ETAN_BSOSE_JJA_avg = ETAN_BSOSE_JJA_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JAS_avg(isnan(ETAN_BSOSE_JAS_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JAS_avg(isnan(ETAN_BSOSE_JAS_avg)==0));
 ETAN_BSOSE_JAS_avg = ETAN_BSOSE_JAS_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JJASON_avg(isnan(ETAN_BSOSE_JJASON_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JJASON_avg(isnan(ETAN_BSOSE_JJASON_avg)==0));
 ETAN_BSOSE_JJASON_avg = ETAN_BSOSE_JJASON_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JASOND_avg(isnan(ETAN_BSOSE_JASOND_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JASOND_avg(isnan(ETAN_BSOSE_JASOND_avg)==0));
 ETAN_BSOSE_JASOND_avg = ETAN_BSOSE_JASOND_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_DJF_avg(isnan(ETAN_BSOSE_DJF_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_DJF_avg(isnan(ETAN_BSOSE_DJF_avg)==0));
 ETAN_BSOSE_DJF_avg = ETAN_BSOSE_DJF_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JFM_avg(isnan(ETAN_BSOSE_JFM_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JFM_avg(isnan(ETAN_BSOSE_JFM_avg)==0));
 ETAN_BSOSE_JFM_avg = ETAN_BSOSE_JFM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_DN_avg(isnan(ETAN_BSOSE_DN_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_DN_avg(isnan(ETAN_BSOSE_DN_avg)==0));
 ETAN_BSOSE_DN_avg = ETAN_BSOSE_DN_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JD_avg(isnan(ETAN_BSOSE_JD_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JD_avg(isnan(ETAN_BSOSE_JD_avg)==0));
 ETAN_BSOSE_JD_avg = ETAN_BSOSE_JD_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_DJFMAM_avg(isnan(ETAN_BSOSE_DJFMAM_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_DJFMAM_avg(isnan(ETAN_BSOSE_DJFMAM_avg)==0));
 ETAN_BSOSE_DJFMAM_avg = ETAN_BSOSE_DJFMAM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_BSOSE_JFMAMJ_avg(isnan(ETAN_BSOSE_JFMAMJ_avg)==0))
+ETAN_mu = mean(ETAN_BSOSE_JFMAMJ_avg(isnan(ETAN_BSOSE_JFMAMJ_avg)==0));
 ETAN_BSOSE_JFMAMJ_avg = ETAN_BSOSE_JFMAMJ_avg - ETAN_mu;
 
-ETAN_mu = mean(ETAN_32_DJF_avg(isnan(ETAN_32_DJF_avg)==0))
+ETAN_mu = mean(ETAN_32_DJF_avg(isnan(ETAN_32_DJF_avg)==0));
 ETAN_32_DJF_avg = ETAN_32_DJF_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_32_JFM_avg(isnan(ETAN_32_JFM_avg)==0))
+ETAN_mu = mean(ETAN_32_JFM_avg(isnan(ETAN_32_JFM_avg)==0));
 ETAN_32_JFM_avg = ETAN_32_JFM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_32_DJFMAM_avg(isnan(ETAN_32_DJFMAM_avg)==0))
+ETAN_mu = mean(ETAN_32_DJFMAM_avg(isnan(ETAN_32_DJFMAM_avg)==0));
 ETAN_32_DJFMAM_avg = ETAN_32_DJFMAM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_32_JFMAMJ_avg(isnan(ETAN_32_JFMAMJ_avg)==0))
+ETAN_mu = mean(ETAN_32_JFMAMJ_avg(isnan(ETAN_32_JFMAMJ_avg)==0));
 ETAN_32_JFMAMJ_avg = ETAN_32_JFMAMJ_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_32_DN_avg(isnan(ETAN_32_DN_avg)==0))
+ETAN_mu = mean(ETAN_32_DN_avg(isnan(ETAN_32_DN_avg)==0));
 ETAN_32_DN_avg = ETAN_32_DN_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_32_JD_avg(isnan(ETAN_32_JD_avg)==0))
+ETAN_mu = mean(ETAN_32_JD_avg(isnan(ETAN_32_JD_avg)==0));
 ETAN_32_JD_avg = ETAN_32_JD_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_34_JJA_avg(isnan(ETAN_34_JJA_avg)==0))
+ETAN_mu = mean(ETAN_34_JJA_avg(isnan(ETAN_34_JJA_avg)==0));
 ETAN_34_JJA_avg = ETAN_34_JJA_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_34_JAS_avg(isnan(ETAN_34_JAS_avg)==0))
+ETAN_mu = mean(ETAN_34_JAS_avg(isnan(ETAN_34_JAS_avg)==0));
 ETAN_34_JAS_avg = ETAN_34_JAS_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_34_JJASON_avg(isnan(ETAN_34_JJASON_avg)==0))
+ETAN_mu = mean(ETAN_34_JJASON_avg(isnan(ETAN_34_JJASON_avg)==0));
 ETAN_34_JJASON_avg = ETAN_34_JJASON_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_34_JASOND_avg(isnan(ETAN_34_JASOND_avg)==0))
+ETAN_mu = mean(ETAN_34_JASOND_avg(isnan(ETAN_34_JASOND_avg)==0));
 ETAN_34_JASOND_avg = ETAN_34_JASOND_avg - ETAN_mu;
 
-ETAN_mu = mean(ETAN_62_DJF_avg(isnan(ETAN_62_DJF_avg)==0))
+ETAN_mu = mean(ETAN_62_DJF_avg(isnan(ETAN_62_DJF_avg)==0));
 ETAN_62_DJF_avg = ETAN_62_DJF_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_62_JFM_avg(isnan(ETAN_62_JFM_avg)==0))
+ETAN_mu = mean(ETAN_62_JFM_avg(isnan(ETAN_62_JFM_avg)==0));
 ETAN_62_JFM_avg = ETAN_62_JFM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_62_DJFMAM_avg(isnan(ETAN_62_DJFMAM_avg)==0))
+ETAN_mu = mean(ETAN_62_DJFMAM_avg(isnan(ETAN_62_DJFMAM_avg)==0));
 ETAN_62_DJFMAM_avg = ETAN_62_DJFMAM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_62_JFMAMJ_avg(isnan(ETAN_62_JFMAMJ_avg)==0))
+ETAN_mu = mean(ETAN_62_JFMAMJ_avg(isnan(ETAN_62_JFMAMJ_avg)==0));
 ETAN_62_JFMAMJ_avg = ETAN_62_JFMAMJ_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_62_DN_avg(isnan(ETAN_62_DN_avg)==0))
+ETAN_mu = mean(ETAN_62_DN_avg(isnan(ETAN_62_DN_avg)==0));
 ETAN_62_DN_avg = ETAN_62_DN_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_62_JD_avg(isnan(ETAN_62_JD_avg)==0))
+ETAN_mu = mean(ETAN_62_JD_avg(isnan(ETAN_62_JD_avg)==0));
 ETAN_62_JD_avg = ETAN_62_JD_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_64_JJA_avg(isnan(ETAN_64_JJA_avg)==0))
+ETAN_mu = mean(ETAN_64_JJA_avg(isnan(ETAN_64_JJA_avg)==0));
 ETAN_64_JJA_avg = ETAN_64_JJA_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_64_JAS_avg(isnan(ETAN_64_JAS_avg)==0))
+ETAN_mu = mean(ETAN_64_JAS_avg(isnan(ETAN_64_JAS_avg)==0));
 ETAN_64_JAS_avg = ETAN_64_JAS_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_64_JJASON_avg(isnan(ETAN_64_JJASON_avg)==0))
+ETAN_mu = mean(ETAN_64_JJASON_avg(isnan(ETAN_64_JJASON_avg)==0));
 ETAN_64_JJASON_avg = ETAN_64_JJASON_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_64_JASOND_avg(isnan(ETAN_64_JASOND_avg)==0))
+ETAN_mu = mean(ETAN_64_JASOND_avg(isnan(ETAN_64_JASOND_avg)==0));
 ETAN_64_JASOND_avg = ETAN_64_JASOND_avg - ETAN_mu;
 
-ETAN_mu = mean(ETAN_122_DJF_avg(isnan(ETAN_122_DJF_avg)==0))
+ETAN_mu = mean(ETAN_122_DJF_avg(isnan(ETAN_122_DJF_avg)==0));
 ETAN_122_DJF_avg = ETAN_122_DJF_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_122_JFM_avg(isnan(ETAN_122_JFM_avg)==0))
+ETAN_mu = mean(ETAN_122_JFM_avg(isnan(ETAN_122_JFM_avg)==0));
 ETAN_122_JFM_avg = ETAN_122_JFM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_122_DJFMAM_avg(isnan(ETAN_122_DJFMAM_avg)==0))
+ETAN_mu = mean(ETAN_122_DJFMAM_avg(isnan(ETAN_122_DJFMAM_avg)==0));
 ETAN_122_DJFMAM_avg = ETAN_122_DJFMAM_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_122_JFMAMJ_avg(isnan(ETAN_122_JFMAMJ_avg)==0))
+ETAN_mu = mean(ETAN_122_JFMAMJ_avg(isnan(ETAN_122_JFMAMJ_avg)==0));
 ETAN_122_JFMAMJ_avg = ETAN_122_JFMAMJ_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_122_DN_avg(isnan(ETAN_122_DN_avg)==0))
+ETAN_mu = mean(ETAN_122_DN_avg(isnan(ETAN_122_DN_avg)==0));
 ETAN_122_DN_avg = ETAN_122_DN_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_122_JD_avg(isnan(ETAN_122_JD_avg)==0))
+ETAN_mu = mean(ETAN_122_JD_avg(isnan(ETAN_122_JD_avg)==0));
 ETAN_122_JD_avg = ETAN_122_JD_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_124_JJA_avg(isnan(ETAN_124_JJA_avg)==0))
+ETAN_mu = mean(ETAN_124_JJA_avg(isnan(ETAN_124_JJA_avg)==0));
 ETAN_124_JJA_avg = ETAN_124_JJA_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_124_JAS_avg(isnan(ETAN_124_JAS_avg)==0))
+ETAN_mu = mean(ETAN_124_JAS_avg(isnan(ETAN_124_JAS_avg)==0));
 ETAN_124_JAS_avg = ETAN_124_JAS_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_124_JJASON_avg(isnan(ETAN_124_JJASON_avg)==0))
+ETAN_mu = mean(ETAN_124_JJASON_avg(isnan(ETAN_124_JJASON_avg)==0));
 ETAN_124_JJASON_avg = ETAN_124_JJASON_avg - ETAN_mu;
-ETAN_mu = mean(ETAN_124_JASOND_avg(isnan(ETAN_124_JASOND_avg)==0))
+ETAN_mu = mean(ETAN_124_JASOND_avg(isnan(ETAN_124_JASOND_avg)==0));
 ETAN_124_JASOND_avg = ETAN_124_JASOND_avg - ETAN_mu;
 %% End Fix ETAN
 

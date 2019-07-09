@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JJA','-dpng')
+print('THETA_AVG_05JJA','-dpng')
 close all
 %% END THETA
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JAS','-dpng')
+print('THETA_AVG_06JAS','-dpng')
 close all
 %% END THETA
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean SST','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JJASON','-dpng')
+print('THETA_AVG_07JJASON','-dpng')
 close all
 %% END THETA
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean SST','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JASOND','-dpng')
+print('THETA_AVG_08JASOND','-dpng')
 close all
 %% END THETA
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_DN','-dpng')
+print('THETA_AVG_09DN','-dpng')
 close all
 %% END THETA
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JD','-dpng')
+print('THETA_AVG_10JD','-dpng')
 close all
 %% END THETA
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_DJF','-dpng')
+print('THETA_AVG_01DJF','-dpng')
 close all
 %% END THETA
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JFM','-dpng')
+print('THETA_AVG_02JFM','-dpng')
 close all
 %% END THETA
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean SST','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_JFMAMJ','-dpng')
+print('THETA_AVG_04JFMAMJ','-dpng')
 close all
 %% END THETA
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean SST','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_DJFMAM','-dpng')
+print('THETA_AVG_03DJFMAM','-dpng')
 close all
 %% END THETA
 
@@ -770,7 +770,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 105m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JJA','-dpng')
+print('THETA105_AVG_05JJA','-dpng')
 close all
 %% END THETA
 
@@ -838,7 +838,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 105m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JAS','-dpng')
+print('THETA105_AVG_06JAS','-dpng')
 close all
 %% END THETA
 
@@ -906,7 +906,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 105m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JJASON','-dpng')
+print('THETA105_AVG_07JJASON','-dpng')
 close all
 %% END THETA
 
@@ -974,7 +974,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 105m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JASOND','-dpng')
+print('THETA105_AVG_08JASOND','-dpng')
 close all
 %% END THETA
 
@@ -1042,7 +1042,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 105m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_DN','-dpng')
+print('THETA105_AVG_09DN','-dpng')
 close all
 %% END THETA
 
@@ -1110,7 +1110,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 105m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JD','-dpng')
+print('THETA105_AVG_10JD','-dpng')
 close all
 %% END THETA
 
@@ -1178,7 +1178,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 105m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_DJF','-dpng')
+print('THETA105_AVG_01DJF','-dpng')
 close all
 %% END THETA
 
@@ -1246,7 +1246,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 105m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JFM','-dpng')
+print('THETA105_AVG_02JFM','-dpng')
 close all
 %% END THETA
 
@@ -1314,7 +1314,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 105m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_JFMAMJ','-dpng')
+print('THETA105_AVG_04JFMAMJ','-dpng')
 close all
 %% END THETA
 
@@ -1382,7 +1382,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 105m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA105_AVG_DJFMAM','-dpng')
+print('THETA105_AVG_03DJFMAM','-dpng')
 close all
 %% END THETA
 
@@ -1450,7 +1450,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 200m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JJA','-dpng')
+print('THETA200_AVG_05JJA','-dpng')
 close all
 %% END THETA
 
@@ -1518,7 +1518,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 200m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JAS','-dpng')
+print('THETA200_AVG_06JAS','-dpng')
 close all
 %% END THETA
 
@@ -1586,7 +1586,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 200m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JJASON','-dpng')
+print('THETA200_AVG_07JJASON','-dpng')
 close all
 %% END THETA
 
@@ -1654,7 +1654,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 200m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JASOND','-dpng')
+print('THETA200_AVG_08JASOND','-dpng')
 close all
 %% END THETA
 
@@ -1722,7 +1722,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 200m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_DN','-dpng')
+print('THETA200_AVG_09DN','-dpng')
 close all
 %% END THETA
 
@@ -1790,7 +1790,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 200m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JD','-dpng')
+print('THETA200_AVG_10JD','-dpng')
 close all
 %% END THETA
 
@@ -1858,7 +1858,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 200m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_DJF','-dpng')
+print('THETA200_AVG_01DJF','-dpng')
 close all
 %% END THETA
 
@@ -1926,7 +1926,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 200m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JFM','-dpng')
+print('THETA200_AVG_02JFM','-dpng')
 close all
 %% END THETA
 
@@ -1994,7 +1994,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 200m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_JFMAMJ','-dpng')
+print('THETA200_AVG_04JFMAMJ','-dpng')
 close all
 %% END THETA
 
@@ -2062,7 +2062,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 200m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA200_AVG_DJFMAM','-dpng')
+print('THETA200_AVG_03DJFMAM','-dpng')
 close all
 %% END THETA
 
@@ -2133,7 +2133,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 300m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JJA','-dpng')
+print('THETA300_AVG_05JJA','-dpng')
 close all
 %% END THETA
 
@@ -2201,7 +2201,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 300m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JAS','-dpng')
+print('THETA300_AVG_06JAS','-dpng')
 close all
 %% END THETA
 
@@ -2269,7 +2269,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 300m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JJASON','-dpng')
+print('THETA300_AVG_07JJASON','-dpng')
 close all
 %% END THETA
 
@@ -2337,7 +2337,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 300m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JASOND','-dpng')
+print('THETA300_AVG_08JASOND','-dpng')
 close all
 %% END THETA
 
@@ -2405,7 +2405,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 300m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_DN','-dpng')
+print('THETA300_AVG_09DN','-dpng')
 close all
 %% END THETA
 
@@ -2473,7 +2473,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 300m T','FontWeight','Normal','FontSize',1
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JD','-dpng')
+print('THETA300_AVG_10JD','-dpng')
 close all
 %% END THETA
 
@@ -2541,7 +2541,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 300m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_DJF','-dpng')
+print('THETA300_AVG_01DJF','-dpng')
 close all
 %% END THETA
 
@@ -2609,7 +2609,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 300m T','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JFM','-dpng')
+print('THETA300_AVG_02JFM','-dpng')
 close all
 %% END THETA
 
@@ -2677,7 +2677,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 300m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_JFMAMJ','-dpng')
+print('THETA300_AVG_04JFMAMJ','-dpng')
 close all
 %% END THETA
 
@@ -2745,7 +2745,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 300m T','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA300_AVG_DJFMAM','-dpng')
+print('THETA300_AVG_03DJFMAM','-dpng')
 close all
 %% END THETA
 

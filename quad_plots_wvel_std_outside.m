@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 100m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JJA_outside','-dpng')
+print('WVEL100_STD_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 100m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JAS_outside','-dpng')
+print('WVEL100_STD_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 100m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JJASON_outside','-dpng')
+print('WVEL100_STD_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 100m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JASOND_outside','-dpng')
+print('WVEL100_STD_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 100m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_DN_outside','-dpng')
+print('WVEL100_STD_09DN_outside','-dpng')
 close all
 %% END WVEL
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 100m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JD_outside','-dpng')
+print('WVEL100_STD_10JD_outside','-dpng')
 close all
 %% END WVEL
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 100m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_DJF_outside','-dpng')
+print('WVEL100_STD_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 100m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JFM_outside','-dpng')
+print('WVEL100_STD_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 100m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_JFMAMJ_outside','-dpng')
+print('WVEL100_STD_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 100m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL100_STD_DJFMAM_outside','-dpng')
+print('WVEL100_STD_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -769,7 +769,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 190m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JJA_outside','-dpng')
+print('WVEL190_STD_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
@@ -837,7 +837,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 190m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JAS_outside','-dpng')
+print('WVEL190_STD_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
@@ -905,7 +905,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 190m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JJASON_outside','-dpng')
+print('WVEL190_STD_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
@@ -973,7 +973,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 190m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JASOND_outside','-dpng')
+print('WVEL190_STD_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1041,7 +1041,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 190m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_DN_outside','-dpng')
+print('WVEL190_STD_09DN_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1109,7 +1109,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 190m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JD_outside','-dpng')
+print('WVEL190_STD_10JD_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1177,7 +1177,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 190m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_DJF_outside','-dpng')
+print('WVEL190_STD_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1245,7 +1245,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 190m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JFM_outside','-dpng')
+print('WVEL190_STD_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1313,7 +1313,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 190m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_JFMAMJ_outside','-dpng')
+print('WVEL190_STD_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1381,7 +1381,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 190m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL190_STD_DJFMAM_outside','-dpng')
+print('WVEL190_STD_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1452,7 +1452,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 290m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JJA_outside','-dpng')
+print('WVEL290_STD_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1520,7 +1520,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 290m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JAS_outside','-dpng')
+print('WVEL290_STD_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1588,7 +1588,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 290m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JJASON_outside','-dpng')
+print('WVEL290_STD_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1656,7 +1656,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 290m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JASOND_outside','-dpng')
+print('WVEL290_STD_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1724,7 +1724,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 290m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_DN_outside','-dpng')
+print('WVEL290_STD_09DN_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1792,7 +1792,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 290m Wvel stdev','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JD_outside','-dpng')
+print('WVEL290_STD_10JD_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1860,7 +1860,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 290m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_DJF_outside','-dpng')
+print('WVEL290_STD_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1928,7 +1928,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 290m Wvel stdev','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JFM_outside','-dpng')
+print('WVEL290_STD_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1996,7 +1996,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 290m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_JFMAMJ_outside','-dpng')
+print('WVEL290_STD_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2064,7 +2064,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 290m Wvel stdev','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('WVEL290_STD_DJFMAM_outside','-dpng')
+print('WVEL290_STD_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 

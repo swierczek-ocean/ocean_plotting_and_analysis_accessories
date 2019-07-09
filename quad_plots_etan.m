@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean SSH anomaly','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JJA','-dpng')
+print('ETAN_AVG_05JJA','-dpng')
 close all
 %% END ETAN
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean SSH anomaly','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JAS','-dpng')
+print('ETAN_AVG_06JAS','-dpng')
 close all
 %% END ETAN
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean SSH anomaly','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JJASON','-dpng')
+print('ETAN_AVG_07JJASON','-dpng')
 close all
 %% END ETAN
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean SSH anomaly','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JASOND','-dpng')
+print('ETAN_AVG_08JASOND','-dpng')
 close all
 %% END ETAN
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean SSH anomaly','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_DN','-dpng')
+print('ETAN_AVG_09DN','-dpng')
 close all
 %% END ETAN
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean SSH anomaly','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JD','-dpng')
+print('ETAN_AVG_10JD','-dpng')
 close all
 %% END ETAN
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean SSH anomaly','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_DJF','-dpng')
+print('ETAN_AVG_01DJF','-dpng')
 close all
 %% END ETAN
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean SSH anomaly','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JFM','-dpng')
+print('ETAN_AVG_02JFM','-dpng')
 close all
 %% END ETAN
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean SSH anomaly','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_JFMAMJ','-dpng')
+print('ETAN_AVG_04JFMAMJ','-dpng')
 close all
 %% END ETAN
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean SSH anomaly','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_DJFMAM','-dpng')
+print('ETAN_AVG_03DJFMAM','-dpng')
 close all
 %% END ETAN
 

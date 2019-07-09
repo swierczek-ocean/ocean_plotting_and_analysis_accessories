@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JJA','-dpng')
+print('OFLUX_AVG_05JJA','-dpng')
 close all
 %% END OFLUX
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JAS','-dpng')
+print('OFLUX_AVG_06JAS','-dpng')
 close all
 %% END OFLUX
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JJASON','-dpng')
+print('OFLUX_AVG_07JJASON','-dpng')
 close all
 %% END OFLUX
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JASOND','-dpng')
+print('OFLUX_AVG_08JASOND','-dpng')
 close all
 %% END OFLUX
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean O2 flux','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_DN','-dpng')
+print('OFLUX_AVG_09DN','-dpng')
 close all
 %% END OFLUX
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean O2 flux','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JD','-dpng')
+print('OFLUX_AVG_10JD','-dpng')
 close all
 %% END OFLUX
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_DJF','-dpng')
+print('OFLUX_AVG_01DJF','-dpng')
 close all
 %% END OFLUX
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JFM','-dpng')
+print('OFLUX_AVG_02JFM','-dpng')
 close all
 %% END OFLUX
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_JFMAMJ','-dpng')
+print('OFLUX_AVG_04JFMAMJ','-dpng')
 close all
 %% END OFLUX
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_DJFMAM','-dpng')
+print('OFLUX_AVG_03DJFMAM','-dpng')
 close all
 %% END OFLUX
 

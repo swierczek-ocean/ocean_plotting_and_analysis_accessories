@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean surf DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JJA','-dpng')
+print('DIC_AVG_05JJA','-dpng')
 close all
 %% END DIC
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean surf DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JAS','-dpng')
+print('DIC_AVG_06JAS','-dpng')
 close all
 %% END DIC
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean surf DIC','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JJASON','-dpng')
+print('DIC_AVG_07JJASON','-dpng')
 close all
 %% END DIC
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean surf DIC','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JASOND','-dpng')
+print('DIC_AVG_08JASOND','-dpng')
 close all
 %% END DIC
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean surf DIC','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_DN','-dpng')
+print('DIC_AVG_09DN','-dpng')
 close all
 %% END DIC
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean surf DIC','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JD','-dpng')
+print('DIC_AVG_10JD','-dpng')
 close all
 %% END DIC
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean surf DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_DJF','-dpng')
+print('DIC_AVG_01DJF','-dpng')
 close all
 %% END DIC
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean surf DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JFM','-dpng')
+print('DIC_AVG_02JFM','-dpng')
 close all
 %% END DIC
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean surf DIC','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_JFMAMJ','-dpng')
+print('DIC_AVG_04JFMAMJ','-dpng')
 close all
 %% END DIC
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean surf DIC','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_DJFMAM','-dpng')
+print('DIC_AVG_03DJFMAM','-dpng')
 close all
 %% END DIC
 

@@ -15,7 +15,7 @@ load AB122_output
 %%
 
 %%
-option = 1;
+option = 8;
 mask = permute(mask,[2,1,3]);
 inside_coords = [290.5 350.2 -58.7 -32];
 [XC3,YC3] = ndgrid(XC3,YC3);
@@ -77,7 +77,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JJA','-dpng')
+print('AGE_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
@@ -134,7 +134,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JAS','-dpng')
+print('AGE_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
@@ -191,7 +191,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JJASON','-dpng')
+print('AGE_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
@@ -248,7 +248,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JASOND','-dpng')
+print('AGE_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
@@ -305,7 +305,7 @@ title('1/12 MITgcm+BLING DN 2017 mean surf age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_DN','-dpng')
+print('AGE_AVG_09DN','-dpng')
 close all
 %% END AGE
 
@@ -362,7 +362,7 @@ title('1/12 MITgcm+BLING JD 2017 mean surf age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JD','-dpng')
+print('AGE_AVG_10JD','-dpng')
 close all
 %% END AGE
 
@@ -419,7 +419,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_DJF','-dpng')
+print('AGE_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
@@ -476,7 +476,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JFM','-dpng')
+print('AGE_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
@@ -533,7 +533,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_JFMAMJ','-dpng')
+print('AGE_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
@@ -590,7 +590,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_DJFMAM','-dpng')
+print('AGE_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
@@ -610,7 +610,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_34_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -623,7 +623,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_64_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -638,7 +638,7 @@ contourf(XC12,YC12,AGE200_124_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -647,7 +647,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JJA','-dpng')
+print('AGE200_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
@@ -667,7 +667,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_34_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -680,7 +680,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_64_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -695,7 +695,7 @@ contourf(XC12,YC12,AGE200_124_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -704,7 +704,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JAS','-dpng')
+print('AGE200_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
@@ -724,7 +724,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_34_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -737,7 +737,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_64_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -752,7 +752,7 @@ contourf(XC12,YC12,AGE200_124_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -761,7 +761,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JJASON','-dpng')
+print('AGE200_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
@@ -781,7 +781,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_34_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -794,7 +794,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_64_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -809,7 +809,7 @@ contourf(XC12,YC12,AGE200_124_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -818,7 +818,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JASOND','-dpng')
+print('AGE200_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
@@ -838,7 +838,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -851,7 +851,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -866,7 +866,7 @@ contourf(XC12,YC12,AGE200_122_DN_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -875,7 +875,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 200m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_DN','-dpng')
+print('AGE200_AVG_09DN','-dpng')
 close all
 %% END AGE
 
@@ -895,7 +895,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -908,7 +908,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -923,7 +923,7 @@ contourf(XC12,YC12,AGE200_122_JD_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -932,7 +932,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 200m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JD','-dpng')
+print('AGE200_AVG_10JD','-dpng')
 close all
 %% END AGE
 
@@ -952,7 +952,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -965,7 +965,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -980,7 +980,7 @@ contourf(XC12,YC12,AGE200_122_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -989,7 +989,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_DJF','-dpng')
+print('AGE200_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
@@ -1009,7 +1009,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1022,7 +1022,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1037,7 +1037,7 @@ contourf(XC12,YC12,AGE200_122_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1046,7 +1046,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JFM','-dpng')
+print('AGE200_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
@@ -1066,7 +1066,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1079,7 +1079,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1094,7 +1094,7 @@ contourf(XC12,YC12,AGE200_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1103,7 +1103,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_JFMAMJ','-dpng')
+print('AGE200_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
@@ -1123,7 +1123,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE200_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1136,7 +1136,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE200_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1151,7 +1151,7 @@ contourf(XC12,YC12,AGE200_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,20),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1160,7 +1160,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_DJFMAM','-dpng')
+print('AGE200_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
@@ -1180,7 +1180,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_34_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1193,7 +1193,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_64_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1208,7 +1208,7 @@ contourf(XC12,YC12,AGE500_124_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1217,7 +1217,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JJA','-dpng')
+print('AGE500_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
@@ -1237,7 +1237,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_34_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1250,7 +1250,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_64_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1265,7 +1265,7 @@ contourf(XC12,YC12,AGE500_124_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1274,7 +1274,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JAS','-dpng')
+print('AGE500_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
@@ -1294,7 +1294,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_34_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1307,7 +1307,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_64_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1322,7 +1322,7 @@ contourf(XC12,YC12,AGE500_124_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1331,7 +1331,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JJASON','-dpng')
+print('AGE500_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
@@ -1351,7 +1351,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_34_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1364,7 +1364,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_64_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1379,7 +1379,7 @@ contourf(XC12,YC12,AGE500_124_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1388,7 +1388,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JASOND','-dpng')
+print('AGE500_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
@@ -1408,7 +1408,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1421,7 +1421,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1436,7 +1436,7 @@ contourf(XC12,YC12,AGE500_122_DN_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1445,7 +1445,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 500m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_DN','-dpng')
+print('AGE500_AVG_09DN','-dpng')
 close all
 %% END AGE
 
@@ -1465,7 +1465,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1478,7 +1478,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1493,7 +1493,7 @@ contourf(XC12,YC12,AGE500_122_JD_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1502,7 +1502,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 500m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JD','-dpng')
+print('AGE500_AVG_10JD','-dpng')
 close all
 %% END AGE
 
@@ -1522,7 +1522,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1535,7 +1535,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1550,7 +1550,7 @@ contourf(XC12,YC12,AGE500_122_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1559,7 +1559,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_DJF','-dpng')
+print('AGE500_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
@@ -1579,7 +1579,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1592,7 +1592,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1607,7 +1607,7 @@ contourf(XC12,YC12,AGE500_122_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1616,7 +1616,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JFM','-dpng')
+print('AGE500_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
@@ -1636,7 +1636,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1649,7 +1649,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1664,7 +1664,7 @@ contourf(XC12,YC12,AGE500_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1673,7 +1673,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_JFMAMJ','-dpng')
+print('AGE500_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
@@ -1693,7 +1693,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE500_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1706,7 +1706,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE500_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1721,7 +1721,7 @@ contourf(XC12,YC12,AGE500_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,30),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1730,7 +1730,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_DJFMAM','-dpng')
+print('AGE500_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
@@ -1750,7 +1750,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_34_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1763,7 +1763,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_64_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1778,7 +1778,7 @@ contourf(XC12,YC12,AGE1000_124_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1787,7 +1787,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JJA','-dpng')
+print('AGE1000_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
@@ -1807,7 +1807,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_34_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1820,7 +1820,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_64_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1835,7 +1835,7 @@ contourf(XC12,YC12,AGE1000_124_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1844,7 +1844,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JAS','-dpng')
+print('AGE1000_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
@@ -1864,7 +1864,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_34_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1877,7 +1877,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_64_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1892,7 +1892,7 @@ contourf(XC12,YC12,AGE1000_124_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1901,7 +1901,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JJASON','-dpng')
+print('AGE1000_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
@@ -1921,7 +1921,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_34_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1934,7 +1934,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_64_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1949,7 +1949,7 @@ contourf(XC12,YC12,AGE1000_124_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1958,7 +1958,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JASOND','-dpng')
+print('AGE1000_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
@@ -1978,7 +1978,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -1991,7 +1991,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2006,7 +2006,7 @@ contourf(XC12,YC12,AGE1000_122_DN_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2015,7 +2015,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 1000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_DN','-dpng')
+print('AGE1000_AVG_09DN','-dpng')
 close all
 %% END AGE
 
@@ -2035,7 +2035,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2048,7 +2048,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2063,7 +2063,7 @@ contourf(XC12,YC12,AGE1000_122_JD_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2072,7 +2072,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 1000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JD','-dpng')
+print('AGE1000_AVG_10JD','-dpng')
 close all
 %% END AGE
 
@@ -2092,7 +2092,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2105,7 +2105,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2120,7 +2120,7 @@ contourf(XC12,YC12,AGE1000_122_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2129,7 +2129,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_DJF','-dpng')
+print('AGE1000_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
@@ -2149,7 +2149,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2162,7 +2162,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2177,7 +2177,7 @@ contourf(XC12,YC12,AGE1000_122_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2186,7 +2186,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JFM','-dpng')
+print('AGE1000_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
@@ -2206,7 +2206,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2219,7 +2219,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2234,7 +2234,7 @@ contourf(XC12,YC12,AGE1000_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2243,7 +2243,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_JFMAMJ','-dpng')
+print('AGE1000_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
@@ -2263,7 +2263,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE1000_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2276,7 +2276,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE1000_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2291,7 +2291,7 @@ contourf(XC12,YC12,AGE1000_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,36),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2300,7 +2300,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_DJFMAM','-dpng')
+print('AGE1000_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
@@ -2320,7 +2320,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_34_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2333,7 +2333,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_64_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2348,7 +2348,7 @@ contourf(XC12,YC12,AGE2000_124_JJA_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2357,7 +2357,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JJA','-dpng')
+print('AGE2000_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
@@ -2377,7 +2377,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_34_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2390,7 +2390,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_64_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2405,7 +2405,7 @@ contourf(XC12,YC12,AGE2000_124_JAS_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2414,7 +2414,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JAS','-dpng')
+print('AGE2000_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
@@ -2434,7 +2434,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_34_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2447,7 +2447,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_64_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2462,7 +2462,7 @@ contourf(XC12,YC12,AGE2000_124_JJASON_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2471,7 +2471,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JJASON','-dpng')
+print('AGE2000_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
@@ -2491,7 +2491,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_34_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2504,7 +2504,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_64_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2519,7 +2519,7 @@ contourf(XC12,YC12,AGE2000_124_JASOND_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2528,7 +2528,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JASOND','-dpng')
+print('AGE2000_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
@@ -2548,7 +2548,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2561,7 +2561,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_DN_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2576,7 +2576,7 @@ contourf(XC12,YC12,AGE2000_122_DN_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2585,7 +2585,7 @@ title('1/12 MITgcm+BLING DN 2017 mean 2000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_DN','-dpng')
+print('AGE2000_AVG_09DN','-dpng')
 close all
 %% END AGE
 
@@ -2605,7 +2605,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2618,7 +2618,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_JD_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2633,7 +2633,7 @@ contourf(XC12,YC12,AGE2000_122_JD_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2642,7 +2642,7 @@ title('1/12 MITgcm+BLING JD 2017 mean 2000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JD','-dpng')
+print('AGE2000_AVG_10JD','-dpng')
 close all
 %% END AGE
 
@@ -2662,7 +2662,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2675,7 +2675,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2690,7 +2690,7 @@ contourf(XC12,YC12,AGE2000_122_DJF_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2699,7 +2699,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_DJF','-dpng')
+print('AGE2000_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
@@ -2719,7 +2719,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2732,7 +2732,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2747,7 +2747,7 @@ contourf(XC12,YC12,AGE2000_122_JFM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2756,7 +2756,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JFM','-dpng')
+print('AGE2000_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
@@ -2776,7 +2776,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2789,7 +2789,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2804,7 +2804,7 @@ contourf(XC12,YC12,AGE2000_122_JFMAMJ_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2813,7 +2813,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_JFMAMJ','-dpng')
+print('AGE2000_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
@@ -2833,7 +2833,7 @@ colormap(cm)
 ax2 = subplot(2,2,2);
 contourf(XC3,YC3,AGE2000_32_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2846,7 +2846,7 @@ hold off
 ax3 = subplot(2,2,3);
 contourf(XC6,YC6,AGE2000_62_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2861,7 +2861,7 @@ contourf(XC12,YC12,AGE2000_122_DJFMAM_avg,'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
+contour(XCm,YCm,mask(:,:,42),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
@@ -2870,7 +2870,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_DJFMAM','-dpng')
+print('AGE2000_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 

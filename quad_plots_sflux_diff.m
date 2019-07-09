@@ -88,7 +88,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean salt flux','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JJA_DIFF','-dpng')
+print('SFLUX_AVG_05JJA_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -166,7 +166,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean salt flux','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JAS_DIFF','-dpng')
+print('SFLUX_AVG_06JAS_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -244,7 +244,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean salt flux','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JASOND_DIFF','-dpng')
+print('SFLUX_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -322,7 +322,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean salt flux','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JJASON_DIFF','-dpng')
+print('SFLUX_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -400,7 +400,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean salt flux','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_DJF_DIFF','-dpng')
+print('SFLUX_AVG_01DJF_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -478,7 +478,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean salt flux','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JFM_DIFF','-dpng')
+print('SFLUX_AVG_02JFM_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -556,7 +556,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean salt flux','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_DJFMAM_DIFF','-dpng')
+print('SFLUX_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -634,7 +634,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean salt flux','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JFMAMJ_DIFF','-dpng')
+print('SFLUX_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -712,7 +712,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean salt flux','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_DN_DIFF','-dpng')
+print('SFLUX_AVG_09DN_DIFF','-dpng')
 close all
 %% END SFLUX
 
@@ -790,7 +790,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean salt flux','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SFLUX_AVG_JD_DIFF','-dpng')
+print('SFLUX_AVG_10JD_DIFF','-dpng')
 close all
 %% END SFLUX
 

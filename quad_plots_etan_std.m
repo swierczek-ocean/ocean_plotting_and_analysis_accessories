@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JJA','-dpng')
+print('ETAN_STD_05JJA','-dpng')
 close all
 %% END ETAN
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JAS','-dpng')
+print('ETAN_STD_06JAS','-dpng')
 close all
 %% END ETAN
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JJASON','-dpng')
+print('ETAN_STD_07JJASON','-dpng')
 close all
 %% END ETAN
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JASOND','-dpng')
+print('ETAN_STD_08JASOND','-dpng')
 close all
 %% END ETAN
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_DN','-dpng')
+print('ETAN_STD_09DN','-dpng')
 close all
 %% END ETAN
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JD','-dpng')
+print('ETAN_STD_10JD','-dpng')
 close all
 %% END ETAN
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_DJF','-dpng')
+print('ETAN_STD_01DJF','-dpng')
 close all
 %% END ETAN
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JFM','-dpng')
+print('ETAN_STD_02JFM','-dpng')
 close all
 %% END ETAN
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_JFMAMJ','-dpng')
+print('ETAN_STD_04DJFMAMJ','-dpng')
 close all
 %% END ETAN
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_DJFMAM','-dpng')
+print('ETAN_STD_03DJFMAM','-dpng')
 close all
 %% END ETAN
 

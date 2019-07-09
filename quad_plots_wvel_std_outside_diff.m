@@ -88,7 +88,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 100m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JJA_DIFF','-dpng')
+print('WVEL100_STD_05JJA_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -166,7 +166,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 100m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JAS_DIFF','-dpng')
+print('WVEL100_STD_06JAS_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -244,7 +244,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 100m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JASOND_DIFF','-dpng')
+print('WVEL100_STD_08JASOND_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -322,7 +322,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 100m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JJASON_DIFF','-dpng')
+print('WVEL100_STD_07JJASON_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -400,7 +400,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 100m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_DJF_DIFF','-dpng')
+print('WVEL100_STD_01DJF_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -478,7 +478,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 100m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JFM_DIFF','-dpng')
+print('WVEL100_STD_02JFM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -556,7 +556,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 100m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_DJFMAM_DIFF','-dpng')
+print('WVEL100_STD_03DJFMAM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -634,7 +634,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 100m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JFMAMJ_DIFF','-dpng')
+print('WVEL100_STD_04JFMAMJ_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -712,7 +712,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 100m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_DN_DIFF','-dpng')
+print('WVEL100_STD_09DN_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -790,7 +790,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 100m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_STD_JD_DIFF','-dpng')
+print('WVEL100_STD_10JD_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -868,7 +868,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 190m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JJA_DIFF','-dpng')
+print('WVEL190_STD_05JJA_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -946,7 +946,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 190m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JAS_DIFF','-dpng')
+print('WVEL190_STD_06JAS_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1024,7 +1024,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 190m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JASOND_DIFF','-dpng')
+print('WVEL190_STD_08JASOND_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1102,7 +1102,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 190m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JJASON_DIFF','-dpng')
+print('WVEL190_STD_07JJASON_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1180,7 +1180,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 190m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_DJF_DIFF','-dpng')
+print('WVEL190_STD_01DJF_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1258,7 +1258,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 190m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JFM_DIFF','-dpng')
+print('WVEL190_STD_02JFM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1336,7 +1336,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 190m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_DJFMAM_DIFF','-dpng')
+print('WVEL190_STD_03DJFMAM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1414,7 +1414,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 190m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JFMAMJ_DIFF','-dpng')
+print('WVEL190_STD_04JFMAMJ_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1492,7 +1492,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 190m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_DN_DIFF','-dpng')
+print('WVEL190_STD_09DN_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1570,7 +1570,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 190m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_STD_JD_DIFF','-dpng')
+print('WVEL190_STD_10JD_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1648,7 +1648,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 290m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JJA_DIFF','-dpng')
+print('WVEL290_STD_05JJA_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1726,7 +1726,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 290m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JAS_DIFF','-dpng')
+print('WVEL290_STD_06JAS_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1804,7 +1804,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 290m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JASOND_DIFF','-dpng')
+print('WVEL290_STD_08JASOND_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1882,7 +1882,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 290m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JJASON_DIFF','-dpng')
+print('WVEL290_STD_07JJASON_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1960,7 +1960,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 290m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_DJF_DIFF','-dpng')
+print('WVEL290_STD_01DJF_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2038,7 +2038,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 290m Wvel stdev','FontWeight','No
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JFM_DIFF','-dpng')
+print('WVEL290_STD_02JFM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2116,7 +2116,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 290m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_DJFMAM_DIFF','-dpng')
+print('WVEL290_STD_03DJFMAM_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2194,7 +2194,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 290m Wvel stdev','FontWeight',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JFMAMJ_DIFF','-dpng')
+print('WVEL290_STD_04JFMAMJ_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2272,7 +2272,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 290m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_DN_DIFF','-dpng')
+print('WVEL290_STD_09DN_DIFF_outside','-dpng')
 close all
 %% END WVEL
 
@@ -2350,7 +2350,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 290m Wvel stdev','FontWeight','Nor
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_STD_JD_DIFF','-dpng')
+print('WVEL290_STD_10JD_DIFF_outside','-dpng')
 close all
 %% END WVEL
 

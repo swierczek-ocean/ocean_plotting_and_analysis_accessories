@@ -88,7 +88,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean SSS','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JJA_DIFF','-dpng')
+print('SALT_AVG_05JJA_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -166,7 +166,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean SSS','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JAS_DIFF','-dpng')
+print('SALT_AVG_06JAS_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -244,7 +244,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean SSS','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JASOND_DIFF','-dpng')
+print('SALT_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -322,7 +322,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean SSS','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JJASON_DIFF','-dpng')
+print('SALT_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -400,7 +400,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean SSS','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_DJF_DIFF','-dpng')
+print('SALT_AVG_01DJF_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -478,7 +478,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean SSS','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JFM_DIFF','-dpng')
+print('SALT_AVG_02JFM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -556,7 +556,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean SSS','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_DJFMAM_DIFF','-dpng')
+print('SALT_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -634,7 +634,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean SSS','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JFMAMJ_DIFF','-dpng')
+print('SALT_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -712,7 +712,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean SSS','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_DN_DIFF','-dpng')
+print('SALT_AVG_09DN_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -790,7 +790,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean SSS','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT_AVG_JD_DIFF','-dpng')
+print('SALT_AVG_10JD_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -868,7 +868,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 105m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JJA_DIFF','-dpng')
+print('SALT105_AVG_05JJA_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -946,7 +946,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 105m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JAS_DIFF','-dpng')
+print('SALT105_AVG_06JAS_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1024,7 +1024,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 105m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JASOND_DIFF','-dpng')
+print('SALT105_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1102,7 +1102,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 105m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JJASON_DIFF','-dpng')
+print('SALT105_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1180,7 +1180,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 105m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_DJF_DIFF','-dpng')
+print('SALT105_AVG_01DJF_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1258,7 +1258,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 105m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JFM_DIFF','-dpng')
+print('SALT105_AVG_02JFM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1336,7 +1336,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 105m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_DJFMAM_DIFF','-dpng')
+print('SALT105_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1414,7 +1414,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 105m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JFMAMJ_DIFF','-dpng')
+print('SALT105_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1492,7 +1492,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 105m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_DN_DIFF','-dpng')
+print('SALT105_AVG_09DN_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1570,7 +1570,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 105m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT105_AVG_JD_DIFF','-dpng')
+print('SALT105_AVG_10JD_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1648,7 +1648,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 200m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JJA_DIFF','-dpng')
+print('SALT200_AVG_05JJA_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1726,7 +1726,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 200m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JAS_DIFF','-dpng')
+print('SALT200_AVG_06JAS_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1804,7 +1804,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 200m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JASOND_DIFF','-dpng')
+print('SALT200_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1882,7 +1882,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 200m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JJASON_DIFF','-dpng')
+print('SALT200_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -1960,7 +1960,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 200m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_DJF_DIFF','-dpng')
+print('SALT200_AVG_01DJF_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2038,7 +2038,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 200m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JFM_DIFF','-dpng')
+print('SALT200_AVG_02JFM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2116,7 +2116,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 200m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_DJFMAM_DIFF','-dpng')
+print('SALT200_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2194,7 +2194,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 200m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JFMAMJ_DIFF','-dpng')
+print('SALT200_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2272,7 +2272,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 200m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_DN_DIFF','-dpng')
+print('SALT200_AVG_09DN_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2350,7 +2350,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 200m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT200_AVG_JD_DIFF','-dpng')
+print('SALT200_AVG_10JD_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2428,7 +2428,7 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean 300m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JJA_DIFF','-dpng')
+print('SALT300_AVG_05JJA_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2506,7 +2506,7 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean 300m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JAS_DIFF','-dpng')
+print('SALT300_AVG_06JAS_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2584,7 +2584,7 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean 300m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JASOND_DIFF','-dpng')
+print('SALT300_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2662,7 +2662,7 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean 300m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JJASON_DIFF','-dpng')
+print('SALT300_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2740,7 +2740,7 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean 300m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_DJF_DIFF','-dpng')
+print('SALT300_AVG_01DJF_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2818,7 +2818,7 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean 300m S','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JFM_DIFF','-dpng')
+print('SALT300_AVG_02JFM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2896,7 +2896,7 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean 300m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_DJFMAM_DIFF','-dpng')
+print('SALT300_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -2974,7 +2974,7 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean 300m S','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JFMAMJ_DIFF','-dpng')
+print('SALT300_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -3052,7 +3052,7 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean 300m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_DN_DIFF','-dpng')
+print('SALT300_AVG_09DN_DIFF','-dpng')
 close all
 %% END SALT
 
@@ -3130,7 +3130,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean 300m S','FontWeight','Normal','Fon
 acc_movie
 acc_quad_plots_v8
 hold off
-print('SALT300_AVG_JD_DIFF','-dpng')
+print('SALT300_AVG_10JD_DIFF','-dpng')
 close all
 %% END SALT
 

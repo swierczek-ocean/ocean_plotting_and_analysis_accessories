@@ -483,10 +483,35 @@ parfor ii=1:m122
             WVEL190_122_JD_avg(ii,jj) = 99999999999;
             WVEL190_122_JD_std(ii,jj) = 99999999999;
         end
+        if (HC(ii,jj,50)==0)
+            THETA300_122_DJF_avg(ii,jj) = 99999999999;
+            SALT300_122_DJF_avg(ii,jj) = 99999999999;
+            WVEL290_122_DJF_avg(ii,jj) = 99999999999;
+            WVEL290_122_DJF_std(ii,jj) = 99999999999;
+            THETA300_122_JFM_avg(ii,jj) = 99999999999;
+            SALT300_122_JFM_avg(ii,jj) = 99999999999;
+            WVEL290_122_JFM_avg(ii,jj) = 99999999999;
+            WVEL290_122_JFM_std(ii,jj) = 99999999999;
+            THETA300_122_DJFMAM_avg(ii,jj) = 99999999999;
+            SALT300_122_DJFMAM_avg(ii,jj) = 99999999999;
+            WVEL290_122_DJFMAM_avg(ii,jj) = 99999999999;
+            WVEL290_122_DJFMAM_std(ii,jj) = 99999999999;
+            THETA300_122_JFMAMJ_avg(ii,jj) = 99999999999;
+            SALT300_122_JFMAMJ_avg(ii,jj) = 99999999999;
+            WVEL290_122_JFMAMJ_avg(ii,jj) = 99999999999;
+            WVEL290_122_JFMAMJ_std(ii,jj) = 99999999999;
+            THETA300_122_DN_avg(ii,jj) = 99999999999;
+            SALT300_122_DN_avg(ii,jj) = 99999999999;
+            WVEL290_122_DN_avg(ii,jj) = 99999999999;
+            WVEL290_122_DN_std(ii,jj) = 99999999999;
+            THETA300_122_JD_avg(ii,jj) = 99999999999;
+            SALT300_122_JD_avg(ii,jj) = 99999999999;
+            WVEL290_122_JD_avg(ii,jj) = 99999999999;
+            WVEL290_122_JD_std(ii,jj) = 99999999999;
+        end
         if (HC(ii,jj,60)==0)
             AGE500_122_DJF_avg(ii,jj) = 99999999999;
             AGE500_122_JFM_avg(ii,jj) = 99999999999;
-            AGE200_122_DJFMAM_avg(ii,jj) = 99999999999;
             AGE500_122_DJFMAM_avg(ii,jj) = 99999999999;
             AGE500_122_JFMAMJ_avg(ii,jj) = 99999999999;
             AGE500_122_DN_avg(ii,jj) = 99999999999;
