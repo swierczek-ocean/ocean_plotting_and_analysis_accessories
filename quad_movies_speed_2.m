@@ -31,7 +31,7 @@ cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(SPEED_BSOSE,...
     SPEED_Series32,SPEED_Series62,SPEED_Series122,option);
 lb = 0;
-ub = 1.9;
+ub = 1.88;
 nlvls = 8*(nlvls - 1) +1;
 z = linspace(lb,ub,nlvls);
 z = [z,9999998];
@@ -96,7 +96,7 @@ text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
 hold off
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
-vidObj = VideoWriter('Currents3.avi');
+vidObj = VideoWriter('CURRENTS3.avi');
 vidObj.Quality = 100;
 vidObj.FrameRate = 36;
 open(vidObj);

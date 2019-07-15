@@ -107,6 +107,24 @@ if option==9
 end
 %%
 
+%% 1st to 99th percentile range
+if option==10
+    ind1 = ceil(len*0.002);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
+%% 1st to 99th percentile range
+if option==11
+    ind1 = ceil(len*0.001);
+    DIST2 = DIST(200:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
 range = ub - lb;
 
 if range>12&&range<30

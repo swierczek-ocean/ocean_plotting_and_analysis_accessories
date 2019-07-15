@@ -1,6 +1,6 @@
 %% Nice Colors for plots
 % % .........................................................................
-Color  = zeros(3,50);
+Color  = zeros(3,51);
 Color(:,1) = [85;170;170]/255;      % Light Blue-Grey
 Color(:,2) = [60;60;230]/255;       % Blue
 Color(:,3) = [170;0;170]/255;       % Bright Purple
@@ -51,4 +51,5 @@ Color(:,47) = [0.8;1;0];            % flourescant yellow
 Color(:,48) = [0.093;0.111;0.261];  % bottom of balance cm
 Color(:,49) = [0.1629;0.095;0.4225];% bottom of haline cm
 Color(:,50) = [0.156;0.138;0.2015]; % bottom of thermal cm
+Color(:,51) = [0.082;0.1148;0.2647];% bottom of curl cm
 % .........................................................................
