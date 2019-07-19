@@ -1,6 +1,6 @@
 %% Nice Colors for plots
 % % .........................................................................
-Color  = zeros(3,51);
+Color  = zeros(3,46);
 Color(:,1) = [85;170;170]/255;      % Light Blue-Grey
 Color(:,2) = [60;60;230]/255;       % Blue
 Color(:,3) = [170;0;170]/255;       % Bright Purple
@@ -36,8 +36,8 @@ Color(:,32) = [51;102;153]/255;     % Battleship
 Color(:,33) = [51;0;153]/255;       % Dark Purple
 Color(:,34) = [0;0;204]/255;        % Blue Blue
 Color(:,35) = [102;153;255]/255;    % Light Cornflower
-Color(:,36) = [0.7;0.7;0.7];        % Light Grey
-Color(:,37) = [0;0;0];              % Black
+Color(:,36) = [0.7,0.7,0.7];        % Light Grey
+Color(:,37) = [0,0,0];              % Black
 Color(:,38) = [255;204;0]/255;      % Yellow
 Color(:,39) = [0;153;0]/255;        % Green 2
 Color(:,40) = [255;153;0]/255;      % Light Burnt Orange
@@ -46,10 +46,6 @@ Color(:,42) = [255;102;255]/255;    % Light Fuschia
 Color(:,43) = [152;102;153]/255;    % Light Purple Grey
 Color(:,44) = [255;51;0]/255;       % Dark Orange
 Color(:,45) = [204;153;102]/255;    % Light Copper
-Color(:,46) = [0.35;0.35;0.35];     % Grey
-Color(:,47) = [0.8;1;0];            % flourescant yellow
-Color(:,48) = [0.093;0.111;0.261];  % bottom of balance cm
-Color(:,49) = [0.1629;0.095;0.4225];% bottom of haline cm
-Color(:,50) = [0.156;0.138;0.2015]; % bottom of thermal cm
-Color(:,51) = [0.082;0.1148;0.2647];% bottom of curl cm
+Color(:,46) = [0.35,0.35,0.35];     % Grey
+Color(:,47) = [0.8,1,0];            % flourescant yellow
 % .........................................................................

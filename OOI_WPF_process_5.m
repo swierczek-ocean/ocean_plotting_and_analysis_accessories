@@ -23,7 +23,7 @@ str5m = 'deployment0002_GA02HYPM-WFP03-04-CTDPFL000-recovered_wfp-ctdpf_ckl_wfp_
 str6 = 'deployment0003_GA02HYPM-WFP03-04-CTDPFL000-recovered_wfp-ctdpf_ckl_wfp_instrument_recovered_20161030T040003-20171225T093012.998520.nc';
 str6m = 'deployment0003_GA02HYPM-WFP03-04-CTDPFL000-recovered_wfp-ctdpf_ckl_wfp_metadata_recovered_20161030T040003-20171225T080002.nc';
 
-ncdisp(str3);
+% ncdisp(str3);
 
 str7 = 'ctdpf_ckl_seawater_pressure';
 str8 = 'ctdpf_ckl_seawater_pressure_qc_executed';
@@ -318,16 +318,13 @@ D = Full_Array(:,5);
 
 clear Full_Array
 
-save Full_Array_2
-
-
 t_low = min(time);
 t_high = max(time);
 depth_low = min(D);
 depth_high = max(D);
 
 my_D = floor(depth_low):25:ceil(depth_high);
-my_time = ceil(t_low):0.25:ceil(t_high);
+my_time = ceil(t_low):1:ceil(t_high);
 
 nn = length(my_time)
 mm = length(my_D)
@@ -337,7 +334,7 @@ my_time(end)
 my_D(1)
 my_D(end)
 
-New_Array1 = zeros(mm,nn,3);
+New_Array5 = zeros(mm,nn,3);
 
 for ii=1:nn
     for jj=1:mm
@@ -349,11 +346,11 @@ for ii=1:nn
             ind = intersect(ind1,ind6);
             mean(T(ind))
             
-            New_Array1(jj,ii,1) = ...
+            New_Array5(jj,ii,1) = ...
                 mean(T(ind));
-            New_Array1(jj,ii,2) = ...
+            New_Array5(jj,ii,2) = ...
                 mean(S(ind));
-            New_Array1(jj,ii,3) = ...
+            New_Array5(jj,ii,3) = ...
                 mean(P(ind));
             
             fprintf('finished binning depth %g and day %g \n \n',my_D(jj),my_time(ii)-my_time(1));
@@ -366,11 +363,11 @@ for ii=1:nn
             ind = intersect(ind5,ind3);
             mean(T(ind))
             
-            New_Array1(jj,ii,1) = ...
+            New_Array5(jj,ii,1) = ...
                 mean(T(ind));
-            New_Array1(jj,ii,2) = ...
+            New_Array5(jj,ii,2) = ...
                 mean(S(ind));
-            New_Array1(jj,ii,3) = ...
+            New_Array5(jj,ii,3) = ...
                 mean(P(ind));
             
             fprintf('finished binning depth %g and day %g \n \n',my_D(jj),my_time(ii)-my_time(1));
@@ -381,11 +378,11 @@ for ii=1:nn
             ind = intersect(ind1,ind3);
             mean(T(ind))
             
-            New_Array1(jj,ii,1) = ...
+            New_Array5(jj,ii,1) = ...
                 mean(T(ind));
-            New_Array1(jj,ii,2) = ...
+            New_Array5(jj,ii,2) = ...
                 mean(S(ind));
-            New_Array1(jj,ii,3) = ...
+            New_Array5(jj,ii,3) = ...
                 mean(P(ind));
             
             fprintf('finished binning depth %g and day %g \n \n',my_D(jj),my_time(ii)-my_time(1));
@@ -409,11 +406,11 @@ for ii=1:nn
             
             mean(temp_T(ind))
             
-            New_Array1(jj,ii,1) = ...
+            New_Array5(jj,ii,1) = ...
                 mean(temp_T(ind));
-            New_Array1(jj,ii,2) = ...
+            New_Array5(jj,ii,2) = ...
                 mean(temp_S(ind));
-            New_Array1(jj,ii,3) = ...
+            New_Array5(jj,ii,3) = ...
                 mean(temp_P(ind));
             
             fprintf('finished binning depth %g and day %g \n \n',my_D(jj),my_time(ii)-my_time(1));
@@ -423,8 +420,8 @@ for ii=1:nn
 end
 
 
-clearvars -except my_D my_time New_Array1
-save New_Array1
+clearvars -except my_D my_time New_Array5
+save New_Array5
 
 
 
