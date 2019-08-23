@@ -3,7 +3,7 @@ function cm = acc_colormap_2(str)
 
 load stan_cmaps
 
-clearvars -except eval(str)
 cm = eval(str);
+
 end
 
