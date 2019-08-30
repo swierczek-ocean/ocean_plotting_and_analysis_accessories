@@ -31,8 +31,8 @@ DIC_Series_vert_t32 = zeros(192,132,395);
 O2_Series_vert_t32 = zeros(192,132,395);
 NO3_Series_vert_t32 = zeros(192,132,395);
 
-THETA_Series_slice_32 = zeros(132,52,13);
-SALT_Series_slice_32 = zeros(132,52,13);
+THETA_Series_slice_32 = zeros(132,52,395);
+SALT_Series_slice_32 = zeros(132,52,395);
 WVEL_Series_slice_32 = zeros(132,52,395);
 UVEL_Series_slice_32 = zeros(132,52,395);
 VVEL_Series_slice_32 = zeros(132,52,395);

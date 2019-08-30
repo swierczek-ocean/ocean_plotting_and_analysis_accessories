@@ -4,6 +4,8 @@
 tfield122 = 1;
 sfield122 = 2;
 wfield122 = 3;
+ufield122 = 3;
+vfield122 = 4;
 tffield122 = 1;
 sffield122 = 2;
 cfield122 = 3;
@@ -13,532 +15,374 @@ mfield122 = 4;
 dfield122 = 1;
 afield122 = 2;
 agfield122 = 9;
+pcfield122 = 2;
+no3field122 = 4;
+o2field122 = 3;
 
-THETA_Series122 = zeros(756,512,13);
-THETA105_Series122 = zeros(756,512,13);
-THETA200_Series122 = zeros(756,512,13);
-THETA300_Series122 = zeros(756,512,13);
-SALT_Series122 = zeros(756,512,13);
-SALT105_Series122 = zeros(756,512,13);
-SALT200_Series122 = zeros(756,512,13);
-SALT300_Series122 = zeros(756,512,13);
-AGE_Series122 = zeros(756,512,13);
-AGE200_Series122 = zeros(756,512,13);
-AGE500_Series122 = zeros(756,512,13);
-AGE1000_Series122 = zeros(756,512,13);
-AGE2000_Series122 = zeros(756,512,13);
-WVEL100_Series122 = zeros(756,512,395);
-WVEL190_Series122 = zeros(756,512,395);
-WVEL290_Series122 = zeros(756,512,395);
-DIC_Series122 = zeros(756,512,13);
-ALK_Series122 = zeros(756,512,13);
-TFLUX_Series122 = zeros(756,512,13);
-SFLUX_Series122 = zeros(756,512,13);
-CFLUX_Series122 = zeros(756,512,13);
-OFLUX_Series122 = zeros(756,512,13);
-ETAN_Series122 = zeros(756,512,395);
-MLD_Series122 = zeros(756,512,395);
+slice_index = 223;
+
+THETA_Series_vert_122 = zeros(756,512,395);
+DIC_Series_vert_122 = zeros(756,512,395);
+O2_Series_vert_122 = zeros(756,512,395);
+NO3_Series_vert_122 = zeros(756,512,395);
+
+THETA_Series_vert_t122 = zeros(756,512,395);
+DIC_Series_vert_t122 = zeros(756,512,395);
+O2_Series_vert_t122 = zeros(756,512,395);
+NO3_Series_vert_t122 = zeros(756,512,395);
+
+THETA_Series_slice_122 = zeros(512,104,395);
+SALT_Series_slice_122 = zeros(512,104,395);
+WVEL_Series_slice_122 = zeros(512,104,395);
+UVEL_Series_slice_122 = zeros(512,104,395);
+VVEL_Series_slice_122 = zeros(512,104,395);
+DIC_Series_slice_122 = zeros(512,104,395);
+ALK_Series_slice_122 = zeros(512,104,395);
+O2_Series_slice_122 = zeros(512,104,395);
+NO3_Series_slice_122 = zeros(512,104,395);
+TFLUX_Series_slice_122 = zeros(512,395);
+SFLUX_Series_slice_122 = zeros(512,395);
+CFLUX_Series_slice_122 = zeros(512,395);
+OFLUX_Series_slice_122 = zeros(512,395);
+ETAN_Series_slice_122 = zeros(512,395);
+MLD_Series_slice_122 = zeros(512,395);
+PCO2_Series_slice_122 = zeros(512,395);
 
 HC = rdmds('../MITgcm/verification/SO12_20190513/run/hFacC');
+DRF_temp = rdmds('../MITgcm/verification/SO12_20190513/run/DRF');
+[mm,nn,pp] = size(HC);
+DRF = zeros(1,1,pp);
+DRF(1,1,:) = DRF_temp;
+clear DRF_temp;
+Volume = zeros(mm,nn,pp);
+
+for ii=1:mm
+    for jj=1:nn
+        Volume(ii,jj,:) = HC(ii,jj,:).*DRF;
+    end
+end
+
+Height = sum(Volume,3);
+
 depth122 = 1;
-str = '../MITgcm/verification/SO12_20190513/diag/';
+str = '../MITgcm/verification/SO12_20190513/diag_slice/';
 
 for ii=1:2
-    char122state = [str,'diag_vel.0000000',num2str(360*ii)];
+    char122state = [str,'diag_state.0000000',num2str(360*ii)];
     temp122state = rdmds(char122state);
-    WVEL100_Series122(:,:,ii) = temp122state(:,:,2,wfield122);
-    WVEL190_Series122(:,:,ii) = temp122state(:,:,3,wfield122);
-    WVEL290_Series122(:,:,ii) = temp122state(:,:,4,wfield122);
+    THETA_Series_vert_t122(:,:,ii) = sum(temp122state(:,:,:,tfield122).*Volume,3);
+    THETA_Series_vert_122(:,:,ii) = THETA_Series_vert_t122(:,:,ii)./Height;
+    THETA_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,tfield122);
+    SALT_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,sfield122);
+    WVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,wfield122);
+    UVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,ufield122);
+    VVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,vfield122);
     clear temp122state
     char122surf = [str,'diag_surf.0000000',num2str(360*ii)];
     temp122surf = rdmds(char122surf); 
-    ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
-    MLD_Series122(:,:,ii) = temp122surf(:,:,mfield122);
+    ETAN_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,efield122); 
+    MLD_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,mfield122);
+    PCO2_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,pcfield122);
     clear temp122surf
+    char122airsea = [str,'diag_airsea.0000000',num2str(360*ii)];
+    temp122airsea = rdmds(char122airsea); 
+    TFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,tffield122);
+    SFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,sffield122);
+    CFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,cfield122);
+    OFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,ofield122);
+    clear temp122airsea
+    char122bgc = [str,'diag_bgc.0000000',num2str(360*ii)];
+    temp122bgc = rdmds(char122bgc); 
+    DIC_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,dfield122);
+    ALK_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,afield122);
+    O2_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,o2field122);
+    NO3_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,no3field122);
+    DIC_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,dfield122).*Volume,3);
+    DIC_Series_vert_122(:,:,ii) = DIC_Series_vert_t122(:,:,ii)./Height;
+    O2_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,o2field122).*Volume,3);
+    O2_Series_vert_122(:,:,ii) = O2_Series_vert_t122(:,:,ii)./Height;
+    NO3_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,no3field122).*Volume,3);
+    NO3_Series_vert_122(:,:,ii) = NO3_Series_vert_t122(:,:,ii)./Height;
+    clear temp122bgc
 end
 
 for ii=3:27
-    char122state = [str,'diag_vel.000000',num2str(360*ii)];
+    char122state = [str,'diag_state.000000',num2str(360*ii)];
     temp122state = rdmds(char122state);
-    WVEL100_Series122(:,:,ii) = temp122state(:,:,2,wfield122);
-    WVEL190_Series122(:,:,ii) = temp122state(:,:,3,wfield122);
-    WVEL290_Series122(:,:,ii) = temp122state(:,:,4,wfield122);
+    THETA_Series_vert_t122(:,:,ii) = sum(temp122state(:,:,:,tfield122).*Volume,3);
+    THETA_Series_vert_122(:,:,ii) = THETA_Series_vert_t122(:,:,ii)./Height;
+    THETA_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,tfield122);
+    SALT_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,sfield122);
+    WVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,wfield122);
+    UVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,ufield122);
+    VVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,vfield122);
     clear temp122state
     char122surf = [str,'diag_surf.000000',num2str(360*ii)];
     temp122surf = rdmds(char122surf); 
-    ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
-    MLD_Series122(:,:,ii) = temp122surf(:,:,mfield122);
+    ETAN_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,efield122); 
+    MLD_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,mfield122);
+    PCO2_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,pcfield122);
     clear temp122surf
+    char122airsea = [str,'diag_airsea.000000',num2str(360*ii)];
+    temp122airsea = rdmds(char122airsea); 
+    TFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,tffield122);
+    SFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,sffield122);
+    CFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,cfield122);
+    OFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,ofield122);
+    clear temp122airsea
+    char122bgc = [str,'diag_bgc.000000',num2str(360*ii)];
+    temp122bgc = rdmds(char122bgc); 
+    DIC_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,dfield122);
+    ALK_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,afield122);
+    O2_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,o2field122);
+    NO3_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,no3field122);
+    DIC_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,dfield122).*Volume,3);
+    DIC_Series_vert_122(:,:,ii) = DIC_Series_vert_t122(:,:,ii)./Height;
+    O2_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,o2field122).*Volume,3);
+    O2_Series_vert_122(:,:,ii) = O2_Series_vert_t122(:,:,ii)./Height;
+    NO3_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,no3field122).*Volume,3);
+    NO3_Series_vert_122(:,:,ii) = NO3_Series_vert_t122(:,:,ii)./Height;
+    clear temp122bgc
 end
 
 for ii=28:277
-    char122state = [str,'diag_vel.00000',num2str(360*ii)];
+    char122state = [str,'diag_state.00000',num2str(360*ii)];
     temp122state = rdmds(char122state);
-    WVEL100_Series122(:,:,ii) = temp122state(:,:,2,wfield122);
-    WVEL190_Series122(:,:,ii) = temp122state(:,:,3,wfield122);
-    WVEL290_Series122(:,:,ii) = temp122state(:,:,4,wfield122);
+    THETA_Series_vert_t122(:,:,ii) = sum(temp122state(:,:,:,tfield122).*Volume,3);
+    THETA_Series_vert_122(:,:,ii) = THETA_Series_vert_t122(:,:,ii)./Height;
+    THETA_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,tfield122);
+    SALT_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,sfield122);
+    WVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,wfield122);
+    UVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,ufield122);
+    VVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,vfield122);
     clear temp122state
     char122surf = [str,'diag_surf.00000',num2str(360*ii)];
     temp122surf = rdmds(char122surf); 
-    ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
-    MLD_Series122(:,:,ii) = temp122surf(:,:,mfield122);
+    ETAN_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,efield122); 
+    MLD_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,mfield122);
+    PCO2_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,pcfield122);
     clear temp122surf
+    char122airsea = [str,'diag_airsea.00000',num2str(360*ii)];
+    temp122airsea = rdmds(char122airsea); 
+    TFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,tffield122);
+    SFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,sffield122);
+    CFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,cfield122);
+    OFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,ofield122);
+    clear temp122airsea
+    char122bgc = [str,'diag_bgc.00000',num2str(360*ii)];
+    temp122bgc = rdmds(char122bgc); 
+    DIC_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,dfield122);
+    ALK_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,afield122);
+    O2_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,o2field122);
+    NO3_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,no3field122);
+    DIC_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,dfield122).*Volume,3);
+    DIC_Series_vert_122(:,:,ii) = DIC_Series_vert_t122(:,:,ii)./Height;
+    O2_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,o2field122).*Volume,3);
+    O2_Series_vert_122(:,:,ii) = O2_Series_vert_t122(:,:,ii)./Height;
+    NO3_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,no3field122).*Volume,3);
+    NO3_Series_vert_122(:,:,ii) = NO3_Series_vert_t122(:,:,ii)./Height;
+    clear temp122bgc
 end
 
 for ii=278:395
-    char122state = [str,'diag_vel.0000',num2str(360*ii)];
+    char122state = [str,'diag_state.0000',num2str(360*ii)];
     temp122state = rdmds(char122state);
-    WVEL100_Series122(:,:,ii) = temp122state(:,:,2,wfield122);
-    WVEL190_Series122(:,:,ii) = temp122state(:,:,3,wfield122);
-    WVEL290_Series122(:,:,ii) = temp122state(:,:,4,wfield122);
+    THETA_Series_vert_t122(:,:,ii) = sum(temp122state(:,:,:,tfield122).*Volume,3);
+    THETA_Series_vert_122(:,:,ii) = THETA_Series_vert_t122(:,:,ii)./Height;
+    THETA_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,tfield122);
+    SALT_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,sfield122);
+    WVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,wfield122);
+    UVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,ufield122);
+    VVEL_Series_slice_122(:,:,ii) = temp122state(slice_index,:,:,vfield122);
     clear temp122state
     char122surf = [str,'diag_surf.0000',num2str(360*ii)];
     temp122surf = rdmds(char122surf); 
-    ETAN_Series122(:,:,ii) = temp122surf(:,:,efield122); 
-    MLD_Series122(:,:,ii) = temp122surf(:,:,mfield122);
+    ETAN_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,efield122); 
+    MLD_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,mfield122);
+    PCO2_Series_slice_122(:,:,ii) = temp122surf(slice_index,:,pcfield122);
     clear temp122surf
-end
-
-for ii=1:9
-    char122state = [str,'diag_state.00000',num2str(10950*ii)];
-    temp122state = rdmds(char122state);
-    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
-    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
-    THETA105_Series122(:,:,ii) = temp122state(:,:,26,tfield122);
-    SALT105_Series122(:,:,ii) = temp122state(:,:,26,sfield122);
-    THETA200_Series122(:,:,ii) = temp122state(:,:,40,tfield122);
-    SALT200_Series122(:,:,ii) = temp122state(:,:,40,sfield122);
-    THETA300_Series122(:,:,ii) = temp122state(:,:,50,tfield122);
-    SALT300_Series122(:,:,ii) = temp122state(:,:,50,sfield122);
-    clear temp122state
-    char122airsea = [str,'diag_airsea.00000',num2str(10950*ii)];
+    char122airsea = [str,'diag_airsea.0000',num2str(360*ii)];
     temp122airsea = rdmds(char122airsea); 
-    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
-    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
-    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
-    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
+    TFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,tffield122);
+    SFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,sffield122);
+    CFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,cfield122);
+    OFLUX_Series_slice_122(:,:,ii) = temp122airsea(slice_index,:,ofield122);
     clear temp122airsea
-    char122bgc = [str,'diag_bgc.00000',num2str(10950*ii)];
+    char122bgc = [str,'diag_bgc.0000',num2str(360*ii)];
     temp122bgc = rdmds(char122bgc); 
-    DIC_Series122(:,:,ii) = temp122bgc(:,:,1,dfield122);
-    ALK_Series122(:,:,ii) = temp122bgc(:,:,1,afield122);
-    AGE_Series122(:,:,ii) = temp122bgc(:,:,depth122,agfield122);
-    AGE200_Series122(:,:,ii) = temp122bgc(:,:,40,agfield122);
-    AGE500_Series122(:,:,ii) = temp122bgc(:,:,60,agfield122);
-    AGE1000_Series122(:,:,ii) = temp122bgc(:,:,72,agfield122);
-    AGE2000_Series122(:,:,ii) = temp122bgc(:,:,84,agfield122);
+    DIC_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,dfield122);
+    ALK_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,afield122);
+    O2_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,o2field122);
+    NO3_Series_slice_122(:,:,ii) = temp122bgc(slice_index,:,:,no3field122);
+    DIC_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,dfield122).*Volume,3);
+    DIC_Series_vert_122(:,:,ii) = DIC_Series_vert_t122(:,:,ii)./Height;
+    O2_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,o2field122).*Volume,3);
+    O2_Series_vert_122(:,:,ii) = O2_Series_vert_t122(:,:,ii)./Height;
+    NO3_Series_vert_t122(:,:,ii) = sum(temp122bgc(:,:,:,no3field122).*Volume,3);
+    NO3_Series_vert_122(:,:,ii) = NO3_Series_vert_t122(:,:,ii)./Height;
     clear temp122bgc
 end
 
-for ii=10:13
-    char122state = [str,'diag_state.0000',num2str(10950*ii)];
-    temp122state = rdmds(char122state);
-    THETA_Series122(:,:,ii) = temp122state(:,:,depth122,tfield122);
-    SALT_Series122(:,:,ii) = temp122state(:,:,depth122,sfield122);
-    THETA105_Series122(:,:,ii) = temp122state(:,:,26,tfield122);
-    SALT105_Series122(:,:,ii) = temp122state(:,:,26,sfield122);
-    THETA200_Series122(:,:,ii) = temp122state(:,:,40,tfield122);
-    SALT200_Series122(:,:,ii) = temp122state(:,:,40,sfield122);
-    THETA300_Series122(:,:,ii) = temp122state(:,:,50,tfield122);
-    SALT300_Series122(:,:,ii) = temp122state(:,:,50,sfield122);
-    clear temp122state
-    char122airsea = [str,'diag_airsea.0000',num2str(10950*ii)];
-    temp122airsea = rdmds(char122airsea); 
-    TFLUX_Series122(:,:,ii) = temp122airsea(:,:,tffield122);
-    SFLUX_Series122(:,:,ii) = temp122airsea(:,:,sffield122);
-    CFLUX_Series122(:,:,ii) = temp122airsea(:,:,cfield122);
-    OFLUX_Series122(:,:,ii) = temp122airsea(:,:,ofield122);
-    clear temp122airsea
-    char122bgc = [str,'diag_bgc.0000',num2str(10950*ii)];
-    temp122bgc = rdmds(char122bgc); 
-    DIC_Series122(:,:,ii) = temp122bgc(:,:,1,dfield122);
-    ALK_Series122(:,:,ii) = temp122bgc(:,:,1,afield122);
-    AGE_Series122(:,:,ii) = temp122bgc(:,:,depth122,agfield122);
-    AGE200_Series122(:,:,ii) = temp122bgc(:,:,40,agfield122);
-    AGE500_Series122(:,:,ii) = temp122bgc(:,:,60,agfield122);
-    AGE1000_Series122(:,:,ii) = temp122bgc(:,:,72,agfield122);
-    AGE2000_Series122(:,:,ii) = temp122bgc(:,:,84,agfield122);
-    clear temp122bgc
-end
 
-THETA_122_DJF_avg = mean(THETA_Series122(:,:,1:3),3);
-SALT_122_DJF_avg = mean(SALT_Series122(:,:,1:3),3);
-THETA105_122_DJF_avg = mean(THETA105_Series122(:,:,1:3),3);
-SALT105_122_DJF_avg = mean(SALT105_Series122(:,:,1:3),3);
-THETA200_122_DJF_avg = mean(THETA200_Series122(:,:,1:3),3);
-SALT200_122_DJF_avg = mean(SALT200_Series122(:,:,1:3),3);
-THETA300_122_DJF_avg = mean(THETA300_Series122(:,:,1:3),3);
-SALT300_122_DJF_avg = mean(SALT300_Series122(:,:,1:3),3);
-AGE_122_DJF_avg = mean(AGE_Series122(:,:,1:3),3);
-AGE200_122_DJF_avg = mean(AGE200_Series122(:,:,1:3),3);
-AGE500_122_DJF_avg = mean(AGE500_Series122(:,:,1:3),3);
-AGE1000_122_DJF_avg = mean(AGE1000_Series122(:,:,1:3),3);
-AGE2000_122_DJF_avg = mean(AGE2000_Series122(:,:,1:3),3);
-WVEL100_122_DJF_avg = mean(WVEL100_Series122(:,:,1:91),3);
-WVEL100_122_DJF_std = std(WVEL100_Series122(:,:,1:91),0,3);
-WVEL190_122_DJF_avg = mean(WVEL190_Series122(:,:,1:91),3);
-WVEL190_122_DJF_std = std(WVEL190_Series122(:,:,1:91),0,3);
-WVEL290_122_DJF_avg = mean(WVEL290_Series122(:,:,1:91),3);
-WVEL290_122_DJF_std = std(WVEL290_Series122(:,:,1:91),0,3);
-TFLUX_122_DJF_avg = mean(TFLUX_Series122(:,:,1:3),3);
-SFLUX_122_DJF_avg = mean(SFLUX_Series122(:,:,1:3),3);
-ETAN_122_DJF_avg = mean(ETAN_Series122(:,:,1:91),3);
-ETAN_122_DJF_std = std(ETAN_Series122(:,:,1:91),0,3);
-CFLUX_122_DJF_avg = mean(CFLUX_Series122(:,:,1:3),3);
-OFLUX_122_DJF_avg = mean(OFLUX_Series122(:,:,1:3),3);
-MLD_122_DJF_avg = mean(MLD_Series122(:,:,1:91),3);
-MLD_122_DJF_std = std(MLD_Series122(:,:,1:91),0,3);
-DIC_122_DJF_avg = mean(DIC_Series122(:,:,1:3),3);
-ALK_122_DJF_avg = mean(ALK_Series122(:,:,1:3),3);
+THETA_122_DJF_slice_avg = mean(THETA_Series_slice_122(:,:,1:91),3);
+SALT_122_DJF_slice_avg = mean(SALT_Series_slice_122(:,:,1:91),3);
+WVEL_122_DJF_slice_avg = mean(WVEL_Series_slice_122(:,:,1:91),3);
+WVEL_122_DJF_slice_std = std(WVEL_Series_slice_122(:,:,1:91),0,3);
+UVEL_122_DJF_slice_avg = mean(UVEL_Series_slice_122(:,:,1:91),3);
+UVEL_122_DJF_slice_std = std(UVEL_Series_slice_122(:,:,1:91),0,3);
+VVEL_122_DJF_slice_avg = mean(VVEL_Series_slice_122(:,:,1:91),3);
+VVEL_122_DJF_slice_std = std(VVEL_Series_slice_122(:,:,1:91),0,3);
+DIC_122_DJF_slice_avg = mean(DIC_Series_slice_122(:,:,1:91),3);
+ALK_122_DJF_slice_avg = mean(ALK_Series_slice_122(:,:,1:91),3);
+O2_122_DJF_slice_avg = mean(O2_Series_slice_122(:,:,1:91),3);
+NO3_122_DJF_slice_avg = mean(NO3_Series_slice_122(:,:,1:91),3);
 
-THETA_122_JFM_avg = mean(THETA_Series122(:,:,2:4),3);
-SALT_122_JFM_avg = mean(SALT_Series122(:,:,2:4),3);
-THETA105_122_JFM_avg = mean(THETA105_Series122(:,:,2:4),3);
-SALT105_122_JFM_avg = mean(SALT105_Series122(:,:,2:4),3);
-THETA200_122_JFM_avg = mean(THETA200_Series122(:,:,2:4),3);
-SALT200_122_JFM_avg = mean(SALT200_Series122(:,:,2:4),3);
-THETA300_122_JFM_avg = mean(THETA300_Series122(:,:,2:4),3);
-SALT300_122_JFM_avg = mean(SALT300_Series122(:,:,2:4),3);
-WVEL100_122_JFM_avg = mean(WVEL100_Series122(:,:,32:122),3);
-WVEL100_122_JFM_std = std(WVEL100_Series122(:,:,32:122),0,3);
-WVEL190_122_JFM_avg = mean(WVEL190_Series122(:,:,32:122),3);
-WVEL190_122_JFM_std = std(WVEL190_Series122(:,:,32:122),0,3);
-WVEL290_122_JFM_avg = mean(WVEL290_Series122(:,:,32:122),3);
-WVEL290_122_JFM_std = std(WVEL290_Series122(:,:,32:122),0,3);
-AGE_122_JFM_avg = mean(AGE_Series122(:,:,2:4),3);
-AGE200_122_JFM_avg = mean(AGE200_Series122(:,:,2:4),3);
-AGE500_122_JFM_avg = mean(AGE500_Series122(:,:,2:4),3);
-AGE1000_122_JFM_avg = mean(AGE1000_Series122(:,:,2:4),3);
-AGE2000_122_JFM_avg = mean(AGE2000_Series122(:,:,2:4),3);
-TFLUX_122_JFM_avg = mean(TFLUX_Series122(:,:,2:4),3);
-SFLUX_122_JFM_avg = mean(SFLUX_Series122(:,:,2:4),3);
-ETAN_122_JFM_avg = mean(ETAN_Series122(:,:,32:122),3);
-ETAN_122_JFM_std = std(ETAN_Series122(:,:,32:122),0,3);
-CFLUX_122_JFM_avg = mean(CFLUX_Series122(:,:,2:4),3);
-OFLUX_122_JFM_avg = mean(OFLUX_Series122(:,:,2:4),3);
-MLD_122_JFM_avg = mean(MLD_Series122(:,:,32:122),3);
-MLD_122_JFM_std = std(MLD_Series122(:,:,32:122),0,3);
-DIC_122_JFM_avg = mean(DIC_Series122(:,:,2:4),3);
-ALK_122_JFM_avg = mean(ALK_Series122(:,:,2:4),3);
+THETA_122_JFM_slice_avg = mean(THETA_Series_slice_122(:,:,122:122),3);
+SALT_122_JFM_slice_avg = mean(SALT_Series_slice_122(:,:,122:122),3);
+WVEL_122_JFM_slice_avg = mean(WVEL_Series_slice_122(:,:,122:122),3);
+WVEL_122_JFM_slice_std = std(WVEL_Series_slice_122(:,:,122:122),0,3);
+UVEL_122_JFM_slice_avg = mean(UVEL_Series_slice_122(:,:,122:122),3);
+UVEL_122_JFM_slice_std = std(UVEL_Series_slice_122(:,:,122:122),0,3);
+VVEL_122_JFM_slice_avg = mean(VVEL_Series_slice_122(:,:,122:122),3);
+VVEL_122_JFM_slice_std = std(VVEL_Series_slice_122(:,:,122:122),0,3);
+DIC_122_JFM_slice_avg = mean(DIC_Series_slice_122(:,:,122:122),3);
+ALK_122_JFM_slice_avg = mean(ALK_Series_slice_122(:,:,122:122),3);
+O2_122_JFM_slice_avg = mean(O2_Series_slice_122(:,:,122:122),3);
+NO3_122_JFM_slice_avg = mean(NO3_Series_slice_122(:,:,122:122),3);
 
-THETA_122_DJFMAM_avg = mean(THETA_Series122(:,:,1:6),3);
-SALT_122_DJFMAM_avg = mean(SALT_Series122(:,:,1:6),3);
-THETA105_122_DJFMAM_avg = mean(THETA105_Series122(:,:,1:6),3);
-SALT105_122_DJFMAM_avg = mean(SALT105_Series122(:,:,1:6),3);
-THETA200_122_DJFMAM_avg = mean(THETA200_Series122(:,:,1:6),3);
-SALT200_122_DJFMAM_avg = mean(SALT200_Series122(:,:,1:6),3);
-THETA300_122_DJFMAM_avg = mean(THETA300_Series122(:,:,1:6),3);
-SALT300_122_DJFMAM_avg = mean(SALT300_Series122(:,:,1:6),3);
-AGE_122_DJFMAM_avg = mean(AGE_Series122(:,:,1:6),3);
-AGE200_122_DJFMAM_avg = mean(AGE200_Series122(:,:,1:6),3);
-AGE500_122_DJFMAM_avg = mean(AGE500_Series122(:,:,1:6),3);
-AGE1000_122_DJFMAM_avg = mean(AGE1000_Series122(:,:,1:6),3);
-AGE2000_122_DJFMAM_avg = mean(AGE2000_Series122(:,:,1:6),3);
-WVEL100_122_DJFMAM_avg = mean(WVEL100_Series122(:,:,1:182),3);
-WVEL100_122_DJFMAM_std = std(WVEL100_Series122(:,:,1:182),0,3);
-WVEL190_122_DJFMAM_avg = mean(WVEL190_Series122(:,:,1:182),3);
-WVEL190_122_DJFMAM_std = std(WVEL190_Series122(:,:,1:182),0,3);
-WVEL290_122_DJFMAM_avg = mean(WVEL290_Series122(:,:,1:182),3);
-WVEL290_122_DJFMAM_std = std(WVEL290_Series122(:,:,1:182),0,3);
-TFLUX_122_DJFMAM_avg = mean(TFLUX_Series122(:,:,1:6),3);
-SFLUX_122_DJFMAM_avg = mean(SFLUX_Series122(:,:,1:6),3);
-ETAN_122_DJFMAM_avg = mean(ETAN_Series122(:,:,1:182),3);
-ETAN_122_DJFMAM_std = std(ETAN_Series122(:,:,1:182),0,3);
-CFLUX_122_DJFMAM_avg = mean(CFLUX_Series122(:,:,1:6),3);
-OFLUX_122_DJFMAM_avg = mean(OFLUX_Series122(:,:,1:6),3);
-MLD_122_DJFMAM_avg = mean(MLD_Series122(:,:,1:182),3);
-MLD_122_DJFMAM_std = std(MLD_Series122(:,:,1:182),0,3);
-DIC_122_DJFMAM_avg = mean(DIC_Series122(:,:,1:6),3);
-ALK_122_DJFMAM_avg = mean(ALK_Series122(:,:,1:6),3);
+THETA_122_DJFMAM_slice_avg = mean(THETA_Series_slice_122(:,:,1:182),3);
+SALT_122_DJFMAM_slice_avg = mean(SALT_Series_slice_122(:,:,1:182),3);
+WVEL_122_DJFMAM_slice_avg = mean(WVEL_Series_slice_122(:,:,1:182),3);
+WVEL_122_DJFMAM_slice_std = std(WVEL_Series_slice_122(:,:,1:182),0,3);
+UVEL_122_DJFMAM_slice_avg = mean(UVEL_Series_slice_122(:,:,1:182),3);
+UVEL_122_DJFMAM_slice_std = std(UVEL_Series_slice_122(:,:,1:182),0,3);
+VVEL_122_DJFMAM_slice_avg = mean(VVEL_Series_slice_122(:,:,1:182),3);
+VVEL_122_DJFMAM_slice_std = std(VVEL_Series_slice_122(:,:,1:182),0,3);
+DIC_122_DJFMAM_slice_avg = mean(DIC_Series_slice_122(:,:,1:182),3);
+ALK_122_DJFMAM_slice_avg = mean(ALK_Series_slice_122(:,:,1:182),3);
+O2_122_DJFMAM_slice_avg = mean(O2_Series_slice_122(:,:,1:182),3);
+NO3_122_DJFMAM_slice_avg = mean(NO3_Series_slice_122(:,:,1:182),3);
 
-THETA_122_JFMAMJ_avg = mean(THETA_Series122(:,:,2:7),3);
-SALT_122_JFMAMJ_avg = mean(SALT_Series122(:,:,2:7),3);
-THETA105_122_JFMAMJ_avg = mean(THETA105_Series122(:,:,2:7),3);
-SALT105_122_JFMAMJ_avg = mean(SALT105_Series122(:,:,2:7),3);
-THETA200_122_JFMAMJ_avg = mean(THETA200_Series122(:,:,2:7),3);
-SALT200_122_JFMAMJ_avg = mean(SALT200_Series122(:,:,2:7),3);
-THETA300_122_JFMAMJ_avg = mean(THETA300_Series122(:,:,2:7),3);
-SALT300_122_JFMAMJ_avg = mean(SALT300_Series122(:,:,2:7),3);
-AGE_122_JFMAMJ_avg = mean(AGE_Series122(:,:,2:7),3);
-AGE200_122_JFMAMJ_avg = mean(AGE200_Series122(:,:,2:7),3);
-AGE500_122_JFMAMJ_avg = mean(AGE500_Series122(:,:,2:7),3);
-AGE1000_122_JFMAMJ_avg = mean(AGE1000_Series122(:,:,2:7),3);
-AGE2000_122_JFMAMJ_avg = mean(AGE2000_Series122(:,:,2:7),3);
-WVEL100_122_JFMAMJ_avg = mean(WVEL100_Series122(:,:,32:213),3);
-WVEL100_122_JFMAMJ_std = std(WVEL100_Series122(:,:,32:213),0,3);
-WVEL190_122_JFMAMJ_avg = mean(WVEL190_Series122(:,:,32:213),3);
-WVEL190_122_JFMAMJ_std = std(WVEL190_Series122(:,:,32:213),0,3);
-WVEL290_122_JFMAMJ_avg = mean(WVEL290_Series122(:,:,32:213),3);
-WVEL290_122_JFMAMJ_std = std(WVEL290_Series122(:,:,32:213),0,3);
-TFLUX_122_JFMAMJ_avg = mean(TFLUX_Series122(:,:,2:7),3);
-SFLUX_122_JFMAMJ_avg = mean(SFLUX_Series122(:,:,2:7),3);
-ETAN_122_JFMAMJ_avg = mean(ETAN_Series122(:,:,32:213),3);
-ETAN_122_JFMAMJ_std = std(ETAN_Series122(:,:,32:213),0,3);
-CFLUX_122_JFMAMJ_avg = mean(CFLUX_Series122(:,:,2:7),3);
-OFLUX_122_JFMAMJ_avg = mean(OFLUX_Series122(:,:,2:7),3);
-MLD_122_JFMAMJ_avg = mean(MLD_Series122(:,:,32:213),3);
-MLD_122_JFMAMJ_std = std(MLD_Series122(:,:,32:213),0,3);
-DIC_122_JFMAMJ_avg = mean(DIC_Series122(:,:,2:7),3);
-ALK_122_JFMAMJ_avg = mean(ALK_Series122(:,:,2:7),3);
+THETA_122_JFMAMJ_slice_avg = mean(THETA_Series_slice_122(:,:,122:213),3);
+SALT_122_JFMAMJ_slice_avg = mean(SALT_Series_slice_122(:,:,122:213),3);
+WVEL_122_JFMAMJ_slice_avg = mean(WVEL_Series_slice_122(:,:,122:213),3);
+WVEL_122_JFMAMJ_slice_std = std(WVEL_Series_slice_122(:,:,122:213),0,3);
+UVEL_122_JFMAMJ_slice_avg = mean(UVEL_Series_slice_122(:,:,122:213),3);
+UVEL_122_JFMAMJ_slice_std = std(UVEL_Series_slice_122(:,:,122:213),0,3);
+VVEL_122_JFMAMJ_slice_avg = mean(VVEL_Series_slice_122(:,:,122:213),3);
+VVEL_122_JFMAMJ_slice_std = std(VVEL_Series_slice_122(:,:,122:213),0,3);
+DIC_122_JFMAMJ_slice_avg = mean(DIC_Series_slice_122(:,:,122:213),3);
+ALK_122_JFMAMJ_slice_avg = mean(ALK_Series_slice_122(:,:,122:213),3);
+O2_122_JFMAMJ_slice_avg = mean(O2_Series_slice_122(:,:,122:213),3);
+NO3_122_JFMAMJ_slice_avg = mean(NO3_Series_slice_122(:,:,122:213),3);
 
-THETA_122_DN_avg = mean(THETA_Series122(:,:,1:12),3);
-SALT_122_DN_avg = mean(SALT_Series122(:,:,1:12),3);
-THETA105_122_DN_avg = mean(THETA105_Series122(:,:,1:12),3);
-SALT105_122_DN_avg = mean(SALT105_Series122(:,:,1:12),3);
-THETA200_122_DN_avg = mean(THETA200_Series122(:,:,1:12),3);
-SALT200_122_DN_avg = mean(SALT200_Series122(:,:,1:12),3);
-THETA300_122_DN_avg = mean(THETA300_Series122(:,:,1:12),3);
-SALT300_122_DN_avg = mean(SALT300_Series122(:,:,1:12),3);
-AGE_122_DN_avg = mean(AGE_Series122(:,:,1:12),3);
-AGE200_122_DN_avg = mean(AGE200_Series122(:,:,1:12),3);
-AGE500_122_DN_avg = mean(AGE500_Series122(:,:,1:12),3);
-AGE1000_122_DN_avg = mean(AGE1000_Series122(:,:,1:12),3);
-AGE2000_122_DN_avg = mean(AGE2000_Series122(:,:,1:12),3);
-WVEL100_122_DN_avg = mean(WVEL100_Series122(:,:,1:364),3);
-WVEL100_122_DN_std = std(WVEL100_Series122(:,:,1:364),0,3);
-WVEL190_122_DN_avg = mean(WVEL190_Series122(:,:,1:364),3);
-WVEL190_122_DN_std = std(WVEL190_Series122(:,:,1:364),0,3);
-WVEL290_122_DN_avg = mean(WVEL290_Series122(:,:,1:364),3);
-WVEL290_122_DN_std = std(WVEL290_Series122(:,:,1:364),0,3);
-TFLUX_122_DN_avg = mean(TFLUX_Series122(:,:,1:12),3);
-SFLUX_122_DN_avg = mean(SFLUX_Series122(:,:,1:12),3);
-ETAN_122_DN_avg = mean(ETAN_Series122(:,:,1:364),3);
-ETAN_122_DN_std = std(ETAN_Series122(:,:,1:364),0,3);
-CFLUX_122_DN_avg = mean(CFLUX_Series122(:,:,1:12),3);
-OFLUX_122_DN_avg = mean(OFLUX_Series122(:,:,1:12),3);
-MLD_122_DN_avg = mean(MLD_Series122(:,:,1:364),3);
-MLD_122_DN_std = std(MLD_Series122(:,:,1:364),0,3);
-DIC_122_DN_avg = mean(DIC_Series122(:,:,1:12),3);
-ALK_122_DN_avg = mean(ALK_Series122(:,:,1:12),3);
+THETA_122_DN_slice_avg = mean(THETA_Series_slice_122(:,:,1:364),3);
+SALT_122_DN_slice_avg = mean(SALT_Series_slice_122(:,:,1:364),3);
+WVEL_122_DN_slice_avg = mean(WVEL_Series_slice_122(:,:,1:364),3);
+WVEL_122_DN_slice_std = std(WVEL_Series_slice_122(:,:,1:364),0,3);
+UVEL_122_DN_slice_avg = mean(UVEL_Series_slice_122(:,:,1:364),3);
+UVEL_122_DN_slice_std = std(UVEL_Series_slice_122(:,:,1:364),0,3);
+VVEL_122_DN_slice_avg = mean(VVEL_Series_slice_122(:,:,1:364),3);
+VVEL_122_DN_slice_std = std(VVEL_Series_slice_122(:,:,1:364),0,3);
+DIC_122_DN_slice_avg = mean(DIC_Series_slice_122(:,:,1:364),3);
+ALK_122_DN_slice_avg = mean(ALK_Series_slice_122(:,:,1:364),3);
+O2_122_DN_slice_avg = mean(O2_Series_slice_122(:,:,1:364),3);
+NO3_122_DN_slice_avg = mean(NO3_Series_slice_122(:,:,1:364),3);
 
-THETA_122_JD_avg = mean(THETA_Series122(:,:,2:13),3);
-SALT_122_JD_avg = mean(SALT_Series122(:,:,2:13),3);
-THETA105_122_JD_avg = mean(THETA105_Series122(:,:,2:13),3);
-SALT105_122_JD_avg = mean(SALT105_Series122(:,:,2:13),3);
-THETA200_122_JD_avg = mean(THETA200_Series122(:,:,2:13),3);
-SALT200_122_JD_avg = mean(SALT200_Series122(:,:,2:13),3);
-THETA300_122_JD_avg = mean(THETA300_Series122(:,:,2:13),3);
-SALT300_122_JD_avg = mean(SALT300_Series122(:,:,2:13),3);
-AGE_122_JD_avg = mean(AGE_Series122(:,:,2:13),3);
-AGE200_122_JD_avg = mean(AGE200_Series122(:,:,2:13),3);
-AGE500_122_JD_avg = mean(AGE500_Series122(:,:,2:13),3);
-AGE1000_122_JD_avg = mean(AGE1000_Series122(:,:,2:13),3);
-AGE2000_122_JD_avg = mean(AGE2000_Series122(:,:,2:13),3);
-WVEL100_122_JD_avg = mean(WVEL100_Series122(:,:,32:395),3);
-WVEL100_122_JD_std = std(WVEL100_Series122(:,:,32:395),0,3);
-WVEL190_122_JD_avg = mean(WVEL190_Series122(:,:,32:395),3);
-WVEL190_122_JD_std = std(WVEL190_Series122(:,:,32:395),0,3);
-WVEL290_122_JD_avg = mean(WVEL290_Series122(:,:,32:395),3);
-WVEL290_122_JD_std = std(WVEL290_Series122(:,:,32:395),0,3);
-TFLUX_122_JD_avg = mean(TFLUX_Series122(:,:,2:13),3);
-SFLUX_122_JD_avg = mean(SFLUX_Series122(:,:,2:13),3);
-ETAN_122_JD_avg = mean(ETAN_Series122(:,:,32:395),3);
-ETAN_122_JD_std = std(ETAN_Series122(:,:,32:395),0,3);
-CFLUX_122_JD_avg = mean(CFLUX_Series122(:,:,2:13),3);
-OFLUX_122_JD_avg = mean(OFLUX_Series122(:,:,2:13),3);
-MLD_122_JD_avg = mean(MLD_Series122(:,:,32:395),3);
-MLD_122_JD_std = std(MLD_Series122(:,:,32:395),0,3);
-DIC_122_JD_avg = mean(DIC_Series122(:,:,2:13),3);
-ALK_122_JD_avg = mean(ALK_Series122(:,:,2:13),3);
+THETA_122_JD_slice_avg = mean(THETA_Series_slice_122(:,:,122:395),3);
+SALT_122_JD_slice_avg = mean(SALT_Series_slice_122(:,:,122:395),3);
+WVEL_122_JD_slice_avg = mean(WVEL_Series_slice_122(:,:,122:395),3);
+WVEL_122_JD_slice_std = std(WVEL_Series_slice_122(:,:,122:395),0,3);
+UVEL_122_JD_slice_avg = mean(UVEL_Series_slice_122(:,:,122:395),3);
+UVEL_122_JD_slice_std = std(UVEL_Series_slice_122(:,:,122:395),0,3);
+VVEL_122_JD_slice_avg = mean(VVEL_Series_slice_122(:,:,122:395),3);
+VVEL_122_JD_slice_std = std(VVEL_Series_slice_122(:,:,122:395),0,3);
+DIC_122_JD_slice_avg = mean(DIC_Series_slice_122(:,:,122:395),3);
+ALK_122_JD_slice_avg = mean(ALK_Series_slice_122(:,:,122:395),3);
+O2_122_JD_slice_avg = mean(O2_Series_slice_122(:,:,122:395),3);
+NO3_122_JD_slice_avg = mean(NO3_Series_slice_122(:,:,122:395),3);
 
-
-[m122,n122] = size(THETA_122_DJF_avg);
+[m122,n122] = size(THETA_122_DJF_slice_avg);
 
 parfor ii=1:m122
     for jj=1:n122
-        if (HC(ii,jj,1)==0)
-            THETA_122_DJF_avg(ii,jj) = 99999999999;
-            SALT_122_DJF_avg(ii,jj) = 99999999999;
-            TFLUX_122_DJF_avg(ii,jj) = 99999999999;
-            SFLUX_122_DJF_avg(ii,jj) = 99999999999;
-            ETAN_122_DJF_avg(ii,jj) = 99999999999;
-            ETAN_122_DJF_std(ii,jj) = 99999999999;
-            CFLUX_122_DJF_avg(ii,jj) = 99999999999;
-            OFLUX_122_DJF_avg(ii,jj) = 99999999999;
-            MLD_122_DJF_avg(ii,jj) = 99999999999;
-            MLD_122_DJF_std(ii,jj) = 99999999999;
-            DIC_122_DJF_avg(ii,jj) = 99999999999;
-            ALK_122_DJF_avg(ii,jj) = 99999999999;
-            THETA_122_JFM_avg(ii,jj) = 99999999999;
-            SALT_122_JFM_avg(ii,jj) = 99999999999;
-            AGE_122_JFM_avg(ii,jj) = 99999999999;
-            TFLUX_122_JFM_avg(ii,jj) = 99999999999;
-            SFLUX_122_JFM_avg(ii,jj) = 99999999999;
-            ETAN_122_JFM_avg(ii,jj) = 99999999999;
-            ETAN_122_JFM_std(ii,jj) = 99999999999;
-            CFLUX_122_JFM_avg(ii,jj) = 99999999999;
-            OFLUX_122_JFM_avg(ii,jj) = 99999999999;
-            MLD_122_JFM_avg(ii,jj) = 99999999999;
-            MLD_122_JFM_std(ii,jj) = 99999999999;
-            DIC_122_JFM_avg(ii,jj) = 99999999999;
-            ALK_122_JFM_avg(ii,jj) = 99999999999;
-            THETA_122_DJFMAM_avg(ii,jj) = 99999999999;
-            SALT_122_DJFMAM_avg(ii,jj) = 99999999999;
-            AGE_122_DJFMAM_avg(ii,jj) = 99999999999;
-            TFLUX_122_DJFMAM_avg(ii,jj) = 99999999999;
-            SFLUX_122_DJFMAM_avg(ii,jj) = 99999999999;
-            ETAN_122_DJFMAM_avg(ii,jj) = 99999999999;
-            ETAN_122_DJFMAM_std(ii,jj) = 99999999999;
-            CFLUX_122_DJFMAM_avg(ii,jj) = 99999999999;
-            OFLUX_122_DJFMAM_avg(ii,jj) = 99999999999;
-            MLD_122_DJFMAM_avg(ii,jj) = 99999999999;
-            MLD_122_DJFMAM_std(ii,jj) = 99999999999;
-            DIC_122_DJFMAM_avg(ii,jj) = 99999999999;
-            ALK_122_DJFMAM_avg(ii,jj) = 99999999999;
-            THETA_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            SALT_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            AGE_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            TFLUX_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            SFLUX_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            ETAN_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            ETAN_122_JFMAMJ_std(ii,jj) = 99999999999;
-            CFLUX_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            OFLUX_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            MLD_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            MLD_122_JFMAMJ_std(ii,jj) = 99999999999;
-            DIC_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            ALK_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            THETA_122_DN_avg(ii,jj) = 99999999999;
-            SALT_122_DN_avg(ii,jj) = 99999999999;
-            AGE_122_DN_avg(ii,jj) = 99999999999;
-            TFLUX_122_DN_avg(ii,jj) = 99999999999;
-            SFLUX_122_DN_avg(ii,jj) = 99999999999;
-            ETAN_122_DN_avg(ii,jj) = 99999999999;
-            ETAN_122_DN_std(ii,jj) = 99999999999;
-            CFLUX_122_DN_avg(ii,jj) = 99999999999;
-            OFLUX_122_DN_avg(ii,jj) = 99999999999;
-            MLD_122_DN_avg(ii,jj) = 99999999999;
-            MLD_122_DN_std(ii,jj) = 99999999999;
-            DIC_122_DN_avg(ii,jj) = 99999999999;
-            ALK_122_DN_avg(ii,jj) = 99999999999;
-            THETA_122_JD_avg(ii,jj) = 99999999999;
-            SALT_122_JD_avg(ii,jj) = 99999999999;
-            AGE_122_JD_avg(ii,jj) = 99999999999;
-            TFLUX_122_JD_avg(ii,jj) = 99999999999;
-            SFLUX_122_JD_avg(ii,jj) = 99999999999;
-            ETAN_122_JD_avg(ii,jj) = 99999999999;
-            ETAN_122_JD_std(ii,jj) = 99999999999;
-            CFLUX_122_JD_avg(ii,jj) = 99999999999;
-            OFLUX_122_JD_avg(ii,jj) = 99999999999;
-            MLD_122_JD_avg(ii,jj) = 99999999999;
-            MLD_122_JD_std(ii,jj) = 99999999999;
-            DIC_122_JD_avg(ii,jj) = 99999999999;
-            ALK_122_JD_avg(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,26)==0)
-            THETA105_122_DJF_avg(ii,jj) = 99999999999;
-            SALT105_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL100_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL100_122_DJF_std(ii,jj) = 99999999999;
-            THETA105_122_JFM_avg(ii,jj) = 99999999999;
-            SALT105_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL100_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL100_122_JFM_std(ii,jj) = 99999999999;
-            THETA105_122_DJFMAM_avg(ii,jj) = 99999999999;
-            SALT105_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL100_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL100_122_DJFMAM_std(ii,jj) = 99999999999;
-            THETA105_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            SALT105_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL100_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL100_122_JFMAMJ_std(ii,jj) = 99999999999;
-            THETA105_122_DN_avg(ii,jj) = 99999999999;
-            SALT105_122_DN_avg(ii,jj) = 99999999999;
-            WVEL100_122_DN_avg(ii,jj) = 99999999999;
-            WVEL100_122_DN_std(ii,jj) = 99999999999;
-            THETA105_122_JD_avg(ii,jj) = 99999999999;
-            SALT105_122_JD_avg(ii,jj) = 99999999999;
-            WVEL100_122_JD_avg(ii,jj) = 99999999999;
-            WVEL100_122_JD_std(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,40)==0)
-            THETA200_122_DJF_avg(ii,jj) = 99999999999;
-            SALT200_122_DJF_avg(ii,jj) = 99999999999;
-            AGE200_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL190_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL190_122_DJF_std(ii,jj) = 99999999999;
-            THETA200_122_JFM_avg(ii,jj) = 99999999999;
-            SALT200_122_JFM_avg(ii,jj) = 99999999999;
-            AGE200_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL190_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL190_122_JFM_std(ii,jj) = 99999999999;
-            THETA200_122_DJFMAM_avg(ii,jj) = 99999999999;
-            SALT200_122_DJFMAM_avg(ii,jj) = 99999999999;
-            AGE200_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL190_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL190_122_DJFMAM_std(ii,jj) = 99999999999;
-            THETA200_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            SALT200_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            AGE200_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL190_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL190_122_JFMAMJ_std(ii,jj) = 99999999999;
-            THETA200_122_DN_avg(ii,jj) = 99999999999;
-            SALT200_122_DN_avg(ii,jj) = 99999999999;
-            AGE200_122_DN_avg(ii,jj) = 99999999999;
-            WVEL190_122_DN_avg(ii,jj) = 99999999999;
-            WVEL190_122_DN_std(ii,jj) = 99999999999;
-            THETA200_122_JD_avg(ii,jj) = 99999999999;
-            SALT200_122_JD_avg(ii,jj) = 99999999999;
-            AGE200_122_JD_avg(ii,jj) = 99999999999;
-            WVEL190_122_JD_avg(ii,jj) = 99999999999;
-            WVEL190_122_JD_std(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,50)==0)
-            THETA300_122_DJF_avg(ii,jj) = 99999999999;
-            SALT300_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL290_122_DJF_avg(ii,jj) = 99999999999;
-            WVEL290_122_DJF_std(ii,jj) = 99999999999;
-            THETA300_122_JFM_avg(ii,jj) = 99999999999;
-            SALT300_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL290_122_JFM_avg(ii,jj) = 99999999999;
-            WVEL290_122_JFM_std(ii,jj) = 99999999999;
-            THETA300_122_DJFMAM_avg(ii,jj) = 99999999999;
-            SALT300_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL290_122_DJFMAM_avg(ii,jj) = 99999999999;
-            WVEL290_122_DJFMAM_std(ii,jj) = 99999999999;
-            THETA300_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            SALT300_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL290_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            WVEL290_122_JFMAMJ_std(ii,jj) = 99999999999;
-            THETA300_122_DN_avg(ii,jj) = 99999999999;
-            SALT300_122_DN_avg(ii,jj) = 99999999999;
-            WVEL290_122_DN_avg(ii,jj) = 99999999999;
-            WVEL290_122_DN_std(ii,jj) = 99999999999;
-            THETA300_122_JD_avg(ii,jj) = 99999999999;
-            SALT300_122_JD_avg(ii,jj) = 99999999999;
-            WVEL290_122_JD_avg(ii,jj) = 99999999999;
-            WVEL290_122_JD_std(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,60)==0)
-            AGE500_122_DJF_avg(ii,jj) = 99999999999;
-            AGE500_122_JFM_avg(ii,jj) = 99999999999;
-            AGE500_122_DJFMAM_avg(ii,jj) = 99999999999;
-            AGE500_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            AGE500_122_DN_avg(ii,jj) = 99999999999;
-            AGE500_122_JD_avg(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,72)==0)
-            AGE1000_122_DJF_avg(ii,jj) = 99999999999;
-            AGE1000_122_JFM_avg(ii,jj) = 99999999999;
-            AGE1000_122_DJFMAM_avg(ii,jj) = 99999999999;
-            AGE1000_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            AGE1000_122_DN_avg(ii,jj) = 99999999999;
-            AGE1000_122_JD_avg(ii,jj) = 99999999999;
-        end
-        if (HC(ii,jj,84)==0)
-            AGE2000_122_DJF_avg(ii,jj) = 99999999999;
-            AGE2000_122_JFM_avg(ii,jj) = 99999999999;
-            AGE2000_122_DJFMAM_avg(ii,jj) = 99999999999;
-            AGE2000_122_JFMAMJ_avg(ii,jj) = 99999999999;
-            AGE2000_122_DN_avg(ii,jj) = 99999999999;
-            AGE2000_122_JD_avg(ii,jj) = 99999999999;
+        if (HC(slice_index,ii,jj)==0)
+            THETA_Series_slice_122(ii,jj,:) = 99999999999;
+            SALT_Series_slice_122(ii,jj,:) = 99999999999;
+            WVEL_Series_slice_122(ii,jj,:) = 99999999999;
+            UVEL_Series_slice_122(ii,jj,:) = 99999999999;
+            VVEL_Series_slice_122(ii,jj,:) = 99999999999;
+            DIC_Series_slice_122(ii,jj,:) = 99999999999;
+            ALK_Series_slice_122(ii,jj,:) = 99999999999;
+            O2_Series_slice_122(ii,jj,:) = 99999999999;
+            NO3_Series_slice_122(ii,jj,:) = 99999999999;
+            
+            THETA_122_DJF_slice_avg(ii,jj) = 99999999999;
+            SALT_122_DJF_slice_avg(ii,jj) = 99999999999;
+            DIC_122_DJF_slice_avg(ii,jj) = 99999999999;
+            ALK_122_DJF_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
+            O2_122_DJF_slice_avg(ii,jj) = 99999999999;
+            NO3_122_DJF_slice_avg(ii,jj) = 99999999999;
+            
+            THETA_122_JFM_slice_avg(ii,jj) = 99999999999;
+            SALT_122_JFM_slice_avg(ii,jj) = 99999999999;
+            DIC_122_JFM_slice_avg(ii,jj) = 99999999999;
+            ALK_122_JFM_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
+            O2_122_JFM_slice_avg(ii,jj) = 99999999999;
+            NO3_122_JFM_slice_avg(ii,jj) = 99999999999;
+            
+            THETA_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            SALT_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            DIC_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            ALK_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            O2_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            NO3_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            
+            THETA_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            SALT_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            DIC_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            ALK_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            O2_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            NO3_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            
+            THETA_122_DN_slice_avg(ii,jj) = 99999999999;
+            SALT_122_DN_slice_avg(ii,jj) = 99999999999;
+            DIC_122_DN_slice_avg(ii,jj) = 99999999999;
+            ALK_122_DN_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_DN_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_DN_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_DN_slice_avg(ii,jj) = 99999999999;
+            O2_122_DN_slice_avg(ii,jj) = 99999999999;
+            NO3_122_DN_slice_avg(ii,jj) = 99999999999;
+            
+            THETA_122_JD_slice_avg(ii,jj) = 99999999999;
+            SALT_122_JD_slice_avg(ii,jj) = 99999999999;
+            DIC_122_JD_slice_avg(ii,jj) = 99999999999;
+            ALK_122_JD_slice_avg(ii,jj) = 99999999999;
+            WVEL_122_JD_slice_avg(ii,jj) = 99999999999;
+            VVEL_122_JD_slice_avg(ii,jj) = 99999999999;
+            UVEL_122_JD_slice_avg(ii,jj) = 99999999999;
+            O2_122_JD_slice_avg(ii,jj) = 99999999999;
+            NO3_122_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
 
 
-clear char122* temp122* *Series122 n122 m122 *field122 ii
-save AB122_output
+clear char122* temp122* n122 m122 *field122 ii jj
+save AB122_output_slice_vert
 
 fprintf('finished 122 \n')
 
