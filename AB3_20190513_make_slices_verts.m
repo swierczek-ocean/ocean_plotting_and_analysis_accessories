@@ -80,9 +80,9 @@ for ii=1:2
     clear temp32state
     char32surf = [str,'diag_surf.00000000',num2str(48*ii)];
     temp32surf = rdmds(char32surf); 
-    ETAN_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,efield32); 
-    MLD_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,mfield32);
-    PCO2_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,pcfield32);
+    ETAN_Series_slice_32(:,ii) = temp32surf(slice_index,:,efield32); 
+    MLD_Series_slice_32(:,ii) = temp32surf(slice_index,:,mfield32);
+    PCO2_Series_slice_32(:,ii) = temp32surf(slice_index,:,pcfield32);
     clear temp32surf
     char32airsea = [str,'diag_airsea.00000000',num2str(48*ii)];
     temp32airsea = rdmds(char32airsea); 
@@ -119,9 +119,9 @@ for ii=3:20
     clear temp32state
     char32surf = [str,'diag_surf.0000000',num2str(48*ii)];
     temp32surf = rdmds(char32surf); 
-    ETAN_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,efield32); 
-    MLD_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,mfield32);
-    PCO2_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,pcfield32);
+    ETAN_Series_slice_32(:,ii) = temp32surf(slice_index,:,efield32); 
+    MLD_Series_slice_32(:,ii) = temp32surf(slice_index,:,mfield32);
+    PCO2_Series_slice_32(:,ii) = temp32surf(slice_index,:,pcfield32);
     clear temp32surf
     char32airsea = [str,'diag_airsea.0000000',num2str(48*ii)];
     temp32airsea = rdmds(char32airsea); 
@@ -158,9 +158,9 @@ for ii=21:208
     clear temp32state
     char32surf = [str,'diag_surf.000000',num2str(48*ii)];
     temp32surf = rdmds(char32surf); 
-    ETAN_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,efield32); 
-    MLD_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,mfield32);
-    PCO2_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,pcfield32);
+    ETAN_Series_slice_32(:,ii) = temp32surf(slice_index,:,efield32); 
+    MLD_Series_slice_32(:,ii) = temp32surf(slice_index,:,mfield32);
+    PCO2_Series_slice_32(:,ii) = temp32surf(slice_index,:,pcfield32);
     clear temp32surf
     char32airsea = [str,'diag_airsea.000000',num2str(48*ii)];
     temp32airsea = rdmds(char32airsea); 
@@ -197,9 +197,9 @@ for ii=209:395
     clear temp32state
     char32surf = [str,'diag_surf.00000',num2str(48*ii)];
     temp32surf = rdmds(char32surf); 
-    ETAN_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,efield32); 
-    MLD_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,mfield32);
-    PCO2_Series_slice_32(:,:,ii) = temp32surf(slice_index,:,pcfield32);
+    ETAN_Series_slice_32(:,ii) = temp32surf(slice_index,:,efield32); 
+    MLD_Series_slice_32(:,ii) = temp32surf(slice_index,:,mfield32);
+    PCO2_Series_slice_32(:,ii) = temp32surf(slice_index,:,pcfield32);
     clear temp32surf
     char32airsea = [str,'diag_airsea.00000',num2str(48*ii)];
     temp32airsea = rdmds(char32airsea); 

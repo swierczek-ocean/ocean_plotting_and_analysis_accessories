@@ -80,9 +80,9 @@ for ii=1:2
     clear temp124state
     char124surf = [str,'diag_surf.0000000',num2str(360*ii)];
     temp124surf = rdmds(char124surf); 
-    ETAN_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,efield124); 
-    MLD_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,mfield124);
-    PCO2_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,pcfield124);
+    ETAN_Series_slice_124(:,ii) = temp124surf(slice_index,:,efield124); 
+    MLD_Series_slice_124(:,ii) = temp124surf(slice_index,:,mfield124);
+    PCO2_Series_slice_124(:,ii) = temp124surf(slice_index,:,pcfield124);
     clear temp124surf
     char124airsea = [str,'diag_airsea.0000000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
@@ -119,9 +119,9 @@ for ii=3:27
     clear temp124state
     char124surf = [str,'diag_surf.000000',num2str(360*ii)];
     temp124surf = rdmds(char124surf); 
-    ETAN_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,efield124); 
-    MLD_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,mfield124);
-    PCO2_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,pcfield124);
+    ETAN_Series_slice_124(:,ii) = temp124surf(slice_index,:,efield124); 
+    MLD_Series_slice_124(:,ii) = temp124surf(slice_index,:,mfield124);
+    PCO2_Series_slice_124(:,ii) = temp124surf(slice_index,:,pcfield124);
     clear temp124surf
     char124airsea = [str,'diag_airsea.000000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
@@ -158,9 +158,9 @@ for ii=28:213
     clear temp124state
     char124surf = [str,'diag_surf.00000',num2str(360*ii)];
     temp124surf = rdmds(char124surf); 
-    ETAN_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,efield124); 
-    MLD_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,mfield124);
-    PCO2_Series_slice_124(:,:,ii) = temp124surf(slice_index,:,pcfield124);
+    ETAN_Series_slice_124(:,ii) = temp124surf(slice_index,:,efield124); 
+    MLD_Series_slice_124(:,ii) = temp124surf(slice_index,:,mfield124);
+    PCO2_Series_slice_124(:,ii) = temp124surf(slice_index,:,pcfield124);
     clear temp124surf
     char124airsea = [str,'diag_airsea.00000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
