@@ -31,6 +31,11 @@ DIC_Series_vert_t64 = zeros(384,260,213);
 O2_Series_vert_t64 = zeros(384,260,213);
 NO3_Series_vert_t64 = zeros(384,260,213);
 
+THETA_Series_vert100_t64 = zeros(384,260,213);
+DIC_Series_vert100_t64 = zeros(384,260,213);
+O2_Series_vert100_t64 = zeros(384,260,213);
+NO3_Series_vert100_t64 = zeros(384,260,213);
+
 THETA_Series_slice_64 = zeros(260,52,213);
 SALT_Series_slice_64 = zeros(260,52,213);
 WVEL_Series_slice_64 = zeros(260,52,213);
@@ -71,6 +76,7 @@ for ii=1:1
     char64state = [str,'diag_state.00000000',num2str(72*ii)];
     temp64state = rdmds(char64state);
     THETA_Series_vert_t64(:,:,ii) = sum(temp64state(:,:,:,tfield64).*Volume,3);
+    THETA_Series_vert100_t64(:,:,ii) = sum(temp64state(:,:,1:10,tfield64).*Volume(:,:,1:10),3);
     THETA_Series_vert_64(:,:,ii) = THETA_Series_vert_t64(:,:,ii)./Height;
     THETA_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,tfield64);
     SALT_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,sfield64);
@@ -98,10 +104,13 @@ for ii=1:1
     O2_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,o2field64);
     NO3_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,no3field64);
     DIC_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,dfield64).*Volume,3);
+    DIC_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,dfield64).*Volume(:,:,1:10),3);
     DIC_Series_vert_64(:,:,ii) = DIC_Series_vert_t64(:,:,ii)./Height;
     O2_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,o2field64).*Volume,3);
+    O2_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,o2field64).*Volume(:,:,1:10),3);
     O2_Series_vert_64(:,:,ii) = O2_Series_vert_t64(:,:,ii)./Height;
     NO3_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,no3field64).*Volume,3);
+    NO3_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,no3field64).*Volume(:,:,1:10),3);
     NO3_Series_vert_64(:,:,ii) = NO3_Series_vert_t64(:,:,ii)./Height;
     clear temp64bgc
 end
@@ -110,6 +119,7 @@ for ii=2:13
     char64state = [str,'diag_state.0000000',num2str(72*ii)];
     temp64state = rdmds(char64state);
     THETA_Series_vert_t64(:,:,ii) = sum(temp64state(:,:,:,tfield64).*Volume,3);
+    THETA_Series_vert100_t64(:,:,ii) = sum(temp64state(:,:,1:10,tfield64).*Volume(:,:,1:10),3);
     THETA_Series_vert_64(:,:,ii) = THETA_Series_vert_t64(:,:,ii)./Height;
     THETA_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,tfield64);
     SALT_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,sfield64);
@@ -137,10 +147,13 @@ for ii=2:13
     O2_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,o2field64);
     NO3_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,no3field64);
     DIC_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,dfield64).*Volume,3);
+    DIC_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,dfield64).*Volume(:,:,1:10),3);
     DIC_Series_vert_64(:,:,ii) = DIC_Series_vert_t64(:,:,ii)./Height;
     O2_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,o2field64).*Volume,3);
+    O2_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,o2field64).*Volume(:,:,1:10),3);
     O2_Series_vert_64(:,:,ii) = O2_Series_vert_t64(:,:,ii)./Height;
     NO3_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,no3field64).*Volume,3);
+    NO3_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,no3field64).*Volume(:,:,1:10),3);
     NO3_Series_vert_64(:,:,ii) = NO3_Series_vert_t64(:,:,ii)./Height;
     clear temp64bgc
 end
@@ -149,6 +162,7 @@ for ii=14:138
     char64state = [str,'diag_state.000000',num2str(72*ii)];
     temp64state = rdmds(char64state);
     THETA_Series_vert_t64(:,:,ii) = sum(temp64state(:,:,:,tfield64).*Volume,3);
+    THETA_Series_vert100_t64(:,:,ii) = sum(temp64state(:,:,1:10,tfield64).*Volume(:,:,1:10),3);
     THETA_Series_vert_64(:,:,ii) = THETA_Series_vert_t64(:,:,ii)./Height;
     THETA_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,tfield64);
     SALT_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,sfield64);
@@ -176,10 +190,13 @@ for ii=14:138
     O2_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,o2field64);
     NO3_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,no3field64);
     DIC_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,dfield64).*Volume,3);
+    DIC_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,dfield64).*Volume(:,:,1:10),3);
     DIC_Series_vert_64(:,:,ii) = DIC_Series_vert_t64(:,:,ii)./Height;
     O2_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,o2field64).*Volume,3);
+    O2_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,o2field64).*Volume(:,:,1:10),3);
     O2_Series_vert_64(:,:,ii) = O2_Series_vert_t64(:,:,ii)./Height;
     NO3_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,no3field64).*Volume,3);
+    NO3_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,no3field64).*Volume(:,:,1:10),3);
     NO3_Series_vert_64(:,:,ii) = NO3_Series_vert_t64(:,:,ii)./Height;
     clear temp64bgc
 end
@@ -188,6 +205,7 @@ for ii=139:213
     char64state = [str,'diag_state.00000',num2str(72*ii)];
     temp64state = rdmds(char64state);
     THETA_Series_vert_t64(:,:,ii) = sum(temp64state(:,:,:,tfield64).*Volume,3);
+    THETA_Series_vert100_t64(:,:,ii) = sum(temp64state(:,:,1:10,tfield64).*Volume(:,:,1:10),3);
     THETA_Series_vert_64(:,:,ii) = THETA_Series_vert_t64(:,:,ii)./Height;
     THETA_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,tfield64);
     SALT_Series_slice_64(:,:,ii) = temp64state(slice_index,:,:,sfield64);
@@ -215,12 +233,46 @@ for ii=139:213
     O2_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,o2field64);
     NO3_Series_slice_64(:,:,ii) = temp64bgc(slice_index,:,:,no3field64);
     DIC_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,dfield64).*Volume,3);
+    DIC_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,dfield64).*Volume(:,:,1:10),3);
     DIC_Series_vert_64(:,:,ii) = DIC_Series_vert_t64(:,:,ii)./Height;
     O2_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,o2field64).*Volume,3);
+    O2_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,o2field64).*Volume(:,:,1:10),3);
     O2_Series_vert_64(:,:,ii) = O2_Series_vert_t64(:,:,ii)./Height;
     NO3_Series_vert_t64(:,:,ii) = sum(temp64bgc(:,:,:,no3field64).*Volume,3);
+    NO3_Series_vert100_t64(:,:,ii) = sum(temp64bgc(:,:,1:10,no3field64).*Volume(:,:,1:10),3);
     NO3_Series_vert_64(:,:,ii) = NO3_Series_vert_t64(:,:,ii)./Height;
     clear temp64bgc
+end
+
+for ii=1:260
+    if (HC(slice_index,ii,1)==0)
+        ETAN_Series_slice_64(ii,:) = NaN;
+        MLD_Series_slice_64(ii,:) = NaN;
+        PCO2_Series_slice_64(ii,:) = NaN;
+        TFLUX_Series_slice_64(ii,:) = NaN;
+        OFLUX_Series_slice_64(ii,:) = NaN;
+        CFLUX_Series_slice_64(ii,:) = NaN;
+        SFLUX_Series_slice_64(ii,:) = NaN;
+    end
+end
+
+parfor ii=1:384
+    for jj=1:260
+        if (HC(ii,jj,1)==0)
+            THETA_Series_vert_64(ii,jj,:) = 99999999999;
+            THETA_Series_vert_t64(ii,jj,:) = 99999999999;
+            THETA_Series_vert100_t64(ii,jj,:) = 99999999999;
+            DIC_Series_vert_64(ii,jj,:) = 99999999999;
+            DIC_Series_vert_t64(ii,jj,:) = 99999999999;
+            DIC_Series_vert100_t64(ii,jj,:) = 99999999999;
+            O2_Series_vert_64(ii,jj,:) = 99999999999;
+            O2_Series_vert_t64(ii,jj,:) = 99999999999;
+            O2_Series_vert100_t64(ii,jj,:) = 99999999999;
+            NO3_Series_vert_64(ii,jj,:) = 99999999999;
+            NO3_Series_vert_t64(ii,jj,:) = 99999999999;
+            NO3_Series_vert100_t64(ii,jj,:) = 99999999999;
+        end
+    end
 end
 
 
@@ -236,19 +288,57 @@ DIC_64_JJA_slice_avg = mean(DIC_Series_slice_64(:,:,1:91),3);
 ALK_64_JJA_slice_avg = mean(ALK_Series_slice_64(:,:,1:91),3);
 O2_64_JJA_slice_avg = mean(O2_Series_slice_64(:,:,1:91),3);
 NO3_64_JJA_slice_avg = mean(NO3_Series_slice_64(:,:,1:91),3);
+ETAN_64_JJA_slice_avg = mean(ETAN_Series_slice_64(:,1:91),3);
+MLD_64_JJA_slice_avg = mean(MLD_Series_slice_64(:,1:91),3);
+PCO2_64_JJA_slice_avg = mean(PCO2_Series_slice_64(:,1:91),3);
+TFLUX_64_JJA_slice_avg = mean(TFLUX_Series_slice_64(:,1:91),3);
+SFLUX_64_JJA_slice_avg = mean(SFLUX_Series_slice_64(:,1:91),3);
+CFLUX_64_JJA_slice_avg = mean(CFLUX_Series_slice_64(:,1:91),3);
+OFLUX_64_JJA_slice_avg = mean(OFLUX_Series_slice_64(:,1:91),3);
+THETA_64_JJA_vert_avg = mean(THETA_Series_vert_64(:,:,1:91),3);
+THETA_64_JJA_tvert_avg = mean(THETA_Series_vert_t64(:,:,1:91),3);
+THETA_64_JJA_vert100_avg = mean(THETA_Series_vert100_t64(:,:,1:91),3);
+DIC_64_JJA_vert_avg = mean(DIC_Series_vert_64(:,:,1:91),3);
+DIC_64_JJA_tvert_avg = mean(DIC_Series_vert_t64(:,:,1:91),3);
+DIC_64_JJA_vert100_avg = mean(DIC_Series_vert100_t64(:,:,1:91),3);
+O2_64_JJA_vert_avg = mean(O2_Series_vert_64(:,:,1:91),3);
+O2_64_JJA_tvert_avg = mean(O2_Series_vert_t64(:,:,1:91),3);
+O2_64_JJA_vert100_avg = mean(O2_Series_vert100_t64(:,:,1:91),3);
+NO3_64_JJA_vert_avg = mean(NO3_Series_vert_64(:,:,1:91),3);
+NO3_64_JJA_tvert_avg = mean(NO3_Series_vert_t64(:,:,1:91),3);
+NO3_64_JJA_vert100_avg = mean(NO3_Series_vert100_t64(:,:,1:91),3);
 
-THETA_64_JAS_slice_avg = mean(THETA_Series_slice_64(:,:,64:122),3);
-SALT_64_JAS_slice_avg = mean(SALT_Series_slice_64(:,:,64:122),3);
-WVEL_64_JAS_slice_avg = mean(WVEL_Series_slice_64(:,:,64:122),3);
-WVEL_64_JAS_slice_std = std(WVEL_Series_slice_64(:,:,64:122),0,3);
-UVEL_64_JAS_slice_avg = mean(UVEL_Series_slice_64(:,:,64:122),3);
-UVEL_64_JAS_slice_std = std(UVEL_Series_slice_64(:,:,64:122),0,3);
-VVEL_64_JAS_slice_avg = mean(VVEL_Series_slice_64(:,:,64:122),3);
-VVEL_64_JAS_slice_std = std(VVEL_Series_slice_64(:,:,64:122),0,3);
-DIC_64_JAS_slice_avg = mean(DIC_Series_slice_64(:,:,64:122),3);
-ALK_64_JAS_slice_avg = mean(ALK_Series_slice_64(:,:,64:122),3);
-O2_64_JAS_slice_avg = mean(O2_Series_slice_64(:,:,64:122),3);
-NO3_64_JAS_slice_avg = mean(NO3_Series_slice_64(:,:,64:122),3);
+THETA_64_JAS_slice_avg = mean(THETA_Series_slice_64(:,:,32:122),3);
+SALT_64_JAS_slice_avg = mean(SALT_Series_slice_64(:,:,32:122),3);
+WVEL_64_JAS_slice_avg = mean(WVEL_Series_slice_64(:,:,32:122),3);
+WVEL_64_JAS_slice_std = std(WVEL_Series_slice_64(:,:,32:122),0,3);
+UVEL_64_JAS_slice_avg = mean(UVEL_Series_slice_64(:,:,32:122),3);
+UVEL_64_JAS_slice_std = std(UVEL_Series_slice_64(:,:,32:122),0,3);
+VVEL_64_JAS_slice_avg = mean(VVEL_Series_slice_64(:,:,32:122),3);
+VVEL_64_JAS_slice_std = std(VVEL_Series_slice_64(:,:,32:122),0,3);
+DIC_64_JAS_slice_avg = mean(DIC_Series_slice_64(:,:,32:122),3);
+ALK_64_JAS_slice_avg = mean(ALK_Series_slice_64(:,:,32:122),3);
+O2_64_JAS_slice_avg = mean(O2_Series_slice_64(:,:,32:122),3);
+NO3_64_JAS_slice_avg = mean(NO3_Series_slice_64(:,:,32:122),3);
+ETAN_64_JAS_slice_avg = mean(ETAN_Series_slice_64(:,32:122),3);
+MLD_64_JAS_slice_avg = mean(MLD_Series_slice_64(:,32:122),3);
+PCO2_64_JAS_slice_avg = mean(PCO2_Series_slice_64(:,32:122),3);
+TFLUX_64_JAS_slice_avg = mean(TFLUX_Series_slice_64(:,32:122),3);
+SFLUX_64_JAS_slice_avg = mean(SFLUX_Series_slice_64(:,32:122),3);
+CFLUX_64_JAS_slice_avg = mean(CFLUX_Series_slice_64(:,32:122),3);
+OFLUX_64_JAS_slice_avg = mean(OFLUX_Series_slice_64(:,32:122),3);
+THETA_64_JAS_vert_avg = mean(THETA_Series_vert_64(:,:,32:122),3);
+THETA_64_JAS_tvert_avg = mean(THETA_Series_vert_t64(:,:,32:122),3);
+THETA_64_JAS_vert100_avg = mean(THETA_Series_vert100_t64(:,:,32:122),3);
+DIC_64_JAS_vert_avg = mean(DIC_Series_vert_64(:,:,32:122),3);
+DIC_64_JAS_tvert_avg = mean(DIC_Series_vert_t64(:,:,32:122),3);
+DIC_64_JAS_vert100_avg = mean(DIC_Series_vert100_t64(:,:,32:122),3);
+O2_64_JAS_vert_avg = mean(O2_Series_vert_64(:,:,32:122),3);
+O2_64_JAS_tvert_avg = mean(O2_Series_vert_t64(:,:,32:122),3);
+O2_64_JAS_vert100_avg = mean(O2_Series_vert100_t64(:,:,32:122),3);
+NO3_64_JAS_vert_avg = mean(NO3_Series_vert_64(:,:,32:122),3);
+NO3_64_JAS_tvert_avg = mean(NO3_Series_vert_t64(:,:,32:122),3);
+NO3_64_JAS_vert100_avg = mean(NO3_Series_vert100_t64(:,:,32:122),3); 
 
 THETA_64_JJASON_slice_avg = mean(THETA_Series_slice_64(:,:,1:182),3);
 SALT_64_JJASON_slice_avg = mean(SALT_Series_slice_64(:,:,1:182),3);
@@ -262,19 +352,57 @@ DIC_64_JJASON_slice_avg = mean(DIC_Series_slice_64(:,:,1:182),3);
 ALK_64_JJASON_slice_avg = mean(ALK_Series_slice_64(:,:,1:182),3);
 O2_64_JJASON_slice_avg = mean(O2_Series_slice_64(:,:,1:182),3);
 NO3_64_JJASON_slice_avg = mean(NO3_Series_slice_64(:,:,1:182),3);
+ETAN_64_JJASON_slice_avg = mean(ETAN_Series_slice_64(:,1:182),3);
+MLD_64_JJASON_slice_avg = mean(MLD_Series_slice_64(:,1:182),3);
+PCO2_64_JJASON_slice_avg = mean(PCO2_Series_slice_64(:,1:182),3);
+TFLUX_64_JJASON_slice_avg = mean(TFLUX_Series_slice_64(:,1:182),3);
+SFLUX_64_JJASON_slice_avg = mean(SFLUX_Series_slice_64(:,1:182),3);
+CFLUX_64_JJASON_slice_avg = mean(CFLUX_Series_slice_64(:,1:182),3);
+OFLUX_64_JJASON_slice_avg = mean(OFLUX_Series_slice_64(:,1:182),3);
+THETA_64_JJASON_vert_avg = mean(THETA_Series_vert_64(:,:,1:182),3);
+THETA_64_JJASON_tvert_avg = mean(THETA_Series_vert_t64(:,:,1:182),3);
+THETA_64_JJASON_vert100_avg = mean(THETA_Series_vert100_t64(:,:,1:182),3);
+DIC_64_JJASON_vert_avg = mean(DIC_Series_vert_64(:,:,1:182),3);
+DIC_64_JJASON_tvert_avg = mean(DIC_Series_vert_t64(:,:,1:182),3);
+DIC_64_JJASON_vert100_avg = mean(DIC_Series_vert100_t64(:,:,1:182),3);
+O2_64_JJASON_vert_avg = mean(O2_Series_vert_64(:,:,1:182),3);
+O2_64_JJASON_tvert_avg = mean(O2_Series_vert_t64(:,:,1:182),3);
+O2_64_JJASON_vert100_avg = mean(O2_Series_vert100_t64(:,:,1:182),3);
+NO3_64_JJASON_vert_avg = mean(NO3_Series_vert_64(:,:,1:182),3);
+NO3_64_JJASON_tvert_avg = mean(NO3_Series_vert_t64(:,:,1:182),3);
+NO3_64_JJASON_vert100_avg = mean(NO3_Series_vert100_t64(:,:,1:182),3); 
 
-THETA_64_JASOND_slice_avg = mean(THETA_Series_slice_64(:,:,64:213),3);
-SALT_64_JASOND_slice_avg = mean(SALT_Series_slice_64(:,:,64:213),3);
-WVEL_64_JASOND_slice_avg = mean(WVEL_Series_slice_64(:,:,64:213),3);
-WVEL_64_JASOND_slice_std = std(WVEL_Series_slice_64(:,:,64:213),0,3);
-UVEL_64_JASOND_slice_avg = mean(UVEL_Series_slice_64(:,:,64:213),3);
-UVEL_64_JASOND_slice_std = std(UVEL_Series_slice_64(:,:,64:213),0,3);
-VVEL_64_JASOND_slice_avg = mean(VVEL_Series_slice_64(:,:,64:213),3);
-VVEL_64_JASOND_slice_std = std(VVEL_Series_slice_64(:,:,64:213),0,3);
-DIC_64_JASOND_slice_avg = mean(DIC_Series_slice_64(:,:,64:213),3);
-ALK_64_JASOND_slice_avg = mean(ALK_Series_slice_64(:,:,64:213),3);
-O2_64_JASOND_slice_avg = mean(O2_Series_slice_64(:,:,64:213),3);
-NO3_64_JASOND_slice_avg = mean(NO3_Series_slice_64(:,:,64:213),3);
+THETA_64_JASOND_slice_avg = mean(THETA_Series_slice_64(:,:,32:213),3);
+SALT_64_JASOND_slice_avg = mean(SALT_Series_slice_64(:,:,32:213),3);
+WVEL_64_JASOND_slice_avg = mean(WVEL_Series_slice_64(:,:,32:213),3);
+WVEL_64_JASOND_slice_std = std(WVEL_Series_slice_64(:,:,32:213),0,3);
+UVEL_64_JASOND_slice_avg = mean(UVEL_Series_slice_64(:,:,32:213),3);
+UVEL_64_JASOND_slice_std = std(UVEL_Series_slice_64(:,:,32:213),0,3);
+VVEL_64_JASOND_slice_avg = mean(VVEL_Series_slice_64(:,:,32:213),3);
+VVEL_64_JASOND_slice_std = std(VVEL_Series_slice_64(:,:,32:213),0,3);
+DIC_64_JASOND_slice_avg = mean(DIC_Series_slice_64(:,:,32:213),3);
+ALK_64_JASOND_slice_avg = mean(ALK_Series_slice_64(:,:,32:213),3);
+O2_64_JASOND_slice_avg = mean(O2_Series_slice_64(:,:,32:213),3);
+NO3_64_JASOND_slice_avg = mean(NO3_Series_slice_64(:,:,32:213),3);
+ETAN_64_JASOND_slice_avg = mean(ETAN_Series_slice_64(:,32:213),3);
+MLD_64_JASOND_slice_avg = mean(MLD_Series_slice_64(:,32:213),3);
+PCO2_64_JASOND_slice_avg = mean(PCO2_Series_slice_64(:,32:213),3);
+TFLUX_64_JASOND_slice_avg = mean(TFLUX_Series_slice_64(:,32:213),3);
+SFLUX_64_JASOND_slice_avg = mean(SFLUX_Series_slice_64(:,32:213),3);
+CFLUX_64_JASOND_slice_avg = mean(CFLUX_Series_slice_64(:,32:213),3);
+OFLUX_64_JASOND_slice_avg = mean(OFLUX_Series_slice_64(:,32:213),3);
+THETA_64_JASOND_vert_avg = mean(THETA_Series_vert_64(:,:,32:213),3);
+THETA_64_JASOND_tvert_avg = mean(THETA_Series_vert_t64(:,:,32:213),3);
+THETA_64_JASOND_vert100_avg = mean(THETA_Series_vert100_t64(:,:,32:213),3);
+DIC_64_JASOND_vert_avg = mean(DIC_Series_vert_64(:,:,32:213),3);
+DIC_64_JASOND_tvert_avg = mean(DIC_Series_vert_t64(:,:,32:213),3);
+DIC_64_JASOND_vert100_avg = mean(DIC_Series_vert100_t64(:,:,32:213),3);
+O2_64_JASOND_vert_avg = mean(O2_Series_vert_64(:,:,32:213),3);
+O2_64_JASOND_tvert_avg = mean(O2_Series_vert_t64(:,:,32:213),3);
+O2_64_JASOND_vert100_avg = mean(O2_Series_vert100_t64(:,:,32:213),3);
+NO3_64_JASOND_vert_avg = mean(NO3_Series_vert_64(:,:,32:213),3);
+NO3_64_JASOND_tvert_avg = mean(NO3_Series_vert_t64(:,:,32:213),3);
+NO3_64_JASOND_vert100_avg = mean(NO3_Series_vert100_t64(:,:,32:213),3); 
 
 [m64,n64] = size(THETA_64_JJA_slice_avg);
 
@@ -330,26 +458,6 @@ parfor ii=1:m64
             UVEL_64_JASOND_slice_avg(ii,jj) = 99999999999;
             O2_64_JASOND_slice_avg(ii,jj) = 99999999999;
             NO3_64_JASOND_slice_avg(ii,jj) = 99999999999;
-            
-            THETA_64_DN_slice_avg(ii,jj) = 99999999999;
-            SALT_64_DN_slice_avg(ii,jj) = 99999999999;
-            DIC_64_DN_slice_avg(ii,jj) = 99999999999;
-            ALK_64_DN_slice_avg(ii,jj) = 99999999999;
-            WVEL_64_DN_slice_avg(ii,jj) = 99999999999;
-            VVEL_64_DN_slice_avg(ii,jj) = 99999999999;
-            UVEL_64_DN_slice_avg(ii,jj) = 99999999999;
-            O2_64_DN_slice_avg(ii,jj) = 99999999999;
-            NO3_64_DN_slice_avg(ii,jj) = 99999999999;
-            
-            THETA_64_JD_slice_avg(ii,jj) = 99999999999;
-            SALT_64_JD_slice_avg(ii,jj) = 99999999999;
-            DIC_64_JD_slice_avg(ii,jj) = 99999999999;
-            ALK_64_JD_slice_avg(ii,jj) = 99999999999;
-            WVEL_64_JD_slice_avg(ii,jj) = 99999999999;
-            VVEL_64_JD_slice_avg(ii,jj) = 99999999999;
-            UVEL_64_JD_slice_avg(ii,jj) = 99999999999;
-            O2_64_JD_slice_avg(ii,jj) = 99999999999;
-            NO3_64_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end

@@ -31,8 +31,13 @@ DIC_Series_vert_t34 = zeros(192,132,213);
 O2_Series_vert_t34 = zeros(192,132,213);
 NO3_Series_vert_t34 = zeros(192,132,213);
 
-THETA_Series_slice_34 = zeros(132,52,13);
-SALT_Series_slice_34 = zeros(132,52,13);
+THETA_Series_vert100_t34 = zeros(192,132,213);
+DIC_Series_vert100_t34 = zeros(192,132,213);
+O2_Series_vert100_t34 = zeros(192,132,213);
+NO3_Series_vert100_t34 = zeros(192,132,213);
+
+THETA_Series_slice_34 = zeros(132,52,213);
+SALT_Series_slice_34 = zeros(132,52,213);
 WVEL_Series_slice_34 = zeros(132,52,213);
 UVEL_Series_slice_34 = zeros(132,52,213);
 VVEL_Series_slice_34 = zeros(132,52,213);
@@ -71,6 +76,7 @@ for ii=1:2
     char34state = [str,'diag_state.00000000',num2str(48*ii)];
     temp34state = rdmds(char34state);
     THETA_Series_vert_t34(:,:,ii) = sum(temp34state(:,:,:,tfield34).*Volume,3);
+    THETA_Series_vert100_t34(:,:,ii) = sum(temp34state(:,:,1:10,tfield34).*Volume(:,:,1:10),3);
     THETA_Series_vert_34(:,:,ii) = THETA_Series_vert_t34(:,:,ii)./Height;
     THETA_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,tfield34);
     SALT_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,sfield34);
@@ -98,10 +104,13 @@ for ii=1:2
     O2_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,o2field34);
     NO3_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,no3field34);
     DIC_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,dfield34).*Volume,3);
+    DIC_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,dfield34).*Volume(:,:,1:10),3);
     DIC_Series_vert_34(:,:,ii) = DIC_Series_vert_t34(:,:,ii)./Height;
     O2_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,o2field34).*Volume,3);
+    O2_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,o2field34).*Volume(:,:,1:10),3);
     O2_Series_vert_34(:,:,ii) = O2_Series_vert_t34(:,:,ii)./Height;
     NO3_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,no3field34).*Volume,3);
+    NO3_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,no3field34).*Volume(:,:,1:10),3);
     NO3_Series_vert_34(:,:,ii) = NO3_Series_vert_t34(:,:,ii)./Height;
     clear temp34bgc
 end
@@ -110,6 +119,7 @@ for ii=3:20
     char34state = [str,'diag_state.0000000',num2str(48*ii)];
     temp34state = rdmds(char34state);
     THETA_Series_vert_t34(:,:,ii) = sum(temp34state(:,:,:,tfield34).*Volume,3);
+    THETA_Series_vert100_t34(:,:,ii) = sum(temp34state(:,:,1:10,tfield34).*Volume(:,:,1:10),3);
     THETA_Series_vert_34(:,:,ii) = THETA_Series_vert_t34(:,:,ii)./Height;
     THETA_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,tfield34);
     SALT_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,sfield34);
@@ -137,10 +147,13 @@ for ii=3:20
     O2_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,o2field34);
     NO3_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,no3field34);
     DIC_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,dfield34).*Volume,3);
+    DIC_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,dfield34).*Volume(:,:,1:10),3);
     DIC_Series_vert_34(:,:,ii) = DIC_Series_vert_t34(:,:,ii)./Height;
     O2_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,o2field34).*Volume,3);
+    O2_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,o2field34).*Volume(:,:,1:10),3);
     O2_Series_vert_34(:,:,ii) = O2_Series_vert_t34(:,:,ii)./Height;
     NO3_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,no3field34).*Volume,3);
+    NO3_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,no3field34).*Volume(:,:,1:10),3);
     NO3_Series_vert_34(:,:,ii) = NO3_Series_vert_t34(:,:,ii)./Height;
     clear temp34bgc
 end
@@ -149,6 +162,7 @@ for ii=21:208
     char34state = [str,'diag_state.000000',num2str(48*ii)];
     temp34state = rdmds(char34state);
     THETA_Series_vert_t34(:,:,ii) = sum(temp34state(:,:,:,tfield34).*Volume,3);
+    THETA_Series_vert100_t34(:,:,ii) = sum(temp34state(:,:,1:10,tfield34).*Volume(:,:,1:10),3);
     THETA_Series_vert_34(:,:,ii) = THETA_Series_vert_t34(:,:,ii)./Height;
     THETA_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,tfield34);
     SALT_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,sfield34);
@@ -176,10 +190,13 @@ for ii=21:208
     O2_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,o2field34);
     NO3_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,no3field34);
     DIC_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,dfield34).*Volume,3);
+    DIC_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,dfield34).*Volume(:,:,1:10),3);
     DIC_Series_vert_34(:,:,ii) = DIC_Series_vert_t34(:,:,ii)./Height;
     O2_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,o2field34).*Volume,3);
+    O2_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,o2field34).*Volume(:,:,1:10),3);
     O2_Series_vert_34(:,:,ii) = O2_Series_vert_t34(:,:,ii)./Height;
     NO3_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,no3field34).*Volume,3);
+    NO3_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,no3field34).*Volume(:,:,1:10),3);
     NO3_Series_vert_34(:,:,ii) = NO3_Series_vert_t34(:,:,ii)./Height;
     clear temp34bgc
 end
@@ -188,6 +205,7 @@ for ii=209:213
     char34state = [str,'diag_state.00000',num2str(48*ii)];
     temp34state = rdmds(char34state);
     THETA_Series_vert_t34(:,:,ii) = sum(temp34state(:,:,:,tfield34).*Volume,3);
+    THETA_Series_vert100_t34(:,:,ii) = sum(temp34state(:,:,1:10,tfield34).*Volume(:,:,1:10),3);
     THETA_Series_vert_34(:,:,ii) = THETA_Series_vert_t34(:,:,ii)./Height;
     THETA_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,tfield34);
     SALT_Series_slice_34(:,:,ii) = temp34state(slice_index,:,:,sfield34);
@@ -215,12 +233,46 @@ for ii=209:213
     O2_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,o2field34);
     NO3_Series_slice_34(:,:,ii) = temp34bgc(slice_index,:,:,no3field34);
     DIC_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,dfield34).*Volume,3);
+    DIC_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,dfield34).*Volume(:,:,1:10),3);
     DIC_Series_vert_34(:,:,ii) = DIC_Series_vert_t34(:,:,ii)./Height;
     O2_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,o2field34).*Volume,3);
+    O2_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,o2field34).*Volume(:,:,1:10),3);
     O2_Series_vert_34(:,:,ii) = O2_Series_vert_t34(:,:,ii)./Height;
     NO3_Series_vert_t34(:,:,ii) = sum(temp34bgc(:,:,:,no3field34).*Volume,3);
+    NO3_Series_vert100_t34(:,:,ii) = sum(temp34bgc(:,:,1:10,no3field34).*Volume(:,:,1:10),3);
     NO3_Series_vert_34(:,:,ii) = NO3_Series_vert_t34(:,:,ii)./Height;
     clear temp34bgc
+end
+
+for ii=1:132
+    if (HC(slice_index,ii,1)==0)
+        ETAN_Series_slice_34(ii,:) = NaN;
+        MLD_Series_slice_34(ii,:) = NaN;
+        PCO2_Series_slice_34(ii,:) = NaN;
+        TFLUX_Series_slice_34(ii,:) = NaN;
+        OFLUX_Series_slice_34(ii,:) = NaN;
+        CFLUX_Series_slice_34(ii,:) = NaN;
+        SFLUX_Series_slice_34(ii,:) = NaN;
+    end
+end
+
+parfor ii=1:192
+    for jj=1:132
+        if (HC(ii,jj,1)==0)
+            THETA_Series_vert_34(ii,jj,:) = 99999999999;
+            THETA_Series_vert_t34(ii,jj,:) = 99999999999;
+            THETA_Series_vert100_t34(ii,jj,:) = 99999999999;
+            DIC_Series_vert_34(ii,jj,:) = 99999999999;
+            DIC_Series_vert_t34(ii,jj,:) = 99999999999;
+            DIC_Series_vert100_t34(ii,jj,:) = 99999999999;
+            O2_Series_vert_34(ii,jj,:) = 99999999999;
+            O2_Series_vert_t34(ii,jj,:) = 99999999999;
+            O2_Series_vert100_t34(ii,jj,:) = 99999999999;
+            NO3_Series_vert_34(ii,jj,:) = 99999999999;
+            NO3_Series_vert_t34(ii,jj,:) = 99999999999;
+            NO3_Series_vert100_t34(ii,jj,:) = 99999999999;
+        end
+    end
 end
 
 
@@ -236,19 +288,57 @@ DIC_34_JJA_slice_avg = mean(DIC_Series_slice_34(:,:,1:91),3);
 ALK_34_JJA_slice_avg = mean(ALK_Series_slice_34(:,:,1:91),3);
 O2_34_JJA_slice_avg = mean(O2_Series_slice_34(:,:,1:91),3);
 NO3_34_JJA_slice_avg = mean(NO3_Series_slice_34(:,:,1:91),3);
+ETAN_34_JJA_slice_avg = mean(ETAN_Series_slice_34(:,1:91),3);
+MLD_34_JJA_slice_avg = mean(MLD_Series_slice_34(:,1:91),3);
+PCO2_34_JJA_slice_avg = mean(PCO2_Series_slice_34(:,1:91),3);
+TFLUX_34_JJA_slice_avg = mean(TFLUX_Series_slice_34(:,1:91),3);
+SFLUX_34_JJA_slice_avg = mean(SFLUX_Series_slice_34(:,1:91),3);
+CFLUX_34_JJA_slice_avg = mean(CFLUX_Series_slice_34(:,1:91),3);
+OFLUX_34_JJA_slice_avg = mean(OFLUX_Series_slice_34(:,1:91),3);
+THETA_34_JJA_vert_avg = mean(THETA_Series_vert_34(:,:,1:91),3);
+THETA_34_JJA_tvert_avg = mean(THETA_Series_vert_t34(:,:,1:91),3);
+THETA_34_JJA_vert100_avg = mean(THETA_Series_vert100_t34(:,:,1:91),3);
+DIC_34_JJA_vert_avg = mean(DIC_Series_vert_34(:,:,1:91),3);
+DIC_34_JJA_tvert_avg = mean(DIC_Series_vert_t34(:,:,1:91),3);
+DIC_34_JJA_vert100_avg = mean(DIC_Series_vert100_t34(:,:,1:91),3);
+O2_34_JJA_vert_avg = mean(O2_Series_vert_34(:,:,1:91),3);
+O2_34_JJA_tvert_avg = mean(O2_Series_vert_t34(:,:,1:91),3);
+O2_34_JJA_vert100_avg = mean(O2_Series_vert100_t34(:,:,1:91),3);
+NO3_34_JJA_vert_avg = mean(NO3_Series_vert_34(:,:,1:91),3);
+NO3_34_JJA_tvert_avg = mean(NO3_Series_vert_t34(:,:,1:91),3);
+NO3_34_JJA_vert100_avg = mean(NO3_Series_vert100_t34(:,:,1:91),3);
 
-THETA_34_JAS_slice_avg = mean(THETA_Series_slice_34(:,:,34:122),3);
-SALT_34_JAS_slice_avg = mean(SALT_Series_slice_34(:,:,34:122),3);
-WVEL_34_JAS_slice_avg = mean(WVEL_Series_slice_34(:,:,34:122),3);
-WVEL_34_JAS_slice_std = std(WVEL_Series_slice_34(:,:,34:122),0,3);
-UVEL_34_JAS_slice_avg = mean(UVEL_Series_slice_34(:,:,34:122),3);
-UVEL_34_JAS_slice_std = std(UVEL_Series_slice_34(:,:,34:122),0,3);
-VVEL_34_JAS_slice_avg = mean(VVEL_Series_slice_34(:,:,34:122),3);
-VVEL_34_JAS_slice_std = std(VVEL_Series_slice_34(:,:,34:122),0,3);
-DIC_34_JAS_slice_avg = mean(DIC_Series_slice_34(:,:,34:122),3);
-ALK_34_JAS_slice_avg = mean(ALK_Series_slice_34(:,:,34:122),3);
-O2_34_JAS_slice_avg = mean(O2_Series_slice_34(:,:,34:122),3);
-NO3_34_JAS_slice_avg = mean(NO3_Series_slice_34(:,:,34:122),3);
+THETA_34_JAS_slice_avg = mean(THETA_Series_slice_34(:,:,32:122),3);
+SALT_34_JAS_slice_avg = mean(SALT_Series_slice_34(:,:,32:122),3);
+WVEL_34_JAS_slice_avg = mean(WVEL_Series_slice_34(:,:,32:122),3);
+WVEL_34_JAS_slice_std = std(WVEL_Series_slice_34(:,:,32:122),0,3);
+UVEL_34_JAS_slice_avg = mean(UVEL_Series_slice_34(:,:,32:122),3);
+UVEL_34_JAS_slice_std = std(UVEL_Series_slice_34(:,:,32:122),0,3);
+VVEL_34_JAS_slice_avg = mean(VVEL_Series_slice_34(:,:,32:122),3);
+VVEL_34_JAS_slice_std = std(VVEL_Series_slice_34(:,:,32:122),0,3);
+DIC_34_JAS_slice_avg = mean(DIC_Series_slice_34(:,:,32:122),3);
+ALK_34_JAS_slice_avg = mean(ALK_Series_slice_34(:,:,32:122),3);
+O2_34_JAS_slice_avg = mean(O2_Series_slice_34(:,:,32:122),3);
+NO3_34_JAS_slice_avg = mean(NO3_Series_slice_34(:,:,32:122),3);
+ETAN_34_JAS_slice_avg = mean(ETAN_Series_slice_34(:,32:122),3);
+MLD_34_JAS_slice_avg = mean(MLD_Series_slice_34(:,32:122),3);
+PCO2_34_JAS_slice_avg = mean(PCO2_Series_slice_34(:,32:122),3);
+TFLUX_34_JAS_slice_avg = mean(TFLUX_Series_slice_34(:,32:122),3);
+SFLUX_34_JAS_slice_avg = mean(SFLUX_Series_slice_34(:,32:122),3);
+CFLUX_34_JAS_slice_avg = mean(CFLUX_Series_slice_34(:,32:122),3);
+OFLUX_34_JAS_slice_avg = mean(OFLUX_Series_slice_34(:,32:122),3);
+THETA_34_JAS_vert_avg = mean(THETA_Series_vert_34(:,:,32:122),3);
+THETA_34_JAS_tvert_avg = mean(THETA_Series_vert_t34(:,:,32:122),3);
+THETA_34_JAS_vert100_avg = mean(THETA_Series_vert100_t34(:,:,32:122),3);
+DIC_34_JAS_vert_avg = mean(DIC_Series_vert_34(:,:,32:122),3);
+DIC_34_JAS_tvert_avg = mean(DIC_Series_vert_t34(:,:,32:122),3);
+DIC_34_JAS_vert100_avg = mean(DIC_Series_vert100_t34(:,:,32:122),3);
+O2_34_JAS_vert_avg = mean(O2_Series_vert_34(:,:,32:122),3);
+O2_34_JAS_tvert_avg = mean(O2_Series_vert_t34(:,:,32:122),3);
+O2_34_JAS_vert100_avg = mean(O2_Series_vert100_t34(:,:,32:122),3);
+NO3_34_JAS_vert_avg = mean(NO3_Series_vert_34(:,:,32:122),3);
+NO3_34_JAS_tvert_avg = mean(NO3_Series_vert_t34(:,:,32:122),3);
+NO3_34_JAS_vert100_avg = mean(NO3_Series_vert100_t34(:,:,32:122),3); 
 
 THETA_34_JJASON_slice_avg = mean(THETA_Series_slice_34(:,:,1:182),3);
 SALT_34_JJASON_slice_avg = mean(SALT_Series_slice_34(:,:,1:182),3);
@@ -262,19 +352,57 @@ DIC_34_JJASON_slice_avg = mean(DIC_Series_slice_34(:,:,1:182),3);
 ALK_34_JJASON_slice_avg = mean(ALK_Series_slice_34(:,:,1:182),3);
 O2_34_JJASON_slice_avg = mean(O2_Series_slice_34(:,:,1:182),3);
 NO3_34_JJASON_slice_avg = mean(NO3_Series_slice_34(:,:,1:182),3);
+ETAN_34_JJASON_slice_avg = mean(ETAN_Series_slice_34(:,1:182),3);
+MLD_34_JJASON_slice_avg = mean(MLD_Series_slice_34(:,1:182),3);
+PCO2_34_JJASON_slice_avg = mean(PCO2_Series_slice_34(:,1:182),3);
+TFLUX_34_JJASON_slice_avg = mean(TFLUX_Series_slice_34(:,1:182),3);
+SFLUX_34_JJASON_slice_avg = mean(SFLUX_Series_slice_34(:,1:182),3);
+CFLUX_34_JJASON_slice_avg = mean(CFLUX_Series_slice_34(:,1:182),3);
+OFLUX_34_JJASON_slice_avg = mean(OFLUX_Series_slice_34(:,1:182),3);
+THETA_34_JJASON_vert_avg = mean(THETA_Series_vert_34(:,:,1:182),3);
+THETA_34_JJASON_tvert_avg = mean(THETA_Series_vert_t34(:,:,1:182),3);
+THETA_34_JJASON_vert100_avg = mean(THETA_Series_vert100_t34(:,:,1:182),3);
+DIC_34_JJASON_vert_avg = mean(DIC_Series_vert_34(:,:,1:182),3);
+DIC_34_JJASON_tvert_avg = mean(DIC_Series_vert_t34(:,:,1:182),3);
+DIC_34_JJASON_vert100_avg = mean(DIC_Series_vert100_t34(:,:,1:182),3);
+O2_34_JJASON_vert_avg = mean(O2_Series_vert_34(:,:,1:182),3);
+O2_34_JJASON_tvert_avg = mean(O2_Series_vert_t34(:,:,1:182),3);
+O2_34_JJASON_vert100_avg = mean(O2_Series_vert100_t34(:,:,1:182),3);
+NO3_34_JJASON_vert_avg = mean(NO3_Series_vert_34(:,:,1:182),3);
+NO3_34_JJASON_tvert_avg = mean(NO3_Series_vert_t34(:,:,1:182),3);
+NO3_34_JJASON_vert100_avg = mean(NO3_Series_vert100_t34(:,:,1:182),3); 
 
-THETA_34_JASOND_slice_avg = mean(THETA_Series_slice_34(:,:,34:213),3);
-SALT_34_JASOND_slice_avg = mean(SALT_Series_slice_34(:,:,34:213),3);
-WVEL_34_JASOND_slice_avg = mean(WVEL_Series_slice_34(:,:,34:213),3);
-WVEL_34_JASOND_slice_std = std(WVEL_Series_slice_34(:,:,34:213),0,3);
-UVEL_34_JASOND_slice_avg = mean(UVEL_Series_slice_34(:,:,34:213),3);
-UVEL_34_JASOND_slice_std = std(UVEL_Series_slice_34(:,:,34:213),0,3);
-VVEL_34_JASOND_slice_avg = mean(VVEL_Series_slice_34(:,:,34:213),3);
-VVEL_34_JASOND_slice_std = std(VVEL_Series_slice_34(:,:,34:213),0,3);
-DIC_34_JASOND_slice_avg = mean(DIC_Series_slice_34(:,:,34:213),3);
-ALK_34_JASOND_slice_avg = mean(ALK_Series_slice_34(:,:,34:213),3);
-O2_34_JASOND_slice_avg = mean(O2_Series_slice_34(:,:,34:213),3);
-NO3_34_JASOND_slice_avg = mean(NO3_Series_slice_34(:,:,34:213),3);
+THETA_34_JASOND_slice_avg = mean(THETA_Series_slice_34(:,:,32:213),3);
+SALT_34_JASOND_slice_avg = mean(SALT_Series_slice_34(:,:,32:213),3);
+WVEL_34_JASOND_slice_avg = mean(WVEL_Series_slice_34(:,:,32:213),3);
+WVEL_34_JASOND_slice_std = std(WVEL_Series_slice_34(:,:,32:213),0,3);
+UVEL_34_JASOND_slice_avg = mean(UVEL_Series_slice_34(:,:,32:213),3);
+UVEL_34_JASOND_slice_std = std(UVEL_Series_slice_34(:,:,32:213),0,3);
+VVEL_34_JASOND_slice_avg = mean(VVEL_Series_slice_34(:,:,32:213),3);
+VVEL_34_JASOND_slice_std = std(VVEL_Series_slice_34(:,:,32:213),0,3);
+DIC_34_JASOND_slice_avg = mean(DIC_Series_slice_34(:,:,32:213),3);
+ALK_34_JASOND_slice_avg = mean(ALK_Series_slice_34(:,:,32:213),3);
+O2_34_JASOND_slice_avg = mean(O2_Series_slice_34(:,:,32:213),3);
+NO3_34_JASOND_slice_avg = mean(NO3_Series_slice_34(:,:,32:213),3);
+ETAN_34_JASOND_slice_avg = mean(ETAN_Series_slice_34(:,32:213),3);
+MLD_34_JASOND_slice_avg = mean(MLD_Series_slice_34(:,32:213),3);
+PCO2_34_JASOND_slice_avg = mean(PCO2_Series_slice_34(:,32:213),3);
+TFLUX_34_JASOND_slice_avg = mean(TFLUX_Series_slice_34(:,32:213),3);
+SFLUX_34_JASOND_slice_avg = mean(SFLUX_Series_slice_34(:,32:213),3);
+CFLUX_34_JASOND_slice_avg = mean(CFLUX_Series_slice_34(:,32:213),3);
+OFLUX_34_JASOND_slice_avg = mean(OFLUX_Series_slice_34(:,32:213),3);
+THETA_34_JASOND_vert_avg = mean(THETA_Series_vert_34(:,:,32:213),3);
+THETA_34_JASOND_tvert_avg = mean(THETA_Series_vert_t34(:,:,32:213),3);
+THETA_34_JASOND_vert100_avg = mean(THETA_Series_vert100_t34(:,:,32:213),3);
+DIC_34_JASOND_vert_avg = mean(DIC_Series_vert_34(:,:,32:213),3);
+DIC_34_JASOND_tvert_avg = mean(DIC_Series_vert_t34(:,:,32:213),3);
+DIC_34_JASOND_vert100_avg = mean(DIC_Series_vert100_t34(:,:,32:213),3);
+O2_34_JASOND_vert_avg = mean(O2_Series_vert_34(:,:,32:213),3);
+O2_34_JASOND_tvert_avg = mean(O2_Series_vert_t34(:,:,32:213),3);
+O2_34_JASOND_vert100_avg = mean(O2_Series_vert100_t34(:,:,32:213),3);
+NO3_34_JASOND_vert_avg = mean(NO3_Series_vert_34(:,:,32:213),3);
+NO3_34_JASOND_tvert_avg = mean(NO3_Series_vert_t34(:,:,32:213),3);
+NO3_34_JASOND_vert100_avg = mean(NO3_Series_vert100_t34(:,:,32:213),3); 
 
 [m34,n34] = size(THETA_34_JJA_slice_avg);
 
@@ -330,26 +458,6 @@ parfor ii=1:m34
             UVEL_34_JASOND_slice_avg(ii,jj) = 99999999999;
             O2_34_JASOND_slice_avg(ii,jj) = 99999999999;
             NO3_34_JASOND_slice_avg(ii,jj) = 99999999999;
-            
-            THETA_34_DN_slice_avg(ii,jj) = 99999999999;
-            SALT_34_DN_slice_avg(ii,jj) = 99999999999;
-            DIC_34_DN_slice_avg(ii,jj) = 99999999999;
-            ALK_34_DN_slice_avg(ii,jj) = 99999999999;
-            WVEL_34_DN_slice_avg(ii,jj) = 99999999999;
-            VVEL_34_DN_slice_avg(ii,jj) = 99999999999;
-            UVEL_34_DN_slice_avg(ii,jj) = 99999999999;
-            O2_34_DN_slice_avg(ii,jj) = 99999999999;
-            NO3_34_DN_slice_avg(ii,jj) = 99999999999;
-            
-            THETA_34_JD_slice_avg(ii,jj) = 99999999999;
-            SALT_34_JD_slice_avg(ii,jj) = 99999999999;
-            DIC_34_JD_slice_avg(ii,jj) = 99999999999;
-            ALK_34_JD_slice_avg(ii,jj) = 99999999999;
-            WVEL_34_JD_slice_avg(ii,jj) = 99999999999;
-            VVEL_34_JD_slice_avg(ii,jj) = 99999999999;
-            UVEL_34_JD_slice_avg(ii,jj) = 99999999999;
-            O2_34_JD_slice_avg(ii,jj) = 99999999999;
-            NO3_34_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
