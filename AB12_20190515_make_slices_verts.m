@@ -86,10 +86,10 @@ for ii=1:2
     clear temp124surf
     char124airsea = [str,'diag_airsea.0000000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
-    TFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,tffield124);
-    SFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,sffield124);
-    CFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,cfield124);
-    OFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,ofield124);
+    TFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,tffield124);
+    SFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,sffield124);
+    CFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,cfield124);
+    OFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,ofield124);
     clear temp124airsea
     char124bgc = [str,'diag_bgc.0000000',num2str(360*ii)];
     temp124bgc = rdmds(char124bgc); 
@@ -125,10 +125,10 @@ for ii=3:27
     clear temp124surf
     char124airsea = [str,'diag_airsea.000000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
-    TFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,tffield124);
-    SFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,sffield124);
-    CFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,cfield124);
-    OFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,ofield124);
+    TFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,tffield124);
+    SFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,sffield124);
+    CFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,cfield124);
+    OFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,ofield124);
     clear temp124airsea
     char124bgc = [str,'diag_bgc.000000',num2str(360*ii)];
     temp124bgc = rdmds(char124bgc); 
@@ -164,10 +164,10 @@ for ii=28:213
     clear temp124surf
     char124airsea = [str,'diag_airsea.00000',num2str(360*ii)];
     temp124airsea = rdmds(char124airsea); 
-    TFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,tffield124);
-    SFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,sffield124);
-    CFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,cfield124);
-    OFLUX_Series_slice_124(:,:,ii) = temp124airsea(slice_index,:,ofield124);
+    TFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,tffield124);
+    SFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,sffield124);
+    CFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,cfield124);
+    OFLUX_Series_slice_124(:,ii) = temp124airsea(slice_index,:,ofield124);
     clear temp124airsea
     char124bgc = [str,'diag_bgc.00000',num2str(360*ii)];
     temp124bgc = rdmds(char124bgc); 
@@ -317,7 +317,25 @@ end
 
 
 clear char124* temp124* n124 m124 *field124 ii jj
-save AB124_output_slice_vert
+
+
+save AB124_output_THETA_slice_vert THETA*
+save AB124_output_SALT_slice_vert SALT*
+save AB124_output_WVEL_slice_vert WVEL*
+save AB124_output_VVEL_slice_vert VVEL*
+save AB124_output_UVEL_slice_vert UVEL*
+save AB124_output_O2_slice_vert O2*
+save AB124_output_NO3_slice_vert NO3*
+save AB124_output_DIC_slice_vert DIC*
+save AB124_output_ALK_slice_vert ALK*
+save AB124_output_ETAN_slice_vert ETAN*
+save AB124_output_MLD_slice_vert MLD*
+save AB124_output_PCO2_slice_vert PCO2*
+save AB124_output_TFLUX_slice_vert TFLUX*
+save AB124_output_CFLUX_slice_vert CFLUX*
+save AB124_output_SFLUX_slice_vert SFLUX*
+save AB124_output_OFLUX_slice_vert OFLUX*
+
 
 fprintf('finished 124 \n')
 

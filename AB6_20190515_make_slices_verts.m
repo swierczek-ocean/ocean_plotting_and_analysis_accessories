@@ -86,10 +86,10 @@ for ii=1:1
     clear temp64surf
     char64airsea = [str,'diag_airsea.00000000',num2str(72*ii)];
     temp64airsea = rdmds(char64airsea); 
-    TFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,tffield64);
-    SFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,sffield64);
-    CFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,cfield64);
-    OFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,ofield64);
+    TFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,tffield64);
+    SFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,sffield64);
+    CFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,cfield64);
+    OFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,ofield64);
     clear temp64airsea
     char64bgc = [str,'diag_bgc.00000000',num2str(72*ii)];
     temp64bgc = rdmds(char64bgc); 
@@ -125,10 +125,10 @@ for ii=2:13
     clear temp64surf
     char64airsea = [str,'diag_airsea.0000000',num2str(72*ii)];
     temp64airsea = rdmds(char64airsea); 
-    TFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,tffield64);
-    SFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,sffield64);
-    CFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,cfield64);
-    OFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,ofield64);
+    TFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,tffield64);
+    SFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,sffield64);
+    CFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,cfield64);
+    OFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,ofield64);
     clear temp64airsea
     char64bgc = [str,'diag_bgc.0000000',num2str(72*ii)];
     temp64bgc = rdmds(char64bgc); 
@@ -164,10 +164,10 @@ for ii=14:138
     clear temp64surf
     char64airsea = [str,'diag_airsea.000000',num2str(72*ii)];
     temp64airsea = rdmds(char64airsea); 
-    TFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,tffield64);
-    SFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,sffield64);
-    CFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,cfield64);
-    OFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,ofield64);
+    TFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,tffield64);
+    SFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,sffield64);
+    CFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,cfield64);
+    OFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,ofield64);
     clear temp64airsea
     char64bgc = [str,'diag_bgc.000000',num2str(72*ii)];
     temp64bgc = rdmds(char64bgc); 
@@ -203,10 +203,10 @@ for ii=139:213
     clear temp64surf
     char64airsea = [str,'diag_airsea.00000',num2str(72*ii)];
     temp64airsea = rdmds(char64airsea); 
-    TFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,tffield64);
-    SFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,sffield64);
-    CFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,cfield64);
-    OFLUX_Series_slice_64(:,:,ii) = temp64airsea(slice_index,:,ofield64);
+    TFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,tffield64);
+    SFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,sffield64);
+    CFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,cfield64);
+    OFLUX_Series_slice_64(:,ii) = temp64airsea(slice_index,:,ofield64);
     clear temp64airsea
     char64bgc = [str,'diag_bgc.00000',num2str(72*ii)];
     temp64bgc = rdmds(char64bgc); 
@@ -356,7 +356,23 @@ end
 
 
 clear char64* temp64* n64 m64 *field64 ii jj
-save AB64_output_slice_vert
+
+save AB64_output_THETA_slice_vert THETA*
+save AB64_output_SALT_slice_vert SALT*
+save AB64_output_WVEL_slice_vert WVEL*
+save AB64_output_VVEL_slice_vert VVEL*
+save AB64_output_UVEL_slice_vert UVEL*
+save AB64_output_O2_slice_vert O2*
+save AB64_output_NO3_slice_vert NO3*
+save AB64_output_DIC_slice_vert DIC*
+save AB64_output_ALK_slice_vert ALK*
+save AB64_output_ETAN_slice_vert ETAN*
+save AB64_output_MLD_slice_vert MLD*
+save AB64_output_PCO2_slice_vert PCO2*
+save AB64_output_TFLUX_slice_vert TFLUX*
+save AB64_output_CFLUX_slice_vert CFLUX*
+save AB64_output_SFLUX_slice_vert SFLUX*
+save AB64_output_OFLUX_slice_vert OFLUX*
 
 fprintf('finished 64 \n')
 

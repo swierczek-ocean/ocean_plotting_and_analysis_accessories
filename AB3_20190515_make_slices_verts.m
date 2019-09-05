@@ -86,10 +86,10 @@ for ii=1:2
     clear temp34surf
     char34airsea = [str,'diag_airsea.00000000',num2str(48*ii)];
     temp34airsea = rdmds(char34airsea); 
-    TFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,tffield34);
-    SFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,sffield34);
-    CFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,cfield34);
-    OFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,ofield34);
+    TFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,tffield34);
+    SFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,sffield34);
+    CFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,cfield34);
+    OFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,ofield34);
     clear temp34airsea
     char34bgc = [str,'diag_bgc.00000000',num2str(48*ii)];
     temp34bgc = rdmds(char34bgc); 
@@ -125,10 +125,10 @@ for ii=3:20
     clear temp34surf
     char34airsea = [str,'diag_airsea.0000000',num2str(48*ii)];
     temp34airsea = rdmds(char34airsea); 
-    TFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,tffield34);
-    SFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,sffield34);
-    CFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,cfield34);
-    OFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,ofield34);
+    TFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,tffield34);
+    SFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,sffield34);
+    CFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,cfield34);
+    OFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,ofield34);
     clear temp34airsea
     char34bgc = [str,'diag_bgc.0000000',num2str(48*ii)];
     temp34bgc = rdmds(char34bgc); 
@@ -164,10 +164,10 @@ for ii=21:208
     clear temp34surf
     char34airsea = [str,'diag_airsea.000000',num2str(48*ii)];
     temp34airsea = rdmds(char34airsea); 
-    TFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,tffield34);
-    SFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,sffield34);
-    CFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,cfield34);
-    OFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,ofield34);
+    TFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,tffield34);
+    SFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,sffield34);
+    CFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,cfield34);
+    OFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,ofield34);
     clear temp34airsea
     char34bgc = [str,'diag_bgc.000000',num2str(48*ii)];
     temp34bgc = rdmds(char34bgc); 
@@ -203,10 +203,10 @@ for ii=209:213
     clear temp34surf
     char34airsea = [str,'diag_airsea.00000',num2str(48*ii)];
     temp34airsea = rdmds(char34airsea); 
-    TFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,tffield34);
-    SFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,sffield34);
-    CFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,cfield34);
-    OFLUX_Series_slice_34(:,:,ii) = temp34airsea(slice_index,:,ofield34);
+    TFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,tffield34);
+    SFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,sffield34);
+    CFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,cfield34);
+    OFLUX_Series_slice_34(:,ii) = temp34airsea(slice_index,:,ofield34);
     clear temp34airsea
     char34bgc = [str,'diag_bgc.00000',num2str(48*ii)];
     temp34bgc = rdmds(char34bgc); 
@@ -356,7 +356,23 @@ end
 
 
 clear char34* temp34* n34 m34 *field34 ii jj
-save AB34_output_slice_vert
+
+save AB34_output_THETA_slice_vert THETA*
+save AB34_output_SALT_slice_vert SALT*
+save AB34_output_WVEL_slice_vert WVEL*
+save AB34_output_VVEL_slice_vert VVEL*
+save AB34_output_UVEL_slice_vert UVEL*
+save AB34_output_O2_slice_vert O2*
+save AB34_output_NO3_slice_vert NO3*
+save AB34_output_DIC_slice_vert DIC*
+save AB34_output_ALK_slice_vert ALK*
+save AB34_output_ETAN_slice_vert ETAN*
+save AB34_output_MLD_slice_vert MLD*
+save AB34_output_PCO2_slice_vert PCO2*
+save AB34_output_TFLUX_slice_vert TFLUX*
+save AB34_output_CFLUX_slice_vert CFLUX*
+save AB34_output_SFLUX_slice_vert SFLUX*
+save AB34_output_OFLUX_slice_vert OFLUX*
 
 fprintf('finished 34 \n')
 
