@@ -8,7 +8,7 @@ ax.TickDir = 'out';
 ax.TickLength = [0.005 0.035];
 % makes the tick marks a little shorter than usual
 
-set(ax,'yticklabel',num2str(abs(get(ax,'ytick').')))
+% set(ax,'yticklabel',num2str(abs(get(ax,'ytick').')))
 % gets rid of the negative signs on the y axis, so depth reads as positive
 
 ax.LineWidth = 1.5;
@@ -36,9 +36,9 @@ ax.FontSize = 16;
 outerpos = ax.OuterPosition;
 ti = ax.TightInset;
 left = outerpos(1) + ti(1) + 0.01;
-bottom = outerpos(2) + ti(2) + 0.025;
-ax_width = outerpos(3) - ti(1) - ti(3) - 0.03;
-ax_height = outerpos(4) - ti(2) - ti(4) - 0.035;
+bottom = outerpos(2) + ti(2) + 0.01;
+ax_width = outerpos(3) - ti(1) - ti(3) - 0.02;
+ax_height = outerpos(4) - ti(2) - ti(4) - 0.02;
 ax.Position = [left bottom ax_width ax_height];
 % these commands make the plot fit tight with very little white space.
 % sometimes you need to fiddle with the decimals added or subtracted

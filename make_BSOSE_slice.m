@@ -61,7 +61,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             THETA_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    THETA_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            THETA_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             THETA_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             THETA_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             THETA_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -69,7 +69,7 @@ for ii=1:m64
             THETA_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             THETA_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             THETA_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            THETA_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            THETA_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
@@ -116,6 +116,39 @@ ETAN_mu = mean(ETAN_series(isnan(ETAN_series)==0));
 ETAN_series = ETAN_series - ETAN_mu;
 ETAN_series(isnan(ETAN_series)==0) = 0;
 
+ETAN_BSOSE_DJF_slice_avg = mean(ETAN_series(:,1:DJF_length_time),2);
+ETAN_BSOSE_DJF_slice_avg = ETAN_BSOSE_DJF_slice_avg -...
+    mean(ETAN_BSOSE_DJF_slice_avg(isnan(ETAN_BSOSE_DJF_slice_avg)==0));
+ETAN_BSOSE_DJFMAM_slice_avg = mean(ETAN_series(:,1:DM_length_time),2);
+ETAN_BSOSE_DJFMAM_slice_avg = ETAN_BSOSE_DJFMAM_slice_avg -...
+    mean(ETAN_BSOSE_DJFMAM_slice_avg(isnan(ETAN_BSOSE_DJFMAM_slice_avg)==0));
+ETAN_BSOSE_DN_slice_avg = mean(ETAN_series(:,1:DD_length_time),2);
+ETAN_BSOSE_DN_slice_avg = ETAN_BSOSE_DN_slice_avg -...
+    mean(ETAN_BSOSE_DN_slice_avg(isnan(ETAN_BSOSE_DN_slice_avg)==0));
+ETAN_BSOSE_JJA_slice_avg = mean(ETAN_series(:,JN_length_time:(JN_length_time+91)),2);
+ETAN_BSOSE_JJA_slice_avg = ETAN_BSOSE_JJA_slice_avg -...
+    mean(ETAN_BSOSE_JJA_slice_avg(isnan(ETAN_BSOSE_JJA_slice_avg)==0));
+ETAN_BSOSE_JJASON_slice_avg = mean(ETAN_series(:,JN_length_time:DD_length_time),2);
+ETAN_BSOSE_JJASON_slice_avg = ETAN_BSOSE_JJASON_slice_avg -...
+    mean(ETAN_BSOSE_JJASON_slice_avg(isnan(ETAN_BSOSE_JJASON_slice_avg)==0));
+ETAN_BSOSE_JFM_slice_avg = mean(ETAN_series(:,32:(DJF_length_time+31)),2);
+ETAN_BSOSE_JFM_slice_avg = ETAN_BSOSE_JFM_slice_avg -...
+    mean(ETAN_BSOSE_JFM_slice_avg(isnan(ETAN_BSOSE_JFM_slice_avg)==0));
+ETAN_BSOSE_JFMAMJ_slice_avg = mean(ETAN_series(:,32:(DM_length_time+30)),2);
+ETAN_BSOSE_JFMAMJ_slice_avg = ETAN_BSOSE_JFMAMJ_slice_avg -...
+    mean(ETAN_BSOSE_JFMAMJ_slice_avg(isnan(ETAN_BSOSE_JFMAMJ_slice_avg)==0));
+ETAN_BSOSE_JD_slice_avg = mean(ETAN_series(:,32:(DD_length_time+30)),2);
+ETAN_BSOSE_JD_slice_avg = ETAN_BSOSE_JD_slice_avg -...
+    mean(ETAN_BSOSE_JD_slice_avg(isnan(ETAN_BSOSE_JD_slice_avg)==0));
+ETAN_BSOSE_JAS_slice_avg = mean(ETAN_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+ETAN_BSOSE_JAS_slice_avg = ETAN_BSOSE_JAS_slice_avg -...
+    mean(ETAN_BSOSE_JAS_slice_avg(isnan(ETAN_BSOSE_JAS_slice_avg)==0));
+ETAN_BSOSE_JASOND_slice_avg = mean(ETAN_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+ETAN_BSOSE_JASOND_slice_avg = ETAN_BSOSE_JASOND_slice_avg -...
+    mean(ETAN_BSOSE_JASOND_slice_avg(isnan(ETAN_BSOSE_JASOND_slice_avg)==0));
+
+ETAN_BSOSE_slice_std = std(ETAN_series(:,:),0,2);
+
 fprintf('finished ETAN \n')
 
 %% ETAN
@@ -133,9 +166,18 @@ for ii=1:nd
     PCO2_series(:,ii) = temp;
 end
 
-PCO2_mu = mean(PCO2_series(isnan(PCO2_series)==0));
-PCO2_series = PCO2_series - PCO2_mu;
-PCO2_series(isnan(PCO2_series)==0) = 0;
+PCO2_BSOSE_DJF_slice_avg = mean(PCO2_series(:,1:DJF_length_time),2);
+PCO2_BSOSE_DJFMAM_slice_avg = mean(PCO2_series(:,1:DM_length_time),2);
+PCO2_BSOSE_DN_slice_avg = mean(PCO2_series(:,1:DD_length_time),2);
+PCO2_BSOSE_JJA_slice_avg = mean(PCO2_series(:,JN_length_time:(JN_length_time+91)),2);
+PCO2_BSOSE_JJASON_slice_avg = mean(PCO2_series(:,JN_length_time:DD_length_time),2);
+PCO2_BSOSE_JFM_slice_avg = mean(PCO2_series(:,32:(DJF_length_time+31)),2);
+PCO2_BSOSE_JFMAMJ_slice_avg = mean(PCO2_series(:,32:(DM_length_time+30)),2);
+PCO2_BSOSE_JD_slice_avg = mean(PCO2_series(:,32:(DD_length_time+30)),2);
+PCO2_BSOSE_JAS_slice_avg = mean(PCO2_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+PCO2_BSOSE_JASOND_slice_avg = mean(PCO2_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+PCO2_BSOSE_slice_std = std(PCO2_series(:,:),0,2);
 
 fprintf('finished PCO2 \n')
 
@@ -147,6 +189,20 @@ sd = bsose_index_2;
 nd = DD_length_time+30;
 
 MLD_series = squeeze(ncread(str,'BLGMLD',[thex,loy,sd],[1,mm,nd]));
+
+MLD_BSOSE_DJF_slice_avg = mean(MLD_series(:,1:DJF_length_time),2);
+MLD_BSOSE_DJFMAM_slice_avg = mean(MLD_series(:,1:DM_length_time),2);
+MLD_BSOSE_DN_slice_avg = mean(MLD_series(:,1:DD_length_time),2);
+MLD_BSOSE_JJA_slice_avg = mean(MLD_series(:,JN_length_time:(JN_length_time+91)),2);
+MLD_BSOSE_JJASON_slice_avg = mean(MLD_series(:,JN_length_time:DD_length_time),2);
+MLD_BSOSE_JFM_slice_avg = mean(MLD_series(:,32:(DJF_length_time+31)),2);
+MLD_BSOSE_JFMAMJ_slice_avg = mean(MLD_series(:,32:(DM_length_time+30)),2);
+MLD_BSOSE_JD_slice_avg = mean(MLD_series(:,32:(DD_length_time+30)),2);
+MLD_BSOSE_JAS_slice_avg = mean(MLD_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+MLD_BSOSE_JASOND_slice_avg = mean(MLD_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+MLD_BSOSE_slice_std = std(MLD_series(:,:),0,2);
+
 
 fprintf('finished MLD \n')
 
@@ -394,7 +450,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             SALT_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    SALT_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            SALT_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             SALT_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             SALT_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             SALT_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -402,7 +458,7 @@ for ii=1:m64
             SALT_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             SALT_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             SALT_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            SALT_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            SALT_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
@@ -420,6 +476,20 @@ nd = DD_length_time+30;
 
 TFLUX_series = squeeze(ncread(str,'TFLUX',[thex,loy,sd],[1,mm,nd]));
 
+TFLUX_BSOSE_DJF_slice_avg = mean(TFLUX_series(:,1:DJF_length_time),2);
+TFLUX_BSOSE_DJFMAM_slice_avg = mean(TFLUX_series(:,1:DM_length_time),2);
+TFLUX_BSOSE_DN_slice_avg = mean(TFLUX_series(:,1:DD_length_time),2);
+TFLUX_BSOSE_JJA_slice_avg = mean(TFLUX_series(:,JN_length_time:(JN_length_time+91)),2);
+TFLUX_BSOSE_JJASON_slice_avg = mean(TFLUX_series(:,JN_length_time:DD_length_time),2);
+TFLUX_BSOSE_JFM_slice_avg = mean(TFLUX_series(:,32:(DJF_length_time+31)),2);
+TFLUX_BSOSE_JFMAMJ_slice_avg = mean(TFLUX_series(:,32:(DM_length_time+30)),2);
+TFLUX_BSOSE_JD_slice_avg = mean(TFLUX_series(:,32:(DD_length_time+30)),2);
+TFLUX_BSOSE_JAS_slice_avg = mean(TFLUX_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+TFLUX_BSOSE_JASOND_slice_avg = mean(TFLUX_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+TFLUX_BSOSE_slice_std = std(TFLUX_series(:,:),0,2);
+
+
 fprintf('finished TFLUX \n')
 
 %% TFLUX
@@ -430,6 +500,19 @@ sd = bsose_index_2;
 nd = DD_length_time+30;
 
 SFLUX_series = squeeze(ncread(str,'SFLUX',[thex,loy,sd],[1,mm,nd]));
+
+SFLUX_BSOSE_DJF_slice_avg = mean(SFLUX_series(:,1:DJF_length_time),2);
+SFLUX_BSOSE_DJFMAM_slice_avg = mean(SFLUX_series(:,1:DM_length_time),2);
+SFLUX_BSOSE_DN_slice_avg = mean(SFLUX_series(:,1:DD_length_time),2);
+SFLUX_BSOSE_JJA_slice_avg = mean(SFLUX_series(:,JN_length_time:(JN_length_time+91)),2);
+SFLUX_BSOSE_JJASON_slice_avg = mean(SFLUX_series(:,JN_length_time:DD_length_time),2);
+SFLUX_BSOSE_JFM_slice_avg = mean(SFLUX_series(:,32:(DJF_length_time+31)),2);
+SFLUX_BSOSE_JFMAMJ_slice_avg = mean(SFLUX_series(:,32:(DM_length_time+30)),2);
+SFLUX_BSOSE_JD_slice_avg = mean(SFLUX_series(:,32:(DD_length_time+30)),2);
+SFLUX_BSOSE_JAS_slice_avg = mean(SFLUX_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+SFLUX_BSOSE_JASOND_slice_avg = mean(SFLUX_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+SFLUX_BSOSE_slice_std = std(SFLUX_series(:,:),0,2);
 
 fprintf('finished SFLUX \n')
 
@@ -442,6 +525,19 @@ nd = DD_length_time+30;
 
 CFLUX_series = squeeze(ncread(str,'BLGCFLX',[thex,loy,sd],[1,mm,nd]));
 
+CFLUX_BSOSE_DJF_slice_avg = mean(CFLUX_series(:,1:DJF_length_time),2);
+CFLUX_BSOSE_DJFMAM_slice_avg = mean(CFLUX_series(:,1:DM_length_time),2);
+CFLUX_BSOSE_DN_slice_avg = mean(CFLUX_series(:,1:DD_length_time),2);
+CFLUX_BSOSE_JJA_slice_avg = mean(CFLUX_series(:,JN_length_time:(JN_length_time+91)),2);
+CFLUX_BSOSE_JJASON_slice_avg = mean(CFLUX_series(:,JN_length_time:DD_length_time),2);
+CFLUX_BSOSE_JFM_slice_avg = mean(CFLUX_series(:,32:(DJF_length_time+31)),2);
+CFLUX_BSOSE_JFMAMJ_slice_avg = mean(CFLUX_series(:,32:(DM_length_time+30)),2);
+CFLUX_BSOSE_JD_slice_avg = mean(CFLUX_series(:,32:(DD_length_time+30)),2);
+CFLUX_BSOSE_JAS_slice_avg = mean(CFLUX_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+CFLUX_BSOSE_JASOND_slice_avg = mean(CFLUX_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+CFLUX_BSOSE_slice_std = std(CFLUX_series(:,:),0,2);
+
 fprintf('finished CFLUX \n')
 
 %% CFLUX
@@ -453,6 +549,19 @@ sd = bsose_index_2;
 nd = DD_length_time+30;
 
 OFLUX_series = squeeze(ncread(str,'BLGOFLX',[thex,loy,sd],[1,mm,nd]));
+
+OFLUX_BSOSE_DJF_slice_avg = mean(OFLUX_series(:,1:DJF_length_time),2);
+OFLUX_BSOSE_DJFMAM_slice_avg = mean(OFLUX_series(:,1:DM_length_time),2);
+OFLUX_BSOSE_DN_slice_avg = mean(OFLUX_series(:,1:DD_length_time),2);
+OFLUX_BSOSE_JJA_slice_avg = mean(OFLUX_series(:,JN_length_time:(JN_length_time+91)),2);
+OFLUX_BSOSE_JJASON_slice_avg = mean(OFLUX_series(:,JN_length_time:DD_length_time),2);
+OFLUX_BSOSE_JFM_slice_avg = mean(OFLUX_series(:,32:(DJF_length_time+31)),2);
+OFLUX_BSOSE_JFMAMJ_slice_avg = mean(OFLUX_series(:,32:(DM_length_time+30)),2);
+OFLUX_BSOSE_JD_slice_avg = mean(OFLUX_series(:,32:(DD_length_time+30)),2);
+OFLUX_BSOSE_JAS_slice_avg = mean(OFLUX_series(:,(JN_length_time+30):(JN_length_time+121)),2);
+OFLUX_BSOSE_JASOND_slice_avg = mean(OFLUX_series(:,(JN_length_time+30):(DD_length_time+30)),2);
+
+OFLUX_BSOSE_slice_std = std(OFLUX_series(:,:),0,2);
 
 fprintf('finished OFLUX \n')
 
@@ -496,7 +605,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             O2_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    O2_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            O2_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             O2_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             O2_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             O2_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -504,7 +613,7 @@ for ii=1:m64
             O2_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             O2_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             O2_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            O2_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            O2_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
@@ -571,7 +680,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             NO3_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    NO3_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            NO3_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             NO3_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             NO3_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             NO3_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -579,7 +688,7 @@ for ii=1:m64
             NO3_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             NO3_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             NO3_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            NO3_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            NO3_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
@@ -646,7 +755,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             DIC_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    DIC_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            DIC_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             DIC_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             DIC_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             DIC_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -654,7 +763,7 @@ for ii=1:m64
             DIC_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             DIC_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             DIC_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            DIC_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            DIC_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
@@ -720,7 +829,7 @@ for ii=1:m64
     for jj=1:n64
         if (HC(ii,jj)==0)
             ALK_BSOSE_DJF_slice_avg(ii,jj) = 99999999999;
-	    ALK_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            ALK_BSOSE_DJFMAM_slice_avg(ii,jj) = 99999999999;
             ALK_BSOSE_DN_slice_avg(ii,jj) = 99999999999;
             ALK_BSOSE_JJA_slice_avg(ii,jj) = 99999999999;
             ALK_BSOSE_JAS_slice_avg(ii,jj) = 99999999999;
@@ -728,7 +837,7 @@ for ii=1:m64
             ALK_BSOSE_JASOND_slice_avg(ii,jj) = 99999999999;
             ALK_BSOSE_JFM_slice_avg(ii,jj) = 99999999999;
             ALK_BSOSE_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            ALK_BSOSE_JD_slice_avg(ii,jj) = 99999999999;            
+            ALK_BSOSE_JD_slice_avg(ii,jj) = 99999999999;
         end
     end
 end
