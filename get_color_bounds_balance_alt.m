@@ -157,6 +157,15 @@ if option==15
 end
 %%
 
+%% 1st to 99th percentile range
+if option==16
+    ind1 = ceil(len*0.002);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
 lbcb = lb;
 ubcb = ub;
 

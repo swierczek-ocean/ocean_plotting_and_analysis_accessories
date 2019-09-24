@@ -125,6 +125,27 @@ if option==11
 end
 %%
 
+%% trim last 250 measurements
+if option==12
+    lb = DIST(1); 
+    ub = DIST(len-1500);
+end
+%%
+
+%% trim first 3300 measurements
+if option==13
+    lb = DIST(3300); 
+    ub = DIST(len-25);
+end
+%%
+
+%% trim first 3000 measurements
+if option==14
+    lb = DIST(3000); 
+    ub = DIST(len-25);
+end
+%%
+
 range = ub - lb;
 
 if range>12&&range<30
