@@ -13,6 +13,13 @@ processed_ooi_array = [time,zeros(num_hours,9)];
 
 ooi_time = ooi_array(:,1);
 
+%% convert in situ temperature to potential temperature
+% first get absolute salinity
+SA = gsw_SA_from_SP(ooi_array(:,5),ooi_array(:,6),...
+    ooi_array(:,3),ooi_array(:,2));
+ooi_array(:,4) = gsw_pt0_from_t(SA,...
+    ooi_array(:,4),ooi_array(:,6));
+%% end
 
 %% first hour
 ind1 = find(ooi_time>time(1),1);
@@ -74,13 +81,6 @@ fprintf('   longest set of consecutive hours with obs: %g \n \n',max_consec_obs)
 ind2 = find(processed_ooi_array(:,10)==max_consec_obs);
 processed_ooi_array = processed_ooi_array((ind2-max_consec_obs+1):ind2,:);
 %%
-
-%% convert conservative temperature to potential temperature
-% first get absolute salinity
-SA = gsw_SA_from_SP(processed_ooi_array(:,5),processed_ooi_array(:,6),...
-    processed_ooi_array(:,3),processed_ooi_array(:,2));
-processed_ooi_array(:,4) = gsw_pt_from_CT(SA,processed_ooi_array(:,4));
-%% end
 
 end
 
