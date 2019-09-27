@@ -127,7 +127,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 350m depth for A
 
 %% try on 350m depth for B
@@ -226,7 +226,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -343,7 +343,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 500m depth for A
 
 %% try on 500m depth for B
@@ -442,7 +442,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -559,7 +559,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 750m depth for A
 
 %% try on 750m depth for B
@@ -658,7 +658,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -775,7 +775,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 1500m depth for A
 
 %% try on 1500m depth for B
@@ -874,7 +874,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -991,7 +991,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 250m depth for A
 
 %% try on 250m depth for B
@@ -1090,7 +1090,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -1207,7 +1207,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 180m depth for A
 
 %% try on 180m depth for B
@@ -1306,7 +1306,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -1423,7 +1423,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 130m depth for A
 
 %% try on 130m depth for B
@@ -1522,7 +1522,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -1639,7 +1639,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 90m depth for A
 
 %% try on 90m depth for B
@@ -1738,7 +1738,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -1855,7 +1855,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 60m depth for A
 
 %% try on 60m depth for B
@@ -1954,7 +1954,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -2071,7 +2071,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 40m depth for A
 
 %% try on 40m depth for B
@@ -2170,7 +2170,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all
@@ -2287,7 +2287,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mA_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 %% end try on 30m depth for A
 
 %% try on 30m depth for B
@@ -2386,7 +2386,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mB_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
 
 
 close all

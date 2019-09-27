@@ -3,9 +3,12 @@ close all
 clc
 
 tic()
-quad_plots_theta_all
-quad_plots_dic_all
-quad_plots_o2_all
-quad_plots_no3_all
+single_plots_pco2
+single_plots_etan
+single_plots_mld
+single_plots_cflux
+single_plots_oflux
+single_plots_tflux
+single_plots_sflux
 
 toc()

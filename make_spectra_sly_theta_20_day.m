@@ -51,7 +51,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -127,7 +127,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 350m depth for A in Dec
 
 %% try on 350m depth for B in Dec
@@ -150,7 +150,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -226,7 +226,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 350m depth for B in Dec
 
@@ -259,7 +259,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -335,7 +335,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 350m depth for A in Mar
 
 %% try on 350m depth for B in Mar
@@ -358,7 +358,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -434,7 +434,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 350m depth for B in Mar
 
@@ -467,7 +467,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -543,7 +543,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 350m depth for A in Jul
 
 %% try on 350m depth for B in Jul
@@ -567,7 +567,7 @@ dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -643,7 +643,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_350mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_350m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 350m depth for B in Jul
@@ -683,7 +683,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -759,7 +759,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 500m depth for A in Dec
 
 %% try on 500m depth for B in Dec
@@ -782,7 +782,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -858,7 +858,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 500m depth for B in Dec
 
@@ -891,7 +891,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -967,7 +967,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 500m depth for A in Mar
 
 %% try on 500m depth for B in Mar
@@ -990,7 +990,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1066,7 +1066,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 500m depth for B in Mar
 
@@ -1099,7 +1099,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1175,7 +1175,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 500m depth for A in Jul
 
 %% try on 500m depth for B in Jul
@@ -1199,7 +1199,7 @@ dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1275,7 +1275,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 500m depth for B in Jul
@@ -1316,7 +1316,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1392,7 +1392,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 750m depth for A in Dec
 
 %% try on 750m depth for B in Dec
@@ -1415,7 +1415,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1491,7 +1491,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 750m depth for B in Dec
 
@@ -1524,7 +1524,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1600,7 +1600,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 750m depth for A in Mar
 
 %% try on 750m depth for B in Mar
@@ -1623,7 +1623,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1699,7 +1699,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 750m depth for B in Mar
 
@@ -1732,7 +1732,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1808,7 +1808,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 750m depth for A in Jul
 
 %% try on 750m depth for B in Jul
@@ -1832,7 +1832,7 @@ dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1908,7 +1908,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_750mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_750m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 750m depth for B in Jul
@@ -1949,7 +1949,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2025,7 +2025,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 1500m depth for A in Dec
 
 %% try on 1500m depth for B in Dec
@@ -2048,7 +2048,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2124,7 +2124,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 1500m depth for B in Dec
 
@@ -2157,7 +2157,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2233,7 +2233,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 1500m depth for A in Mar
 
 %% try on 1500m depth for B in Mar
@@ -2256,7 +2256,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2332,7 +2332,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 1500m depth for B in Mar
 
@@ -2365,7 +2365,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2441,7 +2441,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 1500m depth for A in Jul
 
 %% try on 1500m depth for B in Jul
@@ -2465,7 +2465,7 @@ dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2541,7 +2541,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1500mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1500m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 1500m depth for B in Jul
@@ -2582,7 +2582,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2658,7 +2658,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 250m depth for A in Dec
 
 %% try on 250m depth for B in Dec
@@ -2681,7 +2681,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2757,7 +2757,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 250m depth for B in Dec
 
@@ -2790,7 +2790,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2866,7 +2866,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 250m depth for A in Mar
 
 %% try on 250m depth for B in Mar
@@ -2889,7 +2889,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2965,7 +2965,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 250m depth for B in Mar
 
@@ -2998,7 +2998,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3074,7 +3074,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 250m depth for A in Jul
 
 %% try on 250m depth for B in Jul
@@ -3098,7 +3098,7 @@ dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3174,7 +3174,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_250mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_250m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 250m depth for B in Jul
@@ -3215,7 +3215,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3291,7 +3291,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 180m depth for A in Dec
 
 %% try on 180m depth for B in Dec
@@ -3314,7 +3314,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3390,7 +3390,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 180m depth for B in Dec
 
@@ -3423,7 +3423,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3499,7 +3499,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 180m depth for A in Mar
 
 %% try on 180m depth for B in Mar
@@ -3522,7 +3522,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3598,7 +3598,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 180m depth for B in Mar
 
@@ -3631,7 +3631,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3707,7 +3707,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 180m depth for A in Jul
 
 %% try on 180m depth for B in Jul
@@ -3731,7 +3731,7 @@ dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3807,7 +3807,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_180mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_180m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 180m depth for B in Jul
@@ -3848,7 +3848,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -3924,7 +3924,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 130m depth for A in Dec
 
 %% try on 130m depth for B in Dec
@@ -3947,7 +3947,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4023,7 +4023,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 130m depth for B in Dec
 
@@ -4056,7 +4056,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4132,7 +4132,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 130m depth for A in Mar
 
 %% try on 130m depth for B in Mar
@@ -4155,7 +4155,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4231,7 +4231,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 130m depth for B in Mar
 
@@ -4264,7 +4264,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4340,7 +4340,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 130m depth for A in Jul
 
 %% try on 130m depth for B in Jul
@@ -4364,7 +4364,7 @@ dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4440,7 +4440,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_130mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_130m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 130m depth for B in Jul
@@ -4481,7 +4481,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4557,7 +4557,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 90m depth for A in Dec
 
 %% try on 90m depth for B in Dec
@@ -4580,7 +4580,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4656,7 +4656,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 90m depth for B in Dec
 
@@ -4689,7 +4689,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4765,7 +4765,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 90m depth for A in Mar
 
 %% try on 90m depth for B in Mar
@@ -4788,7 +4788,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4864,7 +4864,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 90m depth for B in Mar
 
@@ -4897,7 +4897,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -4973,7 +4973,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 90m depth for A in Jul
 
 %% try on 90m depth for B in Jul
@@ -4997,7 +4997,7 @@ dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5073,7 +5073,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_90mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_90m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 90m depth for B in Jul
@@ -5114,7 +5114,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5190,7 +5190,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 60m depth for A in Dec
 
 %% try on 60m depth for B in Dec
@@ -5213,7 +5213,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5289,7 +5289,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 60m depth for B in Dec
 
@@ -5322,7 +5322,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5398,7 +5398,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 60m depth for A in Mar
 
 %% try on 60m depth for B in Mar
@@ -5421,7 +5421,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5497,7 +5497,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 60m depth for B in Mar
 
@@ -5530,7 +5530,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5606,7 +5606,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 60m depth for A in Jul
 
 %% try on 60m depth for B in Jul
@@ -5630,7 +5630,7 @@ dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5706,7 +5706,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_60mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_60m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 60m depth for B in Jul
@@ -5747,7 +5747,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5823,7 +5823,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 40m depth for A in Dec
 
 %% try on 40m depth for B in Dec
@@ -5846,7 +5846,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -5922,7 +5922,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 40m depth for B in Dec
 
@@ -5955,7 +5955,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6031,7 +6031,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 40m depth for A in Mar
 
 %% try on 40m depth for B in Mar
@@ -6054,7 +6054,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6130,7 +6130,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 40m depth for B in Mar
 
@@ -6163,7 +6163,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6239,7 +6239,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 40m depth for A in Jul
 
 %% try on 40m depth for B in Jul
@@ -6263,7 +6263,7 @@ dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6339,7 +6339,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_40mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_40m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 40m depth for B in Jul
@@ -6380,7 +6380,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6456,7 +6456,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 30m depth for A in Dec
 
 %% try on 30m depth for B in Dec
@@ -6479,7 +6479,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6555,7 +6555,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 30m depth for B in Dec
 
@@ -6588,7 +6588,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6664,7 +6664,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 30m depth for A in Mar
 
 %% try on 30m depth for B in Mar
@@ -6687,7 +6687,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6763,7 +6763,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 30m depth for B in Mar
 
@@ -6796,7 +6796,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6872,7 +6872,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 30m depth for A in Jul
 
 %% try on 30m depth for B in Jul
@@ -6896,7 +6896,7 @@ dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -6972,7 +6972,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_30mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_30m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 30m depth for B in Jul
@@ -7014,7 +7014,7 @@ dyn_12M = MITgcm12_OOI_CTD_1000m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -7090,7 +7090,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1000mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1000m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 1000m depth for A in Mar
 
 %% try on 1000m depth for B in Mar
@@ -7113,7 +7113,7 @@ dyn_12M = MITgcm12_OOI_CTD_1000m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -7189,7 +7189,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1000mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1000m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 %% end try on 1000m depth for B in Mar
 
@@ -7222,7 +7222,7 @@ dyn_12M = MITgcm12_OOI_CTD_1000m(time_ind_startM:(time_ind_startM+NT-1),2);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -7298,7 +7298,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1000mA_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1000m_A_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 %% end try on 1000m depth for A in Jul
 
 %% try on 1000m depth for B in Jul
@@ -7322,7 +7322,7 @@ dyn_12M = MITgcm12_OOI_CTD_1000m(time_ind_startM:(time_ind_startM+NT-1),4);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 480;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -7398,7 +7398,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_CTD_1000mB_',datestr(startnum,'yyyymmdd'),'sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_THETA_1000m_B_',datestr(startnum,'yyyymmdd'),'_20d_sly'],'-dpng')
 
 close all
 %% end try on 1000m depth for B in Jul
