@@ -148,6 +148,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_30mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_30mA_dep123 = sortrows(GA_OOI_CTD_30mA_dep123,1);
+GA_OOI_CTD_30mA_dep123 = clean_array(GA_OOI_CTD_30mA_dep123,30);
 
 save GA_OOI_CTD_30mA_dep123 GA_OOI_CTD_30mA_dep123 str_key str1a
 %% 
@@ -195,6 +196,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_40mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_40mA_dep123 = sortrows(GA_OOI_CTD_40mA_dep123,1);
+GA_OOI_CTD_40mA_dep123 = clean_array(GA_OOI_CTD_40mA_dep123,40);
 
 save GA_OOI_CTD_40mA_dep123 GA_OOI_CTD_40mA_dep123 str_key str2a
 %% 
@@ -242,6 +244,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_60mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_60mA_dep123 = sortrows(GA_OOI_CTD_60mA_dep123,1);
+GA_OOI_CTD_60mA_dep123 = clean_array(GA_OOI_CTD_60mA_dep123,60);
 
 
 save GA_OOI_CTD_60mA_dep123 GA_OOI_CTD_60mA_dep123 str_key str3a
@@ -289,6 +292,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_90mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_90mA_dep123 = sortrows(GA_OOI_CTD_90mA_dep123,1);
+GA_OOI_CTD_90mA_dep123 = clean_array(GA_OOI_CTD_90mA_dep123,90);
 
 save GA_OOI_CTD_90mA_dep123 GA_OOI_CTD_90mA_dep123 str_key str4a
 %% 
@@ -336,6 +340,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_130mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_130mA_dep123 = sortrows(GA_OOI_CTD_130mA_dep123,1);
+GA_OOI_CTD_130mA_dep123 = clean_array(GA_OOI_CTD_130mA_dep123,130);
 
 save GA_OOI_CTD_130mA_dep123 GA_OOI_CTD_130mA_dep123 str_key str5a
 %% 
@@ -383,6 +388,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_180mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_180mA_dep123 = sortrows(GA_OOI_CTD_180mA_dep123,1);
+GA_OOI_CTD_180mA_dep123 = clean_array(GA_OOI_CTD_180mA_dep123,180);
 
 save GA_OOI_CTD_180mA_dep123 GA_OOI_CTD_180mA_dep123 str_key str6a
 %% 
@@ -430,6 +436,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_250mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_250mA_dep123 = sortrows(GA_OOI_CTD_250mA_dep123,1);
+GA_OOI_CTD_250mA_dep123 = clean_array(GA_OOI_CTD_250mA_dep123,30);
 
 save GA_OOI_CTD_250mA_dep123 GA_OOI_CTD_250mA_dep123 str_key str7a
 %% 
@@ -477,6 +484,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_350mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_350mA_dep123 = sortrows(GA_OOI_CTD_350mA_dep123,1);
+GA_OOI_CTD_350mA_dep123 = clean_array(GA_OOI_CTD_350mA_dep123,350);
 
 save GA_OOI_CTD_350mA_dep123 GA_OOI_CTD_350mA_dep123 str_key str8a
 %% 
@@ -524,6 +532,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_500mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_500mA_dep123 = sortrows(GA_OOI_CTD_500mA_dep123,1);
+GA_OOI_CTD_500mA_dep123 = clean_array(GA_OOI_CTD_500mA_dep123,500);
 
 save GA_OOI_CTD_500mA_dep123 GA_OOI_CTD_500mA_dep123 str_key str9a
 %% 
@@ -571,6 +580,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_750mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_750mA_dep123 = sortrows(GA_OOI_CTD_750mA_dep123,1);
+GA_OOI_CTD_750mA_dep123 = clean_array(GA_OOI_CTD_750mA_dep123,750);
 
 save GA_OOI_CTD_750mA_dep123 GA_OOI_CTD_750mA_dep123 str_key str10a
 %% 
@@ -619,6 +629,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_1000mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_1000mA_dep123 = sortrows(GA_OOI_CTD_1000mA_dep123,1);
+GA_OOI_CTD_1000mA_dep123 = clean_array(GA_OOI_CTD_1000mA_dep123,1000);
 
 save GA_OOI_CTD_1000mA_dep123 GA_OOI_CTD_1000mA_dep123 str_key str11a
 %% 
@@ -666,6 +677,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_1500mA_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_1500mA_dep123 = sortrows(GA_OOI_CTD_1500mA_dep123,1);
+GA_OOI_CTD_1500mA_dep123 = clean_array(GA_OOI_CTD_1500mA_dep123,1500);
 
 save GA_OOI_CTD_1500mA_dep123 GA_OOI_CTD_1500mA_dep123 str_key str12a
 %% 
@@ -713,6 +725,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_30mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_30mB_dep123 = sortrows(GA_OOI_CTD_30mB_dep123,1);
+GA_OOI_CTD_30mB_dep123 = clean_array(GA_OOI_CTD_30mB_dep123,30);
 
 save GA_OOI_CTD_30mB_dep123 GA_OOI_CTD_30mB_dep123 str_key str13a
 %% 
@@ -760,6 +773,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_40mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_40mB_dep123 = sortrows(GA_OOI_CTD_40mB_dep123,1);
+GA_OOI_CTD_40mB_dep123 = clean_array(GA_OOI_CTD_40mB_dep123,40);
 
 save GA_OOI_CTD_40mB_dep123 GA_OOI_CTD_40mB_dep123 str_key str14a
 %% 
@@ -807,6 +821,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_60mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_60mB_dep123 = sortrows(GA_OOI_CTD_60mB_dep123,1);
+GA_OOI_CTD_60mB_dep123 = clean_array(GA_OOI_CTD_60mB_dep123,60);
 
 save GA_OOI_CTD_60mB_dep123 GA_OOI_CTD_60mB_dep123 str_key str15a
 %% 
@@ -854,6 +869,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_90mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_90mB_dep123 = sortrows(GA_OOI_CTD_90mB_dep123,1);
+GA_OOI_CTD_90mB_dep123 = clean_array(GA_OOI_CTD_90mB_dep123,90);
 
 save GA_OOI_CTD_90mB_dep123 GA_OOI_CTD_90mB_dep123 str_key str16a
 %% 
@@ -901,6 +917,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_130mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_130mB_dep123 = sortrows(GA_OOI_CTD_130mB_dep123,1);
+% GA_OOI_CTD_130mB_dep123 = clean_array(GA_OOI_CTD_130mB_dep123,130);
 
 save GA_OOI_CTD_130mB_dep123 GA_OOI_CTD_130mB_dep123 str_key str17a
 %% 
@@ -948,6 +965,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_180mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_180mB_dep123 = sortrows(GA_OOI_CTD_180mB_dep123,1);
+GA_OOI_CTD_180mB_dep123 = clean_array(GA_OOI_CTD_180mB_dep123,180);
 
 save GA_OOI_CTD_180mB_dep123 GA_OOI_CTD_180mB_dep123 str_key str18a
 %% 
@@ -995,6 +1013,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_250mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_250mB_dep123 = sortrows(GA_OOI_CTD_250mB_dep123,1);
+GA_OOI_CTD_250mB_dep123 = clean_array(GA_OOI_CTD_250mB_dep123,250);
 
 save GA_OOI_CTD_250mB_dep123 GA_OOI_CTD_250mB_dep123 str_key str19a
 %% 
@@ -1042,6 +1061,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_350mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_350mB_dep123 = sortrows(GA_OOI_CTD_350mB_dep123,1);
+GA_OOI_CTD_350mB_dep123 = clean_array(GA_OOI_CTD_350mB_dep123,350);
 
 save GA_OOI_CTD_350mB_dep123 GA_OOI_CTD_350mB_dep123 str_key str20a
 %% 
@@ -1089,6 +1109,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_500mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_500mB_dep123 = sortrows(GA_OOI_CTD_500mB_dep123,1);
+% GA_OOI_CTD_500mB_dep123 = clean_array(GA_OOI_CTD_500mB_dep123,500);
 
 save GA_OOI_CTD_500mB_dep123 GA_OOI_CTD_500mB_dep123 str_key str21a
 %% 
@@ -1136,6 +1157,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_750mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_750mB_dep123 = sortrows(GA_OOI_CTD_750mB_dep123,1);
+GA_OOI_CTD_750mB_dep123 = clean_array(GA_OOI_CTD_750mB_dep123,750);
 
 save GA_OOI_CTD_750mB_dep123 GA_OOI_CTD_750mB_dep123 str_key str22a
 %% 
@@ -1183,6 +1205,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_1000mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_1000mB_dep123 = sortrows(GA_OOI_CTD_1000mB_dep123,1);
+GA_OOI_CTD_1000mB_dep123 = clean_array(GA_OOI_CTD_1000mB_dep123,1000);
 
 save GA_OOI_CTD_1000mB_dep123 GA_OOI_CTD_1000mB_dep123 str_key str23a
 %% 
@@ -1230,6 +1253,7 @@ fprintf('QC disqualified %g of %g total measurements \n \n',len1-len2,len1);
 
 GA_OOI_CTD_1500mB_dep123 = [time,lat,lon,temp,salt,pres,dens,depth,QC];
 GA_OOI_CTD_1500mB_dep123 = sortrows(GA_OOI_CTD_1500mB_dep123,1);
+GA_OOI_CTD_1500mB_dep123 = clean_array(GA_OOI_CTD_1500mB_dep123,1500);
 
 save GA_OOI_CTD_1500mB_dep123 GA_OOI_CTD_1500mB_dep123 str_key str24a
 %% 
