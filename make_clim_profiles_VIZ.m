@@ -31,7 +31,7 @@ prof_Sweightall=[];
 
 t1=1;
 
-for yr=2012:2013
+for yr=2014:2018
 
  filename = ['VIZ_SO_' num2str(yr) '_PFL.nc'];
  
@@ -66,75 +66,75 @@ for yr=2012:2013
 
 end
 
-for yr=2014
-
- filename = ['VIZ_SO_' num2str(yr) '_PFL.nc'];
- 
- % I read using ncloads, but one could use ncread or other matlab function
- ncloads(filename);
-
- t2=t1+size(prof_DIC,1)-1;
- 
- prof_DICall(t1:t2,:)=prof_DIC;
- prof_ALKall(t1:t2,:)=prof_ALK;
- prof_PHall(t1:t2,:)=prof_PH;
- prof_PCOall(t1:t2,:)=prof_PCO;
- prof_O2all(t1:t2,:)=prof_O2;
- prof_NO3all(t1:t2,:)=prof_NO3;
- prof_Tall(t1:t2,:)=prof_T;
- prof_Sall(t1:t2,:)=prof_S;
- prof_latall(t1:t2,:)=prof_lat;
- prof_lonall(t1:t2,:)=prof_lon;
- prof_dateall(t1:t2,:)=prof_date;
- prof_YYYYMMDDall(t1:t2,:)=prof_YYYYMMDD;
- prof_HHMMSSall(t1:t2,:)=prof_HHMMSS;
- prof_DICweightall(t1:t2,:)=prof_DIC_LIARweight;
- prof_ALKweightall(t1:t2,:)=prof_ALKweight;
- prof_PHweightall(t1:t2,:)=prof_PHweight;
- prof_PCOweightall(t1:t2,:)=prof_PCOweight;
- prof_O2weightall(t1:t2,:)=prof_O2weight;
- prof_NO3weightall(t1:t2,:)=prof_NO3weight;
- prof_Tweightall(t1:t2,:)=prof_Tweight;
- prof_Sweightall(t1:t2,:)=prof_Sweight;
- 
- t1=t2+1;
-
-end
-
-for yr=2015:2018
-
- filename = ['VIZ_SO_' num2str(yr) '_PFL.nc'];
- 
- % I read using ncloads, but one could use ncread or other matlab function
- ncloads(filename);
-
- t2=t1+size(prof_DIC,1)-1;
- 
- prof_DICall(t1:t2,:)=prof_DIC;
- prof_ALKall(t1:t2,:)=prof_ALK;
- prof_PHall(t1:t2,:)=prof_PH;
- prof_PCOall(t1:t2,:)=prof_PCO;
- prof_O2all(t1:t2,:)=prof_O2;
- prof_NO3all(t1:t2,:)=prof_NO3;
- prof_Tall(t1:t2,:)=prof_T;
- prof_Sall(t1:t2,:)=prof_S;
- prof_latall(t1:t2,:)=prof_lat;
- prof_lonall(t1:t2,:)=prof_lon;
- prof_dateall(t1:t2,:)=prof_date;
- prof_YYYYMMDDall(t1:t2,:)=prof_YYYYMMDD;
- prof_HHMMSSall(t1:t2,:)=prof_HHMMSS;
- prof_DICweightall(t1:t2,:)=prof_DICweight;
- prof_ALKweightall(t1:t2,:)=prof_ALKweight;
- prof_PHweightall(t1:t2,:)=prof_PHweight;
- prof_PCOweightall(t1:t2,:)=prof_PCOweight;
- prof_O2weightall(t1:t2,:)=prof_O2weight;
- prof_NO3weightall(t1:t2,:)=prof_NO3weight;
- prof_Tweightall(t1:t2,:)=prof_Tweight;
- prof_Sweightall(t1:t2,:)=prof_Sweight;
- 
- t1=t2+1;
-
-end
+% for yr=2014
+% 
+%  filename = ['VIZ_SO_' num2str(yr) '_PFL.nc'];
+%  
+%  % I read using ncloads, but one could use ncread or other matlab function
+%  ncloads(filename);
+% 
+%  t2=t1+size(prof_DIC,1)-1;
+%  
+%  prof_DICall(t1:t2,:)=prof_DIC;
+%  prof_ALKall(t1:t2,:)=prof_ALK;
+%  prof_PHall(t1:t2,:)=prof_PH;
+%  prof_PCOall(t1:t2,:)=prof_PCO;
+%  prof_O2all(t1:t2,:)=prof_O2;
+%  prof_NO3all(t1:t2,:)=prof_NO3;
+%  prof_Tall(t1:t2,:)=prof_T;
+%  prof_Sall(t1:t2,:)=prof_S;
+%  prof_latall(t1:t2,:)=prof_lat;
+%  prof_lonall(t1:t2,:)=prof_lon;
+%  prof_dateall(t1:t2,:)=prof_date;
+%  prof_YYYYMMDDall(t1:t2,:)=prof_YYYYMMDD;
+%  prof_HHMMSSall(t1:t2,:)=prof_HHMMSS;
+%  prof_DICweightall(t1:t2,:)=prof_DIC_LIARweight;
+%  prof_ALKweightall(t1:t2,:)=prof_ALKweight;
+%  prof_PHweightall(t1:t2,:)=prof_PHweight;
+%  prof_PCOweightall(t1:t2,:)=prof_PCOweight;
+%  prof_O2weightall(t1:t2,:)=prof_O2weight;
+%  prof_NO3weightall(t1:t2,:)=prof_NO3weight;
+%  prof_Tweightall(t1:t2,:)=prof_Tweight;
+%  prof_Sweightall(t1:t2,:)=prof_Sweight;
+%  
+%  t1=t2+1;
+% 
+% end
+% 
+% for yr=2015:2018
+% 
+%  filename = ['VIZ_SO_' num2str(yr) '_PFL.nc'];
+%  
+%  % I read using ncloads, but one could use ncread or other matlab function
+%  ncloads(filename);
+% 
+%  t2=t1+size(prof_DIC,1)-1;
+%  
+%  prof_DICall(t1:t2,:)=prof_DIC;
+%  prof_ALKall(t1:t2,:)=prof_ALK;
+%  prof_PHall(t1:t2,:)=prof_PH;
+%  prof_PCOall(t1:t2,:)=prof_PCO;
+%  prof_O2all(t1:t2,:)=prof_O2;
+%  prof_NO3all(t1:t2,:)=prof_NO3;
+%  prof_Tall(t1:t2,:)=prof_T;
+%  prof_Sall(t1:t2,:)=prof_S;
+%  prof_latall(t1:t2,:)=prof_lat;
+%  prof_lonall(t1:t2,:)=prof_lon;
+%  prof_dateall(t1:t2,:)=prof_date;
+%  prof_YYYYMMDDall(t1:t2,:)=prof_YYYYMMDD;
+%  prof_HHMMSSall(t1:t2,:)=prof_HHMMSS;
+%  prof_DICweightall(t1:t2,:)=prof_DICweight;
+%  prof_ALKweightall(t1:t2,:)=prof_ALKweight;
+%  prof_PHweightall(t1:t2,:)=prof_PHweight;
+%  prof_PCOweightall(t1:t2,:)=prof_PCOweight;
+%  prof_O2weightall(t1:t2,:)=prof_O2weight;
+%  prof_NO3weightall(t1:t2,:)=prof_NO3weight;
+%  prof_Tweightall(t1:t2,:)=prof_Tweight;
+%  prof_Sweightall(t1:t2,:)=prof_Sweight;
+%  
+%  t1=t2+1;
+% 
+% end
 
 % Now write it all in a structured array
 

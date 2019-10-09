@@ -102,6 +102,14 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_312.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
+%%
+
 char = '../MITgcm/verification/SO3_20190514/diag/diag_state.0000000288';
 temp = rdmds(char);
 
@@ -202,6 +210,14 @@ fid = fopen('DOP_AB3_IC_20170601.bin','w','b');
 fwrite(fid,DOP,'single');
 fclose(fid);
 fprintf('finished DOP \n')
+%%
+
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_306.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
 %%
 
 char = '../MITgcm/verification/SO6_20190510/diag/diag_state.0000000432';
@@ -306,6 +322,14 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_612.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
+%%
+
 char = '../MITgcm/verification/SO6_20190514/diag/diag_state.0000000432';
 temp = rdmds(char);
 
@@ -406,6 +430,14 @@ fid = fopen('DOP_AB6_IC_20170601.bin','w','b');
 fwrite(fid,DOP,'single');
 fclose(fid);
 fprintf('finished DOP \n')
+%%
+
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_606.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
 %%
 
 char = '../MITgcm/verification/SO12_20190510/diag/diag_state.0000001080';
@@ -510,6 +542,14 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_1212.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
+%%
+
 char = '../MITgcm/verification/SO12_20190514/diag/diag_state.0000001080';
 temp = rdmds(char);
 
@@ -610,6 +650,14 @@ fid = fopen('DOP_AB12_IC_20170601.bin','w','b');
 fwrite(fid,DOP,'single');
 fclose(fid);
 fprintf('finished DOP \n')
+
+%% PHY
+PHY = temp(:,:,:,9);
+fid = fopen('phyto_sm_so6_interp_1206.bin','w','b');
+fwrite(fid,PHY,'single');
+fclose(fid);
+fprintf('finished PHY \n')
+%%
 %%
 
 clear

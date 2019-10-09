@@ -330,8 +330,10 @@ netcdf.endDef(ncid);
 
 % write data
 for ii=1:length(list_vars);
-    varname=list_vars{ii};
+    ii
+    varname=list_vars{ii}
     data=getfield(MITprof_buffer,varname);
+    size(data)
     if isnumeric(data)
         data(isnan(data))=fillval;
     end
