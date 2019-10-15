@@ -1333,31 +1333,200 @@ fclose(fid);
 % clear SALT*
 %% end SALT
 
+%% PHYTO_SM
+str = '/data/SOSE/SOSE/SO6/ITER122/bsose_i122_2013to2017_monthly_PhytoSm.nc';
+
+XCS = ncread(str,'XC');
+YCS = ncread(str,'YC');
+hFacC = ncread(str,'hFacC');
+X = XCS;
+Y = YCS;
+lox = find(X>288.3,1)-5;
+hix = find(X>352,1)+5;
+loy = find(Y>-60.1,1)-5;
+hiy = find(Y>-30.7,1)+5;
+YY = find(Y>-32.1,1);
+XCS = XCS(lox:hix);
+YCS = YCS(loy:hiy);
+hFacC = hFacC(lox:hix,loy:hiy,:);
+nn = length(XCS);
+mm = length(YCS);
+[XCS,YCS] = ndgrid(XCS,YCS);
+
+
+
+PHYTO_SM_temp = ncread(str,'PHYTO_SM',[lox,loy,1,1],[nn,mm,52,60]);
+for ii=1:60
+    for jj=1:52
+        PHYTO_SM_temp_temp = PHYTO_SM_temp(:,:,jj,ii);
+        PHYTO_SM_temp_temp(hFacC(:,:,jj)==0) = NaN;
+        PHYTO_SM_temp_temp = fillmissingstan(PHYTO_SM_temp_temp);
+        PHYTO_SM_temp(:,:,jj,ii) = PHYTO_SM_temp_temp;
+    end
+end
+PHYTO_SM = zeros(192,132,52,61);
+
+fprintf('PHYTO_SM grid = [%g,%g]x[%g,%g] \n PHYTO_SM nbc loc = %g \n',X(lox),X(hix),Y(loy),Y(hiy),Y(YY));
+
+for ii=1:52
+    for jj=1:60
+        F = griddedInterpolant(XCS,YCS,PHYTO_SM_temp(:,:,ii,jj),'linear');
+        PHYTO_SM(:,:,ii,jj) = F(XC3,YC3);
+    end
+end
+
+num_mistakes = 0;
+for kk=1:60
+    Logic = PHYTO_SM(:,:,:,kk)==0&HC~=0;
+    num_mistakes = num_mistakes + sum(reshape(Logic,[192*132*52,1]));
+end
+fprintf('number of PHYTO_SM mistakes = %g \n',num_mistakes)
+
+PHYTO_SMN = PHYTO_SM(:,127,:,:);
+PHYTO_SMS = PHYTO_SM(:,6,:,:);
+PHYTO_SME = PHYTO_SM(187,:,:,:);
+PHYTO_SMW = PHYTO_SM(6,:,:,:);
+for ii=1:5
+    PHYTO_SMN(ii,:,:,:) = PHYTO_SMN(6,:,:,:);
+    PHYTO_SMN(187+ii,:,:,:) = PHYTO_SMN(187,:,:,:);
+    PHYTO_SMS(ii,:,:,:) = PHYTO_SMS(6,:,:,:);
+    PHYTO_SMS(187+ii,:,:,:) = PHYTO_SMS(187,:,:,:);
+    PHYTO_SME(:,ii,:,:) = PHYTO_SME(:,6,:,:);
+    PHYTO_SME(:,127+ii,:,:) = PHYTO_SME(:,127,:,:);
+    PHYTO_SMW(:,ii,:,:) = PHYTO_SMW(:,6,:,:);
+    PHYTO_SMW(:,127+ii,:,:) = PHYTO_SMW(:,127,:,:);
+end
+
+PHYTO_SMN = squeeze(PHYTO_SMN);
+PHYTO_SMS = squeeze(PHYTO_SMS);
+PHYTO_SME = squeeze(PHYTO_SME);
+PHYTO_SMW = squeeze(PHYTO_SMW);
+PHYTO_SMN(:,:,61) = PHYTO_SMN(:,:,60);
+PHYTO_SMS(:,:,61) = PHYTO_SMS(:,:,60);
+PHYTO_SME(:,:,61) = PHYTO_SME(:,:,60);
+PHYTO_SMW(:,:,61) = PHYTO_SMW(:,:,60);
+
+fprintf('PHYTO_SMN has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SMN)))));
+fprintf('PHYTO_SMS has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SMS)))));
+fprintf('PHYTO_SME has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SME)))));
+fprintf('PHYTO_SMW has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SMW)))));
+
+fid = fopen('PHYTO_SM_NBC_2013to2017_monthly_3.bin','w','b');
+fwrite(fid,PHYTO_SMN,'single');
+fclose(fid);
+
+fid = fopen('PHYTO_SM_SBC_2013to2017_monthly_3.bin','w','b');
+fwrite(fid,PHYTO_SMS,'single');
+fclose(fid);
+
+fid = fopen('PHYTO_SM_EBC_2013to2017_monthly_3.bin','w','b');
+fwrite(fid,PHYTO_SME,'single');
+fclose(fid);
+
+fid = fopen('PHYTO_SM_WBC_2013to2017_monthly_3.bin','w','b');
+fwrite(fid,PHYTO_SMW,'single');
+fclose(fid);
+
+% clear PHYTO_SM*
+%% end PHYTO_SM
+
 %% AGE
-AGEN = ones(size(SALTN));
-AGEN(:,1,:) = 0;
+AGEN = zeros(192,52,61);
+AGEN(:,2:52,48) = 1;
+AGEN(:,2:52,49) = 2629800;
+AGEN(:,2:52,50) = 2*2629800;
+AGEN(:,2:52,51) = 3*2629800;
+AGEN(:,2:52,52) = 4*2629800;
+AGEN(:,2:52,53) = 5*2629800;
+AGEN(:,2:52,54) = 6*2629800;
+AGEN(:,2:52,55) = 7*2629800;
+AGEN(:,2:52,56) = 8*2629800;
+AGEN(:,2:52,57) = 9*2629800;
+AGEN(:,2:52,58) = 10*2629800;
+AGEN(:,2:52,59) = 11*2629800;
+AGEN(:,2:52,60) = 12*2629800;
+AGEN(:,2:52,61) = 13*2629800;
+
 AGES = AGEN;
-AGEE = ones(size(SALTE));
-AGEE(:,1,:) = 0;
+
+AGEE = zeros(132,52,61);
+AGEE(:,2:52,48) = 1;
+AGEE(:,2:52,49) = 2629800;
+AGEE(:,2:52,50) = 2*2629800;
+AGEE(:,2:52,51) = 3*2629800;
+AGEE(:,2:52,52) = 4*2629800;
+AGEE(:,2:52,53) = 5*2629800;
+AGEE(:,2:52,54) = 6*2629800;
+AGEE(:,2:52,55) = 7*2629800;
+AGEE(:,2:52,56) = 8*2629800;
+AGEE(:,2:52,57) = 9*2629800;
+AGEE(:,2:52,58) = 10*2629800;
+AGEE(:,2:52,59) = 11*2629800;
+AGEE(:,2:52,60) = 12*2629800;
+AGEE(:,2:52,61) = 13*2629800;
+
 AGEW = AGEE;
 
-fid = fopen('AGE_NBC_2013to2017_monthly_3.bin','w','b');
+fid = fopen('AGE_NBC_2013to2017_monthly_32.bin','w','b');
 fwrite(fid,AGEN,'single');
 fclose(fid);
 
-fid = fopen('AGE_SBC_2013to2017_monthly_3.bin','w','b');
+fid = fopen('AGE_SBC_2013to2017_monthly_32.bin','w','b');
 fwrite(fid,AGES,'single');
 fclose(fid);
 
-fid = fopen('AGE_EBC_2013to2017_monthly_3.bin','w','b');
+fid = fopen('AGE_EBC_2013to2017_monthly_32.bin','w','b');
 fwrite(fid,AGEE,'single');
 fclose(fid);
 
-fid = fopen('AGE_WBC_2013to2017_monthly_3.bin','w','b');
+fid = fopen('AGE_WBC_2013to2017_monthly_32.bin','w','b');
 fwrite(fid,AGEW,'single');
 fclose(fid);
 
-clear SALT*
 clear AGE*
 %% end AGE
 
+%% AGE
+AGEN = zeros(192,52,61);
+
+AGEN(:,2:52,54) = 1;
+AGEN(:,2:52,55) = 2629800;
+AGEN(:,2:52,56) = 2*2629800;
+AGEN(:,2:52,57) = 3*2629800;
+AGEN(:,2:52,58) = 4*2629800;
+AGEN(:,2:52,59) = 5*2629800;
+AGEN(:,2:52,60) = 6*2629800;
+AGEN(:,2:52,61) = 7*2629800;
+
+AGES = AGEN;
+
+AGEE = zeros(132,52,61);
+AGEE(:,2:52,54) = 1;
+AGEE(:,2:52,55) = 2629800;
+AGEE(:,2:52,56) = 2*2629800;
+AGEE(:,2:52,57) = 3*2629800;
+AGEE(:,2:52,58) = 4*2629800;
+AGEE(:,2:52,59) = 5*2629800;
+AGEE(:,2:52,60) = 6*2629800;
+AGEE(:,2:52,61) = 7*2629800;
+
+AGEW = AGEE;
+
+fid = fopen('AGE_NBC_2013to2017_monthly_34.bin','w','b');
+fwrite(fid,AGEN,'single');
+fclose(fid);
+
+fid = fopen('AGE_SBC_2013to2017_monthly_34.bin','w','b');
+fwrite(fid,AGES,'single');
+fclose(fid);
+
+fid = fopen('AGE_EBC_2013to2017_monthly_34.bin','w','b');
+fwrite(fid,AGEE,'single');
+fclose(fid);
+
+fid = fopen('AGE_WBC_2013to2017_monthly_34.bin','w','b');
+fwrite(fid,AGEW,'single');
+fclose(fid);
+
+clear AGE*
+%% end AGE

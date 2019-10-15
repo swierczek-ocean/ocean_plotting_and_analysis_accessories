@@ -807,8 +807,7 @@ clear DOP*
 
 %% age tracer
 
-AGE = ones(756,512,104);
-AGE(:,:,1) = zeros(756,512);
+AGE = zeros(756,512,104);
 fid = fopen('AGE_IC_12.bin','w','b');
 fwrite(fid,AGE,'single');
 fclose(fid);

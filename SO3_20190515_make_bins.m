@@ -12,7 +12,7 @@ efield34 = 1;
 mfield34 = 4;
 dfield34 = 1;
 afield34 = 2;
-agfield34 = 9;
+agfield34 = 10;
 
 THETA_Series34 = zeros(192,132,7);
 THETA105_Series34 = zeros(192,132,7);

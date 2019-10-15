@@ -12,7 +12,7 @@ efield64 = 1;
 mfield64 = 4;
 dfield64 = 1;
 afield64 = 2;
-agfield64 = 9;
+agfield64 = 10;
 
 THETA_Series64 = zeros(384,260,7);
 THETA105_Series64 = zeros(384,260,7);

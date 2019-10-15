@@ -12,7 +12,7 @@ efield122 = 1;
 mfield122 = 4;
 dfield122 = 1;
 afield122 = 2;
-agfield122 = 9;
+agfield122 = 10;
 
 THETA_Series122 = zeros(756,512,13);
 THETA105_Series122 = zeros(756,512,13);
