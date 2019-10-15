@@ -102,12 +102,12 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_312.bin','w','b');
-fwrite(fid,PHY,'single');
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB3_IC_20161201.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
 fclose(fid);
-fprintf('finished PHY \n')
+fprintf('finished PHYTO_SM \n')
 %%
 
 char = '../MITgcm/verification/SO3_20190514/diag/diag_state.0000000288';
@@ -212,12 +212,12 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_306.bin','w','b');
-fwrite(fid,PHY,'single');
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB3_IC_20170601.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
 fclose(fid);
-fprintf('finished PHY \n')
+fprintf('finished PHYTO_SM \n')
 %%
 
 char = '../MITgcm/verification/SO6_20190510/diag/diag_state.0000000432';
@@ -322,12 +322,12 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_612.bin','w','b');
-fwrite(fid,PHY,'single');
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB6_IC_20161201.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
 fclose(fid);
-fprintf('finished PHY \n')
+fprintf('finished PHYTO_SM \n')
 %%
 
 char = '../MITgcm/verification/SO6_20190514/diag/diag_state.0000000432';
@@ -432,12 +432,12 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_606.bin','w','b');
-fwrite(fid,PHY,'single');
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB6_IC_20170601.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
 fclose(fid);
-fprintf('finished PHY \n')
+fprintf('finished PHYTO_SM \n')
 %%
 
 char = '../MITgcm/verification/SO12_20190510/diag/diag_state.0000001080';
@@ -542,12 +542,12 @@ fclose(fid);
 fprintf('finished DOP \n')
 %%
 
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_1212.bin','w','b');
-fwrite(fid,PHY,'single');
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB12_IC_20161201.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
 fclose(fid);
-fprintf('finished PHY \n')
+fprintf('finished PHYTO_SM \n')
 %%
 
 char = '../MITgcm/verification/SO12_20190514/diag/diag_state.0000001080';
@@ -650,14 +650,14 @@ fid = fopen('DOP_AB12_IC_20170601.bin','w','b');
 fwrite(fid,DOP,'single');
 fclose(fid);
 fprintf('finished DOP \n')
-
-%% PHY
-PHY = temp(:,:,:,9);
-fid = fopen('phyto_sm_so6_interp_1206.bin','w','b');
-fwrite(fid,PHY,'single');
-fclose(fid);
-fprintf('finished PHY \n')
 %%
+
+%% PHYTO_SM
+PHYTO_SM = temp(:,:,:,9);
+fid = fopen('PHYTO_SM_AB12_IC_20170601.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
+fclose(fid);
+fprintf('finished PHYTO_SM \n')
 %%
 
 clear

@@ -1354,7 +1354,7 @@ mm = length(YCS);
 
 
 
-PHYTO_SM_temp = ncread(str,'PHYTO_SM',[lox,loy,1,1],[nn,mm,52,60]);
+PHYTO_SM_temp = ncread(str,'BLGPSM',[lox,loy,1,1],[nn,mm,52,60]);
 for ii=1:60
     for jj=1:52
         PHYTO_SM_temp_temp = PHYTO_SM_temp(:,:,jj,ii);

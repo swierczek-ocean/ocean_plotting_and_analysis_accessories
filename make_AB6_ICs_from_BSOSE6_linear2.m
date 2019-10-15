@@ -745,6 +745,67 @@ fclose(fid);
 clear DOP*
 %% DOP
 
+%% PHYTO_SM
+str = '/data/SOSE/SOSE/SO6/ITER122/bsose_i122_2013to2017_5day_PhytoSm.nc';
+jj = 322;
+
+XCS = ncread(str,'XC');
+YCS = ncread(str,'YC');
+hFacC = ncread(str,'hFacC');
+X = XCS;
+Y = YCS;
+lox = find(X>288.3,1)-5;
+hix = find(X>352,1)+5;
+loy = find(Y>-60.1,1)-5;
+hiy = find(Y>-30.7,1)+5;
+YY = find(Y>-32.1,1);
+XCS = XCS(lox:hix);
+YCS = YCS(loy:hiy);
+hFacC = hFacC(lox:hix,loy:hiy,:);
+nn = length(XCS);
+mm = length(YCS);
+[XCS,YCS] = ndgrid(XCS,YCS);
+
+PHYTO_SM_temp = ncread(str,'BLGPSM',[lox,loy,1,jj],[nn,mm,52,1]);
+fprintf('PHYTO_SM has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SM_temp)))));
+
+for jj=1:52
+    PHYTO_SM_temp_temp = PHYTO_SM_temp(:,:,jj);
+    PHYTO_SM_temp_temp(hFacC(:,:,jj)==0) = NaN;
+    PHYTO_SM_temp_temp = fillmissingstan(PHYTO_SM_temp_temp);
+    PHYTO_SM_temp(:,:,jj) = PHYTO_SM_temp_temp;
+end
+fprintf('PHYTO_SM has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SM_temp)))));
+PHYTO_SM = zeros(384,260,52);
+
+for ii=1:52
+    F = griddedInterpolant(XCS,YCS,PHYTO_SM_temp(:,:,ii),'linear');
+    PHYTO_SM(:,:,ii) = F(XC6,YC6);
+end
+fprintf('PHYTO_SM has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SM)))));
+Logic = PHYTO_SM==0&HC~=0;
+num_mistakes = sum(reshape(Logic,[384*260*52,1]));
+fprintf('number of PHYTO_SM mistakes = %g \n',num_mistakes)
+
+for ii=1:10
+    PHYTO_SM(ii,11:250,:) = PHYTO_SM(11,11:250,:); 
+    PHYTO_SM(11:374,ii,:) = PHYTO_SM(11:374,11,:);
+    PHYTO_SM(374+ii,11:250,:) = PHYTO_SM(374,11:250,:); 
+    PHYTO_SM(11:374,250+ii,:) = PHYTO_SM(11:374,250,:);
+end
+fprintf('PHYTO_SM has %g NaNs \n',sum(sum(sum(isnan(PHYTO_SM)))));
+
+Logic = PHYTO_SM==0&HC~=0;
+num_mistakes = sum(reshape(Logic,[384*260*52,1]));
+fprintf('number of PHYTO_SM mistakes = %g \n',num_mistakes)
+
+fid = fopen('PHYTO_SM_AB6_IC_20170529.bin','w','b');
+fwrite(fid,PHYTO_SM,'single');
+fclose(fid);
+
+clear PHYTO_SM*
+%% PHYTO_SM
+
 %% age tracer
 
 AGE = ones(384,260,52);
