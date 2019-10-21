@@ -6,12 +6,12 @@ load mask
 load XY3 
 load XY6 
 load XY12 
-load AB34_output
-load AB64_output
-load AB124_output
-load AB32_output
-load AB62_output
-load AB122_output
+load AB34_output AGE*
+load AB64_output AGE*
+load AB124_output AGE*
+load AB32_output AGE*
+load AB62_output AGE*
+load AB122_output AGE*
 %%
 
 %%
@@ -25,8 +25,8 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JJA_avg,...
     AGE_34_JJA_avg,AGE_64_JJA_avg,AGE_124_JJA_avg,option);
 
@@ -82,8 +82,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JAS_avg,...
     AGE_34_JAS_avg,AGE_64_JAS_avg,AGE_124_JAS_avg,option);
 
@@ -139,8 +139,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JJASON_avg,...
     AGE_34_JJASON_avg,AGE_64_JJASON_avg,AGE_124_JJASON_avg,option);
 
@@ -196,8 +196,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JASOND_avg,...
     AGE_34_JASOND_avg,AGE_64_JASOND_avg,AGE_124_JASOND_avg,option);
 
@@ -253,8 +253,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DN_avg,...
     AGE_32_DN_avg,AGE_62_DN_avg,AGE_122_DN_avg,option);
 
@@ -310,8 +310,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JD_avg,...
     AGE_32_JD_avg,AGE_62_JD_avg,AGE_122_JD_avg,option);
 
@@ -367,8 +367,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DJF_avg,...
     AGE_32_DJF_avg,AGE_62_DJF_avg,AGE_122_DJF_avg,option);
 
@@ -424,8 +424,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JFM_avg,...
     AGE_32_JFM_avg,AGE_62_JFM_avg,AGE_122_JFM_avg,option);
 
@@ -481,8 +481,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JFMAMJ_avg,...
     AGE_32_JFMAMJ_avg,AGE_62_JFMAMJ_avg,AGE_122_JFMAMJ_avg,option);
 
@@ -538,8 +538,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DJFMAM_avg,...
     AGE_32_DJFMAM_avg,AGE_62_DJFMAM_avg,AGE_122_DJFMAM_avg,option);
 
@@ -595,8 +595,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JJA_avg,...
     AGE200_34_JJA_avg,AGE200_64_JJA_avg,AGE200_124_JJA_avg,option);
 
@@ -652,8 +652,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JAS_avg,...
     AGE200_34_JAS_avg,AGE200_64_JAS_avg,AGE200_124_JAS_avg,option);
 
@@ -709,8 +709,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JJASON_avg,...
     AGE200_34_JJASON_avg,AGE200_64_JJASON_avg,AGE200_124_JJASON_avg,option);
 
@@ -766,8 +766,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JASOND_avg,...
     AGE200_34_JASOND_avg,AGE200_64_JASOND_avg,AGE200_124_JASOND_avg,option);
 
@@ -823,8 +823,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DN_avg,...
     AGE200_32_DN_avg,AGE200_62_DN_avg,AGE200_122_DN_avg,option);
 
@@ -880,8 +880,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JD_avg,...
     AGE200_32_JD_avg,AGE200_62_JD_avg,AGE200_122_JD_avg,option);
 
@@ -937,8 +937,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DJF_avg,...
     AGE200_32_DJF_avg,AGE200_62_DJF_avg,AGE200_122_DJF_avg,option);
 
@@ -994,8 +994,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JFM_avg,...
     AGE200_32_JFM_avg,AGE200_62_JFM_avg,AGE200_122_JFM_avg,option);
 
@@ -1051,8 +1051,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JFMAMJ_avg,...
     AGE200_32_JFMAMJ_avg,AGE200_62_JFMAMJ_avg,AGE200_122_JFMAMJ_avg,option);
 
@@ -1108,8 +1108,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DJFMAM_avg,...
     AGE200_32_DJFMAM_avg,AGE200_62_DJFMAM_avg,AGE200_122_DJFMAM_avg,option);
 
@@ -1165,8 +1165,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JJA_avg,...
     AGE500_34_JJA_avg,AGE500_64_JJA_avg,AGE500_124_JJA_avg,option);
 
@@ -1222,8 +1222,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JAS_avg,...
     AGE500_34_JAS_avg,AGE500_64_JAS_avg,AGE500_124_JAS_avg,option);
 
@@ -1279,8 +1279,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JJASON_avg,...
     AGE500_34_JJASON_avg,AGE500_64_JJASON_avg,AGE500_124_JJASON_avg,option);
 
@@ -1336,8 +1336,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JASOND_avg,...
     AGE500_34_JASOND_avg,AGE500_64_JASOND_avg,AGE500_124_JASOND_avg,option);
 
@@ -1393,8 +1393,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DN_avg,...
     AGE500_32_DN_avg,AGE500_62_DN_avg,AGE500_122_DN_avg,option);
 
@@ -1450,8 +1450,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JD_avg,...
     AGE500_32_JD_avg,AGE500_62_JD_avg,AGE500_122_JD_avg,option);
 
@@ -1507,8 +1507,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DJF_avg,...
     AGE500_32_DJF_avg,AGE500_62_DJF_avg,AGE500_122_DJF_avg,option);
 
@@ -1564,8 +1564,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JFM_avg,...
     AGE500_32_JFM_avg,AGE500_62_JFM_avg,AGE500_122_JFM_avg,option);
 
@@ -1621,8 +1621,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JFMAMJ_avg,...
     AGE500_32_JFMAMJ_avg,AGE500_62_JFMAMJ_avg,AGE500_122_JFMAMJ_avg,option);
 
@@ -1678,8 +1678,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DJFMAM_avg,...
     AGE500_32_DJFMAM_avg,AGE500_62_DJFMAM_avg,AGE500_122_DJFMAM_avg,option);
 
@@ -1735,8 +1735,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JJA_avg,...
     AGE1000_34_JJA_avg,AGE1000_64_JJA_avg,AGE1000_124_JJA_avg,option);
 
@@ -1792,8 +1792,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JAS_avg,...
     AGE1000_34_JAS_avg,AGE1000_64_JAS_avg,AGE1000_124_JAS_avg,option);
 
@@ -1849,8 +1849,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JJASON_avg,...
     AGE1000_34_JJASON_avg,AGE1000_64_JJASON_avg,AGE1000_124_JJASON_avg,option);
 
@@ -1906,8 +1906,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JASOND_avg,...
     AGE1000_34_JASOND_avg,AGE1000_64_JASOND_avg,AGE1000_124_JASOND_avg,option);
 
@@ -1963,8 +1963,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DN_avg,...
     AGE1000_32_DN_avg,AGE1000_62_DN_avg,AGE1000_122_DN_avg,option);
 
@@ -2020,8 +2020,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JD_avg,...
     AGE1000_32_JD_avg,AGE1000_62_JD_avg,AGE1000_122_JD_avg,option);
 
@@ -2077,8 +2077,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DJF_avg,...
     AGE1000_32_DJF_avg,AGE1000_62_DJF_avg,AGE1000_122_DJF_avg,option);
 
@@ -2134,8 +2134,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JFM_avg,...
     AGE1000_32_JFM_avg,AGE1000_62_JFM_avg,AGE1000_122_JFM_avg,option);
 
@@ -2191,8 +2191,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JFMAMJ_avg,...
     AGE1000_32_JFMAMJ_avg,AGE1000_62_JFMAMJ_avg,AGE1000_122_JFMAMJ_avg,option);
 
@@ -2248,8 +2248,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DJFMAM_avg,...
     AGE1000_32_DJFMAM_avg,AGE1000_62_DJFMAM_avg,AGE1000_122_DJFMAM_avg,option);
 
@@ -2305,8 +2305,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JJA_avg,...
     AGE2000_34_JJA_avg,AGE2000_64_JJA_avg,AGE2000_124_JJA_avg,option);
 
@@ -2362,8 +2362,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JAS_avg,...
     AGE2000_34_JAS_avg,AGE2000_64_JAS_avg,AGE2000_124_JAS_avg,option);
 
@@ -2419,8 +2419,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JJASON_avg,...
     AGE2000_34_JJASON_avg,AGE2000_64_JJASON_avg,AGE2000_124_JJASON_avg,option);
 
@@ -2476,8 +2476,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JASOND_avg,...
     AGE2000_34_JASOND_avg,AGE2000_64_JASOND_avg,AGE2000_124_JASOND_avg,option);
 
@@ -2533,8 +2533,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DN_avg,...
     AGE2000_32_DN_avg,AGE2000_62_DN_avg,AGE2000_122_DN_avg,option);
 
@@ -2590,8 +2590,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JD_avg,...
     AGE2000_32_JD_avg,AGE2000_62_JD_avg,AGE2000_122_JD_avg,option);
 
@@ -2647,8 +2647,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DJF_avg,...
     AGE2000_32_DJF_avg,AGE2000_62_DJF_avg,AGE2000_122_DJF_avg,option);
 
@@ -2704,8 +2704,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JFM_avg,...
     AGE2000_32_JFM_avg,AGE2000_62_JFM_avg,AGE2000_122_JFM_avg,option);
 
@@ -2761,8 +2761,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JFMAMJ_avg,...
     AGE2000_32_JFMAMJ_avg,AGE2000_62_JFMAMJ_avg,AGE2000_122_JFMAMJ_avg,option);
 
@@ -2818,8 +2818,8 @@ close all
 %% END AGE
 
 %% AGE
-cm = acc_colormap('amp');
-cm = [cm;Color(:,46)'];
+cm = acc_colormap('cmo_amp');
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DJFMAM_avg,...
     AGE2000_32_DJFMAM_avg,AGE2000_62_DJFMAM_avg,AGE2000_122_DJFMAM_avg,option);
 

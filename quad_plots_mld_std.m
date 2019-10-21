@@ -3,16 +3,16 @@ acc_settings
 
 %%
 load mask
-load XY3 
-load XY6 
-load XY12 
-load BSOSE_surf_avgs
-load AB34_output
-load AB64_output
-load AB124_output
-load AB32_output
-load AB62_output
-load AB122_output
+load XY3 XC3 YC3
+load XY6 XC6 YC6
+load XY12 XC12 YC12
+load BSOSE_surf_avgs XCS YCS MLD* 
+load AB34_output MLD*
+load AB64_output MLD*
+load AB124_output MLD*
+load AB32_output MLD*
+load AB62_output MLD*
+load AB122_output MLD*
 %%
 
 %%
@@ -26,7 +26,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJA_std,...
     MLD_34_JJA_std,MLD_64_JJA_std,MLD_124_JJA_std,option);
@@ -94,7 +94,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JAS_std,...
     MLD_34_JAS_std,MLD_64_JAS_std,MLD_124_JAS_std,option);
@@ -162,7 +162,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJASON_std,...
     MLD_34_JJASON_std,MLD_64_JJASON_std,MLD_124_JJASON_std,option);
@@ -230,7 +230,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JASOND_std,...
     MLD_34_JASOND_std,MLD_64_JASOND_std,MLD_124_JASOND_std,option);
@@ -298,7 +298,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DN_std,...
     MLD_32_DN_std,MLD_62_DN_std,MLD_122_DN_std,option);
@@ -366,7 +366,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JD_std,...
     MLD_32_JD_std,MLD_62_JD_std,MLD_122_JD_std,option);
@@ -434,7 +434,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJF_std,...
     MLD_32_DJF_std,MLD_62_DJF_std,MLD_122_DJF_std,option);
@@ -502,7 +502,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFM_std,...
     MLD_32_JFM_std,MLD_62_JFM_std,MLD_122_JFM_std,option);
@@ -570,7 +570,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFMAMJ_std,...
     MLD_32_JFMAMJ_std,MLD_62_JFMAMJ_std,MLD_122_JFMAMJ_std,option);
@@ -638,7 +638,7 @@ close all
 %% END MLD
 
 %% MLD
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJFMAM_std,...
     MLD_32_DJFMAM_std,MLD_62_DJFMAM_std,MLD_122_DJFMAM_std,option);

@@ -2,8 +2,8 @@ tic()
 
 %%
 load mask
-load BSOSE_surf_avgs
-load diff_avgs
+load BSOSE_surf_avgs XCS YCS ETAN* 
+load diff_avgs XC* YC* ETAN* 
 %%
 
 %%
@@ -16,7 +16,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJA_std,...
     ETAN_BSOSE_JJA_std,ETAN_BSOSE_JJA_std,ETAN_BSOSE_JJA_std,option);
@@ -42,8 +42,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJA_std_diff,...
     ETAN_34_JJA_std_diff,ETAN_64_JJA_std_diff,ETAN_124_JJA_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -94,7 +94,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JAS_std,...
     ETAN_BSOSE_JAS_std,ETAN_BSOSE_JAS_std,ETAN_BSOSE_JAS_std,option);
@@ -120,8 +120,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JAS_std_diff,...
     ETAN_34_JAS_std_diff,ETAN_64_JAS_std_diff,ETAN_124_JAS_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -172,7 +172,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JASOND_std,...
     ETAN_BSOSE_JASOND_std,ETAN_BSOSE_JASOND_std,ETAN_BSOSE_JASOND_std,option);
@@ -198,8 +198,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JASOND_std_diff,...
     ETAN_34_JASOND_std_diff,ETAN_64_JASOND_std_diff,ETAN_124_JASOND_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -250,7 +250,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJASON_std,...
     ETAN_BSOSE_JJASON_std,ETAN_BSOSE_JJASON_std,ETAN_BSOSE_JJASON_std,option);
@@ -276,8 +276,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJASON_std_diff,...
     ETAN_34_JJASON_std_diff,ETAN_64_JJASON_std_diff,ETAN_124_JJASON_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -328,7 +328,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJF_std,...
     ETAN_BSOSE_DJF_std,ETAN_BSOSE_DJF_std,ETAN_BSOSE_DJF_std,option);
@@ -354,8 +354,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJF_std_diff,...
     ETAN_32_DJF_std_diff,ETAN_62_DJF_std_diff,ETAN_122_DJF_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -406,7 +406,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFM_std,...
     ETAN_BSOSE_JFM_std,ETAN_BSOSE_JFM_std,ETAN_BSOSE_JFM_std,option);
@@ -432,8 +432,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFM_std_diff,...
     ETAN_32_JFM_std_diff,ETAN_62_JFM_std_diff,ETAN_122_JFM_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -484,7 +484,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJFMAM_std,...
     ETAN_BSOSE_DJFMAM_std,ETAN_BSOSE_DJFMAM_std,ETAN_BSOSE_DJFMAM_std,option);
@@ -510,8 +510,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJFMAM_std_diff,...
     ETAN_32_DJFMAM_std_diff,ETAN_62_DJFMAM_std_diff,ETAN_122_DJFMAM_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -562,7 +562,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFMAMJ_std,...
     ETAN_BSOSE_JFMAMJ_std,ETAN_BSOSE_JFMAMJ_std,ETAN_BSOSE_JFMAMJ_std,option);
@@ -588,8 +588,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFMAMJ_std_diff,...
     ETAN_32_JFMAMJ_std_diff,ETAN_62_JFMAMJ_std_diff,ETAN_122_JFMAMJ_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -640,7 +640,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DN_std,...
     ETAN_BSOSE_DN_std,ETAN_BSOSE_DN_std,ETAN_BSOSE_DN_std,option);
@@ -666,8 +666,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DN_std_diff,...
     ETAN_32_DN_std_diff,ETAN_62_DN_std_diff,ETAN_122_DN_std_diff,option);
 z = linspace(lb,ub,nlvls);
@@ -718,7 +718,7 @@ close all
 
 %% WVEL
 option = 8;
-cm = acc_colormap('fire');
+cm = acc_colormap('cmo_amp');
 cm = [cm;Color(:,46)'];
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JD_std,...
     ETAN_BSOSE_JD_std,ETAN_BSOSE_JD_std,ETAN_BSOSE_JD_std,option);
@@ -744,8 +744,8 @@ acc_quad_plots_v5
 hold off
 
 option = 13;
-cm = acc_colormap('balance');
-cm = [Color(:,48)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JD_std_diff,...
     ETAN_32_JD_std_diff,ETAN_62_JD_std_diff,ETAN_122_JD_std_diff,option);
 z = linspace(lb,ub,nlvls);

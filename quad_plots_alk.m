@@ -6,13 +6,13 @@ load mask
 load XY3 
 load XY6 
 load XY12 
-load BSOSE_surf_avgs
-load AB34_output
-load AB64_output
-load AB124_output
-load AB32_output
-load AB62_output
-load AB122_output
+load BSOSE_surf_avgs XCS YCS ALK*
+load AB34_output ALK*
+load AB64_output ALK*
+load AB124_output ALK*
+load AB32_output ALK*
+load AB62_output ALK*
+load AB122_output ALK*
 %%
 
 %%
@@ -26,9 +26,9 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-% cm = [cm;Color(:,46)'];
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+% cm = [cm;Color(46,:)];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JJA_avg,...
     ALK_34_JJA_avg,ALK_64_JJA_avg,ALK_124_JJA_avg,option);
 
@@ -96,8 +96,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JAS_avg,...
     ALK_34_JAS_avg,ALK_64_JAS_avg,ALK_124_JAS_avg,option);
 
@@ -164,8 +164,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JJASON_avg,...
     ALK_34_JJASON_avg,ALK_64_JJASON_avg,ALK_124_JJASON_avg,option);
 
@@ -232,8 +232,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JASOND_avg,...
     ALK_34_JASOND_avg,ALK_64_JASOND_avg,ALK_124_JASOND_avg,option);
 
@@ -300,8 +300,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DN_avg,...
     ALK_32_DN_avg,ALK_62_DN_avg,ALK_122_DN_avg,option);
 
@@ -368,8 +368,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JD_avg,...
     ALK_32_JD_avg,ALK_62_JD_avg,ALK_122_JD_avg,option);
 
@@ -436,8 +436,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DJF_avg,...
     ALK_32_DJF_avg,ALK_62_DJF_avg,ALK_122_DJF_avg,option);
 
@@ -504,8 +504,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JFM_avg,...
     ALK_32_JFM_avg,ALK_62_JFM_avg,ALK_122_JFM_avg,option);
 
@@ -572,8 +572,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JFMAMJ_avg,...
     ALK_32_JFMAMJ_avg,ALK_62_JFMAMJ_avg,ALK_122_JFMAMJ_avg,option);
 
@@ -640,8 +640,8 @@ close all
 %% END ALK
 
 %% ALK
-cm = flipud(acc_colormap_2('dense'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DJFMAM_avg,...
     ALK_32_DJFMAM_avg,ALK_62_DJFMAM_avg,ALK_122_DJFMAM_avg,option);
 

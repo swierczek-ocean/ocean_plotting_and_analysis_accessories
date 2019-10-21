@@ -3,16 +3,16 @@ acc_settings
 
 %%
 load mask
-load XY3 
-load XY6 
-load XY12 
-load BSOSE_surf_avgs
-load AB34_output
-load AB64_output
-load AB124_output
-load AB32_output
-load AB62_output
-load AB122_output
+load XY3 XC3 YC3
+load XY6 XC6 YC6
+load XY12 XC12 YC12
+load BSOSE_surf_avgs XCS YCS SFLUX*
+load AB34_output SFLUX*
+load AB64_output SFLUX*
+load AB124_output SFLUX*
+load AB32_output SFLUX*
+load AB62_output SFLUX*
+load AB122_output SFLUX*
 %%
 
 %%
@@ -26,8 +26,8 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %%
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JJA_avg,...
     SFLUX_34_JJA_avg,SFLUX_64_JJA_avg,SFLUX_124_JJA_avg,option);
 
@@ -94,8 +94,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JAS_avg,...
     SFLUX_34_JAS_avg,SFLUX_64_JAS_avg,SFLUX_124_JAS_avg,option);
 
@@ -162,8 +162,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JJASON_avg,...
     SFLUX_34_JJASON_avg,SFLUX_64_JJASON_avg,SFLUX_124_JJASON_avg,option);
 
@@ -230,8 +230,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JASOND_avg,...
     SFLUX_34_JASOND_avg,SFLUX_64_JASOND_avg,SFLUX_124_JASOND_avg,option);
 
@@ -298,8 +298,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_DN_avg,...
     SFLUX_32_DN_avg,SFLUX_62_DN_avg,SFLUX_122_DN_avg,option);
 
@@ -366,8 +366,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JD_avg,...
     SFLUX_32_JD_avg,SFLUX_62_JD_avg,SFLUX_122_JD_avg,option);
 
@@ -434,8 +434,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_DJF_avg,...
     SFLUX_32_DJF_avg,SFLUX_62_DJF_avg,SFLUX_122_DJF_avg,option);
 
@@ -502,8 +502,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JFM_avg,...
     SFLUX_32_JFM_avg,SFLUX_62_JFM_avg,SFLUX_122_JFM_avg,option);
 
@@ -570,8 +570,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_JFMAMJ_avg,...
     SFLUX_32_JFMAMJ_avg,SFLUX_62_JFMAMJ_avg,SFLUX_122_JFMAMJ_avg,option);
 
@@ -638,8 +638,8 @@ close all
 %% END SFLUX
 
 %% SFLUX
-cm = acc_colormap('balance');
-cm = [Color(:,13)';cm;Color(:,46)'];
+cm = acc_colormap('cmo_balance');
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(SFLUX_BSOSE_DJFMAM_avg,...
     SFLUX_32_DJFMAM_avg,SFLUX_62_DJFMAM_avg,SFLUX_122_DJFMAM_avg,option);
 
