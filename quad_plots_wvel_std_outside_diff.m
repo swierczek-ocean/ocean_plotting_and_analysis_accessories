@@ -17,7 +17,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JJA_std,...
     WVEL100_BSOSE_JJA_std,WVEL100_BSOSE_JJA_std,WVEL100_BSOSE_JJA_std,option);
 
@@ -95,7 +95,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JAS_std,...
     WVEL100_BSOSE_JAS_std,WVEL100_BSOSE_JAS_std,WVEL100_BSOSE_JAS_std,option);
 
@@ -173,7 +173,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JASOND_std,...
     WVEL100_BSOSE_JASOND_std,WVEL100_BSOSE_JASOND_std,WVEL100_BSOSE_JASOND_std,option);
 
@@ -251,7 +251,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JJASON_std,...
     WVEL100_BSOSE_JJASON_std,WVEL100_BSOSE_JJASON_std,WVEL100_BSOSE_JJASON_std,option);
 
@@ -329,7 +329,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_DJF_std,...
     WVEL100_BSOSE_DJF_std,WVEL100_BSOSE_DJF_std,WVEL100_BSOSE_DJF_std,option);
 
@@ -407,7 +407,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JFM_std,...
     WVEL100_BSOSE_JFM_std,WVEL100_BSOSE_JFM_std,WVEL100_BSOSE_JFM_std,option);
 
@@ -485,7 +485,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_DJFMAM_std,...
     WVEL100_BSOSE_DJFMAM_std,WVEL100_BSOSE_DJFMAM_std,WVEL100_BSOSE_DJFMAM_std,option);
 
@@ -563,7 +563,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JFMAMJ_std,...
     WVEL100_BSOSE_JFMAMJ_std,WVEL100_BSOSE_JFMAMJ_std,WVEL100_BSOSE_JFMAMJ_std,option);
 
@@ -641,7 +641,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_DN_std,...
     WVEL100_BSOSE_DN_std,WVEL100_BSOSE_DN_std,WVEL100_BSOSE_DN_std,option);
 
@@ -719,7 +719,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL100_BSOSE_JD_std,...
     WVEL100_BSOSE_JD_std,WVEL100_BSOSE_JD_std,WVEL100_BSOSE_JD_std,option);
 
@@ -797,7 +797,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JJA_std,...
     WVEL190_BSOSE_JJA_std,WVEL190_BSOSE_JJA_std,WVEL190_BSOSE_JJA_std,option);
 
@@ -875,7 +875,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JAS_std,...
     WVEL190_BSOSE_JAS_std,WVEL190_BSOSE_JAS_std,WVEL190_BSOSE_JAS_std,option);
 
@@ -953,7 +953,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JASOND_std,...
     WVEL190_BSOSE_JASOND_std,WVEL190_BSOSE_JASOND_std,WVEL190_BSOSE_JASOND_std,option);
 
@@ -1031,7 +1031,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JJASON_std,...
     WVEL190_BSOSE_JJASON_std,WVEL190_BSOSE_JJASON_std,WVEL190_BSOSE_JJASON_std,option);
 
@@ -1109,7 +1109,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_DJF_std,...
     WVEL190_BSOSE_DJF_std,WVEL190_BSOSE_DJF_std,WVEL190_BSOSE_DJF_std,option);
 
@@ -1187,7 +1187,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JFM_std,...
     WVEL190_BSOSE_JFM_std,WVEL190_BSOSE_JFM_std,WVEL190_BSOSE_JFM_std,option);
 
@@ -1265,7 +1265,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_DJFMAM_std,...
     WVEL190_BSOSE_DJFMAM_std,WVEL190_BSOSE_DJFMAM_std,WVEL190_BSOSE_DJFMAM_std,option);
 
@@ -1343,7 +1343,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JFMAMJ_std,...
     WVEL190_BSOSE_JFMAMJ_std,WVEL190_BSOSE_JFMAMJ_std,WVEL190_BSOSE_JFMAMJ_std,option);
 
@@ -1421,7 +1421,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_DN_std,...
     WVEL190_BSOSE_DN_std,WVEL190_BSOSE_DN_std,WVEL190_BSOSE_DN_std,option);
 
@@ -1499,7 +1499,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL190_BSOSE_JD_std,...
     WVEL190_BSOSE_JD_std,WVEL190_BSOSE_JD_std,WVEL190_BSOSE_JD_std,option);
 
@@ -1577,7 +1577,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JJA_std,...
     WVEL290_BSOSE_JJA_std,WVEL290_BSOSE_JJA_std,WVEL290_BSOSE_JJA_std,option);
 
@@ -1655,7 +1655,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JAS_std,...
     WVEL290_BSOSE_JAS_std,WVEL290_BSOSE_JAS_std,WVEL290_BSOSE_JAS_std,option);
 
@@ -1733,7 +1733,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JASOND_std,...
     WVEL290_BSOSE_JASOND_std,WVEL290_BSOSE_JASOND_std,WVEL290_BSOSE_JASOND_std,option);
 
@@ -1811,7 +1811,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JJASON_std,...
     WVEL290_BSOSE_JJASON_std,WVEL290_BSOSE_JJASON_std,WVEL290_BSOSE_JJASON_std,option);
 
@@ -1889,7 +1889,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_DJF_std,...
     WVEL290_BSOSE_DJF_std,WVEL290_BSOSE_DJF_std,WVEL290_BSOSE_DJF_std,option);
 
@@ -1967,7 +1967,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JFM_std,...
     WVEL290_BSOSE_JFM_std,WVEL290_BSOSE_JFM_std,WVEL290_BSOSE_JFM_std,option);
 
@@ -2045,7 +2045,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_DJFMAM_std,...
     WVEL290_BSOSE_DJFMAM_std,WVEL290_BSOSE_DJFMAM_std,WVEL290_BSOSE_DJFMAM_std,option);
 
@@ -2123,7 +2123,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JFMAMJ_std,...
     WVEL290_BSOSE_JFMAMJ_std,WVEL290_BSOSE_JFMAMJ_std,WVEL290_BSOSE_JFMAMJ_std,option);
 
@@ -2201,7 +2201,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_DN_std,...
     WVEL290_BSOSE_DN_std,WVEL290_BSOSE_DN_std,WVEL290_BSOSE_DN_std,option);
 
@@ -2279,7 +2279,7 @@ close all
 %% WVEL
 option = 9;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(:,46)'];
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(WVEL290_BSOSE_JD_std,...
     WVEL290_BSOSE_JD_std,WVEL290_BSOSE_JD_std,WVEL290_BSOSE_JD_std,option);
 

@@ -127,7 +127,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_350m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_350m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 350m depth for A in Dec
 
 %% try on 350m depth for B in Dec
@@ -226,7 +226,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_350m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_350m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 350m depth for B in Dec
 
@@ -759,7 +759,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_500m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_500m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 500m depth for A in Dec
 
 %% try on 500m depth for B in Dec
@@ -858,7 +858,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_500m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_500m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 500m depth for B in Dec
 
@@ -1392,7 +1392,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_750m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_750m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 750m depth for A in Dec
 
 %% try on 750m depth for B in Dec
@@ -1491,7 +1491,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_750m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_750m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 750m depth for B in Dec
 
@@ -2025,7 +2025,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_1500m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_1500m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 1500m depth for A in Dec
 
 %% try on 1500m depth for B in Dec
@@ -2124,7 +2124,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_1500m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_1500m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 1500m depth for B in Dec
 
@@ -2658,7 +2658,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_250m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_250m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 250m depth for A in Dec
 
 %% try on 250m depth for B in Dec
@@ -2757,7 +2757,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_250m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_250m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 250m depth for B in Dec
 
@@ -3291,7 +3291,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_180m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_180m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 180m depth for A in Dec
 
 %% try on 180m depth for B in Dec
@@ -3390,7 +3390,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_180m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_180m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 180m depth for B in Dec
 
@@ -3924,7 +3924,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_130m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_130m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 130m depth for A in Dec
 
 %% try on 130m depth for B in Dec
@@ -4023,7 +4023,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_130m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_130m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 130m depth for B in Dec
 
@@ -4557,7 +4557,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_90m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_90m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 90m depth for A in Dec
 
 %% try on 90m depth for B in Dec
@@ -4656,7 +4656,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_90m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_90m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 90m depth for B in Dec
 
@@ -5190,7 +5190,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_60m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_60m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 60m depth for A in Dec
 
 %% try on 60m depth for B in Dec
@@ -5289,7 +5289,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_60m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_60m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 60m depth for B in Dec
 
@@ -5823,7 +5823,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_40m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_40m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 40m depth for A in Dec
 
 %% try on 40m depth for B in Dec
@@ -5922,7 +5922,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_40m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_40m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 40m depth for B in Dec
 
@@ -6456,7 +6456,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_30m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_30m_A_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 %% end try on 30m depth for A in Dec
 
 %% try on 30m depth for B in Dec
@@ -6555,7 +6555,7 @@ grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_SALT_30m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
+% print(['PSD_OOI_vs_MITgcm_SALT_30m_B_',datestr(startnum,'yyyymmdd'),'_20d'],'-dpng')
 
 %% end try on 30m depth for B in Dec
 

@@ -10,8 +10,8 @@ load mask
 load XY3 
 load XY6 
 load XY12
-load ETAN_CURRENTS
-load BSOSE_ETAN
+load ETAN_CURRENTS ETAN*
+load BSOSE_ETAN ETAN* SPEED* XCS YCS
 %%
 
 % SPEED_BSOSE = squeeze(SPEED_BSOSE);

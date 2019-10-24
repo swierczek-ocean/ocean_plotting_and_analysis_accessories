@@ -7,9 +7,9 @@ acc_settings
 
 %%
 load mask
-load XY3 
-load XY6 
-load XY12
+load XY3 XC3 YC3
+load XY6 XC6 YC6
+load XY12 XC12 YC12
 load BSOSE_OTHERS
 load PCO2_CURL_WVEL
 %%
@@ -27,8 +27,8 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str *DYG* *DXG* *DRF*
 %%
 
 %% PCO2
-cm = flipud(acc_colormap('deep'));
-cm = [cm;Color(:,46)'];
+cm = flipud(acc_colormap('cmo_tempo'));
+cm = [cm;Color(46,:)];
 [lb,ub,nlvls] = get_color_bounds_standard(PCO2_BSOSE,...
     PCO2_Series32,PCO2_Series62,PCO2_Series122,option);
 ub = 0.00052;

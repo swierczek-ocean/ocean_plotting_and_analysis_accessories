@@ -17,7 +17,7 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JJA_avg,...
     WVEL100_BSOSE_JJA_avg,WVEL100_BSOSE_JJA_avg,WVEL100_BSOSE_JJA_avg,option);
 
@@ -95,7 +95,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JAS_avg,...
     WVEL100_BSOSE_JAS_avg,WVEL100_BSOSE_JAS_avg,WVEL100_BSOSE_JAS_avg,option);
 
@@ -173,7 +173,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JASOND_avg,...
     WVEL100_BSOSE_JASOND_avg,WVEL100_BSOSE_JASOND_avg,WVEL100_BSOSE_JASOND_avg,option);
 
@@ -251,7 +251,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JJASON_avg,...
     WVEL100_BSOSE_JJASON_avg,WVEL100_BSOSE_JJASON_avg,WVEL100_BSOSE_JJASON_avg,option);
 
@@ -329,7 +329,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DJF_avg,...
     WVEL100_BSOSE_DJF_avg,WVEL100_BSOSE_DJF_avg,WVEL100_BSOSE_DJF_avg,option);
 
@@ -407,7 +407,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JFM_avg,...
     WVEL100_BSOSE_JFM_avg,WVEL100_BSOSE_JFM_avg,WVEL100_BSOSE_JFM_avg,option);
 
@@ -485,7 +485,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DJFMAM_avg,...
     WVEL100_BSOSE_DJFMAM_avg,WVEL100_BSOSE_DJFMAM_avg,WVEL100_BSOSE_DJFMAM_avg,option);
 
@@ -563,7 +563,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JFMAMJ_avg,...
     WVEL100_BSOSE_JFMAMJ_avg,WVEL100_BSOSE_JFMAMJ_avg,WVEL100_BSOSE_JFMAMJ_avg,option);
 
@@ -641,7 +641,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DN_avg,...
     WVEL100_BSOSE_DN_avg,WVEL100_BSOSE_DN_avg,WVEL100_BSOSE_DN_avg,option);
 
@@ -719,7 +719,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JD_avg,...
     WVEL100_BSOSE_JD_avg,WVEL100_BSOSE_JD_avg,WVEL100_BSOSE_JD_avg,option);
 
@@ -797,7 +797,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JJA_avg,...
     WVEL190_BSOSE_JJA_avg,WVEL190_BSOSE_JJA_avg,WVEL190_BSOSE_JJA_avg,option);
 
@@ -875,7 +875,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JAS_avg,...
     WVEL190_BSOSE_JAS_avg,WVEL190_BSOSE_JAS_avg,WVEL190_BSOSE_JAS_avg,option);
 
@@ -953,7 +953,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JASOND_avg,...
     WVEL190_BSOSE_JASOND_avg,WVEL190_BSOSE_JASOND_avg,WVEL190_BSOSE_JASOND_avg,option);
 
@@ -1031,7 +1031,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JJASON_avg,...
     WVEL190_BSOSE_JJASON_avg,WVEL190_BSOSE_JJASON_avg,WVEL190_BSOSE_JJASON_avg,option);
 
@@ -1109,7 +1109,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DJF_avg,...
     WVEL190_BSOSE_DJF_avg,WVEL190_BSOSE_DJF_avg,WVEL190_BSOSE_DJF_avg,option);
 
@@ -1187,7 +1187,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JFM_avg,...
     WVEL190_BSOSE_JFM_avg,WVEL190_BSOSE_JFM_avg,WVEL190_BSOSE_JFM_avg,option);
 
@@ -1265,7 +1265,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DJFMAM_avg,...
     WVEL190_BSOSE_DJFMAM_avg,WVEL190_BSOSE_DJFMAM_avg,WVEL190_BSOSE_DJFMAM_avg,option);
 
@@ -1343,7 +1343,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JFMAMJ_avg,...
     WVEL190_BSOSE_JFMAMJ_avg,WVEL190_BSOSE_JFMAMJ_avg,WVEL190_BSOSE_JFMAMJ_avg,option);
 
@@ -1421,7 +1421,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DN_avg,...
     WVEL190_BSOSE_DN_avg,WVEL190_BSOSE_DN_avg,WVEL190_BSOSE_DN_avg,option);
 
@@ -1499,7 +1499,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JD_avg,...
     WVEL190_BSOSE_JD_avg,WVEL190_BSOSE_JD_avg,WVEL190_BSOSE_JD_avg,option);
 
@@ -1577,7 +1577,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JJA_avg,...
     WVEL290_BSOSE_JJA_avg,WVEL290_BSOSE_JJA_avg,WVEL290_BSOSE_JJA_avg,option);
 
@@ -1655,7 +1655,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JAS_avg,...
     WVEL290_BSOSE_JAS_avg,WVEL290_BSOSE_JAS_avg,WVEL290_BSOSE_JAS_avg,option);
 
@@ -1733,7 +1733,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JASOND_avg,...
     WVEL290_BSOSE_JASOND_avg,WVEL290_BSOSE_JASOND_avg,WVEL290_BSOSE_JASOND_avg,option);
 
@@ -1811,7 +1811,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JJASON_avg,...
     WVEL290_BSOSE_JJASON_avg,WVEL290_BSOSE_JJASON_avg,WVEL290_BSOSE_JJASON_avg,option);
 
@@ -1889,7 +1889,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DJF_avg,...
     WVEL290_BSOSE_DJF_avg,WVEL290_BSOSE_DJF_avg,WVEL290_BSOSE_DJF_avg,option);
 
@@ -1967,7 +1967,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JFM_avg,...
     WVEL290_BSOSE_JFM_avg,WVEL290_BSOSE_JFM_avg,WVEL290_BSOSE_JFM_avg,option);
 
@@ -2045,7 +2045,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DJFMAM_avg,...
     WVEL290_BSOSE_DJFMAM_avg,WVEL290_BSOSE_DJFMAM_avg,WVEL290_BSOSE_DJFMAM_avg,option);
 
@@ -2123,7 +2123,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JFMAMJ_avg,...
     WVEL290_BSOSE_JFMAMJ_avg,WVEL290_BSOSE_JFMAMJ_avg,WVEL290_BSOSE_JFMAMJ_avg,option);
 
@@ -2201,7 +2201,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DN_avg,...
     WVEL290_BSOSE_DN_avg,WVEL290_BSOSE_DN_avg,WVEL290_BSOSE_DN_avg,option);
 
@@ -2279,7 +2279,7 @@ close all
 %% WVEL
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(:,46)';cm;Color(:,46)'];
+cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JD_avg,...
     WVEL290_BSOSE_JD_avg,WVEL290_BSOSE_JD_avg,WVEL290_BSOSE_JD_avg,option);
 
