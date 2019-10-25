@@ -44,14 +44,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_350mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_350mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -110,24 +110,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['350m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['350m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_350m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_350m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 350m depth for A
 
 %% try on 350m depth for B
@@ -142,15 +142,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_350mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_350mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_350m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -209,24 +209,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['350m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['350m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_350m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_350m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -260,14 +260,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_500mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_500mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -326,24 +326,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['500m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['500m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_500m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_500m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 500m depth for A
 
 %% try on 500m depth for B
@@ -358,15 +358,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_500mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_500mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_500m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -425,24 +425,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['500m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['500m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_500m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_500m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -476,14 +476,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_750mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_750mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -542,24 +542,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['750m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['750m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_750m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_750m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 750m depth for A
 
 %% try on 750m depth for B
@@ -574,15 +574,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_750mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_750mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_750m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -641,24 +641,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['750m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['750m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_750m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_750m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -692,14 +692,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_1500mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_1500mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -758,24 +758,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['1500m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['1500m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_1500m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_1500m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 1500m depth for A
 
 %% try on 1500m depth for B
@@ -790,15 +790,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_1500mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_1500mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_1500m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -857,24 +857,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['1500m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['1500m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_1500m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_1500m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -908,14 +908,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_250mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_250mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -974,24 +974,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['250m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['250m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_250m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_250m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 250m depth for A
 
 %% try on 250m depth for B
@@ -1006,15 +1006,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_250mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_250mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_250m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1073,24 +1073,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['250m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['250m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_250m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_250m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -1124,14 +1124,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_180mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_180mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1190,24 +1190,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['180m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['180m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_180m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_180m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 180m depth for A
 
 %% try on 180m depth for B
@@ -1222,15 +1222,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_180mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_180mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_180m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1289,24 +1289,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['180m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['180m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_180m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_180m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -1340,14 +1340,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_130mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_130mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1406,24 +1406,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['130m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['130m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_130m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_130m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 130m depth for A
 
 %% try on 130m depth for B
@@ -1438,15 +1438,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_130mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_130mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_130m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1505,24 +1505,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['130m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['130m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_130m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_130m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -1556,14 +1556,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_90mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_90mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1622,24 +1622,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['90m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['90m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_90m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_90m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 90m depth for A
 
 %% try on 90m depth for B
@@ -1654,15 +1654,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_90mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_90mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_90m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1721,24 +1721,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['90m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['90m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_90m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_90m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -1772,14 +1772,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_60mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_60mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1838,24 +1838,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['60m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['60m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_60m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_60m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 60m depth for A
 
 %% try on 60m depth for B
@@ -1870,15 +1870,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_60mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_60mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_60m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -1937,24 +1937,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['60m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['60m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_60m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_60m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -1988,14 +1988,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_40mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_40mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2054,24 +2054,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['40m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['40m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_40m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_40m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 40m depth for A
 
 %% try on 40m depth for B
@@ -2086,15 +2086,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_40mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_40mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_40m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2153,24 +2153,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['40m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['40m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_40m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_40m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all
@@ -2204,14 +2204,14 @@ datefmt = 'mmm dd yyyy';
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeA(time_ind_startOA),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_30mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_6M = MITgcm6_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
-dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),2);
+dyn_OOI = Proc_GA_OOI_CTD_30mA_dep3(time_ind_startOA:(time_ind_startOA+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_6M = MITgcm6_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),3);
+dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),3);
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2270,24 +2270,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI A','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['30m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['30m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_30m_A_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_30m_A_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 %% end try on 30m depth for A
 
 %% try on 30m depth for B
@@ -2302,15 +2302,15 @@ end
 fprintf(['first model obs at ',datestr(time_of_exp(1),datefmt),...
     '; first OOI obs at ',datestr(ooi_timeB(time_ind_startOB),datefmt),'\n'])
 
-dyn_OOI = Proc_GA_OOI_CTD_30mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),4);
-dyn_3M = MITgcm3_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_6M = MITgcm6_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
-dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),4);
+dyn_OOI = Proc_GA_OOI_CTD_30mB_dep3(time_ind_startOB:(time_ind_startOB+NT-1),5);
+dyn_3M = MITgcm3_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_6M = MITgcm6_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),5);
+dyn_12M = MITgcm12_OOI_CTD_30m(time_ind_startM:(time_ind_startM+NT-1),5);
 
 
 %  %LETS DO 10 DAY WINDOWS WITH 50% OVERLAP
 count = 0;
-dt = 240;
+dt = 1200;
 for i = 1:dt/2:(NT-dt)
     tmp1 = dyn_OOI(i:i+dt-1);
     tmp2 = dyn_3M(i:i+dt-1);
@@ -2369,24 +2369,24 @@ myColorOrder = [Color(cb,:);Color(c3,:);Color(c6,:);Color(c12,:)];
 
 figure();
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = semilogy(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
+h1 = loglog(freq,psd_OOI,'Color',Color(cb,:),'LineWidth',lw);
 hold on
-h2 = semilogy(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
-h3 = semilogy(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
-h4 = semilogy(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
+h2 = loglog(freq,psd_3M,'Color',Color(c3,:),'LineWidth',lw);
+h3 = loglog(freq,psd_6M,'Color',Color(c6,:),'LineWidth',lw);
+h4 = loglog(freq,psd_12M,'Color',Color(c12,:),'LineWidth',lw);
 l = line([freq(3) freq(3)],[err_low err_high]*psd_OOI(3),'Color','k');
 set(l,'linewidth',3);
 legend('OOI B','1/3','1/6','1/12','location','southwest')
 xlabel('cpd')
-ylabel('[degC^2/cpd]')
-title(['30m potential temperature 1 year PSD starting on ',startday],...
+ylabel('[psu^2/cpd]')
+title(['30m salinity 1 year PSD starting on ',startday],...
     'Interpreter','none','FontWeight','Normal')
 set(gca,'fontsize',18)
 grid on;
 acc_plots
 acc_movie
 hold off
-print(['PSD_OOI_vs_MITgcm_THETA_30m_B_',datestr(startnum,'yyyymmdd'),'_long','sly'],'-dpng')
+print(['PSD_OOI_vs_MITgcm_SALT_30m_B_',datestr(startnum,'yyyymmdd'),'_50d_long'],'-dpng')
 
 
 close all

@@ -7,7 +7,7 @@ ti = ax.TightInset;
 left = outerpos(1)-0.044;
 bottom = outerpos(2) + ti(2)-0.045;
 % ax_width = outerpos(3) + 0.032;
-ax_width = outerpos(3) + 0.076;
+ax_width = outerpos(3) + 0.06;
 ax_height = outerpos(4) - ti(2) - ti(4) + 0.07;
 ax.Position = [left bottom ax_width ax_height];
 colorbar('Position', [left+ax_width+0.015 bottom 0.02 2.13*ax_height])

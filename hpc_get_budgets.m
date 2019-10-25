@@ -5,25 +5,25 @@ tic()
 
 dicfield = 1;
 thetafield = 1;
-tuadvffield = 1;
-tvadvffield = 2;
+tuadvfield = 1;
+tvadvfield = 2;
 dicuadvfield = 1;
 dicvadvfield = 2;
 tffield = 1;
 cffield = 3;
 
-ind3up = 126;
-ind3down = 7;
+ind3n = 126;
+ind3s = 7;
 ind3e = 185;
 ind3w = 6;
 
-ind6up = 249;
-ind6down = 10;
+ind6n = 249;
+ind6s = 10;
 ind6e = 370;
 ind6w = 11;
 
-ind12up = 496;
-ind12down = 18;
+ind12n = 496;
+ind12s = 18;
 ind12e = 736;
 ind12w = 17;
 
@@ -190,6 +190,7 @@ for ii=1:2
     temp3state = rdmds(char3state);
     THETA_temp1 = temp3state(ind3w:ind3e,ind3s:ind3n,1:depth31,thetafield);
     THETA_temp2 = temp3state(ind3w:ind3e,ind3s:ind3n,1:depth32,thetafield);
+    fprintf('1/3 now finding average temp, iter %g \n',ii)
     THETA3_Series9m(ii) = sum(sum(sum(THETA_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth31))))./vol9m;
     THETA3_Series100m(ii) = sum(sum(sum(THETA_temp2.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
@@ -199,21 +200,24 @@ for ii=1:2
     temp3bgc = rdmds(char3bgc);
     DIC_temp1 = temp3bgc(ind3w:ind3e,ind3s:ind3n,1:depth31,dicfield);
     DIC_temp2 = temp3bgc(ind3w:ind3e,ind3s:ind3n,1:depth32,dicfield);
+    fprintf('1/3 now finding total dic, iter %g \n',ii)
     DIC3_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth31))));
-    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
+    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth32))));
     clear temp3state    
     char3surf = [str3s,'diag_airsea.00000000',num2str(48*ii)];
     temp3surf = rdmds(char3surf); 
     TFLUX_Series3(:,:,ii) = temp3surf(ind3w:ind3e,ind3s:ind3n,tffield); 
     CFLUX_Series3(:,:,ii) = temp3surf(ind3w:ind3e,ind3s:ind3n,cffield);
+    fprintf('1/3 now finding total fluxes, iter %g \n',ii)
     TFLUX_TS3(ii) = sum(sum(TFLUX_Series3(:,:,ii).*RAC3(ind3w:ind3e,ind3s:ind3n)));
     CFLUX_TS3(ii) = sum(sum(CFLUX_Series3(:,:,ii).*RAC3(ind3w:ind3e,ind3s:ind3n)));
     clear temp3surf
 end
 
 for ii=3:20
+    fprintf('1/3 now finding something else, iter %g \n',ii)
     char3state = [str3s,'diag_state.0000000',num2str(48*ii)];
     temp3state = rdmds(char3state);
     THETA_temp1 = temp3state(ind3w:ind3e,ind3s:ind3n,1:depth31,thetafield);
@@ -229,7 +233,7 @@ for ii=3:20
     DIC_temp2 = temp3bgc(ind3w:ind3e,ind3s:ind3n,1:depth32,dicfield);
     DIC3_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth31))));
-    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
+    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth32))));
     clear temp3state    
     char3surf = [str3s,'diag_airsea.0000000',num2str(48*ii)];
@@ -242,6 +246,7 @@ for ii=3:20
 end
 
 for ii=21:208
+    fprintf('1/3 now finding something else, iter %g \n',ii)
     char3state = [str3s,'diag_state.000000',num2str(48*ii)];
     temp3state = rdmds(char3state);
     THETA_temp1 = temp3state(ind3w:ind3e,ind3s:ind3n,1:depth31,thetafield);
@@ -257,7 +262,7 @@ for ii=21:208
     DIC_temp2 = temp3bgc(ind3w:ind3e,ind3s:ind3n,1:depth32,dicfield);
     DIC3_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth31))));
-    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
+    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth32))));
     clear temp3state    
     char3surf = [str3s,'diag_airsea.000000',num2str(48*ii)];
@@ -270,6 +275,7 @@ for ii=21:208
 end
 
 for ii=209:395
+    fprintf('1/3 now finding something else, iter %g \n',ii)
     char3state = [str3s,'diag_state.00000',num2str(48*ii)];
     temp3state = rdmds(char3state);
     THETA_temp1 = temp3state(ind3w:ind3e,ind3s:ind3n,1:depth31,thetafield);
@@ -285,7 +291,7 @@ for ii=209:395
     DIC_temp2 = temp3bgc(ind3w:ind3e,ind3s:ind3n,1:depth32,dicfield);
     DIC3_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth31))));
-    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
+    DIC3_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC3(ind3w:ind3e,ind3s:ind3n).*...
         DRF3(1,1,1:depth32))));
     clear temp3state    
     char3surf = [str3s,'diag_airsea.00000',num2str(48*ii)];
@@ -350,6 +356,7 @@ depth62 = 12;
 
 
 for ii=1:4
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6dic = [str6b,'diag_dic_budget.000000',num2str(2190*ii)];
     temp6dic = rdmds(char6dic);
     DIC6E(:,:,ii) = squeeze(temp6dic(ind6e+1,ind6s:ind6n,:,dicuadvfield));
@@ -391,6 +398,7 @@ for ii=1:4
 end
 
 for ii=5:13
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6dic = [str6b,'diag_dic_budget.00000',num2str(2190*ii)];
     temp6dic = rdmds(char6dic);
     DIC6E(:,:,ii) = squeeze(temp6dic(ind6e+1,ind6s:ind6n,:,dicuadvfield));
@@ -436,6 +444,7 @@ vol9m = sum(squeeze(DRF6(1:depth61)).*(sum(sum(RAC6))));
 vol100m = sum(squeeze(DRF6(1:depth62)).*(sum(sum(RAC6))));
 
 for ii=1:1
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6state = [str6s,'diag_state.00000000',num2str(72*ii)];
     temp6state = rdmds(char6state);
     THETA_temp1 = temp6state(ind6w:ind6e,ind6s:ind6n,1:depth61,thetafield);
@@ -451,7 +460,7 @@ for ii=1:1
     DIC_temp2 = temp6bgc(ind6w:ind6e,ind6s:ind6n,1:depth62,dicfield);
     DIC6_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth61))));
-    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
+    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth62))));
     clear temp6state    
     char6surf = [str6s,'diag_airsea.00000000',num2str(72*ii)];
@@ -464,6 +473,7 @@ for ii=1:1
 end
 
 for ii=2:13
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6state = [str6s,'diag_state.0000000',num2str(72*ii)];
     temp6state = rdmds(char6state);
     THETA_temp1 = temp6state(ind6w:ind6e,ind6s:ind6n,1:depth61,thetafield);
@@ -479,7 +489,7 @@ for ii=2:13
     DIC_temp2 = temp6bgc(ind6w:ind6e,ind6s:ind6n,1:depth62,dicfield);
     DIC6_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth61))));
-    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
+    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth62))));
     clear temp6state    
     char6surf = [str6s,'diag_airsea.0000000',num2str(72*ii)];
@@ -492,6 +502,7 @@ for ii=2:13
 end
 
 for ii=14:138
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6state = [str6s,'diag_state.000000',num2str(72*ii)];
     temp6state = rdmds(char6state);
     THETA_temp1 = temp6state(ind6w:ind6e,ind6s:ind6n,1:depth61,thetafield);
@@ -507,7 +518,7 @@ for ii=14:138
     DIC_temp2 = temp6bgc(ind6w:ind6e,ind6s:ind6n,1:depth62,dicfield);
     DIC6_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth61))));
-    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
+    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth62))));
     clear temp6state    
     char6surf = [str6s,'diag_airsea.000000',num2str(72*ii)];
@@ -520,6 +531,7 @@ for ii=14:138
 end
 
 for ii=139:395
+    fprintf('1/6 now finding something else, iter %g \n',ii)
     char6state = [str6s,'diag_state.00000',num2str(72*ii)];
     temp6state = rdmds(char6state);
     THETA_temp1 = temp6state(ind6w:ind6e,ind6s:ind6n,1:depth61,thetafield);
@@ -535,7 +547,7 @@ for ii=139:395
     DIC_temp2 = temp6bgc(ind6w:ind6e,ind6s:ind6n,1:depth62,dicfield);
     DIC6_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth61))));
-    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
+    DIC6_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC6(ind6w:ind6e,ind6s:ind6n).*...
         DRF6(1,1,1:depth62))));
     clear temp6state    
     char6surf = [str6s,'diag_airsea.00000',num2str(72*ii)];
@@ -567,14 +579,14 @@ save SO6_BUDGETS DIC* THETA* TFLUX* CFLUX* RC6 YC6e YC6w XC6n XC6s
 
 clear THETA* DIC* TFLUX* CFLUX*
 
-DIC12N = zeros(720,52,13);
-DIC12S = zeros(720,52,13);
-DIC12E = zeros(479,52,13);
-DIC12W = zeros(479,52,13);
-THETA12N = zeros(720,52,13);
-THETA12S = zeros(720,52,13);
-THETA12E = zeros(479,52,13);
-THETA12W = zeros(479,52,13);
+DIC12N = zeros(720,104,13);
+DIC12S = zeros(720,104,13);
+DIC12E = zeros(479,104,13);
+DIC12W = zeros(479,104,13);
+THETA12N = zeros(720,104,13);
+THETA12S = zeros(720,104,13);
+THETA12E = zeros(479,104,13);
+THETA12W = zeros(479,104,13);
 
 DIC12Nts = zeros(1,13);
 DIC12Sts = zeros(1,13);
@@ -600,6 +612,7 @@ depth122 = 24;
 
 
 for ii=1:9
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12dic = [str12b,'diag_dic_budget.00000',num2str(10950*ii)];
     temp12dic = rdmds(char12dic);
     DIC12E(:,:,ii) = squeeze(temp12dic(ind12e+1,ind12s:ind12n,:,dicuadvfield));
@@ -641,6 +654,7 @@ for ii=1:9
 end
 
 for ii=10:13
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12dic = [str12b,'diag_dic_budget.0000',num2str(10950*ii)];
     temp12dic = rdmds(char12dic);
     DIC12E(:,:,ii) = squeeze(temp12dic(ind12e+1,ind12s:ind12n,:,dicuadvfield));
@@ -686,6 +700,7 @@ vol9m = sum(squeeze(DRF12(1:depth121)).*(sum(sum(RAC12))));
 vol100m = sum(squeeze(DRF12(1:depth122)).*(sum(sum(RAC12))));
 
 for ii=1:2
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12state = [str12s,'diag_state.0000000',num2str(360*ii)];
     temp12state = rdmds(char12state);
     THETA_temp1 = temp12state(ind12w:ind12e,ind12s:ind12n,1:depth121,thetafield);
@@ -701,7 +716,7 @@ for ii=1:2
     DIC_temp2 = temp12bgc(ind12w:ind12e,ind12s:ind12n,1:depth122,dicfield);
     DIC12_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth121))));
-    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
+    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth122))));
     clear temp12state    
     char12surf = [str12s,'diag_airsea.0000000',num2str(360*ii)];
@@ -714,6 +729,7 @@ for ii=1:2
 end
 
 for ii=3:27
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12state = [str12s,'diag_state.000000',num2str(360*ii)];
     temp12state = rdmds(char12state);
     THETA_temp1 = temp12state(ind12w:ind12e,ind12s:ind12n,1:depth121,thetafield);
@@ -729,7 +745,7 @@ for ii=3:27
     DIC_temp2 = temp12bgc(ind12w:ind12e,ind12s:ind12n,1:depth122,dicfield);
     DIC12_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth121))));
-    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
+    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth122))));
     clear temp12state    
     char12surf = [str12s,'diag_airsea.000000',num2str(360*ii)];
@@ -742,6 +758,7 @@ for ii=3:27
 end
 
 for ii=28:277
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12state = [str12s,'diag_state.00000',num2str(360*ii)];
     temp12state = rdmds(char12state);
     THETA_temp1 = temp12state(ind12w:ind12e,ind12s:ind12n,1:depth121,thetafield);
@@ -757,7 +774,7 @@ for ii=28:277
     DIC_temp2 = temp12bgc(ind12w:ind12e,ind12s:ind12n,1:depth122,dicfield);
     DIC12_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth121))));
-    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
+    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth122))));
     clear temp12state    
     char12surf = [str12s,'diag_airsea.00000',num2str(360*ii)];
@@ -770,6 +787,7 @@ for ii=28:277
 end
 
 for ii=278:395
+    fprintf('1/12 now finding something else, iter %g \n',ii)
     char12state = [str12s,'diag_state.0000',num2str(360*ii)];
     temp12state = rdmds(char12state);
     THETA_temp1 = temp12state(ind12w:ind12e,ind12s:ind12n,1:depth121,thetafield);
@@ -785,7 +803,7 @@ for ii=278:395
     DIC_temp2 = temp12bgc(ind12w:ind12e,ind12s:ind12n,1:depth122,dicfield);
     DIC12_Series9m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth121))));
-    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp1.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
+    DIC12_Series100m(ii) = sum(sum(sum(DIC_temp2.*RAC12(ind12w:ind12e,ind12s:ind12n).*...
         DRF12(1,1,1:depth122))));
     clear temp12state    
     char12surf = [str12s,'diag_airsea.0000',num2str(360*ii)];
