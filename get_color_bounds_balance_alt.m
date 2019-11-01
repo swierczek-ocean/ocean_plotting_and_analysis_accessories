@@ -1,6 +1,6 @@
 function [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(A,B,C,D,option)
 %% calculates lower and upper bounds for colorbar
-DIST = [A(A<10000000);B(B<10000000);C(C<10000000);D(D<10000000)];
+DIST = [A(isnan(A)==0);B(isnan(B)==0);C(isnan(C)==0);D(isnan(D)==0)];
 DIST = sort(DIST);
 len = length(DIST);
 
@@ -151,15 +151,6 @@ end
 %% 1st to 99th percentile range
 if option==15
     ind1 = ceil(len*0.001);
-    DIST2 = DIST(ind1:(len-ind1));
-    lb = DIST2(1);
-    ub = DIST2(end);
-end
-%%
-
-%% 1st to 99th percentile range
-if option==16
-    ind1 = ceil(len*0.002);
     DIST2 = DIST(ind1:(len-ind1));
     lb = DIST2(1);
     ub = DIST2(end);

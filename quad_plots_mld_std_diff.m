@@ -17,12 +17,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJA_std,...
     MLD_BSOSE_JJA_std,MLD_BSOSE_JJA_std,MLD_BSOSE_JJA_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -47,7 +47,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_34_JJA_std_diff,...
     MLD_34_JJA_std_diff,MLD_64_JJA_std_diff,MLD_124_JJA_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_34_JJA_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -88,19 +88,19 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean MLD stdev','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_05JJA_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_05JJA_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JAS_std,...
     MLD_BSOSE_JAS_std,MLD_BSOSE_JAS_std,MLD_BSOSE_JAS_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -125,7 +125,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_34_JAS_std_diff,...
     MLD_34_JAS_std_diff,MLD_64_JAS_std_diff,MLD_124_JAS_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_34_JAS_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -166,19 +166,19 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean MLD stdev','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_06JAS_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_06JAS_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JASOND_std,...
     MLD_BSOSE_JASOND_std,MLD_BSOSE_JASOND_std,MLD_BSOSE_JASOND_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -203,7 +203,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_34_JASOND_std_diff,...
     MLD_34_JASOND_std_diff,MLD_64_JASOND_std_diff,MLD_124_JASOND_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_34_JASOND_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -244,19 +244,19 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean MLD stdev','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_08JASOND_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_08JASOND_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJASON_std,...
     MLD_BSOSE_JJASON_std,MLD_BSOSE_JJASON_std,MLD_BSOSE_JJASON_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -281,7 +281,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_34_JJASON_std_diff,...
     MLD_34_JJASON_std_diff,MLD_64_JJASON_std_diff,MLD_124_JJASON_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_34_JJASON_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -322,19 +322,19 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean MLD stdev','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_07JJASON_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_07JJASON_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJF_std,...
     MLD_BSOSE_DJF_std,MLD_BSOSE_DJF_std,MLD_BSOSE_DJF_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -359,7 +359,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_DJF_std_diff,...
     MLD_32_DJF_std_diff,MLD_62_DJF_std_diff,MLD_122_DJF_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_DJF_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -400,19 +400,19 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean MLD stdev','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_01DJF_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_01DJF_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFM_std,...
     MLD_BSOSE_JFM_std,MLD_BSOSE_JFM_std,MLD_BSOSE_JFM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -437,7 +437,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_JFM_std_diff,...
     MLD_32_JFM_std_diff,MLD_62_JFM_std_diff,MLD_122_JFM_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_JFM_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -478,19 +478,19 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean MLD stdev','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_02JFM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_02JFM_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJFMAM_std,...
     MLD_BSOSE_DJFMAM_std,MLD_BSOSE_DJFMAM_std,MLD_BSOSE_DJFMAM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -515,7 +515,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_DJFMAM_std_diff,...
     MLD_32_DJFMAM_std_diff,MLD_62_DJFMAM_std_diff,MLD_122_DJFMAM_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_DJFMAM_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -556,19 +556,19 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean MLD stdev','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_03DJFMAM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_03DJFMAM_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFMAMJ_std,...
     MLD_BSOSE_JFMAMJ_std,MLD_BSOSE_JFMAMJ_std,MLD_BSOSE_JFMAMJ_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -593,7 +593,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_JFMAMJ_std_diff,...
     MLD_32_JFMAMJ_std_diff,MLD_62_JFMAMJ_std_diff,MLD_122_JFMAMJ_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_JFMAMJ_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -634,19 +634,19 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean MLD stdev','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_04JFMAMJ_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_04JFMAMJ_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DN_std,...
     MLD_BSOSE_DN_std,MLD_BSOSE_DN_std,MLD_BSOSE_DN_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -671,7 +671,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_DN_std_diff,...
     MLD_32_DN_std_diff,MLD_62_DN_std_diff,MLD_122_DN_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_DN_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -712,19 +712,19 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean MLD stdev','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_09DN_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_09DN_DIFF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 option = 7;
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JD_std,...
     MLD_BSOSE_JD_std,MLD_BSOSE_JD_std,MLD_BSOSE_JD_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -749,7 +749,7 @@ cm = [Color(48,:);cm;Color(46,:)];
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(MLD_32_JD_std_diff,...
     MLD_32_JD_std_diff,MLD_62_JD_std_diff,MLD_122_JD_std_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,MLD_32_JD_std_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -790,7 +790,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean MLD stdev','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('MLD_STD_10JD_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_10JD_DIFF','-dpng')
 close all
 %% END MLD
 

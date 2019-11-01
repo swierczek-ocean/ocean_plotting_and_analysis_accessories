@@ -16,12 +16,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JJA_avg,...
     D_AVISO_JJA_avg,D_AVISO_JJA_avg,D_AVISO_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -42,11 +42,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJA_avg_diff,...
     ETAN_34_JJA_avg_diff,ETAN_64_JJA_avg_diff,ETAN_124_JJA_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_34_JJA_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -87,19 +87,19 @@ title('1/12 MITgcm+BLING-AVISO JJA 2017 mean SSH anomaly','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_05JJA_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_05JJA_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JAS_avg,...
     D_AVISO_JAS_avg,D_AVISO_JAS_avg,D_AVISO_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -120,11 +120,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JAS_avg_diff,...
     ETAN_34_JAS_avg_diff,ETAN_64_JAS_avg_diff,ETAN_124_JAS_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_34_JAS_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -165,19 +165,19 @@ title('1/12 MITgcm+BLING-AVISO JAS 2017 mean SSH anomaly','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_06JAS_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_06JAS_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JASOND_avg,...
     D_AVISO_JASOND_avg,D_AVISO_JASOND_avg,D_AVISO_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -198,11 +198,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JASOND_avg_diff,...
     ETAN_34_JASOND_avg_diff,ETAN_64_JASOND_avg_diff,ETAN_124_JASOND_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_34_JASOND_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -243,19 +243,19 @@ title('1/12 MITgcm+BLING-AVISO JASOND 2017 mean SSH anomaly','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_08JASOND_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_08JASOND_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JJASON_avg,...
     D_AVISO_JJASON_avg,D_AVISO_JJASON_avg,D_AVISO_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -276,11 +276,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJASON_avg_diff,...
     ETAN_34_JJASON_avg_diff,ETAN_64_JJASON_avg_diff,ETAN_124_JJASON_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_34_JJASON_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -321,19 +321,19 @@ title('1/12 MITgcm+BLING-AVISO JJASON 2017 mean SSH anomaly','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_07JJASON_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_07JJASON_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_DJF_avg,...
     D_AVISO_DJF_avg,D_AVISO_DJF_avg,D_AVISO_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -354,11 +354,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJF_avg_diff,...
     ETAN_32_DJF_avg_diff,ETAN_62_DJF_avg_diff,ETAN_122_DJF_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_DJF_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -399,19 +399,19 @@ title('1/12 MITgcm+BLING-AVISO DJF 2017 mean SSH anomaly','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_01DJF_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_01DJF_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JFM_avg,...
     D_AVISO_JFM_avg,D_AVISO_JFM_avg,D_AVISO_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -432,11 +432,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFM_avg_diff,...
     ETAN_32_JFM_avg_diff,ETAN_62_JFM_avg_diff,ETAN_122_JFM_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_JFM_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -477,19 +477,19 @@ title('1/12 MITgcm+BLING-AVISO JFM 2017 mean SSH anomaly','FontWeight','Normal',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_02JFM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_02JFM_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_DJFMAM_avg,...
     D_AVISO_DJFMAM_avg,D_AVISO_DJFMAM_avg,D_AVISO_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -510,11 +510,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJFMAM_avg_diff,...
     ETAN_32_DJFMAM_avg_diff,ETAN_62_DJFMAM_avg_diff,ETAN_122_DJFMAM_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_DJFMAM_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -555,19 +555,19 @@ title('1/12 MITgcm+BLING-AVISO DJFMAM 2017 mean SSH anomaly','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_03DJFMAM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_03DJFMAM_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JFMAMJ_avg,...
     D_AVISO_JFMAMJ_avg,D_AVISO_JFMAMJ_avg,D_AVISO_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -588,11 +588,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFMAMJ_avg_diff,...
     ETAN_32_JFMAMJ_avg_diff,ETAN_62_JFMAMJ_avg_diff,ETAN_122_JFMAMJ_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_JFMAMJ_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -633,19 +633,19 @@ title('1/12 MITgcm+BLING-AVISO JFMAMJ 2017 mean SSH anomaly','FontWeight','Norma
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_04JFMAMJ_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_04JFMAMJ_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_DN_avg,...
     D_AVISO_DN_avg,D_AVISO_DN_avg,D_AVISO_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -666,11 +666,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DN_avg_diff,...
     ETAN_32_DN_avg_diff,ETAN_62_DN_avg_diff,ETAN_122_DN_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_DN_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -711,19 +711,19 @@ title('1/12 MITgcm+BLING-AVISO DN 2017 mean SSH anomaly','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_09DN_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_09DN_DIFF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 option = 2;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(D_AVISO_JD_avg,...
     D_AVISO_JD_avg,D_AVISO_JD_avg,D_AVISO_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -744,11 +744,11 @@ hold off
 
 option = 13;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JD_avg_diff,...
     ETAN_32_JD_avg_diff,ETAN_62_JD_avg_diff,ETAN_122_JD_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCA,YCA,ETAN_32_JD_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -789,7 +789,7 @@ title('1/12 MITgcm+BLING-AVISO JD 2017 mean SSH anomaly','FontWeight','Normal','
 acc_movie
 acc_quad_plots_v8
 hold off
-print('ETAN_AVG_AVISO_10JD_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_AVG_AVISO_10JD_DIFF','-dpng')
 close all
 %% END ETAN
 

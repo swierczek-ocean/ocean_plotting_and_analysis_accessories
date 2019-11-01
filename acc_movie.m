@@ -1,11 +1,13 @@
-set(gca, 'defaultUicontrolFontName', 'Liberation Serif')
-set(gca, 'defaultUitableFontName', 'Liberation Serif')
-set(gca, 'defaultAxesFontName', 'Liberation Serif')
-set(gca, 'defaultTextFontName', 'Liberation Serif')
-set(gca, 'defaultUipanelFontName', 'Liberation Serif')
+set(gca, 'defaultUicontrolFontName', 'Ubuntu')
+set(gca, 'defaultUitableFontName', 'Ubuntu')
+set(gca, 'defaultAxesFontName', 'Ubuntu')
+set(gca, 'defaultTextFontName', 'Ubuntu')
+set(gca, 'defaultUipanelFontName', 'Ubuntu')
 % set(gca,'defaultAxesFontSize', 16)
 % set(gca,'defaultTextFontSize', 16)
 % fig = gcf;
 % set(findall(fig, '-property', 'FontSize'), 'FontSize', 20)
 ax = gca;
-ax.FontSize = 18; 
+ax.FontSize = 16; 
+set(gca, 'visible', 'on')
+set(gca, 'color', Color(46,:))

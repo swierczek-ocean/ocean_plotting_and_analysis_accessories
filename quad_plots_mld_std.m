@@ -27,12 +27,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJA_std,...
     MLD_34_JJA_std,MLD_64_JJA_std,MLD_124_JJA_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -89,18 +89,18 @@ title('1/12 MITgcm+BLING JJA 2017 MLD stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_05JJA','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JAS_std,...
     MLD_34_JAS_std,MLD_64_JAS_std,MLD_124_JAS_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -157,18 +157,18 @@ title('1/12 MITgcm+BLING JAS 2017 MLD stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_06JAS','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JJASON_std,...
     MLD_34_JJASON_std,MLD_64_JJASON_std,MLD_124_JJASON_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -225,18 +225,18 @@ title('1/12 MITgcm+BLING JJASON 2017 MLD stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_07JJASON','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JASOND_std,...
     MLD_34_JASOND_std,MLD_64_JASOND_std,MLD_124_JASOND_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -293,18 +293,18 @@ title('1/12 MITgcm+BLING JASOND 2017 MLD stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_08JASOND','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DN_std,...
     MLD_32_DN_std,MLD_62_DN_std,MLD_122_DN_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -361,18 +361,18 @@ title('1/12 MITgcm+BLING DN 2017 MLD stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_09DN','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JD_std,...
     MLD_32_JD_std,MLD_62_JD_std,MLD_122_JD_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -429,18 +429,18 @@ title('1/12 MITgcm+BLING JD 2017 MLD stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_10JD','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJF_std,...
     MLD_32_DJF_std,MLD_62_DJF_std,MLD_122_DJF_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -497,18 +497,18 @@ title('1/12 MITgcm+BLING DJF 2017 MLD stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_01DJF','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFM_std,...
     MLD_32_JFM_std,MLD_62_JFM_std,MLD_122_JFM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -565,18 +565,18 @@ title('1/12 MITgcm+BLING JFM 2017 MLD stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_02JFM','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_JFMAMJ_std,...
     MLD_32_JFMAMJ_std,MLD_62_JFMAMJ_std,MLD_122_JFMAMJ_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -633,18 +633,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 MLD stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_04DJFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_04DJFMAMJ','-dpng')
 close all
 %% END MLD
 
 %% MLD
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(MLD_BSOSE_DJFMAM_std,...
     MLD_32_DJFMAM_std,MLD_62_DJFMAM_std,MLD_122_DJFMAM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 MLD stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('MLD_STD_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','MLD_STD_03DJFMAM','-dpng')
 close all
 %% END MLD
 

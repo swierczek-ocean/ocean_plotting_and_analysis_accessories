@@ -26,12 +26,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JJA_avg,...
     AGE_34_JJA_avg,AGE_64_JJA_avg,AGE_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -77,18 +77,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JAS_avg,...
     AGE_34_JAS_avg,AGE_64_JAS_avg,AGE_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -134,18 +134,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JJASON_avg,...
     AGE_34_JJASON_avg,AGE_64_JJASON_avg,AGE_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -191,18 +191,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_34_JASOND_avg,...
     AGE_34_JASOND_avg,AGE_64_JASOND_avg,AGE_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -248,18 +248,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DN_avg,...
     AGE_32_DN_avg,AGE_62_DN_avg,AGE_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -305,18 +305,18 @@ title('1/12 MITgcm+BLING DN 2017 mean surf age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_09DN','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JD_avg,...
     AGE_32_JD_avg,AGE_62_JD_avg,AGE_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -362,18 +362,18 @@ title('1/12 MITgcm+BLING JD 2017 mean surf age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_10JD','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DJF_avg,...
     AGE_32_DJF_avg,AGE_62_DJF_avg,AGE_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -419,18 +419,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JFM_avg,...
     AGE_32_JFM_avg,AGE_62_JFM_avg,AGE_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -476,18 +476,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean surf age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_JFMAMJ_avg,...
     AGE_32_JFMAMJ_avg,AGE_62_JFMAMJ_avg,AGE_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -533,18 +533,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE_32_DJFMAM_avg,...
     AGE_32_DJFMAM_avg,AGE_62_DJFMAM_avg,AGE_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -590,18 +590,18 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean surf age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JJA_avg,...
     AGE200_34_JJA_avg,AGE200_64_JJA_avg,AGE200_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -647,18 +647,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JAS_avg,...
     AGE200_34_JAS_avg,AGE200_64_JAS_avg,AGE200_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -704,18 +704,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JJASON_avg,...
     AGE200_34_JJASON_avg,AGE200_64_JJASON_avg,AGE200_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -761,18 +761,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_34_JASOND_avg,...
     AGE200_34_JASOND_avg,AGE200_64_JASOND_avg,AGE200_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -818,18 +818,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DN_avg,...
     AGE200_32_DN_avg,AGE200_62_DN_avg,AGE200_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -875,18 +875,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 200m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_09DN','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JD_avg,...
     AGE200_32_JD_avg,AGE200_62_JD_avg,AGE200_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -932,18 +932,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 200m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_10JD','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DJF_avg,...
     AGE200_32_DJF_avg,AGE200_62_DJF_avg,AGE200_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -989,18 +989,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JFM_avg,...
     AGE200_32_JFM_avg,AGE200_62_JFM_avg,AGE200_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1046,18 +1046,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 200m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_JFMAMJ_avg,...
     AGE200_32_JFMAMJ_avg,AGE200_62_JFMAMJ_avg,AGE200_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1103,18 +1103,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE200_32_DJFMAM_avg,...
     AGE200_32_DJFMAM_avg,AGE200_62_DJFMAM_avg,AGE200_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1160,18 +1160,18 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 200m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE200_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE200_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JJA_avg,...
     AGE500_34_JJA_avg,AGE500_64_JJA_avg,AGE500_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1217,18 +1217,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JAS_avg,...
     AGE500_34_JAS_avg,AGE500_64_JAS_avg,AGE500_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1274,18 +1274,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JJASON_avg,...
     AGE500_34_JJASON_avg,AGE500_64_JJASON_avg,AGE500_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1331,18 +1331,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_34_JASOND_avg,...
     AGE500_34_JASOND_avg,AGE500_64_JASOND_avg,AGE500_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1388,18 +1388,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DN_avg,...
     AGE500_32_DN_avg,AGE500_62_DN_avg,AGE500_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1445,18 +1445,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 500m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_09DN','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JD_avg,...
     AGE500_32_JD_avg,AGE500_62_JD_avg,AGE500_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1502,18 +1502,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 500m age','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_10JD','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DJF_avg,...
     AGE500_32_DJF_avg,AGE500_62_DJF_avg,AGE500_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1559,18 +1559,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JFM_avg,...
     AGE500_32_JFM_avg,AGE500_62_JFM_avg,AGE500_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1616,18 +1616,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 500m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_JFMAMJ_avg,...
     AGE500_32_JFMAMJ_avg,AGE500_62_JFMAMJ_avg,AGE500_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1673,18 +1673,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE500_32_DJFMAM_avg,...
     AGE500_32_DJFMAM_avg,AGE500_62_DJFMAM_avg,AGE500_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1730,18 +1730,18 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 500m age','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE500_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE500_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JJA_avg,...
     AGE1000_34_JJA_avg,AGE1000_64_JJA_avg,AGE1000_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1787,18 +1787,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JAS_avg,...
     AGE1000_34_JAS_avg,AGE1000_64_JAS_avg,AGE1000_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1844,18 +1844,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JJASON_avg,...
     AGE1000_34_JJASON_avg,AGE1000_64_JJASON_avg,AGE1000_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1901,18 +1901,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_34_JASOND_avg,...
     AGE1000_34_JASOND_avg,AGE1000_64_JASOND_avg,AGE1000_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1958,18 +1958,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DN_avg,...
     AGE1000_32_DN_avg,AGE1000_62_DN_avg,AGE1000_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2015,18 +2015,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 1000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_09DN','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JD_avg,...
     AGE1000_32_JD_avg,AGE1000_62_JD_avg,AGE1000_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2072,18 +2072,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 1000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_10JD','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DJF_avg,...
     AGE1000_32_DJF_avg,AGE1000_62_DJF_avg,AGE1000_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2129,18 +2129,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JFM_avg,...
     AGE1000_32_JFM_avg,AGE1000_62_JFM_avg,AGE1000_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2186,18 +2186,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 1000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_JFMAMJ_avg,...
     AGE1000_32_JFMAMJ_avg,AGE1000_62_JFMAMJ_avg,AGE1000_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2243,18 +2243,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE1000_32_DJFMAM_avg,...
     AGE1000_32_DJFMAM_avg,AGE1000_62_DJFMAM_avg,AGE1000_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2300,18 +2300,18 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 1000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE1000_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE1000_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JJA_avg,...
     AGE2000_34_JJA_avg,AGE2000_64_JJA_avg,AGE2000_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2357,18 +2357,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_05JJA','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JAS_avg,...
     AGE2000_34_JAS_avg,AGE2000_64_JAS_avg,AGE2000_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2414,18 +2414,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_06JAS','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JJASON_avg,...
     AGE2000_34_JJASON_avg,AGE2000_64_JJASON_avg,AGE2000_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2471,18 +2471,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_07JJASON','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_34_JASOND_avg,...
     AGE2000_34_JASOND_avg,AGE2000_64_JASOND_avg,AGE2000_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2528,18 +2528,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_08JASOND','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DN_avg,...
     AGE2000_32_DN_avg,AGE2000_62_DN_avg,AGE2000_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2585,18 +2585,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 2000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_09DN','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JD_avg,...
     AGE2000_32_JD_avg,AGE2000_62_JD_avg,AGE2000_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2642,18 +2642,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 2000m age','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_10JD','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DJF_avg,...
     AGE2000_32_DJF_avg,AGE2000_62_DJF_avg,AGE2000_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2699,18 +2699,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_01DJF','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JFM_avg,...
     AGE2000_32_JFM_avg,AGE2000_62_JFM_avg,AGE2000_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2756,18 +2756,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 2000m age','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_02JFM','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_JFMAMJ_avg,...
     AGE2000_32_JFMAMJ_avg,AGE2000_62_JFMAMJ_avg,AGE2000_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2813,18 +2813,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_04JFMAMJ','-dpng')
 close all
 %% END AGE
 
 %% AGE
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(AGE2000_32_DJFMAM_avg,...
     AGE2000_32_DJFMAM_avg,AGE2000_62_DJFMAM_avg,AGE2000_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2870,7 +2870,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 2000m age','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('AGE2000_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','AGE2000_AVG_03DJFMAM','-dpng')
 close all
 %% END AGE
 

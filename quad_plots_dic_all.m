@@ -89,7 +89,7 @@ title('1/12 MITgcm+BLING JJA 2017 mean DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_05JJA_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_05JJA_vert','-dpng')
 close all
 %% END DIC
 
@@ -157,7 +157,7 @@ title('1/12 MITgcm+BLING JAS 2017 mean DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_06JAS_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_06JAS_vert','-dpng')
 close all
 %% END DIC
 
@@ -225,7 +225,7 @@ title('1/12 MITgcm+BLING JJASON 2017 mean DIC content','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_07JJASON_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_07JJASON_vert','-dpng')
 close all
 %% END DIC
 
@@ -293,7 +293,7 @@ title('1/12 MITgcm+BLING JASOND 2017 mean DIC content','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_08JASOND_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_08JASOND_vert','-dpng')
 close all
 %% END DIC
 
@@ -361,7 +361,7 @@ title('1/12 MITgcm+BLING DN 2017 mean DIC content','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_09DN_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_09DN_vert','-dpng')
 close all
 %% END DIC
 
@@ -429,7 +429,7 @@ title('1/12 MITgcm+BLING JD 2017 mean DIC content','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_10JD_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_10JD_vert','-dpng')
 close all
 %% END DIC
 
@@ -497,7 +497,7 @@ title('1/12 MITgcm+BLING DJF 2017 mean DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_01DJF_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_01DJF_vert','-dpng')
 close all
 %% END DIC
 
@@ -565,7 +565,7 @@ title('1/12 MITgcm+BLING JFM 2017 mean DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_02JFM_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_02JFM_vert','-dpng')
 close all
 %% END DIC
 
@@ -633,7 +633,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean DIC content','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_04JFMAMJ_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_04JFMAMJ_vert','-dpng')
 close all
 %% END DIC
 
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean DIC content','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_03DJFMAM_vert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_03DJFMAM_vert','-dpng')
 close all
 %% END DIC
 
@@ -771,7 +771,7 @@ title('1/12 MITgcm+BLING JJA 2017 total DIC content','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_05JJA_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_05JJA_tvert','-dpng')
 close all
 %% END DIC
 
@@ -839,7 +839,7 @@ title('1/12 MITgcm+BLING JAS 2017 total DIC content','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_06JAS_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_06JAS_tvert','-dpng')
 close all
 %% END DIC
 
@@ -907,7 +907,7 @@ title('1/12 MITgcm+BLING JJASON 2017 total DIC content','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_07JJASON_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_07JJASON_tvert','-dpng')
 close all
 %% END DIC
 
@@ -975,7 +975,7 @@ title('1/12 MITgcm+BLING JASOND 2017 total DIC content','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_08JASOND_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_08JASOND_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1043,7 +1043,7 @@ title('1/12 MITgcm+BLING DN 2017 total DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_09DN_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_09DN_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1111,7 +1111,7 @@ title('1/12 MITgcm+BLING JD 2017 total DIC content','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_10JD_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_10JD_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1179,7 +1179,7 @@ title('1/12 MITgcm+BLING DJF 2017 total DIC content','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_01DJF_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_01DJF_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1247,7 +1247,7 @@ title('1/12 MITgcm+BLING JFM 2017 total DIC content','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_02JFM_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_02JFM_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1315,7 +1315,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 total DIC content','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_04JFMAMJ_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_04JFMAMJ_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1383,7 +1383,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 total DIC content','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_03DJFMAM_tvert','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_03DJFMAM_tvert','-dpng')
 close all
 %% END DIC
 
@@ -1453,7 +1453,7 @@ title('1/12 MITgcm+BLING JJA 2017 upper 100m DIC','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_05JJA_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_05JJA_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1521,7 +1521,7 @@ title('1/12 MITgcm+BLING JAS 2017 upper 100m DIC','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_06JAS_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_06JAS_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1589,7 +1589,7 @@ title('1/12 MITgcm+BLING JJASON 2017 upper 100m DIC','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_07JJASON_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_07JJASON_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1657,7 +1657,7 @@ title('1/12 MITgcm+BLING JASOND 2017 upper 100m DIC','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_08JASOND_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_08JASOND_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1725,7 +1725,7 @@ title('1/12 MITgcm+BLING DN 2017 upper 100m DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_09DN_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_09DN_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1793,7 +1793,7 @@ title('1/12 MITgcm+BLING JD 2017 upper 100m DIC','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_10JD_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_10JD_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1861,7 +1861,7 @@ title('1/12 MITgcm+BLING DJF 2017 upper 100m DIC','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_01DJF_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_01DJF_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1929,7 +1929,7 @@ title('1/12 MITgcm+BLING JFM 2017 upper 100m DIC','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_02JFM_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_02JFM_vert100','-dpng')
 close all
 %% END DIC
 
@@ -1997,7 +1997,7 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 upper 100m DIC','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_04JFMAMJ_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_04JFMAMJ_vert100','-dpng')
 close all
 %% END DIC
 
@@ -2065,7 +2065,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 upper 100m DIC','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v4
 hold off
-print('DIC_AVG_03DJFMAM_vert100','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','DIC_AVG_03DJFMAM_vert100','-dpng')
 close all
 %% END DIC
 

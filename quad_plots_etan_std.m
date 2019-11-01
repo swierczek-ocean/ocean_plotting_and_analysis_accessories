@@ -27,12 +27,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJA_std,...
     ETAN_34_JJA_std,ETAN_64_JJA_std,ETAN_124_JJA_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -89,18 +89,18 @@ title('1/12 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_05JJA','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JAS_std,...
     ETAN_34_JAS_std,ETAN_64_JAS_std,ETAN_124_JAS_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -157,18 +157,18 @@ title('1/12 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_06JAS','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJASON_std,...
     ETAN_34_JJASON_std,ETAN_64_JJASON_std,ETAN_124_JJASON_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -225,18 +225,18 @@ title('1/12 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_07JJASON','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JASOND_std,...
     ETAN_34_JASOND_std,ETAN_64_JASOND_std,ETAN_124_JASOND_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -293,18 +293,18 @@ title('1/12 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_08JASOND','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DN_std,...
     ETAN_32_DN_std,ETAN_62_DN_std,ETAN_122_DN_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -361,18 +361,18 @@ title('1/12 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_09DN','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JD_std,...
     ETAN_32_JD_std,ETAN_62_JD_std,ETAN_122_JD_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -429,18 +429,18 @@ title('1/12 MITgcm+BLING JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_10JD','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJF_std,...
     ETAN_32_DJF_std,ETAN_62_DJF_std,ETAN_122_DJF_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -497,18 +497,18 @@ title('1/12 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_01DJF','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFM_std,...
     ETAN_32_JFM_std,ETAN_62_JFM_std,ETAN_122_JFM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -565,18 +565,18 @@ title('1/12 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_02JFM','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFMAMJ_std,...
     ETAN_32_JFMAMJ_std,ETAN_62_JFMAMJ_std,ETAN_122_JFMAMJ_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -633,18 +633,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_04DJFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_04DJFMAMJ','-dpng')
 close all
 %% END ETAN
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJFMAM_std,...
     ETAN_32_DJFMAM_std,ETAN_62_DJFMAM_std,ETAN_122_DJFMAM_std,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ETAN_STD_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ETAN_STD_03DJFMAM','-dpng')
 close all
 %% END ETAN
 

@@ -64,7 +64,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean DLW irr: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of DLW irr: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_DLW','-dpng')
+print('OOI_PLOTS/OOI_METBK_DLW','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -73,7 +73,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK downward longwave irradiance','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_DLW_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_DLW_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -106,7 +106,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean DSW irr: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of DSW irr: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_DSW','-dpng')
+print('OOI_PLOTS/OOI_METBK_DSW','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -115,7 +115,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK downward shortwave irradiance','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_DSW_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_DSW_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -133,22 +133,23 @@ plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c1
 hold on
 grid on
 ylabel('[W/m^2]')
+yline(0);
 title('Argentine Basin OOI METBK upward latent heat flux','FontWeight','Normal')
 xtickangle(45)
 xticks(xdatesfull(datest:datend))
 dateFormat = 'mm/yy';
 datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
+xlim([datenum('070115','mmddyy') datenum('050117','mmddyy')])
 acc_plots_ctd
 acc_movie
 y1 = ylim;
 yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean latent T flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.15*yrange,['mean latent T flux: ',...
     num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of latent T flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.10*yrange,['st dev of latent T flux: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_LTFLXU','-dpng')
+print('OOI_PLOTS/OOI_METBK_LTFLXU','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -157,7 +158,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK upward latent heat flux','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_LTFLXU_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_LTFLXU_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -180,17 +181,17 @@ xtickangle(45)
 xticks(xdatesfull(datest:datend))
 dateFormat = 'mm/yy';
 datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
+xlim([datenum('070115','mmddyy') datenum('050117','mmddyy')])
 acc_plots_ctd
 acc_movie
 y1 = ylim;
 yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean lw irradiance: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.15*yrange,['mean lw irradiance: ',...
     num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of lw irradiance: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.10*yrange,['st dev of lw irradiance: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_NETLIRR','-dpng')
+print('OOI_PLOTS/OOI_METBK_NETLIRR','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -199,7 +200,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK net upward longwave irradiance','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_NETLIRR_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_NETLIRR_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -232,7 +233,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean sw irr: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of sw irr: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_NETSIRR','-dpng')
+print('OOI_PLOTS/OOI_METBK_NETSIRR','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -241,7 +242,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK downward shortwave irradiance','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_NETSIRR_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_NETSIRR_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -267,6 +268,7 @@ datetick('x',dateFormat,'keepticks')
 xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+ylim([970 1050])
 y1 = ylim;
 yrange = y1(2) - y1(1);
 text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean barometric pressure: ',...
@@ -274,16 +276,17 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean barometric pressure: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of barometric pressure: ',...
     num2str(ooi_std,3),' mbar'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_PRES','-dpng')
+print('OOI_PLOTS/OOI_METBK_PRES','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
+histogram(ooi_metbk_hourly(:,2),55,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
 xlabel('[mbar]')
+xlim([970 1050])
 title('Argentine Basin OOI METBK barometric pressure','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_PRES_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_PRES_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -316,7 +319,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean precip: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of precip: ',...
     num2str(ooi_std,3),' mm'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_RAIN','-dpng')
+print('OOI_PLOTS/OOI_METBK_RAIN','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -325,7 +328,7 @@ xlabel('[mm]')
 title('Argentine Basin OOI METBK precipitation','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_RAIN_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_RAIN_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -351,6 +354,7 @@ datetick('x',dateFormat,'keepticks')
 xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+ylim([2 14])
 y1 = ylim;
 yrange = y1(2) - y1(1);
 text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean spec humidity: ',...
@@ -358,16 +362,17 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean spec humidity: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of spec humidity: ',...
     num2str(ooi_std,3),' g/kg'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_SPFH','-dpng')
+print('OOI_PLOTS/OOI_METBK_SPFH','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
 xlabel('[g/kg]')
+xlim([2 14])
 title('Argentine Basin OOI METBK specific humidity','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_SPFH_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_SPFH_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -393,6 +398,7 @@ datetick('x',dateFormat,'keepticks')
 xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+ylim([32.5 35.5])
 y1 = ylim;
 yrange = y1(2) - y1(1);
 text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean SSS: ',...
@@ -400,16 +406,17 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean SSS: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of SSS: ',...
     num2str(ooi_std,3),' psu'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_SSS','-dpng')
+print('OOI_PLOTS/OOI_METBK_SSS','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
+histogram(ooi_metbk_hourly(:,2),'BinWidth',0.05,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
 xlabel('[psu]')
+xlim([32.5 35.5])
 title('Argentine Basin OOI METBK sea surface salinity','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_SSS_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_SSS_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -442,7 +449,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean SST: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of SST: ',...
     num2str(ooi_std,3),' C'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_SST','-dpng')
+print('OOI_PLOTS/OOI_METBK_SST','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -451,7 +458,7 @@ xlabel('[C]')
 title('Argentine Basin OOI METBK sea surface temperature','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_SST_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_SST_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -469,22 +476,23 @@ plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c9
 hold on
 grid on
 ylabel('[W/m^2]')
+yline(0);
 title('Argentine Basin OOI METBK upward heat flux','FontWeight','Normal')
 xtickangle(45)
 xticks(xdatesfull(datest:datend))
 dateFormat = 'mm/yy';
 datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+xlim([datenum('070115','mmddyy') datenum('050117','mmddyy')])
 y1 = ylim;
 yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean heat flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.15*yrange,['mean heat flux: ',...
     num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of heat flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.10*yrange,['st dev of heat flux: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_TFLXU','-dpng')
+print('OOI_PLOTS/OOI_METBK_TFLXU','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -493,7 +501,7 @@ xlabel('[W/m^2]')
 title('Argentine Basin OOI METBK upward heat flux','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_TFLXU_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_TFLXU_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -519,6 +527,7 @@ datetick('x',dateFormat,'keepticks')
 xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+ylim([3 20])
 y1 = ylim;
 yrange = y1(2) - y1(1);
 text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean air temp: ',...
@@ -526,104 +535,22 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean air temp: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of air temp: ',...
     num2str(ooi_std,3),' C'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_2mAT','-dpng')
+print('OOI_PLOTS/OOI_METBK_2mAT','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
+histogram(ooi_metbk_hourly(:,2),55,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
 xlabel('[C]')
+xlim([3 20])
 title('Argentine Basin OOI METBK air temperature','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_2mAT_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_2mAT_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
 %% 12
 
-%% 13
-load OOI_MTBLK_MATS/ooi_metbk_senstfluxup_hourly
-
-datest = find(xdatesfull>ooi_metbk_hourly(1,1),1);
-datend = find(xdatesfull>ooi_metbk_hourly(end,1),1)-1;
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c7,:))
-hold on
-grid on
-ylabel('[W/m^2]')
-title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
-xtickangle(45)
-xticks(xdatesfull(datest:datend))
-dateFormat = 'mm/yy';
-datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
-acc_plots_ctd
-acc_movie
-y1 = ylim;
-yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean sensible T flux: ',...
-    num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of sensible T flux: ',...
-    num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
-hold off
-print('PLOTS/OOI_METBK_SENSTFLX','-dpng')
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
-xlabel('[W/m^2]')
-title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
-acc_plots_ctd
-acc_movie
-print('PLOTS/OOI_METBK_SENSTFLX_hist','-dpng')
-
-close all
-clear ooi_metbk_hourly
-%% 13
-
-%% 14
-load OOI_MTBLK_MATS/ooi_metbk_senstfluxup_hourly
-
-datest = find(xdatesfull>ooi_metbk_hourly(1,1),1);
-datend = find(xdatesfull>ooi_metbk_hourly(end,1),1)-1;
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c8,:))
-hold on
-grid on
-ylabel('[W/m^2]')
-title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
-xtickangle(45)
-xticks(xdatesfull(datest:datend))
-dateFormat = 'mm/yy';
-datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
-acc_plots_ctd
-acc_movie
-y1 = ylim;
-yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean sensible T flux: ',...
-    num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of sensible T flux: ',...
-    num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
-hold off
-print('PLOTS/OOI_METBK_SENSTFLX','-dpng')
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
-xlabel('[W/m^2]')
-title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
-acc_plots_ctd
-acc_movie
-print('PLOTS/OOI_METBK_SENSTFLX_hist','-dpng')
-
-close all
-clear ooi_metbk_hourly
-%% 14
 
 %% 15
 load OOI_MTBLK_MATS/ooi_metbk_senstfluxup_hourly
@@ -637,31 +564,34 @@ plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c8
 hold on
 grid on
 ylabel('[W/m^2]')
+yline(0);
 title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
 xtickangle(45)
 xticks(xdatesfull(datest:datend))
 dateFormat = 'mm/yy';
 datetick('x',dateFormat,'keepticks')
-xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+xlim([datenum('070115','mmddyy') datenum('050117','mmddyy')])
+ylim([-80 170])
 y1 = ylim;
 yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean sensible T flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.15*yrange,['mean sensible T flux: ',...
     num2str(ooi_mean,3),' W/m^2'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of sensible T flux: ',...
+text(datenum('070115','mmddyy')+12,y1(1)+0.10*yrange,['st dev of sensible T flux: ',...
     num2str(ooi_std,3),' W/m^2'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_SENSTFLX','-dpng')
+print('OOI_PLOTS/OOI_METBK_SENSTFLX','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-histogram(ooi_metbk_hourly(:,2),35,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
+histogram(ooi_metbk_hourly(:,2),45,'FaceColor',Color(c4,:),'EdgeColor',Color(c5,:))
 xlabel('[W/m^2]')
+xlim([-80 170])
 title('Argentine Basin OOI METBK net upward sensible heat flux','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_SENSTFLX_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_SENSTFLX_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -679,6 +609,7 @@ plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c9
 hold on
 grid on
 ylabel('[m/s]')
+yline(0);
 title('Argentine Basin OOI METBK 5m U wind','FontWeight','Normal')
 xtickangle(45)
 xticks(xdatesfull(datest:datend))
@@ -694,7 +625,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean 5m u wind: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of 5m u wind: ',...
     num2str(ooi_std,3),' m/s'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_U5M','-dpng')
+print('OOI_PLOTS/OOI_METBK_U5M','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -703,7 +634,7 @@ xlabel('[m/s]')
 title('Argentine Basin OOI METBK 5m U wind','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_U5M_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_U5M_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -721,6 +652,7 @@ plot(ooi_metbk_hourly(:,1),ooi_metbk_hourly(:,2),'LineWidth',lw,'Color',Color(c1
 hold on
 grid on
 ylabel('[m/s]')
+yline(0);
 title('Argentine Basin OOI METBK 5m V wind','FontWeight','Normal')
 xtickangle(45)
 xticks(xdatesfull(datest:datend))
@@ -736,7 +668,7 @@ text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean 5m v wind: ',...
 text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of 5m v wind: ',...
     num2str(ooi_std,3),' m/s'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_V5M','-dpng')
+print('OOI_PLOTS/OOI_METBK_V5M','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -745,7 +677,7 @@ xlabel('[m/s]')
 title('Argentine Basin OOI METBK 5m V wind','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_V5M_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_V5M_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly
@@ -757,7 +689,12 @@ U = ooi_metbk_hourly(:,2);
 load OOI_MTBLK_MATS/ooi_metbk_v5m_hourly
 V = ooi_metbk_hourly(:,2);
 
+
 ooi_metbk_hourly(:,2) = sqrt(U.^2 + V.^2);
+speed = ooi_metbk_hourly(:,2);
+ooi_mean = mean(speed(isnan(speed)==0));
+ooi_std = std(speed(isnan(speed)==0),0);
+
 datest = find(xdatesfull>ooi_metbk_hourly(1,1),1);
 datend = find(xdatesfull>ooi_metbk_hourly(end,1),1)-1;
 
@@ -775,14 +712,15 @@ datetick('x',dateFormat,'keepticks')
 xlim([ooi_metbk_hourly(1,1) ooi_metbk_hourly(end,1)])
 acc_plots_ctd
 acc_movie
+ylim([0 20])
 y1 = ylim;
 yrange = y1(2) - y1(1);
-text(xdatesfull(datest)+12,y1(1)+0.15*yrange,['mean 5m wind speed: ',...
+text(xdatesfull(datest)+7,y1(1)+0.15*yrange,['mean 5m wind spd: ',...
     num2str(ooi_mean,3),' m/s'],'FontSize',16,'Color','k')
-text(xdatesfull(datest)+12,y1(1)+0.10*yrange,['st dev of 5m wind speed: ',...
+text(xdatesfull(datest)+7,y1(1)+0.10*yrange,['st dev of 5m wind spd: ',...
     num2str(ooi_std,3),' m/s'],'FontSize',16,'Color','k')
 hold off
-print('PLOTS/OOI_METBK_5mWNDSPD','-dpng')
+print('OOI_PLOTS/OOI_METBK_5mWNDSPD','-dpng')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -791,7 +729,7 @@ xlabel('[m/s]')
 title('Argentine Basin OOI METBK 5m wind speed','FontWeight','Normal')
 acc_plots_ctd
 acc_movie
-print('PLOTS/OOI_METBK_5mWNDSPD_hist','-dpng')
+print('OOI_PLOTS/OOI_METBK_5mWNDSPD_hist','-dpng')
 
 close all
 clear ooi_metbk_hourly

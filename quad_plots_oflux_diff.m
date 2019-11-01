@@ -17,12 +17,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JJA_avg,...
     OFLUX_BSOSE_JJA_avg,OFLUX_BSOSE_JJA_avg,OFLUX_BSOSE_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -43,11 +43,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_34_JJA_avg_diff,...
     OFLUX_34_JJA_avg_diff,OFLUX_64_JJA_avg_diff,OFLUX_124_JJA_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_34_JJA_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -88,19 +88,19 @@ title('1/12 MITgcm+BLING - BSOSE JJA 2017 mean O2 flux','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_05JJA_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_05JJA_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JAS_avg,...
     OFLUX_BSOSE_JAS_avg,OFLUX_BSOSE_JAS_avg,OFLUX_BSOSE_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -121,11 +121,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_34_JAS_avg_diff,...
     OFLUX_34_JAS_avg_diff,OFLUX_64_JAS_avg_diff,OFLUX_124_JAS_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_34_JAS_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -166,19 +166,19 @@ title('1/12 MITgcm+BLING - BSOSE JAS 2017 mean O2 flux','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_06JAS_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_06JAS_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JASOND_avg,...
     OFLUX_BSOSE_JASOND_avg,OFLUX_BSOSE_JASOND_avg,OFLUX_BSOSE_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -199,11 +199,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_34_JASOND_avg_diff,...
     OFLUX_34_JASOND_avg_diff,OFLUX_64_JASOND_avg_diff,OFLUX_124_JASOND_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_34_JASOND_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -244,19 +244,19 @@ title('1/12 MITgcm+BLING - BSOSE JASOND 2017 mean O2 flux','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_08JASOND_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_08JASOND_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JJASON_avg,...
     OFLUX_BSOSE_JJASON_avg,OFLUX_BSOSE_JJASON_avg,OFLUX_BSOSE_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -277,11 +277,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_34_JJASON_avg_diff,...
     OFLUX_34_JJASON_avg_diff,OFLUX_64_JJASON_avg_diff,OFLUX_124_JJASON_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_34_JJASON_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -322,19 +322,19 @@ title('1/12 MITgcm+BLING - BSOSE JJASON 2017 mean O2 flux','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_07JJASON_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_07JJASON_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DJF_avg,...
     OFLUX_BSOSE_DJF_avg,OFLUX_BSOSE_DJF_avg,OFLUX_BSOSE_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -355,11 +355,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_DJF_avg_diff,...
     OFLUX_32_DJF_avg_diff,OFLUX_62_DJF_avg_diff,OFLUX_122_DJF_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_DJF_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -400,19 +400,19 @@ title('1/12 MITgcm+BLING - BSOSE DJF 2017 mean O2 flux','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_01DJF_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_01DJF_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JFM_avg,...
     OFLUX_BSOSE_JFM_avg,OFLUX_BSOSE_JFM_avg,OFLUX_BSOSE_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -433,11 +433,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_JFM_avg_diff,...
     OFLUX_32_JFM_avg_diff,OFLUX_62_JFM_avg_diff,OFLUX_122_JFM_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_JFM_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -478,19 +478,19 @@ title('1/12 MITgcm+BLING - BSOSE JFM 2017 mean O2 flux','FontWeight','Normal','F
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_02JFM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_02JFM_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DJFMAM_avg,...
     OFLUX_BSOSE_DJFMAM_avg,OFLUX_BSOSE_DJFMAM_avg,OFLUX_BSOSE_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -511,11 +511,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_DJFMAM_avg_diff,...
     OFLUX_32_DJFMAM_avg_diff,OFLUX_62_DJFMAM_avg_diff,OFLUX_122_DJFMAM_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_DJFMAM_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -556,19 +556,19 @@ title('1/12 MITgcm+BLING - BSOSE DJFMAM 2017 mean O2 flux','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_03DJFMAM_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_03DJFMAM_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JFMAMJ_avg,...
     OFLUX_BSOSE_JFMAMJ_avg,OFLUX_BSOSE_JFMAMJ_avg,OFLUX_BSOSE_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -589,11 +589,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_JFMAMJ_avg_diff,...
     OFLUX_32_JFMAMJ_avg_diff,OFLUX_62_JFMAMJ_avg_diff,OFLUX_122_JFMAMJ_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_JFMAMJ_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -634,19 +634,19 @@ title('1/12 MITgcm+BLING - BSOSE JFMAMJ 2017 mean O2 flux','FontWeight','Normal'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_04JFMAMJ_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_04JFMAMJ_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DN_avg,...
     OFLUX_BSOSE_DN_avg,OFLUX_BSOSE_DN_avg,OFLUX_BSOSE_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -667,11 +667,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_DN_avg_diff,...
     OFLUX_32_DN_avg_diff,OFLUX_62_DN_avg_diff,OFLUX_122_DN_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_DN_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -712,19 +712,19 @@ title('1/12 MITgcm+BLING - BSOSE DN 2017 mean O2 flux','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_09DN_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_09DN_DIFF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 option = 3;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JD_avg,...
     OFLUX_BSOSE_JD_avg,OFLUX_BSOSE_JD_avg,OFLUX_BSOSE_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -745,11 +745,11 @@ hold off
 
 option = 14;
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(OFLUX_32_JD_avg_diff,...
     OFLUX_32_JD_avg_diff,OFLUX_62_JD_avg_diff,OFLUX_122_JD_avg_diff,option);
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,OFLUX_32_JD_avg_diff,'LineStyle','none','LevelList',z);
 hold on
@@ -790,7 +790,7 @@ title('1/12 MITgcm+BLING - BSOSE JD 2017 mean O2 flux','FontWeight','Normal','Fo
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_10JD_DIFF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_10JD_DIFF','-dpng')
 close all
 %% END OFLUX
 

@@ -562,125 +562,125 @@ ETAN_124_JASOND_std_diff = ETAN_124_JASOND_std - D_AVISO_JASOND_avg;
 %% End Difference
 
 %% Put Land Value In
-ETAN_122_DJF_avg_diff(ind) = 999999999; 
-ETAN_122_DJF_std_diff(ind) = 999999999; 
+ETAN_122_DJF_avg_diff(ind) = NaN; 
+ETAN_122_DJF_std_diff(ind) = NaN; 
 
-ETAN_122_JFM_avg_diff(ind) = 999999999; 
-ETAN_122_JFM_std_diff(ind) = 999999999; 
+ETAN_122_JFM_avg_diff(ind) = NaN; 
+ETAN_122_JFM_std_diff(ind) = NaN; 
 
-ETAN_122_DJFMAM_avg_diff(ind) = 999999999; 
-ETAN_122_DJFMAM_std_diff(ind) = 999999999; 
+ETAN_122_DJFMAM_avg_diff(ind) = NaN; 
+ETAN_122_DJFMAM_std_diff(ind) = NaN; 
 
-ETAN_122_JFMAMJ_avg_diff(ind) = 999999999; 
-ETAN_122_JFMAMJ_std_diff(ind) = 999999999; 
+ETAN_122_JFMAMJ_avg_diff(ind) = NaN; 
+ETAN_122_JFMAMJ_std_diff(ind) = NaN; 
 
-ETAN_122_DN_avg_diff(ind) = 999999999; 
-ETAN_122_DN_std_diff(ind) = 999999999; 
+ETAN_122_DN_avg_diff(ind) = NaN; 
+ETAN_122_DN_std_diff(ind) = NaN; 
 
-ETAN_122_JD_avg_diff(ind) = 999999999; 
-ETAN_122_JD_std_diff(ind) = 999999999; 
+ETAN_122_JD_avg_diff(ind) = NaN; 
+ETAN_122_JD_std_diff(ind) = NaN; 
 
-ETAN_124_JJA_avg_diff(ind) = 999999999; 
-ETAN_124_JJA_std_diff(ind) = 999999999; 
+ETAN_124_JJA_avg_diff(ind) = NaN; 
+ETAN_124_JJA_std_diff(ind) = NaN; 
 
-ETAN_124_JAS_avg_diff(ind) = 999999999; 
-ETAN_124_JAS_std_diff(ind) = 999999999; 
+ETAN_124_JAS_avg_diff(ind) = NaN; 
+ETAN_124_JAS_std_diff(ind) = NaN; 
 
-ETAN_124_JJASON_avg_diff(ind) = 999999999; 
-ETAN_124_JJASON_std_diff(ind) = 999999999; 
+ETAN_124_JJASON_avg_diff(ind) = NaN; 
+ETAN_124_JJASON_std_diff(ind) = NaN; 
 
-ETAN_124_JASOND_avg_diff(ind) = 999999999;
-ETAN_124_JASOND_std_diff(ind) = 999999999;
+ETAN_124_JASOND_avg_diff(ind) = NaN;
+ETAN_124_JASOND_std_diff(ind) = NaN;
 
-ETAN_62_DJF_avg_diff(ind) = 999999999; 
-ETAN_62_DJF_std_diff(ind) = 999999999; 
+ETAN_62_DJF_avg_diff(ind) = NaN; 
+ETAN_62_DJF_std_diff(ind) = NaN; 
 
-ETAN_62_JFM_avg_diff(ind) = 999999999; 
-ETAN_62_JFM_std_diff(ind) = 999999999; 
+ETAN_62_JFM_avg_diff(ind) = NaN; 
+ETAN_62_JFM_std_diff(ind) = NaN; 
 
-ETAN_62_DJFMAM_avg_diff(ind) = 999999999; 
-ETAN_62_DJFMAM_std_diff(ind) = 999999999; 
+ETAN_62_DJFMAM_avg_diff(ind) = NaN; 
+ETAN_62_DJFMAM_std_diff(ind) = NaN; 
 
-ETAN_62_JFMAMJ_avg_diff(ind) = 999999999; 
-ETAN_62_JFMAMJ_std_diff(ind) = 999999999; 
+ETAN_62_JFMAMJ_avg_diff(ind) = NaN; 
+ETAN_62_JFMAMJ_std_diff(ind) = NaN; 
 
-ETAN_62_DN_avg_diff(ind) = 999999999; 
-ETAN_62_DN_std_diff(ind) = 999999999; 
+ETAN_62_DN_avg_diff(ind) = NaN; 
+ETAN_62_DN_std_diff(ind) = NaN; 
 
-ETAN_62_JD_avg_diff(ind) = 999999999; 
-ETAN_62_JD_std_diff(ind) = 999999999; 
+ETAN_62_JD_avg_diff(ind) = NaN; 
+ETAN_62_JD_std_diff(ind) = NaN; 
 
-ETAN_64_JJA_avg_diff(ind) = 999999999; 
-ETAN_64_JJA_std_diff(ind) = 999999999; 
+ETAN_64_JJA_avg_diff(ind) = NaN; 
+ETAN_64_JJA_std_diff(ind) = NaN; 
 
-ETAN_64_JAS_avg_diff(ind) = 999999999; 
-ETAN_64_JAS_std_diff(ind) = 999999999; 
+ETAN_64_JAS_avg_diff(ind) = NaN; 
+ETAN_64_JAS_std_diff(ind) = NaN; 
 
-ETAN_64_JJASON_avg_diff(ind) = 999999999; 
-ETAN_64_JJASON_std_diff(ind) = 999999999; 
+ETAN_64_JJASON_avg_diff(ind) = NaN; 
+ETAN_64_JJASON_std_diff(ind) = NaN; 
 
-ETAN_64_JASOND_avg_diff(ind) = 999999999;
-ETAN_64_JASOND_std_diff(ind) = 999999999;
+ETAN_64_JASOND_avg_diff(ind) = NaN;
+ETAN_64_JASOND_std_diff(ind) = NaN;
 
-ETAN_32_DJF_avg_diff(ind) = 999999999; 
-ETAN_32_DJF_std_diff(ind) = 999999999; 
+ETAN_32_DJF_avg_diff(ind) = NaN; 
+ETAN_32_DJF_std_diff(ind) = NaN; 
 
-ETAN_32_JFM_avg_diff(ind) = 999999999; 
-ETAN_32_JFM_std_diff(ind) = 999999999; 
+ETAN_32_JFM_avg_diff(ind) = NaN; 
+ETAN_32_JFM_std_diff(ind) = NaN; 
 
-ETAN_32_DJFMAM_avg_diff(ind) = 999999999; 
-ETAN_32_DJFMAM_std_diff(ind) = 999999999; 
+ETAN_32_DJFMAM_avg_diff(ind) = NaN; 
+ETAN_32_DJFMAM_std_diff(ind) = NaN; 
 
-ETAN_32_JFMAMJ_avg_diff(ind) = 999999999; 
-ETAN_32_JFMAMJ_std_diff(ind) = 999999999; 
+ETAN_32_JFMAMJ_avg_diff(ind) = NaN; 
+ETAN_32_JFMAMJ_std_diff(ind) = NaN; 
 
-ETAN_32_DN_avg_diff(ind) = 999999999; 
-ETAN_32_DN_std_diff(ind) = 999999999; 
+ETAN_32_DN_avg_diff(ind) = NaN; 
+ETAN_32_DN_std_diff(ind) = NaN; 
 
-ETAN_32_JD_avg_diff(ind) = 999999999; 
-ETAN_32_JD_std_diff(ind) = 999999999; 
+ETAN_32_JD_avg_diff(ind) = NaN; 
+ETAN_32_JD_std_diff(ind) = NaN; 
 
-ETAN_34_JJA_avg_diff(ind) = 999999999; 
-ETAN_34_JJA_std_diff(ind) = 999999999; 
+ETAN_34_JJA_avg_diff(ind) = NaN; 
+ETAN_34_JJA_std_diff(ind) = NaN; 
 
-ETAN_34_JAS_avg_diff(ind) = 999999999; 
-ETAN_34_JAS_std_diff(ind) = 999999999; 
+ETAN_34_JAS_avg_diff(ind) = NaN; 
+ETAN_34_JAS_std_diff(ind) = NaN; 
 
-ETAN_34_JJASON_avg_diff(ind) = 999999999; 
-ETAN_34_JJASON_std_diff(ind) = 999999999; 
+ETAN_34_JJASON_avg_diff(ind) = NaN; 
+ETAN_34_JJASON_std_diff(ind) = NaN; 
 
-ETAN_34_JASOND_avg_diff(ind) = 999999999;
-ETAN_34_JASOND_std_diff(ind) = 999999999;
+ETAN_34_JASOND_avg_diff(ind) = NaN;
+ETAN_34_JASOND_std_diff(ind) = NaN;
 
-D_AVISO_DJF_avg(ind) = 999999999; 
-D_AVISO_DJF_std(ind) = 999999999; 
+D_AVISO_DJF_avg(ind) = NaN; 
+D_AVISO_DJF_std(ind) = NaN; 
 
-D_AVISO_JFM_avg(ind) = 999999999; 
-D_AVISO_JFM_std(ind) = 999999999; 
+D_AVISO_JFM_avg(ind) = NaN; 
+D_AVISO_JFM_std(ind) = NaN; 
 
-D_AVISO_DJFMAM_avg(ind) = 999999999; 
-D_AVISO_DJFMAM_std(ind) = 999999999; 
+D_AVISO_DJFMAM_avg(ind) = NaN; 
+D_AVISO_DJFMAM_std(ind) = NaN; 
 
-D_AVISO_JFMAMJ_avg(ind) = 999999999; 
-D_AVISO_JFMAMJ_std(ind) = 999999999; 
+D_AVISO_JFMAMJ_avg(ind) = NaN; 
+D_AVISO_JFMAMJ_std(ind) = NaN; 
 
-D_AVISO_DN_avg(ind) = 999999999; 
-D_AVISO_DN_std(ind) = 999999999; 
+D_AVISO_DN_avg(ind) = NaN; 
+D_AVISO_DN_std(ind) = NaN; 
 
-D_AVISO_JD_avg(ind) = 999999999; 
-D_AVISO_JD_std(ind) = 999999999; 
+D_AVISO_JD_avg(ind) = NaN; 
+D_AVISO_JD_std(ind) = NaN; 
 
-D_AVISO_JJA_avg(ind) = 999999999; 
-D_AVISO_JJA_std(ind) = 999999999; 
+D_AVISO_JJA_avg(ind) = NaN; 
+D_AVISO_JJA_std(ind) = NaN; 
 
-D_AVISO_JAS_avg(ind) = 999999999; 
-D_AVISO_JAS_std(ind) = 999999999; 
+D_AVISO_JAS_avg(ind) = NaN; 
+D_AVISO_JAS_std(ind) = NaN; 
 
-D_AVISO_JJASON_avg(ind) = 999999999; 
-D_AVISO_JJASON_std(ind) = 999999999; 
+D_AVISO_JJASON_avg(ind) = NaN; 
+D_AVISO_JJASON_std(ind) = NaN; 
 
-D_AVISO_JASOND_avg(ind) = 999999999; 
-D_AVISO_JASOND_std(ind) = 999999999; 
+D_AVISO_JASOND_avg(ind) = NaN; 
+D_AVISO_JASOND_std(ind) = NaN; 
 
 %% End Put Land Value In
 

@@ -1,6 +1,6 @@
 function [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(A,B,C,D,option)
 %% calculates lower and upper bounds for colorbar
-DIST = [A(A<100000);B(B<100000);C(C<100000);D(D<100000)];
+DIST = [A(isnan(A)==0);B(isnan(B)==0);C(isnan(C)==0);D(isnan(D)==0)];
 DIST = sort(DIST);
 len = length(DIST);
 

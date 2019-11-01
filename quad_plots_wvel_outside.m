@@ -27,12 +27,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JJA_avg,...
     WVEL100_34_JJA_avg,WVEL100_64_JJA_avg,WVEL100_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -89,18 +89,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 100m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_05JJA_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JAS_avg,...
     WVEL100_34_JAS_avg,WVEL100_64_JAS_avg,WVEL100_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -157,18 +157,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 100m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_06JAS_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JJASON_avg,...
     WVEL100_34_JJASON_avg,WVEL100_64_JJASON_avg,WVEL100_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -225,18 +225,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 100m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_07JJASON_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JASOND_avg,...
     WVEL100_34_JASOND_avg,WVEL100_64_JASOND_avg,WVEL100_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -293,18 +293,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 100m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_08JASOND_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DN_avg,...
     WVEL100_32_DN_avg,WVEL100_62_DN_avg,WVEL100_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -361,18 +361,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 100m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_09DN_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_09DN_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JD_avg,...
     WVEL100_32_JD_avg,WVEL100_62_JD_avg,WVEL100_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -429,18 +429,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 100m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_10JD_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_10JD_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DJF_avg,...
     WVEL100_32_DJF_avg,WVEL100_62_DJF_avg,WVEL100_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -497,18 +497,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 100m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_01DJF_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JFM_avg,...
     WVEL100_32_JFM_avg,WVEL100_62_JFM_avg,WVEL100_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -565,18 +565,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 100m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_02JFM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_JFMAMJ_avg,...
     WVEL100_32_JFMAMJ_avg,WVEL100_62_JFMAMJ_avg,WVEL100_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -633,18 +633,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 100m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_04JFMAMJ_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL100_BSOSE_DJFMAM_avg,...
     WVEL100_32_DJFMAM_avg,WVEL100_62_DJFMAM_avg,WVEL100_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -701,18 +701,18 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 100m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL100_AVG_03DJFMAM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL100_AVG_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JJA_avg,...
     WVEL190_34_JJA_avg,WVEL190_64_JJA_avg,WVEL190_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -769,18 +769,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 190m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_05JJA_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JAS_avg,...
     WVEL190_34_JAS_avg,WVEL190_64_JAS_avg,WVEL190_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -837,18 +837,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 190m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_06JAS_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JJASON_avg,...
     WVEL190_34_JJASON_avg,WVEL190_64_JJASON_avg,WVEL190_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -905,18 +905,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 190m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_07JJASON_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JASOND_avg,...
     WVEL190_34_JASOND_avg,WVEL190_64_JASOND_avg,WVEL190_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -973,18 +973,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 190m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_08JASOND_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DN_avg,...
     WVEL190_32_DN_avg,WVEL190_62_DN_avg,WVEL190_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1041,18 +1041,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 190m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_09DN_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_09DN_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JD_avg,...
     WVEL190_32_JD_avg,WVEL190_62_JD_avg,WVEL190_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1109,18 +1109,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 190m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_10JD_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_10JD_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DJF_avg,...
     WVEL190_32_DJF_avg,WVEL190_62_DJF_avg,WVEL190_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1177,18 +1177,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 190m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_01DJF_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JFM_avg,...
     WVEL190_32_JFM_avg,WVEL190_62_JFM_avg,WVEL190_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1245,18 +1245,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 190m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_02JFM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_JFMAMJ_avg,...
     WVEL190_32_JFMAMJ_avg,WVEL190_62_JFMAMJ_avg,WVEL190_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1313,18 +1313,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 190m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_04JFMAMJ_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL190_BSOSE_DJFMAM_avg,...
     WVEL190_32_DJFMAM_avg,WVEL190_62_DJFMAM_avg,WVEL190_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1381,7 +1381,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 190m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL190_AVG_03DJFMAM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL190_AVG_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 
@@ -1390,12 +1390,12 @@ close all
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JJA_avg,...
     WVEL290_34_JJA_avg,WVEL290_64_JJA_avg,WVEL290_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1452,18 +1452,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean 290m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_05JJA_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_05JJA_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JAS_avg,...
     WVEL290_34_JAS_avg,WVEL290_64_JAS_avg,WVEL290_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1520,18 +1520,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean 290m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_06JAS_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_06JAS_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JJASON_avg,...
     WVEL290_34_JJASON_avg,WVEL290_64_JJASON_avg,WVEL290_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1588,18 +1588,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean 290m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_07JJASON_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_07JJASON_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JASOND_avg,...
     WVEL290_34_JASOND_avg,WVEL290_64_JASOND_avg,WVEL290_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1656,18 +1656,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean 290m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_08JASOND_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_08JASOND_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DN_avg,...
     WVEL290_32_DN_avg,WVEL290_62_DN_avg,WVEL290_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1724,18 +1724,18 @@ title('1/12 MITgcm+BLING DN 2017 mean 290m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_09DN_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_09DN_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JD_avg,...
     WVEL290_32_JD_avg,WVEL290_62_JD_avg,WVEL290_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1792,18 +1792,18 @@ title('1/12 MITgcm+BLING JD 2017 mean 290m Wvel','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_10JD_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_10JD_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DJF_avg,...
     WVEL290_32_DJF_avg,WVEL290_62_DJF_avg,WVEL290_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1860,18 +1860,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean 290m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_01DJF_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_01DJF_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JFM_avg,...
     WVEL290_32_JFM_avg,WVEL290_62_JFM_avg,WVEL290_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1928,18 +1928,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean 290m Wvel','FontWeight','Normal','FontSiz
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_02JFM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_02JFM_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_JFMAMJ_avg,...
     WVEL290_32_JFMAMJ_avg,WVEL290_62_JFMAMJ_avg,WVEL290_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -1996,18 +1996,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean 290m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_04JFMAMJ_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_04JFMAMJ_outside','-dpng')
 close all
 %% END WVEL
 
 %% WVEL
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(WVEL290_BSOSE_DJFMAM_avg,...
     WVEL290_32_DJFMAM_avg,WVEL290_62_DJFMAM_avg,WVEL290_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -2064,7 +2064,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean 290m Wvel','FontWeight','Normal','Font
 acc_movie
 acc_quad_plots_v8
 hold off
-print('WVEL290_AVG_03DJFMAM_outside','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','WVEL290_AVG_03DJFMAM_outside','-dpng')
 close all
 %% END WVEL
 

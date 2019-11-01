@@ -30,8 +30,15 @@ clearvars -except timeh
 load OOI_MTBLK_MATS/ooi_metbk_lattfluxup
 ooi_array = [time,lattfluxup];
 ooi_metbk_hourly = process_OOI_met_hourly(ooi_array,timeh);
-ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
-ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
+
+array_exist = ooi_metbk_hourly(:,2);
+array_exist = array_exist(isnan(array_exist)==0);
+ooi_mean = mean(array_exist);
+ooi_std = std(array_exist,0);
+
+
+% ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
+% ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
 save OOI_MTBLK_MATS/ooi_metbk_lattfluxup_hourly ooi_metbk_hourly ooi_mean ooi_std
 clearvars -except timeh
 %% 3
@@ -40,8 +47,15 @@ clearvars -except timeh
 load OOI_MTBLK_MATS/ooi_metbk_netlirr
 ooi_array = [time,netlirr];
 ooi_metbk_hourly = process_OOI_met_hourly(ooi_array,timeh);
-ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
-ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
+
+array_exist = ooi_metbk_hourly(:,2);
+array_exist = array_exist(isnan(array_exist)==0);
+ooi_mean = mean(array_exist);
+ooi_std = std(array_exist,0);
+
+
+% ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
+% ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
 save OOI_MTBLK_MATS/ooi_metbk_netlirr_hourly ooi_metbk_hourly ooi_mean ooi_std
 clearvars -except timeh
 %% 4
@@ -100,8 +114,15 @@ clearvars -except timeh
 load OOI_MTBLK_MATS/ooi_metbk_senstfluxup
 ooi_array = [time,senstfluxup];
 ooi_metbk_hourly = process_OOI_met_hourly(ooi_array,timeh);
-ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
-ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
+
+array_exist = ooi_metbk_hourly(:,2);
+array_exist = array_exist(isnan(array_exist)==0);
+ooi_mean = mean(array_exist);
+ooi_std = std(array_exist,0);
+
+
+% ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
+% ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
 save OOI_MTBLK_MATS/ooi_metbk_senstfluxup_hourly ooi_metbk_hourly ooi_mean ooi_std
 clearvars -except timeh
 %% 10
@@ -140,8 +161,15 @@ clearvars -except timeh
 load OOI_MTBLK_MATS/ooi_metbk_tfluxup
 ooi_array = [time,tfluxup];
 ooi_metbk_hourly = process_OOI_met_hourly(ooi_array,timeh);
-ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
-ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
+
+array_exist = ooi_metbk_hourly(:,2);
+array_exist = array_exist(isnan(array_exist)==0);
+ooi_mean = mean(array_exist);
+ooi_std = std(array_exist,0);
+
+
+% ooi_mean = mean(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2));
+% ooi_std = std(ooi_metbk_hourly(ooi_metbk_hourly(:,3)==1,2),0);
 save OOI_MTBLK_MATS/ooi_metbk_tfluxup_hourly ooi_metbk_hourly ooi_mean ooi_std
 clearvars -except timeh
 %% 14

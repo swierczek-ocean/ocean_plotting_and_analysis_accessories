@@ -1,22 +1,41 @@
-% clear
-% 
-% make_clim_profiles_HDO_BOT
-% 
-% clear
-% 
-% make_clim_profiles_HDO_CTD
-% 
-% 
-% clear
-% 
-% make_clim_profiles_SIO
-
 clear
-
-make_clim_profiles_VIZ
-
-clear
-
-make_clim_profiles_USGO
-
-clear
+clc
+tic()
+quad_plots_age
+quad_plots_alk
+quad_plots_alk_diff
+quad_plots_cflux
+quad_plots_cflux_diff
+quad_plots_oflux
+quad_plots_oflux_diff
+quad_plots_tflux
+quad_plots_tflux_diff
+quad_plots_sflux
+quad_plots_sflux_diff
+quad_plots_dic
+quad_plots_dic_diff
+quad_plots_etan
+quad_plots_etan_diff
+quad_plots_etan_outside
+quad_plots_etan_outside_diff
+quad_plots_etan_std
+quad_plots_etan_std_diff
+quad_plots_etan_std_outside
+quad_plots_etan_std_outside_diff
+quad_plots_mld_std
+quad_plots_mld_std_diff
+quad_plots_mld
+quad_plots_mld_diff
+quad_plots_theta
+quad_plots_theta_diff
+quad_plots_salt
+quad_plots_salt_diff
+quad_plots_wvel
+quad_plots_wvel_diff
+quad_plots_wvel_outside
+quad_plots_wvel_outside_diff
+quad_plots_wvel_std
+quad_plots_wvel_std_diff
+quad_plots_wvel_std_outside
+quad_plots_wvel_std_outside_diff
+toc()

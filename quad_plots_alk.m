@@ -27,13 +27,13 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-% cm = [cm;Color(46,:)];
-cm = [cm;Color(46,:)];
+
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JJA_avg,...
     ALK_34_JJA_avg,ALK_64_JJA_avg,ALK_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 
 figure()
@@ -91,18 +91,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean surf alk','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_05JJA','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JAS_avg,...
     ALK_34_JAS_avg,ALK_64_JAS_avg,ALK_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -159,18 +159,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean surf alk','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_06JAS','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JJASON_avg,...
     ALK_34_JJASON_avg,ALK_64_JJASON_avg,ALK_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -227,18 +227,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean surf alk','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_07JJASON','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JASOND_avg,...
     ALK_34_JASOND_avg,ALK_64_JASOND_avg,ALK_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -295,18 +295,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean surf alk','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_08JASOND','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DN_avg,...
     ALK_32_DN_avg,ALK_62_DN_avg,ALK_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -363,18 +363,18 @@ title('1/12 MITgcm+BLING DN 2017 mean surf alk','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_09DN','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JD_avg,...
     ALK_32_JD_avg,ALK_62_JD_avg,ALK_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -431,18 +431,18 @@ title('1/12 MITgcm+BLING JD 2017 mean surf alk','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_10JD','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DJF_avg,...
     ALK_32_DJF_avg,ALK_62_DJF_avg,ALK_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -499,18 +499,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean surf alk','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_01DJF','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JFM_avg,...
     ALK_32_JFM_avg,ALK_62_JFM_avg,ALK_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -567,18 +567,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean surf alk','FontWeight','Normal','FontSize
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_02JFM','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_JFMAMJ_avg,...
     ALK_32_JFMAMJ_avg,ALK_62_JFMAMJ_avg,ALK_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -635,18 +635,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean surf alk','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_04JFMAMJ','-dpng')
 close all
 %% END ALK
 
 %% ALK
 cm = flipud(acc_colormap('cmo_tempo'));
-cm = [cm;Color(46,:)];
+
 [lb,ub,nlvls] = get_color_bounds_standard(ALK_BSOSE_DJFMAM_avg,...
     ALK_32_DJFMAM_avg,ALK_62_DJFMAM_avg,ALK_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -703,7 +703,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean surf alk','FontWeight','Normal','FontS
 acc_movie
 acc_quad_plots_v4
 hold off
-print('ALK_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','ALK_AVG_03DJFMAM','-dpng')
 close all
 %% END ALK
 

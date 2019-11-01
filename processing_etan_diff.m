@@ -57,9 +57,9 @@ for ii=1:395
     temp62 = temp62 - temp_aviso;
     temp122 = temp122 - temp_aviso;
     
-    temp32(ind) = 999999999;
-    temp62(ind) = 999999999;
-    temp122(ind) = 999999999;
+    temp32(ind) = NaN;
+    temp62(ind) = NaN;
+    temp122(ind) = NaN;
     
     ETAN32DIFF(:,:,ii) = temp32;
     ETAN62DIFF(:,:,ii) = temp62;
@@ -67,8 +67,13 @@ for ii=1:395
     ii
 end
 
-D_AVISO(isnan(D_AVISO)==1) = 99999999;
+D_AVISO(isnan(D_AVISO)==1) = NaN;
 
+ETAN32DIFFstd = std(ETAN32DIFF,0,3);
+ETAN62DIFFstd = std(ETAN62DIFF,0,3);
+ETAN122DIFFstd = std(ETAN122DIFF,0,3);
+
+save ETAN_DIFF_std *DIFFstd* XCA YCA
  
 clearvars -except ETAN32DIFF ETAN62DIFF ETAN122DIFF *_AVISO XCA YCA
 

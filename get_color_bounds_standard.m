@@ -1,6 +1,6 @@
 function [lb,ub,nlvls] = get_color_bounds_standard(A,B,C,D,option)
 %% calculates lower and upper bounds for colorbar
-DIST = [A(A<990000000);B(B<990000000);C(C<990000000);D(D<990000000)];
+DIST = [A(isnan(A)==0);B(isnan(B)==0);C(isnan(C)==0);D(isnan(D)==0)];
 DIST = sort(DIST);
 len = length(DIST);
 
@@ -129,20 +129,6 @@ end
 if option==12
     lb = DIST(1); 
     ub = DIST(len-1500);
-end
-%%
-
-%% trim first 3300 measurements
-if option==13
-    lb = DIST(3300); 
-    ub = DIST(len-25);
-end
-%%
-
-%% trim first 3000 measurements
-if option==14
-    lb = DIST(3000); 
-    ub = DIST(len-25);
 end
 %%
 

@@ -192,6 +192,12 @@ line([290 290],[-58.96 -31.72],'Color',Color(4,:),'LineWidth',2.9)
 line([350 350],[-58.96 -31.72],'Color',Color(4,:),'LineWidth',2.9)
 line([290 350],[-58.96 -58.96],'Color',Color(4,:),'LineWidth',2.9)
 line([290 350],[-31.72 -31.72],'Color',Color(4,:),'LineWidth',2.9)
+
+line([300 300],[-52 -36.15],'Color',Color(4,:),'LineWidth',2.9)
+line([335 335],[-52 -36.15],'Color',Color(4,:),'LineWidth',2.9)
+line([300 345],[-52 -52],'Color',Color(4,:),'LineWidth',2.9)
+line([300 345],[-36.15 -36.15],'Color',Color(4,:),'LineWidth',2.9)
+line([345 345],[-52 -36.15],'Color',Color(4,:),'LineWidth',2.9)
 cbar = colorbar('eastoutside');
 ytickformat('degrees')
 % ylabel('lat')
@@ -202,7 +208,7 @@ axis(coords)
 acc_movie
 acc_plots
 hold off
-print('AB_BATHY_contf_500_budget_box','-dpng')
+print('AB_BATHY_contf_500_budget_boxes','-dpng')
 % 
 % %% 500m levels
 % 

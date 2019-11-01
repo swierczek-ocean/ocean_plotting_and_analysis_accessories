@@ -27,12 +27,12 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JJA_avg,...
     OFLUX_34_JJA_avg,OFLUX_64_JJA_avg,OFLUX_124_JJA_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -89,18 +89,18 @@ title('1/12 MITgcm+BLING JJA 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_05JJA','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_05JJA','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JAS_avg,...
     OFLUX_34_JAS_avg,OFLUX_64_JAS_avg,OFLUX_124_JAS_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -157,18 +157,18 @@ title('1/12 MITgcm+BLING JAS 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_06JAS','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_06JAS','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JJASON_avg,...
     OFLUX_34_JJASON_avg,OFLUX_64_JJASON_avg,OFLUX_124_JJASON_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -225,18 +225,18 @@ title('1/12 MITgcm+BLING JJASON 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_07JJASON','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_07JJASON','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JASOND_avg,...
     OFLUX_34_JASOND_avg,OFLUX_64_JASOND_avg,OFLUX_124_JASOND_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -293,18 +293,18 @@ title('1/12 MITgcm+BLING JASOND 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_08JASOND','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_08JASOND','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DN_avg,...
     OFLUX_32_DN_avg,OFLUX_62_DN_avg,OFLUX_122_DN_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -361,18 +361,18 @@ title('1/12 MITgcm+BLING DN 2017 mean O2 flux','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_09DN','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_09DN','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JD_avg,...
     OFLUX_32_JD_avg,OFLUX_62_JD_avg,OFLUX_122_JD_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -429,18 +429,18 @@ title('1/12 MITgcm+BLING JD 2017 mean O2 flux','FontWeight','Normal','FontSize',
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_10JD','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_10JD','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DJF_avg,...
     OFLUX_32_DJF_avg,OFLUX_62_DJF_avg,OFLUX_122_DJF_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -497,18 +497,18 @@ title('1/12 MITgcm+BLING DJF 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_01DJF','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_01DJF','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JFM_avg,...
     OFLUX_32_JFM_avg,OFLUX_62_JFM_avg,OFLUX_122_JFM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -565,18 +565,18 @@ title('1/12 MITgcm+BLING JFM 2017 mean O2 flux','FontWeight','Normal','FontSize'
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_02JFM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_02JFM','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_JFMAMJ_avg,...
     OFLUX_32_JFMAMJ_avg,OFLUX_62_JFMAMJ_avg,OFLUX_122_JFMAMJ_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -633,18 +633,18 @@ title('1/12 MITgcm+BLING JFMAMJ 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_04JFMAMJ','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_04JFMAMJ','-dpng')
 close all
 %% END OFLUX
 
 %% OFLUX
 cm = acc_colormap('cmo_balance');
-cm = [Color(48,:);cm;Color(46,:)];
+
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(OFLUX_BSOSE_DJFMAM_avg,...
     OFLUX_32_DJFMAM_avg,OFLUX_62_DJFMAM_avg,OFLUX_122_DJFMAM_avg,option);
 
 z = linspace(lb,ub,nlvls);
-z = [-100000,z,9999998];
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -701,7 +701,7 @@ title('1/12 MITgcm+BLING DJFMAM 2017 mean O2 flux','FontWeight','Normal','FontSi
 acc_movie
 acc_quad_plots_v8
 hold off
-print('OFLUX_AVG_03DJFMAM','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','OFLUX_AVG_03DJFMAM','-dpng')
 close all
 %% END OFLUX
 
