@@ -3,7 +3,7 @@
 
 tfield122 = 1;
 sfield122 = 2;
-wfield122 = 3;
+wfield122 = 5;
 ufield122 = 3;
 vfield122 = 4;
 tffield122 = 1;
@@ -55,6 +55,9 @@ PCO2_Series_slice_122 = zeros(512,395);
 
 HC = rdmds('../MITgcm/verification/SO12_20190513/run/hFacC');
 DRF_temp = rdmds('../MITgcm/verification/SO12_20190513/run/DRF');
+% load XY12 hFacC12
+% HC = hFacC12;
+% load XY12 DRF12
 [mm,nn,pp] = size(HC);
 DRF = zeros(1,1,pp);
 DRF(1,1,:) = DRF_temp;
@@ -259,18 +262,18 @@ end
 parfor ii=1:756
     for jj=1:512
         if (HC(ii,jj,1)==0)
-            THETA_Series_vert_122(ii,jj,:) = 99999999999;
-            THETA_Series_vert_t122(ii,jj,:) = 99999999999;
-            THETA_Series_vert100_t122(ii,jj,:) = 99999999999;
-            DIC_Series_vert_122(ii,jj,:) = 99999999999;
-            DIC_Series_vert_t122(ii,jj,:) = 99999999999;
-            DIC_Series_vert100_t122(ii,jj,:) = 99999999999;
-            O2_Series_vert_122(ii,jj,:) = 99999999999;
-            O2_Series_vert_t122(ii,jj,:) = 99999999999;
-            O2_Series_vert100_t122(ii,jj,:) = 99999999999;
-            NO3_Series_vert_122(ii,jj,:) = 99999999999;
-            NO3_Series_vert_t122(ii,jj,:) = 99999999999;
-            NO3_Series_vert100_t122(ii,jj,:) = 99999999999;
+            THETA_Series_vert_122(ii,jj,:) = NaN;
+            THETA_Series_vert_t122(ii,jj,:) = NaN;
+            THETA_Series_vert100_t122(ii,jj,:) = NaN;
+            DIC_Series_vert_122(ii,jj,:) = NaN;
+            DIC_Series_vert_t122(ii,jj,:) = NaN;
+            DIC_Series_vert100_t122(ii,jj,:) = NaN;
+            O2_Series_vert_122(ii,jj,:) = NaN;
+            O2_Series_vert_t122(ii,jj,:) = NaN;
+            O2_Series_vert100_t122(ii,jj,:) = NaN;
+            NO3_Series_vert_122(ii,jj,:) = NaN;
+            NO3_Series_vert_t122(ii,jj,:) = NaN;
+            NO3_Series_vert100_t122(ii,jj,:) = NaN;
         end
     end
 end
@@ -473,75 +476,75 @@ NO3_122_JD_vert100_avg = mean(NO3_Series_vert100_t122(:,:,32:395),3);
 parfor ii=1:m122
     for jj=1:n122
         if (HC(slice_index,ii,jj)==0)
-            THETA_Series_slice_122(ii,jj,:) = 99999999999;
-            SALT_Series_slice_122(ii,jj,:) = 99999999999;
-            WVEL_Series_slice_122(ii,jj,:) = 99999999999;
-            UVEL_Series_slice_122(ii,jj,:) = 99999999999;
-            VVEL_Series_slice_122(ii,jj,:) = 99999999999;
-            DIC_Series_slice_122(ii,jj,:) = 99999999999;
-            ALK_Series_slice_122(ii,jj,:) = 99999999999;
-            O2_Series_slice_122(ii,jj,:) = 99999999999;
-            NO3_Series_slice_122(ii,jj,:) = 99999999999;
+            THETA_Series_slice_122(ii,jj,:) = NaN;
+            SALT_Series_slice_122(ii,jj,:) = NaN;
+            WVEL_Series_slice_122(ii,jj,:) = NaN;
+            UVEL_Series_slice_122(ii,jj,:) = NaN;
+            VVEL_Series_slice_122(ii,jj,:) = NaN;
+            DIC_Series_slice_122(ii,jj,:) = NaN;
+            ALK_Series_slice_122(ii,jj,:) = NaN;
+            O2_Series_slice_122(ii,jj,:) = NaN;
+            NO3_Series_slice_122(ii,jj,:) = NaN;
             
-            THETA_122_DJF_slice_avg(ii,jj) = 99999999999;
-            SALT_122_DJF_slice_avg(ii,jj) = 99999999999;
-            DIC_122_DJF_slice_avg(ii,jj) = 99999999999;
-            ALK_122_DJF_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_DJF_slice_avg(ii,jj) = 99999999999;
-            O2_122_DJF_slice_avg(ii,jj) = 99999999999;
-            NO3_122_DJF_slice_avg(ii,jj) = 99999999999;
+            THETA_122_DJF_slice_avg(ii,jj) = NaN;
+            SALT_122_DJF_slice_avg(ii,jj) = NaN;
+            DIC_122_DJF_slice_avg(ii,jj) = NaN;
+            ALK_122_DJF_slice_avg(ii,jj) = NaN;
+            WVEL_122_DJF_slice_avg(ii,jj) = NaN;
+            VVEL_122_DJF_slice_avg(ii,jj) = NaN;
+            UVEL_122_DJF_slice_avg(ii,jj) = NaN;
+            O2_122_DJF_slice_avg(ii,jj) = NaN;
+            NO3_122_DJF_slice_avg(ii,jj) = NaN;
             
-            THETA_122_JFM_slice_avg(ii,jj) = 99999999999;
-            SALT_122_JFM_slice_avg(ii,jj) = 99999999999;
-            DIC_122_JFM_slice_avg(ii,jj) = 99999999999;
-            ALK_122_JFM_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_JFM_slice_avg(ii,jj) = 99999999999;
-            O2_122_JFM_slice_avg(ii,jj) = 99999999999;
-            NO3_122_JFM_slice_avg(ii,jj) = 99999999999;
+            THETA_122_JFM_slice_avg(ii,jj) = NaN;
+            SALT_122_JFM_slice_avg(ii,jj) = NaN;
+            DIC_122_JFM_slice_avg(ii,jj) = NaN;
+            ALK_122_JFM_slice_avg(ii,jj) = NaN;
+            WVEL_122_JFM_slice_avg(ii,jj) = NaN;
+            VVEL_122_JFM_slice_avg(ii,jj) = NaN;
+            UVEL_122_JFM_slice_avg(ii,jj) = NaN;
+            O2_122_JFM_slice_avg(ii,jj) = NaN;
+            NO3_122_JFM_slice_avg(ii,jj) = NaN;
             
-            THETA_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            SALT_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            DIC_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            ALK_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            O2_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
-            NO3_122_DJFMAM_slice_avg(ii,jj) = 99999999999;
+            THETA_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            SALT_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            DIC_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            ALK_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            WVEL_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            VVEL_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            UVEL_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            O2_122_DJFMAM_slice_avg(ii,jj) = NaN;
+            NO3_122_DJFMAM_slice_avg(ii,jj) = NaN;
             
-            THETA_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            SALT_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            DIC_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            ALK_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            O2_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
-            NO3_122_JFMAMJ_slice_avg(ii,jj) = 99999999999;
+            THETA_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            SALT_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            DIC_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            ALK_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            WVEL_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            VVEL_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            UVEL_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            O2_122_JFMAMJ_slice_avg(ii,jj) = NaN;
+            NO3_122_JFMAMJ_slice_avg(ii,jj) = NaN;
             
-            THETA_122_DN_slice_avg(ii,jj) = 99999999999;
-            SALT_122_DN_slice_avg(ii,jj) = 99999999999;
-            DIC_122_DN_slice_avg(ii,jj) = 99999999999;
-            ALK_122_DN_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_DN_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_DN_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_DN_slice_avg(ii,jj) = 99999999999;
-            O2_122_DN_slice_avg(ii,jj) = 99999999999;
-            NO3_122_DN_slice_avg(ii,jj) = 99999999999;
+            THETA_122_DN_slice_avg(ii,jj) = NaN;
+            SALT_122_DN_slice_avg(ii,jj) = NaN;
+            DIC_122_DN_slice_avg(ii,jj) = NaN;
+            ALK_122_DN_slice_avg(ii,jj) = NaN;
+            WVEL_122_DN_slice_avg(ii,jj) = NaN;
+            VVEL_122_DN_slice_avg(ii,jj) = NaN;
+            UVEL_122_DN_slice_avg(ii,jj) = NaN;
+            O2_122_DN_slice_avg(ii,jj) = NaN;
+            NO3_122_DN_slice_avg(ii,jj) = NaN;
             
-            THETA_122_JD_slice_avg(ii,jj) = 99999999999;
-            SALT_122_JD_slice_avg(ii,jj) = 99999999999;
-            DIC_122_JD_slice_avg(ii,jj) = 99999999999;
-            ALK_122_JD_slice_avg(ii,jj) = 99999999999;
-            WVEL_122_JD_slice_avg(ii,jj) = 99999999999;
-            VVEL_122_JD_slice_avg(ii,jj) = 99999999999;
-            UVEL_122_JD_slice_avg(ii,jj) = 99999999999;
-            O2_122_JD_slice_avg(ii,jj) = 99999999999;
-            NO3_122_JD_slice_avg(ii,jj) = 99999999999;
+            THETA_122_JD_slice_avg(ii,jj) = NaN;
+            SALT_122_JD_slice_avg(ii,jj) = NaN;
+            DIC_122_JD_slice_avg(ii,jj) = NaN;
+            ALK_122_JD_slice_avg(ii,jj) = NaN;
+            WVEL_122_JD_slice_avg(ii,jj) = NaN;
+            VVEL_122_JD_slice_avg(ii,jj) = NaN;
+            UVEL_122_JD_slice_avg(ii,jj) = NaN;
+            O2_122_JD_slice_avg(ii,jj) = NaN;
+            NO3_122_JD_slice_avg(ii,jj) = NaN;
         end
     end
 end
