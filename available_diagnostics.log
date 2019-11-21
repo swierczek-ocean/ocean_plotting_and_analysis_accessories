@@ -1,4 +1,4 @@
- Total Nb of available Diagnostics: ndiagt=   458
+ Total Nb of available Diagnostics: ndiagt=   420
 ------------------------------------------------------------------------------------
   Num  |<-Name->|Levs|  mate |<- code ->|<--  Units   -->|<- Tile (max=80c)         
 ------------------------------------------------------------------------------------
@@ -188,8 +188,8 @@
    181 |EXFqnet |  1 |       |SM      U1|W/m^2           |Net upward heat flux (turb+rad), >0 decreases theta
    182 |EXFtaux |  1 |       |UM      U1|N/m^2           |zonal surface wind stress, >0 increases uVel
    183 |EXFtauy |  1 |       |VM      U1|N/m^2           |meridional surface wind stress, >0 increases vVel
-   184 |EXFuwind|  1 |       |UM      U1|m/s             |zonal 10-m wind speed, >0 increases uVel
-   185 |EXFvwind|  1 |       |VM      U1|m/s             |meridional 10-m wind speed, >0 increases uVel
+   184 |EXFuwind|  1 |       |UM      U1|m/s             |zonal 10-m wind speed, >0 eastward
+   185 |EXFvwind|  1 |       |VM      U1|m/s             |meridional 10-m wind speed, >0 northward
    186 |EXFwspee|  1 |       |SM      U1|m/s             |10-m wind speed modulus ( >= 0 )
    187 |EXFatemp|  1 |       |SM      U1|degK            |surface (2-m) air temperature
    188 |EXFaqh  |  1 |       |SM      U1|kg/kg           |surface (2-m) specific humidity
@@ -200,278 +200,240 @@
    193 |EXFpress|  1 |       |SM      U1|N/m^2           |atmospheric pressure field
    194 |EXFroff |  1 |       |SM      U1|m/s             |river runoff, > 0 decreases salinity
    195 |EXFroft |  1 |       |SM      U1|deg C           |river runoff temperature
-   196 |GGL90TKE| 52 |       |SM      LR|m^2/s^2         |GGL90 sub-grid turbulent kinetic energy
-   197 |GGL90Lmx| 52 |       |SM      LR|m               |Mixing length scale
-   198 |GGL90Prl| 52 |       |SM      LR|1               |Prandtl number used in GGL90
-   199 |GGL90ArU| 52 |       |SM      LR|m^2/s           |GGL90 eddy viscosity at U-point
+   196 |EXFsalfx|  1 |       |SM      U1|psu.kg/m^2/s    |upward salt flux, > 0 decreases salinity
+   197 |GGL90TKE| 52 |       |SM      LR|m^2/s^2         |GGL90 sub-grid turbulent kinetic energy
+   198 |GGL90Lmx| 52 |       |SM      LR|m               |Mixing length scale
+   199 |GGL90Prl| 52 |       |SM      LR|1               |Prandtl number used in GGL90
 ------------------------------------------------------------------------------------
   Num  |<-Name->|Levs|  mate |<- code ->|<--  Units   -->|<- Tile (max=80c)         
 ------------------------------------------------------------------------------------
-   200 |GGL90ArV| 52 |       |SM      LR|m^2/s           |GGL90 eddy viscosity at V-point
-   201 |GGL90Kr | 52 |       |SM      LR|m^2/s           |GGL90 diffusion coefficient for temperature
-   202 |GGL90flx|  1 |       |SM      L1|m^3/s^3         |Surface flux of TKE
-   203 |GGL90tau|  1 |       |SM      L1|m^3/s^3         |Work done by the wind
-   204 |TRAC01  | 52 |       |SMR     MR|mol C/m         |Dissolved Inorganic Carbon concentration
-   205 |UTRAC01 | 52 |   206 |UUr     MR|molC/m.m/s      |Zonal Mass-Weighted Transp of dic
-   206 |VTRAC01 | 52 |   205 |VVr     MR|molC/m.m/s      |Merid Mass-Weighted Transp of dic
-   207 |WTRAC01 | 52 |       |WM      MR|molC/m.m/s      |Vert  Mass-Weighted Transp of dic
-   208 |ForcTr01| 52 |       |SMR     MR|molC/m/s        |dic forcing tendency
-   209 |AB_gTr01| 52 |       |SMR     MR|molC/m/s        |dic tendency from Adams-Bashforth
-   210 |ADVrTr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical   Advective Flux of dic
-   211 |ADVxTr01| 52 |   212 |UU      MR|molC/m.m^3/s    |Zonal      Advective Flux of dic
-   212 |ADVyTr01| 52 |   211 |VV      MR|molC/m.m^3/s    |Meridional Advective Flux of dic
-   213 |DFrETr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical Diffusive Flux of dic (Explicit part)
-   214 |DFxETr01| 52 |   215 |UU      MR|molC/m.m^3/s    |Zonal      Diffusive Flux of dic
-   215 |DFyETr01| 52 |   214 |VV      MR|molC/m.m^3/s    |Meridional Diffusive Flux of dic
-   216 |DFrITr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical Diffusive Flux of dic (Implicit part)
-   217 |TRAC02  | 52 |       |SMR     MR|mol eq/         |Alkalinity concentration
-   218 |UTRAC02 | 52 |   219 |UUr     MR|moleq/.m/s      |Zonal Mass-Weighted Transp of alk
-   219 |VTRAC02 | 52 |   218 |VVr     MR|moleq/.m/s      |Merid Mass-Weighted Transp of alk
-   220 |WTRAC02 | 52 |       |WM      MR|moleq/.m/s      |Vert  Mass-Weighted Transp of alk
-   221 |ForcTr02| 52 |       |SMR     MR|moleq//s        |alk forcing tendency
-   222 |AB_gTr02| 52 |       |SMR     MR|moleq//s        |alk tendency from Adams-Bashforth
-   223 |ADVrTr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical   Advective Flux of alk
-   224 |ADVxTr02| 52 |   225 |UU      MR|moleq/.m^3/s    |Zonal      Advective Flux of alk
-   225 |ADVyTr02| 52 |   224 |VV      MR|moleq/.m^3/s    |Meridional Advective Flux of alk
-   226 |DFrETr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical Diffusive Flux of alk (Explicit part)
-   227 |DFxETr02| 52 |   228 |UU      MR|moleq/.m^3/s    |Zonal      Diffusive Flux of alk
-   228 |DFyETr02| 52 |   227 |VV      MR|moleq/.m^3/s    |Meridional Diffusive Flux of alk
-   229 |DFrITr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical Diffusive Flux of alk (Implicit part)
-   230 |TRAC03  | 52 |       |SMR     MR|mol O/m         |Dissolved Oxygen concentration
-   231 |UTRAC03 | 52 |   232 |UUr     MR|molO/m.m/s      |Zonal Mass-Weighted Transp of o2
-   232 |VTRAC03 | 52 |   231 |VVr     MR|molO/m.m/s      |Merid Mass-Weighted Transp of o2
-   233 |WTRAC03 | 52 |       |WM      MR|molO/m.m/s      |Vert  Mass-Weighted Transp of o2
-   234 |ForcTr03| 52 |       |SMR     MR|molO/m/s        |o2 forcing tendency
-   235 |AB_gTr03| 52 |       |SMR     MR|molO/m/s        |o2 tendency from Adams-Bashforth
-   236 |ADVrTr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical   Advective Flux of o2
-   237 |ADVxTr03| 52 |   238 |UU      MR|molO/m.m^3/s    |Zonal      Advective Flux of o2
-   238 |ADVyTr03| 52 |   237 |VV      MR|molO/m.m^3/s    |Meridional Advective Flux of o2
-   239 |DFrETr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical Diffusive Flux of o2 (Explicit part)
-   240 |DFxETr03| 52 |   241 |UU      MR|molO/m.m^3/s    |Zonal      Diffusive Flux of o2
-   241 |DFyETr03| 52 |   240 |VV      MR|molO/m.m^3/s    |Meridional Diffusive Flux of o2
-   242 |DFrITr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical Diffusive Flux of o2 (Implicit part)
-   243 |TRAC04  | 52 |       |SMR     MR|mol P/m         |Nitrate concentration
-   244 |UTRAC04 | 52 |   245 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of no3
-   245 |VTRAC04 | 52 |   244 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of no3
-   246 |WTRAC04 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of no3
-   247 |ForcTr04| 52 |       |SMR     MR|molP/m/s        |no3 forcing tendency
-   248 |AB_gTr04| 52 |       |SMR     MR|molP/m/s        |no3 tendency from Adams-Bashforth
-   249 |ADVrTr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of no3
-   250 |ADVxTr04| 52 |   251 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of no3
-   251 |ADVyTr04| 52 |   250 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of no3
-   252 |DFrETr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of no3 (Explicit part)
-   253 |DFxETr04| 52 |   254 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of no3
-   254 |DFyETr04| 52 |   253 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of no3
-   255 |DFrITr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of no3 (Implicit part)
-   256 |TRAC05  | 52 |       |SMR     MR|mol P/m         |Phosphate concentration
-   257 |UTRAC05 | 52 |   258 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of po4
-   258 |VTRAC05 | 52 |   257 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of po4
-   259 |WTRAC05 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of po4
-   260 |ForcTr05| 52 |       |SMR     MR|molP/m/s        |po4 forcing tendency
-   261 |AB_gTr05| 52 |       |SMR     MR|molP/m/s        |po4 tendency from Adams-Bashforth
-   262 |ADVrTr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of po4
-   263 |ADVxTr05| 52 |   264 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of po4
-   264 |ADVyTr05| 52 |   263 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of po4
-   265 |DFrETr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of po4 (Explicit part)
-   266 |DFxETr05| 52 |   267 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of po4
-   267 |DFyETr05| 52 |   266 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of po4
-   268 |DFrITr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of po4 (Implicit part)
-   269 |TRAC06  | 52 |       |SMR     MR|mol Fe/         |Dissolved Inorganic Iron concentration
-   270 |UTRAC06 | 52 |   271 |UUr     MR|molFe/.m/s      |Zonal Mass-Weighted Transp of fet
-   271 |VTRAC06 | 52 |   270 |VVr     MR|molFe/.m/s      |Merid Mass-Weighted Transp of fet
-   272 |WTRAC06 | 52 |       |WM      MR|molFe/.m/s      |Vert  Mass-Weighted Transp of fet
-   273 |ForcTr06| 52 |       |SMR     MR|molFe//s        |fet forcing tendency
-   274 |AB_gTr06| 52 |       |SMR     MR|molFe//s        |fet tendency from Adams-Bashforth
-   275 |ADVrTr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical   Advective Flux of fet
-   276 |ADVxTr06| 52 |   277 |UU      MR|molFe/.m^3/s    |Zonal      Advective Flux of fet
-   277 |ADVyTr06| 52 |   276 |VV      MR|molFe/.m^3/s    |Meridional Advective Flux of fet
-   278 |DFrETr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical Diffusive Flux of fet (Explicit part)
-   279 |DFxETr06| 52 |   280 |UU      MR|molFe/.m^3/s    |Zonal      Diffusive Flux of fet
-   280 |DFyETr06| 52 |   279 |VV      MR|molFe/.m^3/s    |Meridional Diffusive Flux of fet
-   281 |DFrITr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical Diffusive Flux of fet (Implicit part)
-   282 |TRAC07  | 52 |       |SMR     MR|mol N/m         |Dissolved Organic Nitrogen concentration
-   283 |UTRAC07 | 52 |   284 |UUr     MR|molN/m.m/s      |Zonal Mass-Weighted Transp of don
-   284 |VTRAC07 | 52 |   283 |VVr     MR|molN/m.m/s      |Merid Mass-Weighted Transp of don
-   285 |WTRAC07 | 52 |       |WM      MR|molN/m.m/s      |Vert  Mass-Weighted Transp of don
-   286 |ForcTr07| 52 |       |SMR     MR|molN/m/s        |don forcing tendency
-   287 |AB_gTr07| 52 |       |SMR     MR|molN/m/s        |don tendency from Adams-Bashforth
-   288 |ADVrTr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical   Advective Flux of don
-   289 |ADVxTr07| 52 |   290 |UU      MR|molN/m.m^3/s    |Zonal      Advective Flux of don
-   290 |ADVyTr07| 52 |   289 |VV      MR|molN/m.m^3/s    |Meridional Advective Flux of don
-   291 |DFrETr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical Diffusive Flux of don (Explicit part)
-   292 |DFxETr07| 52 |   293 |UU      MR|molN/m.m^3/s    |Zonal      Diffusive Flux of don
-   293 |DFyETr07| 52 |   292 |VV      MR|molN/m.m^3/s    |Meridional Diffusive Flux of don
-   294 |DFrITr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical Diffusive Flux of don (Implicit part)
-   295 |TRAC08  | 52 |       |SMR     MR|mol P/m         |Dissolved Organic Phosphorus concentration
-   296 |UTRAC08 | 52 |   297 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of dop
-   297 |VTRAC08 | 52 |   296 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of dop
-   298 |WTRAC08 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of dop
-   299 |ForcTr08| 52 |       |SMR     MR|molP/m/s        |dop forcing tendency
+   200 |GGL90ArU| 52 |       |SM      LR|m^2/s           |GGL90 eddy viscosity at U-point
+   201 |GGL90ArV| 52 |       |SM      LR|m^2/s           |GGL90 eddy viscosity at V-point
+   202 |GGL90Kr | 52 |       |SM      LR|m^2/s           |GGL90 diffusion coefficient for temperature
+   203 |GGL90flx|  1 |       |SM      L1|m^3/s^3         |Surface flux of TKE
+   204 |GGL90tau|  1 |       |SM      L1|m^3/s^3         |Work done by the wind
+   205 |TRAC01  | 52 |       |SMR     MR|mol C/m         |Dissolved Inorganic Carbon concentration
+   206 |UTRAC01 | 52 |   207 |UUr     MR|molC/m.m/s      |Zonal Mass-Weighted Transp of dic
+   207 |VTRAC01 | 52 |   206 |VVr     MR|molC/m.m/s      |Merid Mass-Weighted Transp of dic
+   208 |WTRAC01 | 52 |       |WM      MR|molC/m.m/s      |Vert  Mass-Weighted Transp of dic
+   209 |ForcTr01| 52 |       |SMR     MR|molC/m/s        |dic forcing tendency
+   210 |AB_gTr01| 52 |       |SMR     MR|molC/m/s        |dic tendency from Adams-Bashforth
+   211 |ADVrTr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical   Advective Flux of dic
+   212 |ADVxTr01| 52 |   213 |UU      MR|molC/m.m^3/s    |Zonal      Advective Flux of dic
+   213 |ADVyTr01| 52 |   212 |VV      MR|molC/m.m^3/s    |Meridional Advective Flux of dic
+   214 |DFrETr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical Diffusive Flux of dic (Explicit part)
+   215 |DFxETr01| 52 |   216 |UU      MR|molC/m.m^3/s    |Zonal      Diffusive Flux of dic
+   216 |DFyETr01| 52 |   215 |VV      MR|molC/m.m^3/s    |Meridional Diffusive Flux of dic
+   217 |DFrITr01| 52 |       |WM      LR|molC/m.m^3/s    |Vertical Diffusive Flux of dic (Implicit part)
+   218 |TRAC02  | 52 |       |SMR     MR|mol eq/         |Alkalinity concentration
+   219 |UTRAC02 | 52 |   220 |UUr     MR|moleq/.m/s      |Zonal Mass-Weighted Transp of alk
+   220 |VTRAC02 | 52 |   219 |VVr     MR|moleq/.m/s      |Merid Mass-Weighted Transp of alk
+   221 |WTRAC02 | 52 |       |WM      MR|moleq/.m/s      |Vert  Mass-Weighted Transp of alk
+   222 |ForcTr02| 52 |       |SMR     MR|moleq//s        |alk forcing tendency
+   223 |AB_gTr02| 52 |       |SMR     MR|moleq//s        |alk tendency from Adams-Bashforth
+   224 |ADVrTr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical   Advective Flux of alk
+   225 |ADVxTr02| 52 |   226 |UU      MR|moleq/.m^3/s    |Zonal      Advective Flux of alk
+   226 |ADVyTr02| 52 |   225 |VV      MR|moleq/.m^3/s    |Meridional Advective Flux of alk
+   227 |DFrETr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical Diffusive Flux of alk (Explicit part)
+   228 |DFxETr02| 52 |   229 |UU      MR|moleq/.m^3/s    |Zonal      Diffusive Flux of alk
+   229 |DFyETr02| 52 |   228 |VV      MR|moleq/.m^3/s    |Meridional Diffusive Flux of alk
+   230 |DFrITr02| 52 |       |WM      LR|moleq/.m^3/s    |Vertical Diffusive Flux of alk (Implicit part)
+   231 |TRAC03  | 52 |       |SMR     MR|mol O/m         |Dissolved Oxygen concentration
+   232 |UTRAC03 | 52 |   233 |UUr     MR|molO/m.m/s      |Zonal Mass-Weighted Transp of o2
+   233 |VTRAC03 | 52 |   232 |VVr     MR|molO/m.m/s      |Merid Mass-Weighted Transp of o2
+   234 |WTRAC03 | 52 |       |WM      MR|molO/m.m/s      |Vert  Mass-Weighted Transp of o2
+   235 |ForcTr03| 52 |       |SMR     MR|molO/m/s        |o2 forcing tendency
+   236 |AB_gTr03| 52 |       |SMR     MR|molO/m/s        |o2 tendency from Adams-Bashforth
+   237 |ADVrTr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical   Advective Flux of o2
+   238 |ADVxTr03| 52 |   239 |UU      MR|molO/m.m^3/s    |Zonal      Advective Flux of o2
+   239 |ADVyTr03| 52 |   238 |VV      MR|molO/m.m^3/s    |Meridional Advective Flux of o2
+   240 |DFrETr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical Diffusive Flux of o2 (Explicit part)
+   241 |DFxETr03| 52 |   242 |UU      MR|molO/m.m^3/s    |Zonal      Diffusive Flux of o2
+   242 |DFyETr03| 52 |   241 |VV      MR|molO/m.m^3/s    |Meridional Diffusive Flux of o2
+   243 |DFrITr03| 52 |       |WM      LR|molO/m.m^3/s    |Vertical Diffusive Flux of o2 (Implicit part)
+   244 |TRAC04  | 52 |       |SMR     MR|mol P/m         |Nitrate concentration
+   245 |UTRAC04 | 52 |   246 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of no3
+   246 |VTRAC04 | 52 |   245 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of no3
+   247 |WTRAC04 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of no3
+   248 |ForcTr04| 52 |       |SMR     MR|molP/m/s        |no3 forcing tendency
+   249 |AB_gTr04| 52 |       |SMR     MR|molP/m/s        |no3 tendency from Adams-Bashforth
+   250 |ADVrTr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of no3
+   251 |ADVxTr04| 52 |   252 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of no3
+   252 |ADVyTr04| 52 |   251 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of no3
+   253 |DFrETr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of no3 (Explicit part)
+   254 |DFxETr04| 52 |   255 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of no3
+   255 |DFyETr04| 52 |   254 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of no3
+   256 |DFrITr04| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of no3 (Implicit part)
+   257 |TRAC05  | 52 |       |SMR     MR|mol P/m         |Phosphate concentration
+   258 |UTRAC05 | 52 |   259 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of po4
+   259 |VTRAC05 | 52 |   258 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of po4
+   260 |WTRAC05 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of po4
+   261 |ForcTr05| 52 |       |SMR     MR|molP/m/s        |po4 forcing tendency
+   262 |AB_gTr05| 52 |       |SMR     MR|molP/m/s        |po4 tendency from Adams-Bashforth
+   263 |ADVrTr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of po4
+   264 |ADVxTr05| 52 |   265 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of po4
+   265 |ADVyTr05| 52 |   264 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of po4
+   266 |DFrETr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of po4 (Explicit part)
+   267 |DFxETr05| 52 |   268 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of po4
+   268 |DFyETr05| 52 |   267 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of po4
+   269 |DFrITr05| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of po4 (Implicit part)
+   270 |TRAC06  | 52 |       |SMR     MR|mol Fe/         |Dissolved Inorganic Iron concentration
+   271 |UTRAC06 | 52 |   272 |UUr     MR|molFe/.m/s      |Zonal Mass-Weighted Transp of fet
+   272 |VTRAC06 | 52 |   271 |VVr     MR|molFe/.m/s      |Merid Mass-Weighted Transp of fet
+   273 |WTRAC06 | 52 |       |WM      MR|molFe/.m/s      |Vert  Mass-Weighted Transp of fet
+   274 |ForcTr06| 52 |       |SMR     MR|molFe//s        |fet forcing tendency
+   275 |AB_gTr06| 52 |       |SMR     MR|molFe//s        |fet tendency from Adams-Bashforth
+   276 |ADVrTr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical   Advective Flux of fet
+   277 |ADVxTr06| 52 |   278 |UU      MR|molFe/.m^3/s    |Zonal      Advective Flux of fet
+   278 |ADVyTr06| 52 |   277 |VV      MR|molFe/.m^3/s    |Meridional Advective Flux of fet
+   279 |DFrETr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical Diffusive Flux of fet (Explicit part)
+   280 |DFxETr06| 52 |   281 |UU      MR|molFe/.m^3/s    |Zonal      Diffusive Flux of fet
+   281 |DFyETr06| 52 |   280 |VV      MR|molFe/.m^3/s    |Meridional Diffusive Flux of fet
+   282 |DFrITr06| 52 |       |WM      LR|molFe/.m^3/s    |Vertical Diffusive Flux of fet (Implicit part)
+   283 |TRAC07  | 52 |       |SMR     MR|mol N/m         |Dissolved Organic Nitrogen concentration
+   284 |UTRAC07 | 52 |   285 |UUr     MR|molN/m.m/s      |Zonal Mass-Weighted Transp of don
+   285 |VTRAC07 | 52 |   284 |VVr     MR|molN/m.m/s      |Merid Mass-Weighted Transp of don
+   286 |WTRAC07 | 52 |       |WM      MR|molN/m.m/s      |Vert  Mass-Weighted Transp of don
+   287 |ForcTr07| 52 |       |SMR     MR|molN/m/s        |don forcing tendency
+   288 |AB_gTr07| 52 |       |SMR     MR|molN/m/s        |don tendency from Adams-Bashforth
+   289 |ADVrTr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical   Advective Flux of don
+   290 |ADVxTr07| 52 |   291 |UU      MR|molN/m.m^3/s    |Zonal      Advective Flux of don
+   291 |ADVyTr07| 52 |   290 |VV      MR|molN/m.m^3/s    |Meridional Advective Flux of don
+   292 |DFrETr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical Diffusive Flux of don (Explicit part)
+   293 |DFxETr07| 52 |   294 |UU      MR|molN/m.m^3/s    |Zonal      Diffusive Flux of don
+   294 |DFyETr07| 52 |   293 |VV      MR|molN/m.m^3/s    |Meridional Diffusive Flux of don
+   295 |DFrITr07| 52 |       |WM      LR|molN/m.m^3/s    |Vertical Diffusive Flux of don (Implicit part)
+   296 |TRAC08  | 52 |       |SMR     MR|mol P/m         |Dissolved Organic Phosphorus concentration
+   297 |UTRAC08 | 52 |   298 |UUr     MR|molP/m.m/s      |Zonal Mass-Weighted Transp of dop
+   298 |VTRAC08 | 52 |   297 |VVr     MR|molP/m.m/s      |Merid Mass-Weighted Transp of dop
+   299 |WTRAC08 | 52 |       |WM      MR|molP/m.m/s      |Vert  Mass-Weighted Transp of dop
 ------------------------------------------------------------------------------------
   Num  |<-Name->|Levs|  mate |<- code ->|<--  Units   -->|<- Tile (max=80c)         
 ------------------------------------------------------------------------------------
-   300 |AB_gTr08| 52 |       |SMR     MR|molP/m/s        |dop tendency from Adams-Bashforth
-   301 |ADVrTr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of dop
-   302 |ADVxTr08| 52 |   303 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of dop
-   303 |ADVyTr08| 52 |   302 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of dop
-   304 |DFrETr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of dop (Explicit part)
-   305 |DFxETr08| 52 |   306 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of dop
-   306 |DFyETr08| 52 |   305 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of dop
-   307 |DFrITr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of dop (Implicit part)
-   308 |TRAC09  | 52 |       |SMR     MR|kg/kg           |Tracer 0009 concentration
-   309 |UTRAC09 | 52 |   310 |UUr     MR|kg/kg.m/s       |Zonal Mass-Weighted Transp of Tracer 0009
-   310 |VTRAC09 | 52 |   309 |VVr     MR|kg/kg.m/s       |Merid Mass-Weighted Transp of Tracer 0009
-   311 |WTRAC09 | 52 |       |WM      MR|kg/kg.m/s       |Vert  Mass-Weighted Transp of Tracer 0009
-   312 |ForcTr09| 52 |       |SMR     MR|kg/kg/s         |Tracer 0009 forcing tendency
-   313 |AB_gTr09| 52 |       |SMR     MR|kg/kg/s         |Tracer 0009 tendency from Adams-Bashforth
-   314 |ADVrTr09| 52 |       |WM      LR|kg/kg.m^3/s     |Vertical   Advective Flux of Tracer 0009
-   315 |ADVxTr09| 52 |   316 |UU      MR|kg/kg.m^3/s     |Zonal      Advective Flux of Tracer 0009
-   316 |ADVyTr09| 52 |   315 |VV      MR|kg/kg.m^3/s     |Meridional Advective Flux of Tracer 0009
-   317 |DFrETr09| 52 |       |WM      LR|kg/kg.m^3/s     |Vertical Diffusive Flux of Tracer 0009 (Explicit part)
-   318 |DFxETr09| 52 |   319 |UU      MR|kg/kg.m^3/s     |Zonal      Diffusive Flux of Tracer 0009
-   319 |DFyETr09| 52 |   318 |VV      MR|kg/kg.m^3/s     |Meridional Diffusive Flux of Tracer 0009
-   320 |DFrITr09| 52 |       |WM      LR|kg/kg.m^3/s     |Vertical Diffusive Flux of Tracer 0009 (Implicit part)
-   321 |Add2EmP |  1 |       |SM      U1|kg/m^2/s        |additional EmP from salt relaxation
-   322 |BLGPH3D | 52 |       |SM P    MR|dimensionless   |pH
-   323 |BLGOMAR | 52 |       |SM P    MR|dimensionless   |Aragonite saturation
-   324 |BLGPCO2 |  1 |       |SM P    M1|atm             |Surface ocean partial pressure of CO2
-   325 |BLGCFLX |  1 |       |SM P    L1|mol/m2/sec      |Flux of CO2 due to air-sea exch (mol/m2/s)
-   326 |BLGOFLX |  1 |       |SM P    L1|mol/m2/sec      |Flux of O2 due to air-sea exch (mol/m2/s)
-   327 |BLGPSM  | 52 |       |SM P    MR|mol C/m3        |Small phytoplankton biomass (mol C/m3/s)
-   328 |BLGPLG  | 52 |       |SM P    MR|mol C/m3        |Large phytoplankton biomass (mol C/m3/s)
-   329 |BLGPDIA | 52 |       |SM P    MR|mol C/m3        |Diazotroph phytoplankton biomass (mol C/m3/s)
-   330 |BLGCHL  | 52 |       |SM P    MR|mol chl/m3      |Chlorophyll concentration
-   331 |BLGPOCF | 52 |       |SM P    MR|mol C/m3/s      |Particulate Organic Carbon Flux
-   332 |BLGNPP  | 52 |       |SM P    MR|mol C/m3/s      |Net Primary Production
-   333 |BLGNCP  | 52 |       |SM P    MR|mol C/m3/s      |Net Community Production
-   334 |BLGFESPM| 52 |       |SM P    MR|mol Fe/m3/s     |Iron sinking particle flux
-   335 |BLGFEREC| 52 |       |SM P    MR|mol Fe/m3/s     |Iron recycling
-   336 |BLGFERD | 52 |       |SM P    MR|mol Fe/m3/s     |Iron remin from Diel Vertical Migration
-   337 |BLGFEADI| 52 |       |SM P    MR|mol Fe/m3/s     |Iron inorganic adsorption
-   338 |BLGFEADO| 52 |       |SM P    MR|mol Fe/m3/s     |Iron organic adsorption
-   339 |BLGFEREM| 52 |       |SM P    MR|mol Fe/m3/s     |Iron remin of sinking organic matter
-   340 |BLGFESED| 52 |       |SM P    MR|mol Fe/m3/s     |Iron sediment source
-   341 |BLGFEBUR|  1 |       |SM P    M1|mol Fe/m3/s     |Iron burial into sediment
-   342 |BLGFEUP | 52 |       |SM P    MR|mol Fe/m3/s     |Iron uptake by bio
-   343 |BLGNDENB| 52 |       |SM P    MR|mol N/m3/s      |Benthic denitrification
-   344 |BLGNDENP| 52 |       |SM P    MR|mol N/m3/s      |Pelagic denitrification
-   345 |BLGNDVM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen remin by Diel Vertical Migration
-   346 |BLGNFIX | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen fixation
-   347 |BLGDONP | 52 |       |SM P    MR|mol N/m3/s      |Dissolved Organic Nitrogen Production
-   348 |BLGDONR | 52 |       |SM P    MR|mol N/m3/s      |Dissolved Organic Nitrogen Remineralization
-   349 |BLGNSPM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen sinking particle flux
-   350 |BLGNREC | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen recycling
-   351 |BLGNRD  | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen remin by DVM
-   352 |BLGNREM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen remin of sinking org matter
-   353 |BLGNUP  | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen uptake by bio
-   354 |BLGPDVM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus remin by Diel Vertical Migration
-   355 |BLGDOPP | 52 |       |SM P    MR|mol P/m3/s      |Dissolved Organic Phosphorus Production
-   356 |BLGPSPM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus sinking particle flux
-   357 |BLGPREC | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus recycling
-   358 |BLGPRD  | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus remin by DVM
-   359 |BLGPREM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus remin of sinking org matter
-   360 |BLGPUP  | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus uptake by bio
-   361 |BLGPCM  | 52 |       |SM P    MR|1/s             |Maxximum photosynthesis rate
-   362 |BLGMU   | 52 |       |SM P    MR|1/s             |Phytoplankton growth rate
-   363 |BLGMUDIA| 52 |       |SM P    MR|1/s             |Diazotroph growth rate
-   364 |BLGQSW  | 52 |       |SM P    MR|W/m2            |Effective irradiance
-   365 |BLGIRRIS| 52 |       |SM P    MR|W/m2            |Effective irradiance
-   366 |BLGIEFF | 52 |       |SM P    MR|W/m2            |Effective irradiance
-   367 |BLGIMEM | 52 |       |SM P    MR|W/m2            |Irradiance memory
-   368 |BLGIRRK | 52 |       |SM P    MR|W/m2            |Nutrient-limited photosynthesis efficiency
-   369 |BLGNLIM | 52 |       |SM P    MR|-               |N limitation
-   370 |BLGPLIM | 52 |       |SM P    MR|-               |P limitation
-   371 |BLGFELIM| 52 |       |SM P    MR|-               |Fe limitation
-   372 |BLGNSED |  1 |       |SM P    M1|mol N/m3/s      |Nitrogen flux in/out of sediments
-   373 |BLGPSED |  1 |       |SM P    M1|mol P/m3/s      |Phosphorus flux in/out of sediments
-   374 |BLGOSED |  1 |       |SM P    M1|mol O/m3/s      |Oxygen flux in/out of sediments
-   375 |BLGBIOA | 52 |       |SMRP    MR|mol C/m3/sec    |Tendency of carbon due to bio prod (mol C/m3/s)
-   376 |GC_Tr01 | 52 |       |SMR     MR|mol C/m         |dic concentration before GCHEM
-   377 |GC_Tr02 | 52 |       |SMR     MR|mol eq/         |alk concentration before GCHEM
-   378 |GC_Tr03 | 52 |       |SMR     MR|mol O/m         |o2 concentration before GCHEM
-   379 |GC_Tr04 | 52 |       |SMR     MR|mol P/m         |no3 concentration before GCHEM
-   380 |GC_Tr05 | 52 |       |SMR     MR|mol P/m         |po4 concentration before GCHEM
-   381 |GC_Tr06 | 52 |       |SMR     MR|mol Fe/         |fet concentration before GCHEM
-   382 |GC_Tr07 | 52 |       |SMR     MR|mol N/m         |don concentration before GCHEM
-   383 |GC_Tr08 | 52 |       |SMR     MR|mol P/m         |dop concentration before GCHEM
-   384 |GC_Tr09 | 52 |       |SMR     MR|(kg/kg)         |Tracer 0009 concentration before GCHEM
-   385 |SIarea  |  1 |       |SM      M1|m^2/m^2         |SEAICE fractional ice-covered area [0 to 1]
-   386 |SIareaPR|  1 |       |SM      M1|m^2/m^2         |SIarea preceeding ridging process
-   387 |SIareaPT|  1 |       |SM      M1|m^2/m^2         |SIarea preceeding thermodynamic growth/melt
-   388 |SIheff  |  1 |       |SM      M1|m               |SEAICE effective ice thickness
-   389 |SIheffPT|  1 |       |SM      M1|m               |SIheff preceeeding thermodynamic growth/melt
-   390 |SIhsnow |  1 |       |SM      M1|m               |SEAICE effective snow thickness
-   391 |SIhsnoPT|  1 |       |SM      M1|m               |SIhsnow preceeeding thermodynamic growth/melt
-   392 |SIhsalt |  1 |       |SM      M1|g/m^2           |SEAICE effective salinity
-   393 |SItices |  1 |   385 |SM  C   M1|K               |Surface Temperature over Sea-Ice (area weighted)
-   394 |SIuice  |  1 |   395 |UU      M1|m/s             |SEAICE zonal ice velocity, >0 from West to East
-   395 |SIvice  |  1 |   394 |VV      M1|m/s             |SEAICE merid. ice velocity, >0 from South to North
-   396 |SIfu    |  1 |   397 |UU      U1|N/m^2           |SEAICE zonal surface wind stress, >0 increases uVel
-   397 |SIfv    |  1 |   396 |VV      U1|N/m^2           |SEAICE merid. surface wind stress, >0 increases vVel
-   398 |SIuwind |  1 |   399 |UM      U1|m/s             |SEAICE zonal 10-m wind speed, >0 increases uVel
-   399 |SIvwind |  1 |   398 |VM      U1|m/s             |SEAICE meridional 10-m wind speed, >0 increases uVel
+   300 |ForcTr08| 52 |       |SMR     MR|molP/m/s        |dop forcing tendency
+   301 |AB_gTr08| 52 |       |SMR     MR|molP/m/s        |dop tendency from Adams-Bashforth
+   302 |ADVrTr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical   Advective Flux of dop
+   303 |ADVxTr08| 52 |   304 |UU      MR|molP/m.m^3/s    |Zonal      Advective Flux of dop
+   304 |ADVyTr08| 52 |   303 |VV      MR|molP/m.m^3/s    |Meridional Advective Flux of dop
+   305 |DFrETr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of dop (Explicit part)
+   306 |DFxETr08| 52 |   307 |UU      MR|molP/m.m^3/s    |Zonal      Diffusive Flux of dop
+   307 |DFyETr08| 52 |   306 |VV      MR|molP/m.m^3/s    |Meridional Diffusive Flux of dop
+   308 |DFrITr08| 52 |       |WM      LR|molP/m.m^3/s    |Vertical Diffusive Flux of dop (Implicit part)
+   309 |TRAC09  | 52 |       |SMR     MR|kg              |Phytoplankton Biomass concentration
+   310 |UTRAC09 | 52 |   311 |UUr     MR|kg.m/s          |Zonal Mass-Weighted Transp of phy
+   311 |VTRAC09 | 52 |   310 |VVr     MR|kg.m/s          |Merid Mass-Weighted Transp of phy
+   312 |WTRAC09 | 52 |       |WM      MR|kg.m/s          |Vert  Mass-Weighted Transp of phy
+   313 |ForcTr09| 52 |       |SMR     MR|kg/s            |phy forcing tendency
+   314 |AB_gTr09| 52 |       |SMR     MR|kg/s            |phy tendency from Adams-Bashforth
+   315 |ADVrTr09| 52 |       |WM      LR|kg.m^3/s        |Vertical   Advective Flux of phy
+   316 |ADVxTr09| 52 |   317 |UU      MR|kg.m^3/s        |Zonal      Advective Flux of phy
+   317 |ADVyTr09| 52 |   316 |VV      MR|kg.m^3/s        |Meridional Advective Flux of phy
+   318 |DFrETr09| 52 |       |WM      LR|kg.m^3/s        |Vertical Diffusive Flux of phy (Explicit part)
+   319 |DFxETr09| 52 |   320 |UU      MR|kg.m^3/s        |Zonal      Diffusive Flux of phy
+   320 |DFyETr09| 52 |   319 |VV      MR|kg.m^3/s        |Meridional Diffusive Flux of phy
+   321 |DFrITr09| 52 |       |WM      LR|kg.m^3/s        |Vertical Diffusive Flux of phy (Implicit part)
+   322 |TRAC10  | 52 |       |SMR     MR|s               |Age Tracer concentration
+   323 |UTRAC10 | 52 |   324 |UUr     MR|s.m/s           |Zonal Mass-Weighted Transp of age
+   324 |VTRAC10 | 52 |   323 |VVr     MR|s.m/s           |Merid Mass-Weighted Transp of age
+   325 |WTRAC10 | 52 |       |WM      MR|s.m/s           |Vert  Mass-Weighted Transp of age
+   326 |ForcTr10| 52 |       |SMR     MR|s/s             |age forcing tendency
+   327 |AB_gTr10| 52 |       |SMR     MR|s/s             |age tendency from Adams-Bashforth
+   328 |ADVrTr10| 52 |       |WM      LR|s.m^3/s         |Vertical   Advective Flux of age
+   329 |ADVxTr10| 52 |   330 |UU      MR|s.m^3/s         |Zonal      Advective Flux of age
+   330 |ADVyTr10| 52 |   329 |VV      MR|s.m^3/s         |Meridional Advective Flux of age
+   331 |DFrETr10| 52 |       |WM      LR|s.m^3/s         |Vertical Diffusive Flux of age (Explicit part)
+   332 |DFxETr10| 52 |   333 |UU      MR|s.m^3/s         |Zonal      Diffusive Flux of age
+   333 |DFyETr10| 52 |   332 |VV      MR|s.m^3/s         |Meridional Diffusive Flux of age
+   334 |DFrITr10| 52 |       |WM      LR|s.m^3/s         |Vertical Diffusive Flux of age (Implicit part)
+   335 |Add2EmP |  1 |       |SM      U1|kg/m^2/s        |additional EmP from salt relaxation
+   336 |BLGPSM  | 52 |       |SM P    MR|mol C/m3        |Small phytoplankton biomass (mol C/m3/s)
+   337 |BLGPLG  | 52 |       |SM P    MR|mol C/m3        |Large phytoplankton biomass (mol C/m3/s)
+   338 |BLGPDIA | 52 |       |SM P    MR|mol C/m3        |Diazotroph phytoplankton biomass (mol C/m3/s)
+   339 |BLGCHL  | 52 |       |SM P    MR|mg/m3           |Chlorophyll concentration
+   340 |BLGCHL2C| 52 |       |SM P    MR|mol Chl/mol C   |Chlorophyll to Carbon ratio
+   341 |BLGC2CHL| 52 |       |SM P    MR|g C/g Chl       |Carbon to Chlorophyll ratio
+   342 |BLGPOC  | 52 |       |SM P    MR|mol C/m3        |Particulate Organic Carbon concentration
+   343 |BLGPOCF | 52 |       |SM P    MR|mol C/m3/s      |Particulate Organic Carbon Flux
+   344 |BLGNPP  | 52 |       |SM P    MR|mol C/m3/s      |Net Primary Production
+   345 |BLGNCP  | 52 |       |SM P    MR|mol C/m3/s      |Net Community Production
+   346 |BLGPCM  | 52 |       |SM P    MR|1/s             |Maximum photosynthesis rate
+   347 |BLGMU   | 52 |       |SM P    MR|1/s             |Phytoplankton growth rate
+   348 |BLGMUDIA| 52 |       |SM P    MR|1/s             |Diazotroph growth rate
+   349 |BLGIRRK | 52 |       |SM P    MR|W/m2            |Nutrient-limited photosynthesis efficiency
+   350 |BLGLLIM | 52 |       |SM P    MR|-               |Light limitation
+   351 |BLGNLIM | 52 |       |SM P    MR|-               |N limitation
+   352 |BLGPLIM | 52 |       |SM P    MR|-               |P limitation
+   353 |BLGFELIM| 52 |       |SM P    MR|-               |Fe limitation
+   354 |BLGP2N  | 52 |       |SM P    MR|-               |P to N stoichiometric ratio
+   355 |BLGFE2N | 52 |       |SM P    MR|-               |Fe to N stoichiometric ratio
+   356 |BLGPCO2 |  1 |       |SM P    M1|atm             |Surface ocean partial pressure of CO2
+   357 |BLGPH3D | 52 |       |SM P    MR|dimensionless   |pH
+   358 |BLGOMAR | 52 |       |SM P    MR|dimensionless   |Aragonite saturation
+   359 |BLGCFLX |  1 |       |SM P    L1|mol/m2/sec      |Flux of CO2 due to air-sea exch (mol/m2/s)
+   360 |BLGapco2|  1 |       |SM      U1|10^-6 ppm       |Atmospheric partial pressure of CO2
+   361 |BLGOFLX |  1 |       |SM P    L1|mol/m2/sec      |Flux of O2 due to air-sea exch (mol/m2/s)
+   362 |BLGO2SAT|  1 |       |SM P    L1|percent         |surface O2 saturation (percent)
+   363 |BLGSURFE|  1 |       |SM P    L1|mol/m2/sec      |Surface deposition of Fe (mol/m2/s)
+   364 |BLGFEUP | 52 |       |SM P    MR|mol Fe/m3/s     |Iron uptake by bio
+   365 |BLGFESPM| 52 |       |SM P    MR|mol Fe/m3/s     |Iron sinking particle flux
+   366 |BLGFEREM| 52 |       |SM P    MR|mol Fe/m3/s     |Iron remin of sinking organic matter
+   367 |BLGFERD | 52 |       |SM P    MR|mol Fe/m3/s     |Iron remin from Diel Vertical Migration
+   368 |BLGFEREC| 52 |       |SM P    MR|mol Fe/m3/s     |Iron recycling
+   369 |BLGFEADI| 52 |       |SM P    MR|mol Fe/m3/s     |Iron inorganic adsorption
+   370 |BLGFEADO| 52 |       |SM P    MR|mol Fe/m3/s     |Iron organic adsorption
+   371 |BLGFESED| 52 |       |SM P    MR|mol Fe/m3/s     |Iron sediment source
+   372 |BLGFEBUR|  1 |       |SM P    M1|mol Fe/m3/s     |Iron burial into sediment
+   373 |BLGNUP  | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen uptake by bio
+   374 |BLGNFIX | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen fixation
+   375 |BLGNSPM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen sinking particle flux
+   376 |BLGNREM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen remin of sinking org matter
+   377 |BLGNDVM | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen vertical flux due to DVM
+   378 |BLGNRD  | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen remin by Diel Vertical Migration
+   379 |BLGNREC | 52 |       |SM P    MR|mol N/m3/s      |Nitrogen recycling
+   380 |BLGNDENB| 52 |       |SM P    MR|mol N/m3/s      |Benthic denitrification
+   381 |BLGNDENP| 52 |       |SM P    MR|mol N/m3/s      |Pelagic denitrification
+   382 |BLGDONP | 52 |       |SM P    MR|mol N/m3/s      |Dissolved Organic Nitrogen Production
+   383 |BLGDONR | 52 |       |SM P    MR|mol N/m3/s      |Dissolved Organic Nitrogen Remineralization
+   384 |BLGNONEN| 52 |       |SM P    MR|-               |NO3 no neg
+   385 |BLGPUP  | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus uptake by bio
+   386 |BLGPSPM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus sinking particle flux
+   387 |BLGPREM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus remin of sinking org matter
+   388 |BLGPDVM | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus vertical flux due to DVM
+   389 |BLGPRD  | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus remin by Diel Vertical Migration
+   390 |BLGPREC | 52 |       |SM P    MR|mol P/m3/s      |Phosphorus recycling
+   391 |BLGDOPP | 52 |       |SM P    MR|mol P/m3/s      |Dissolved Organic Phosphorus Production
+   392 |BLGDOPR | 52 |       |SM P    MR|mol P/m3/s      |Dissolved Organic Phosphorus Remineralization
+   393 |BLGMLD  |  1 |       |SM P    L1|m               |Diagnosed mixed layer depth
+   394 |BLGIRRIS| 52 |       |SM P    MR|W/m2            |Local irradiance
+   395 |BLGIEFF | 52 |       |SM P    MR|W/m2            |Effective irradiance
+   396 |BLGIMEM | 52 |       |SM P    MR|W/m2            |Irradiance memory
+   397 |BLGBIOC | 52 |       |SMRP    MR|mol C/m3/sec    |Tendency of DIC due to biology (mol C/m3/s)
+   398 |BLGBIOAL| 52 |       |SMRP    MR|mol alk/m3/sec  |Tendency of alkalinity due to biology (mol alk/m3/s)
+   399 |BLGBIOO2| 52 |       |SMRP    MR|mol O/m3/sec    |Tendency of oxygen due to biology (mol O/m3/s)
 ------------------------------------------------------------------------------------
   Num  |<-Name->|Levs|  mate |<- code ->|<--  Units   -->|<- Tile (max=80c)         
 ------------------------------------------------------------------------------------
-   400 |SIqnet  |  1 |       |SM      U1|W/m^2           |Ocean surface heatflux, turb+rad, >0 decreases theta
-   401 |SIqsw   |  1 |       |SM      U1|W/m^2           |Ocean surface shortwave radiat., >0 decreases theta
-   402 |SIatmQnt|  1 |       |SM      U1|W/m^2           |Net atmospheric heat flux, >0 decreases theta
-   403 |SItflux |  1 |       |SM      U1|W/m^2           |Same as TFLUX but incl seaice (>0 incr T decr H)
-   404 |SIaaflux|  1 |       |SM      U1|W/m^2           |conservative ocn<->seaice adv. heat flux adjust.
-   405 |SIhl    |  1 |       |SM      U1|W/m^2           |Latent heat flux into ocean, >0 increases theta
-   406 |SIqneto |  1 |       |SM      U1|W/m^2           |Open Ocean Part of SIqnet, turb+rad, >0 decr theta
-   407 |SIqneti |  1 |       |SM      U1|W/m^2           |Ice Covered Part of SIqnet, turb+rad, >0 decr theta
-   408 |SIempmr |  1 |       |SM      U1|kg/m^2/s        |Ocean surface freshwater flux, > 0 increases salt
-   409 |SIatmFW |  1 |       |SM      U1|kg/m^2/s        |Net freshwater flux from atmosphere & land (+=down)
-   410 |SIsnPrcp|  1 |       |SM      U1|kg/m^2/s        |Snow precip. (+=dw) over Sea-Ice (area weighted)
-   411 |SIfwSubl|  1 |       |SM      U1|kg/m^2/s        |Potential sublimation freshwater flux, >0 decr. ice
-   412 |SIacSubl|  1 |       |SM      U1|kg/m^2/s        |Actual sublimation freshwater flux, >0 decr. ice
-   413 |SIrsSubl|  1 |       |SM      U1|kg/m^2/s        |Residual subl. freshwater flux, >0 taken from ocn
-   414 |SIactLHF|  1 |       |SM      U1|W/m^2           |Actual latent heat flux over ice
-   415 |SImaxLHF|  1 |       |SM      U1|W/m^2           |Maximum latent heat flux over ice
-   416 |SIaQbOCN|  1 |       |SM      M1|m/s             |Potential HEFF rate of change by ocean ice flux
-   417 |SIaQbATC|  1 |       |SM      M1|m/s             |Potential HEFF rate of change by atm flux over ice
-   418 |SIaQbATO|  1 |       |SM      M1|m/s             |Potential HEFF rate of change by open ocn atm flux
-   419 |SIdHbOCN|  1 |       |SM      M1|m/s             |HEFF rate of change by ocean ice flux
-   420 |SIdSbATC|  1 |       |SM      M1|m/s             |HSNOW rate of change by atm flux over sea ice
-   421 |SIdSbOCN|  1 |       |SM      M1|m/s             |HSNOW rate of change by ocean ice flux
-   422 |SIdHbATC|  1 |       |SM      M1|m/s             |HEFF rate of change by atm flux over sea ice
-   423 |SIdHbATO|  1 |       |SM      M1|m/s             |HEFF rate of change by open ocn atm flux
-   424 |SIdHbFLO|  1 |       |SM      M1|m/s             |HEFF rate of change by flooding snow
-   425 |SIdAbATO|  1 |       |SM      M1|m^2/m^2/s       |Potential AREA rate of change by open ocn atm flux
-   426 |SIdAbATC|  1 |       |SM      M1|m^2/m^2/s       |Potential AREA rate of change by atm flux over ice
-   427 |SIdAbOCN|  1 |       |SM      M1|m^2/m^2/s       |Potential AREA rate of change by ocean ice flux
-   428 |SIdA    |  1 |       |SM      M1|m^2/m^2/s       |AREA rate of change (net)
-   429 |ADVxHEFF|  1 |   430 |UU      M1|m.m^2/s         |Zonal      Advective Flux of eff ice thickn
-   430 |ADVyHEFF|  1 |   429 |VV      M1|m.m^2/s         |Meridional Advective Flux of eff ice thickn
-   431 |SIuheff |  1 |   432 |UU      M1|m^2/s           |Zonal      Transport of eff ice thickn (centered)
-   432 |SIvheff |  1 |   431 |VV      M1|m^2/s           |Meridional Transport of eff ice thickn (centered)
-   433 |DFxEHEFF|  1 |   434 |UU      M1|m^2/s           |Zonal      Diffusive Flux of eff ice thickn
-   434 |DFyEHEFF|  1 |   433 |VV      M1|m^2/s           |Meridional Diffusive Flux of eff ice thickn
-   435 |ADVxAREA|  1 |   436 |UU      M1|m^2/m^2.m^2/s   |Zonal      Advective Flux of fract area
-   436 |ADVyAREA|  1 |   435 |VV      M1|m^2/m^2.m^2/s   |Meridional Advective Flux of fract area
-   437 |DFxEAREA|  1 |   438 |UU      M1|m^2/m^2.m^2/s   |Zonal      Diffusive Flux of fract area
-   438 |DFyEAREA|  1 |   437 |VV      M1|m^2/m^2.m^2/s   |Meridional Diffusive Flux of fract area
-   439 |ADVxSNOW|  1 |   440 |UU      M1|m.m^2/s         |Zonal      Advective Flux of eff snow thickn
-   440 |ADVySNOW|  1 |   439 |VV      M1|m.m^2/s         |Meridional Advective Flux of eff snow thickn
-   441 |DFxESNOW|  1 |   442 |UU      M1|m.m^2/s         |Zonal      Diffusive Flux of eff snow thickn
-   442 |DFyESNOW|  1 |   441 |VV      M1|m.m^2/s         |Meridional Diffusive Flux of eff snow thickn
-   443 |ADVxSSLT|  1 |   444 |UU      M1|psu.m^2/s       |Zonal      Advective Flux of seaice salinity
-   444 |ADVySSLT|  1 |   443 |VV      M1|psu.m^2/s       |Meridional Advective Flux of seaice salinity
-   445 |DFxESSLT|  1 |   446 |UU      M1|psu.m^2/s       |Zonal      Diffusive Flux of seaice salinity
-   446 |DFyESSLT|  1 |   445 |VV      M1|psu.m^2/s       |Meridional Diffusive Flux of seaice salinity
-   447 |SIpress |  1 |       |SM      M1|m^2/s^2         |SEAICE strength (with upper and lower limit)
-   448 |SIzeta  |  1 |       |SM      M1|m^2/s           |SEAICE nonlinear bulk viscosity
-   449 |SIeta   |  1 |       |SM      M1|m^2/s           |SEAICE nonlinear shear viscosity
-   450 |SIsigI  |  1 |       |SM      M1|no units        |SEAICE normalized principle stress, component one
-   451 |SIsigII |  1 |       |SM      M1|no units        |SEAICE normalized principle stress, component two
-   452 |SIshear |  1 |       |SM      M1|s^{-1}          |SEAICE shear deformation
-   453 |SIdelta |  1 |       |SM      M1|s^{-1}          |SEAICE Delta deformation
-   454 |SItensil|  1 |       |SM      M1|m^2/s^2         |SEAICE maximal tensile strength
-   455 |PLUMEKB | 52 |       |SM      MR|                |fractional plume: [0-1] (unitless)
-   456 |oceSPtnd| 52 |       |SM      MR|g/m^2/s         |salt tendency due to salt plume flux >0 increases salinity
-   457 |oceSPflx|  1 |       |SM      U1|g/m^2/s         |net surface Salt flux rejected into the ocean during freezing, (+=down),
-   458 |oceSPDep|  1 |       |SM      U1|m               |Salt plume depth based on density criterion (>0)
+   400 |BLGBION | 52 |       |SMRP    MR|mol N/m3/sec    |Tendency of nitrate due to biology (mol N/m3/s)
+   401 |BLGBIOP | 52 |       |SMRP    MR|mol P/m3/sec    |Tendency of phosphate due to biology (mol P/m3/s)
+   402 |BLGBIOFE| 52 |       |SMRP    MR|mol Fe/m3/sec   |Tendency of iron due to biology (mol Fe/m3/s)
+   403 |BLGNSED |  1 |       |SM P    M1|mol N/m3/s      |Nitrogen flux in/out of sediments
+   404 |BLGPSED |  1 |       |SM P    M1|mol P/m3/s      |Phosphorus flux in/out of sediments
+   405 |BLGOSED |  1 |       |SM P    M1|mol O/m3/s      |Oxygen flux in/out of sediments
+   406 |BLGCCdis| 52 |       |SM P    MR|mol C/m3/s      |Calcium carbonate dissolution
+   407 |BLGCCpro| 52 |       |SM P    MR|mol C/m3/s      |Calcium carbonate production
+   408 |GC_Tr01 | 52 |       |SMR     MR|mol C/m         |dic concentration before GCHEM
+   409 |GC_Tr02 | 52 |       |SMR     MR|mol eq/         |alk concentration before GCHEM
+   410 |GC_Tr03 | 52 |       |SMR     MR|mol O/m         |o2 concentration before GCHEM
+   411 |GC_Tr04 | 52 |       |SMR     MR|mol P/m         |no3 concentration before GCHEM
+   412 |GC_Tr05 | 52 |       |SMR     MR|mol P/m         |po4 concentration before GCHEM
+   413 |GC_Tr06 | 52 |       |SMR     MR|mol Fe/         |fet concentration before GCHEM
+   414 |GC_Tr07 | 52 |       |SMR     MR|mol N/m         |don concentration before GCHEM
+   415 |GC_Tr08 | 52 |       |SMR     MR|mol P/m         |dop concentration before GCHEM
+   416 |GC_Tr09 | 52 |       |SMR     MR|kg              |phy concentration before GCHEM
+   417 |PLUMEKB | 52 |       |SM      MR|                |fractional plume: [0-1] (unitless)
+   418 |oceSPtnd| 52 |       |SM      MR|g/m^2/s         |salt tendency due to salt plume flux >0 increases salinity
+   419 |oceSPflx|  1 |       |SM      U1|g/m^2/s         |net surface Salt flux rejected into the ocean during freezing, (+=down),
+   420 |oceSPDep|  1 |       |SM      U1|m               |Salt plume depth based on density criterion (>0)
 ------------------------------------------------------------------------------------
   Num  |<-Name->|Levs|  mate |<- code ->|<--  Units   -->|<- Tile (max=80c)         
 ------------------------------------------------------------------------------------

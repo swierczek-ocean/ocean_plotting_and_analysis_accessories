@@ -31,17 +31,20 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 %% THETA
 cm = acc_colormap('es_coolwarm');
 
-[lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JJA_avg,...
-    THETA_34_JJA_avg,THETA_64_JJA_avg,THETA_124_JJA_avg,option);
-lb = lb - 1;
+% [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JD_avg,...
+%     THETA_32_JD_avg,THETA_62_JD_avg,THETA_122_JD_avg,option);
+% lb = lb - 1;
+ub = 23;
+lb = -2;
+nlvls = 50;
 z = linspace(lb,ub,nlvls+1);
 
 
 
-THETA_BSOSE_JJA_avg(THETA_BSOSE_JJA_avg==99999999999) = NaN;
-THETA_34_JJA_avg(THETA_34_JJA_avg==99999999999) = NaN;
-THETA_64_JJA_avg(THETA_64_JJA_avg==99999999999) = NaN;
-THETA_124_JJA_avg(THETA_124_JJA_avg==99999999999) = NaN;
+THETA_BSOSE_JD_avg(THETA_BSOSE_JD_avg==99999999999) = NaN;
+THETA_32_JD_avg(THETA_32_JD_avg==99999999999) = NaN;
+THETA_62_JD_avg(THETA_62_JD_avg==99999999999) = NaN;
+THETA_122_JD_avg(THETA_122_JD_avg==99999999999) = NaN;
 
 [lon_met3,lat_met3] = latlon_to_meters(XC3,YC3);
 [lon_met6,lat_met6] = latlon_to_meters(XC6,YC6);
@@ -52,45 +55,48 @@ figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
-pcolor(ax1,lon_metb,lat_metb,THETA_BSOSE_JJA_avg);
+h1 = pcolor(ax1,lon_metb,lat_metb,THETA_BSOSE_JD_avg);
 hold on
 % contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 % axis(inside_coords)
 % ytickformat('degrees')
-title('1/6 B-SOSE JJA 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/6 B-SOSE 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
+set(h1, 'EdgeColor', 'none');
 hold off
 
 ax2 = subplot(2,2,2);
-pcolor(ax2,lon_met3,lat_met3,THETA_34_JJA_avg);
+h2 = pcolor(ax2,lon_met3,lat_met3,THETA_32_JD_avg);
 hold on
 % contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 % axis(inside_coords)
 % xtickformat('degrees')
 % ytickformat('degrees')
-title('1/3 MITgcm+BLING JJA 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
+set(h2, 'EdgeColor', 'none');
 hold off
 
 ax3 = subplot(2,2,3);
-pcolor(ax3,lon_met6,lat_met6,THETA_64_JJA_avg);
+h3 = pcolor(ax3,lon_met6,lat_met6,THETA_62_JD_avg);
 hold on
 % contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 % axis(inside_coords)
 % xtickformat('degrees')
 % ytickformat('degrees')
-title('1/6 MITgcm+BLING JJA 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
+set(h3, 'EdgeColor', 'none');
 hold off
 
 ax4 = subplot(2,2,4);
-pcolor(ax4,lon_met12,lat_met12,THETA_124_JJA_avg);
+h4 = pcolor(ax4,lon_met12,lat_met12,THETA_122_JD_avg);
 hold on
 cbar = colorbar('eastoutside');
 set(cbar,'XLim',[lb+1 ub-1]);
@@ -99,11 +105,80 @@ caxis([lb ub])
 % axis(inside_coords)
 % xtickformat('degrees')
 % ytickformat('degrees')
-title('1/12 MITgcm+BLING JJA 2017 mean SST','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING 2017 mean SST','FontWeight','Normal','FontSize',16)
+acc_movie
+acc_quad_plots_v4
+set(h4, 'EdgeColor', 'none');
+hold off
+set(gcf,'InvertHardCopy','off'); print('-r600','THETA_AVG_2017','-dpng')
+close all
+%% END THETA
+
+%% THETA
+cm = acc_colormap('es_coolwarm');
+
+[lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JD_avg,...
+    THETA_32_JD_avg,THETA_62_JD_avg,THETA_122_JD_avg,option);
+lb = lb - 1;
+z = linspace(lb,ub,nlvls+1);
+
+
+figure()
+set(gcf, 'Position', [1, 1, 1600, 900])
+colormap(cm)
+ax1 = subplot(2,2,1);
+contourf(XCS,YCS,THETA_BSOSE_JD_avg,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+ytickformat('degrees')
+title('1/6 B-SOSE JD 2017 mean SST','FontWeight','Normal','FontSize',16)
+acc_movie
+acc_quad_plots_v1
+hold off
+
+ax2 = subplot(2,2,2);
+contourf(XC3,YC3,THETA_32_JD_avg,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/3 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
+acc_movie
+acc_quad_plots_v2
+hold off
+
+ax3 = subplot(2,2,3);
+contourf(XC6,YC6,THETA_62_JD_avg,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/6 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
+acc_movie
+acc_quad_plots_v3
+hold off
+
+ax4 = subplot(2,2,4);
+contourf(XC12,YC12,THETA_122_JD_avg,'LineStyle','none','LevelList',z);
+hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lb+1 ub-1]);
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/12 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off
-print('THETA_AVG_05JJA','-dpng')
+print('THETA_AVG_10JD','-dpng')
 close all
 %% END THETA
 
@@ -376,74 +451,6 @@ acc_movie
 acc_quad_plots_v4
 hold off
 print('THETA_AVG_09DN','-dpng')
-close all
-%% END THETA
-
-%% THETA
-cm = acc_colormap('es_coolwarm');
-
-[lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JD_avg,...
-    THETA_32_JD_avg,THETA_62_JD_avg,THETA_122_JD_avg,option);
-lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
-
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-colormap(cm)
-ax1 = subplot(2,2,1);
-contourf(XCS,YCS,THETA_BSOSE_JD_avg,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-ytickformat('degrees')
-title('1/6 B-SOSE JD 2017 mean SST','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v1
-hold off
-
-ax2 = subplot(2,2,2);
-contourf(XC3,YC3,THETA_32_JD_avg,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/3 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v2
-hold off
-
-ax3 = subplot(2,2,3);
-contourf(XC6,YC6,THETA_62_JD_avg,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/6 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v3
-hold off
-
-ax4 = subplot(2,2,4);
-contourf(XC12,YC12,THETA_122_JD_avg,'LineStyle','none','LevelList',z);
-hold on
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb+1 ub-1]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/12 MITgcm+BLING JD 2017 mean SST','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v4
-hold off
-print('THETA_AVG_10JD','-dpng')
 close all
 %% END THETA
 

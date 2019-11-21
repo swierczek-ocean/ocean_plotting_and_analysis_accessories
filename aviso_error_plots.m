@@ -54,6 +54,49 @@ c122 = 88;
 lw = 2.5;
 coords = [time(1) time(end) 0 2.7];
 
+set(gcf, 'Position', [1, 1, 1600, 900])
+% h1 = plot(time,etan32_l2,'LineWidth',lw,'Color',Color(c32,:));
+% hold on
+% h2 = plot(time,etan62_l2,'LineWidth',lw,'Color',Color(c62,:));
+% h3 = plot(time,etan122_l2,'LineWidth',lw,'Color',Color(c122,:));
+% h4 = plot(time,etan32_l1,'LineStyle','--','LineWidth',lw,'Color',Color(c32,:));
+% h5 = plot(time,etan62_l1,'LineStyle','--','LineWidth',lw,'Color',Color(c62,:));
+% h6 = plot(time,etan122_l1,'LineStyle','--','LineWidth',lw,'Color',Color(c122,:));
+h7 = plot(time,etan32_linf,'LineStyle','-.','LineWidth',lw,'Color',Color(c32,:));
+hold on
+h8 = plot(time,etan62_linf,'LineStyle','-.','LineWidth',lw,'Color',Color(c62,:));
+h9 = plot(time,etan122_linf,'LineStyle','-.','LineWidth',lw,'Color',Color(c122,:));
+title('RMSE, L1, and max misfits of interpolated MITgcm+BLING to AVISO')
+xtickangle(45)
+% xticks(xdatesfull)
+dateFormat = 'mm/yy';
+datetick('x',dateFormat,'keepticks')
+legend([h7(1),h8(1),h9(1)],'1/3 |max misfit|',...
+    '1/6 |max misfit|','1/12 |max misfit|')
+legend('Location','southeast')
+acc_movie
+acc_plots
+hold off
+print('-r300','AVISO_max_misfits','-dpng')
+
+
+set(gcf, 'Position', [1, 1, 1600, 900])
+h1 = plot(time,etan32_l2,'LineWidth',lw,'Color',Color(c32,:));
+hold on
+h2 = plot(time,etan62_l2,'LineWidth',lw,'Color',Color(c62,:));
+h3 = plot(time,etan122_l2,'LineWidth',lw,'Color',Color(c122,:));
+title('RMSE misfits of interpolated MITgcm + BLING to AVISO (m)','FontWeight','normal')
+dateFormat = 'mm/yy';
+datetick('x',dateFormat,'keepticks')
+axis(coords)
+legend([h1(1),h2(1),h3(1)],'1/3 RMSE',...
+    '1/6 RMSE','1/12 RMSE')
+legend('Location','northwest')
+acc_movie
+acc_plots
+hold off
+print('-r300','AVISO_misfit_RMSE','-dpng')
+
 % set(gcf, 'Position', [1, 1, 1600, 900])
 % h1 = plot(time,etan32_l2,'LineWidth',lw,'Color',Color(c32,:));
 % hold on
@@ -77,26 +120,6 @@ coords = [time(1) time(end) 0 2.7];
 % acc_movie
 % acc_plots
 % hold off
-% print('AVISO_misfits','-dpng')
-
-
-set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = plot(time,etan32_l2,'LineWidth',lw,'Color',Color(c32,:));
-hold on
-h2 = plot(time,etan62_l2,'LineWidth',lw,'Color',Color(c62,:));
-h3 = plot(time,etan122_l2,'LineWidth',lw,'Color',Color(c122,:));
-title('RMSE misfits of interpolated MITgcm + BLING to AVISO (m)','FontWeight','normal')
-dateFormat = 'mm/yy';
-datetick('x',dateFormat,'keepticks')
-axis(coords)
-legend([h1(1),h2(1),h3(1)],'1/3 RMSE',...
-    '1/6 RMSE','1/12 RMSE')
-legend('Location','northwest')
-acc_movie
-acc_plots
-hold off
-print('AVISO_misfit_RMSE','-dpng')
-
-
+% print('AVISO_all_misfits','-dpng')
 
 toc()
