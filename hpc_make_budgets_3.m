@@ -8,10 +8,12 @@ DXG = rdmds('../MITgcm/verification/SO3_20190513/run/DXG');
 DYG = rdmds('../MITgcm/verification/SO3_20190513/run/DYG');
 DXC = rdmds('../MITgcm/verification/SO3_20190513/run/DXC');
 DYC = rdmds('../MITgcm/verification/SO3_20190513/run/DYC');
-DRF = rdmds('../MITgcm/verification/SO3_20190513/run/DRF');
-RAC = rdmds('../MITgcm/verification/SO3_20190513/run/RAC');
-RF = rdmds('../MITgcm/verification/SO3_20190513/run/RF');
-DRF = rdmds('../MITgcm/verification/SO3_20190513/run/DRF');
+XC = rdmds('../MITgcm/verification/SO3_20190513/run/XC');
+YC = rdmds('../MITgcm/verification/SO3_20190513/run/YC');
+RAC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RAC'));
+RC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RC'));
+RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
+DRF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/DRF'));
 str = '../MITgcm/verification/SO3_20190513/diag/';
 strs = '../MITgcm/verification/SO3_20190513/diag_slice/';
 strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
@@ -82,7 +84,7 @@ for ii=1:396
         abe_ind_s:abe_ind_n,:))));
     clear THETA
     charbgc = [strs,'diag_bgc.',num2str(48*ii,'%010.f')];
-    DIC = rdmds(charbgc,'rec',cfield);
+    CARBON = rdmds(charbgc,'rec',cfield);
     carbon_inv3_full(ii) = sum(sum(sum(CARBON(fb_ind_w:fb_ind_e,...
         fb_ind_s:fb_ind_n,:).*DRF.*RAC(fb_ind_w:fb_ind_e,...
         fb_ind_s:fb_ind_n).*hFacC(fb_ind_w:fb_ind_e,...
@@ -149,6 +151,9 @@ RC = RC(z);
 hFacC = hFacC(x,y,z);
 [nx,ny,nz] = size(hFacC);
 dz = permute(repmat(DRF(z),[1,nx,ny]),[2,3,1]).*hFacC;
+fprintf('created dz, size of dz: \n')
+size(dz)
+dz(1:3,1:3,1:3)
 volume = zeros(nx,ny,nz);
 areaWest = zeros(nx+1,ny,nz);
 areaSouth = zeros(nx,ny+1,nz);
@@ -186,6 +191,8 @@ for t=2:13
 % surface flux (mol/m3/s)
 charairsea = [str,'diag_airsea.',num2str(1460*t,'%010.f')];
 flux = rdmds(charairsea,'rec',3); 
+fprintf('size of flux field \n')
+size(flux)
 dicsurf(:,:,1,t-1) = flux(x,y)./(DRF(1)*squeeze(hFacC(:,:,1)));
 
 % tendency due to dilution
@@ -193,6 +200,7 @@ dicsurf(:,:,1,t-1) = flux(x,y)./(DRF(1)*squeeze(hFacC(:,:,1)));
 % forcing tendency (mol/m3/s) includes effects of E-P-R and sponge layer contributions
 chardic = [strb,'diag_dic_budget.',num2str(1460*t,'%010.f')];
 tmp = rdmds(chardic,'rec',11);
+size(tmp)
 dicdilut(:,:,1,t-1) = tmp(x,y,1);
 
 % tendency due to biology
@@ -305,39 +313,47 @@ clear div;
 
 save DIC3_budget dic* XC YC RC
 
-if 0
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
 
+fprintf('making 1st DIC budget at single point')
+
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(dictend(x1,y1,:,t)),RC); hold on
-plot(squeeze(dicsurf(x1,y1,:,t)),RC);
-plot(squeeze(dicdilut(x1,y1,:,t)),RC);
-plot(squeeze(dicmix(x1,y1,:,t)),RC);
-plot(squeeze(dicbio(x1,y1,:,t)),RC);
-plot(squeeze(dicadv(x1,y1,:,t)),RC);
-plot(squeeze(res(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(dictend(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(dicsurf(x1,y1,:,t)),RC);
+h3 = plot(squeeze(dicdilut(x1,y1,:,t)),RC);
+h4 = plot(squeeze(dicmix(x1,y1,:,t)),RC);
+h5 = plot(squeeze(dicbio(x1,y1,:,t)),RC);
+h6 = plot(squeeze(dicadv(x1,y1,:,t)),RC);
+h7 = plot(squeeze(res(x1,y1,:,t)),RC,'--k');
 ylabel('depth'); xlabel('mol/m3/s');
-legend('tend','surf','sed','mix','bio','adv','res')
+legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1)],...
+    'tend','surf','sed','mix','bio','adv','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_dicbudget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
+
+fprintf('making 2nd DIC budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(-dictend(x1,y1,:,t)+dicadv(x1,y1,:,t)),RC); hold on
-plot(squeeze(dicsurf(x1,y1,:,t)),RC);
-plot(squeeze(dicmix(x1,y1,:,t)),RC);
-plot(squeeze(dicbio(x1,y1,:,t)),RC);
-plot(squeeze(res(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(-dictend(x1,y1,:,t)+dicadv(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(dicsurf(x1,y1,:,t)),RC);
+h3 = plot(squeeze(dicmix(x1,y1,:,t)),RC);
+h4 = plot(squeeze(dicbio(x1,y1,:,t)),RC);
+h5 = plot(squeeze(res(x1,y1,:,t)),RC,'--k');
 ylim([-150 0])
 ylabel('depth'); xlabel('mol/m3/s');
-legend('mat deriv','surf','mix','bio','res')
+legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'mat deriv','surf','mix','bio','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_dicbudget_box_3_2','-dpng')
 
-end % if 0
+
 
 
 
@@ -369,10 +385,10 @@ adv_v_intz = squeeze(cumsum(dicadv_v.*dzt,3))*speryr; %clear adv_v
 adv_h_intz = squeeze(cumsum(dicadv_h.*dzt,3))*speryr; %clear adv_h
 res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
 
-
+fprintf('making 9-plot DIC budget')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 1000])
-subplot(3,2,1); 
+subplot(3,3,1); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(tend_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -381,7 +397,7 @@ caxis(c2)
 colormap(acc_colormap('cmo_balance'))
 title('tend');
 
-subplot(3,2,2); 
+subplot(3,3,2); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(bio_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -389,7 +405,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('bio');
 
-subplot(3,2,5); 
+subplot(3,3,5); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(surf_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -397,7 +413,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('surf');
 
-subplot(3,2,6); 
+subplot(3,3,6); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(dilut_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -405,7 +421,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('dilut');
 
-subplot(3,2,4); 
+subplot(3,3,4); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -413,7 +429,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv');
 
-subplot(3,2,3); 
+subplot(3,3,3); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(mix_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -421,7 +437,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('mix');
 
-if 0
+
 subplot(3,3,7); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_h_intz(:,:,z1,:),4)',c1,'LineStyle','none');
@@ -437,7 +453,7 @@ m_coast('color',[0 0 0]);
 m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv vert');
-end
+
 
 axes('position',[.91 .115 .02 .2]);
 contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
@@ -584,36 +600,42 @@ clear div;
 
 save NO33_budget no3* XC YC RC
 
-if 0
+
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
-
+fprintf('making 1st NO3 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(no3tend(x1,y1,:,t)),RC); hold on
-plot(squeeze(no3mix(x1,y1,:,t)),RC);
-plot(squeeze(no3bio(x1,y1,:,t)),RC);
-plot(squeeze(no3adv(x1,y1,:,t)),RC);
-plot(squeeze(res(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(no3tend(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(no3mix(x1,y1,:,t)),RC);
+h3 = plot(squeeze(no3bio(x1,y1,:,t)),RC);
+h4 = plot(squeeze(no3adv(x1,y1,:,t)),RC);
+h5 = plot(squeeze(res(x1,y1,:,t)),RC,'--k');
 ylabel('depth'); xlabel('mol/m3/s');
-legend('tend','mix','bio','adv','res')
+legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'tend','mix','bio','adv','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_no3budget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
+
+
+fprintf('making 2nd NO3 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(-no3tend(x1,y1,:,t)+no3adv(x1,y1,:,t)),RC); hold on
-plot(squeeze(no3mix(x1,y1,:,t)),RC);
-plot(squeeze(no3bio(x1,y1,:,t)),RC);
-plot(squeeze(res(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(-no3tend(x1,y1,:,t)+no3adv(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(no3mix(x1,y1,:,t)),RC);
+h3 = plot(squeeze(no3bio(x1,y1,:,t)),RC);
+h4 = plot(squeeze(res(x1,y1,:,t)),RC,'--k');
 ylim([-150 0])
 ylabel('depth'); xlabel('mol/m3/s');
-legend('mat deriv','mix','bio','res')
+legend([h1(1),h2(1),h3(1),h4(1)],'mat deriv','mix','bio','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_no3budget_box_3_2','-dpng')
 
-end % if 0
 
 
 
@@ -644,9 +666,10 @@ adv_h_intz = squeeze(cumsum(no3adv_h.*dzt,3))*speryr; %clear adv_h
 res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
 
 
+fprintf('making 9-plot NO3 budget')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 1000])
-subplot(3,2,1); 
+subplot(3,3,1); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(tend_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -655,7 +678,7 @@ caxis(c2)
 colormap(acc_colormap('cmo_balance'))
 title('tend');
 
-subplot(3,2,2); 
+subplot(3,3,2); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(bio_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -663,7 +686,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('bio');
 
-subplot(3,2,5); 
+subplot(3,3,5); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(surf_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -671,7 +694,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('surf');
 
-subplot(3,2,6); 
+subplot(3,3,6); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(dilut_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -679,7 +702,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('dilut');
 
-subplot(3,2,4); 
+subplot(3,3,4); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -687,7 +710,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv');
 
-subplot(3,2,3); 
+subplot(3,3,3); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(mix_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -695,7 +718,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('mix');
 
-if 0
+
 subplot(3,3,7); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_h_intz(:,:,z1,:),4)',c1,'LineStyle','none');
@@ -711,7 +734,7 @@ m_coast('color',[0 0 0]);
 m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv vert');
-end
+
 
 axes('position',[.91 .115 .02 .2]);
 contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
@@ -737,7 +760,7 @@ heatadv_h = zeros(nx,ny,nz,nt);
 heatadv_v = zeros(nx,ny,nz,nt);
 heatdiv = zeros(nx,ny,nz,nt);
 heatcorr = zeros(nx,ny,nz,nt);
-heattend_calc = zeros(nx,ny,nz,nt);
+heattend = zeros(nx,ny,nz,nt);
 heattend_calc = zeros(nx,ny,nz,nt);
 
 z1=RF(1:end-1); z2=RF(2:end);
@@ -769,7 +792,7 @@ heatairsea(:,:,1,t-1) = (flux(x,y)-oceQsw(x,y))./(rho*Cp*dz(:,:,1));
 
 % advection
 % diagnostics: ADVx_TH, ADVy_TH, ADVr_TH
-charheat = [strb,'diag_heat_budget.',num2str(1460*t,'%010.f')];
+charheat = [strb,'diag_T_budget.',num2str(1460*t,'%010.f')];
 advflux = rdmds(charheat,'rec',1:3);
 % correction
 % diagnostic: WTHMASS
@@ -867,6 +890,9 @@ heatmix(:,:,:,t-1) = -(mix_x + mix_y + mix_z);
 snap = rdmds([strsn,'diag_snaps'],[1460*(t-1) 1460*t],'rec',1);
 heattend_calc(:,:,:,t-1) = diff(snap(x,y,z,:),1,4)/dt;
 
+tmp = rdmds(charheat,[1460*(t-1) 1460*t],'rec',10);
+heattend(:,:,:,t) = tmp(x,y,z)/86400;
+
 end % for t
 
 clear tmp snap flux mix_* diffflux* div_* vel U V W advflux*
@@ -901,34 +927,39 @@ clear div;
 
 save HEAT3_budget heat* XC YC RC
 
-if 0
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
 
+fprintf('making 1st heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(heattend_calc(x1,y1,:,t)),RC); hold on
-plot(squeeze(heatmix(x1,y1,:,t)),RC);
-plot(squeeze(heatadv(x1,y1,:,t)),RC);
-plot(squeeze(heatres(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(heattend_calc(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(heatmix(x1,y1,:,t)),RC);
+h3 = plot(squeeze(heatadv(x1,y1,:,t)),RC);
+h4 = plot(squeeze(heatres(x1,y1,:,t)),RC,'--k');
 ylabel('depth'); xlabel('mol/m3/s');
-legend('tend','mix','adv','res')
+legend([h1(1),h2(1),h3(1),h4(1)],'tend','mix','adv','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
+
+fprintf('making 2nd heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-plot(squeeze(-heattend_calc(x1,y1,:,t)+heatadv(x1,y1,:,t)),RC); hold on
-plot(squeeze(heatmix(x1,y1,:,t)),RC);
-plot(squeeze(heatres(x1,y1,:,t)),RC,'--k');
+h1 = plot(squeeze(-heattend_calc(x1,y1,:,t)+heatadv(x1,y1,:,t)),RC); 
+hold on
+h2 = plot(squeeze(heatmix(x1,y1,:,t)),RC);
+h3 = plot(squeeze(heatres(x1,y1,:,t)),RC,'--k');
 ylim([-150 0])
 ylabel('depth'); xlabel('mol/m3/s');
-legend('mat deriv','mix','res')
+legend([h1(1),h2(1),h3(1)],'mat deriv','mix','res')
+hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_2','-dpng')
 
-end % if 0
 
 
 
@@ -958,9 +989,10 @@ adv_h_intz = squeeze(cumsum(heatadv_h.*dzt,3))*speryr; %clear adv_h
 res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
 
 
+fprintf('making 9-plot heat budget')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 1000])
-subplot(3,2,1); 
+subplot(3,3,1); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(tend_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -970,7 +1002,7 @@ colormap(acc_colormap('cmo_balance'))
 title('tend');
 
 
-subplot(3,2,5); 
+subplot(3,3,5); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(surf_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -978,15 +1010,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('surf');
 
-subplot(3,2,6); 
-m_proj('ortho','lon',0,'lat',-90,'radius',60);
-m_contourf(XC(:,1),YC(1,:),mean(dilut_intz(:,:,z1,:),4)',c1,'LineStyle','none');
-m_coast('color',[0 0 0]);
-m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
-caxis(c2)
-title('dilut');
-
-subplot(3,2,4); 
+subplot(3,3,4); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -994,7 +1018,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv');
 
-subplot(3,2,3); 
+subplot(3,3,3); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(mix_intz(:,:,z1,:),4)',c1,'LineStyle','none');
 m_coast('color',[0 0 0]);
@@ -1002,7 +1026,7 @@ m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('mix');
 
-if 0
+
 subplot(3,3,7); 
 m_proj('ortho','lon',0,'lat',-90,'radius',60);
 m_contourf(XC(:,1),YC(1,:),mean(adv_h_intz(:,:,z1,:),4)',c1,'LineStyle','none');
@@ -1018,7 +1042,7 @@ m_coast('color',[0 0 0]);
 m_grid('xtick',[],'ytick',[],'XaxisLocation','top');
 caxis(c2)
 title('adv vert');
-end
+
 
 axes('position',[.91 .115 .02 .2]);
 contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');

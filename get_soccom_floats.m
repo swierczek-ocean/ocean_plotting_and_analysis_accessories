@@ -9,7 +9,7 @@ str2 = '_PFL.nc';
 SOCCOM_floats = [];
 counter = 0;
 
-for ii=4:8
+for ii=4:9
     str = [str1,num2str(ii),str2];
     descr = ncread(str,'prof_descr');
     descr = descr';
