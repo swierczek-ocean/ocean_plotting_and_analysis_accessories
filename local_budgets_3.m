@@ -1,23 +1,23 @@
 
 %%
 
-hFacC = rdmds('../MITgcm/verification/SO3_20190513/run/hFacC');
-hFacW = rdmds('../MITgcm/verification/SO3_20190513/run/hFacW');
-hFacS = rdmds('../MITgcm/verification/SO3_20190513/run/hFacS');
-DXG = rdmds('../MITgcm/verification/SO3_20190513/run/DXG');
-DYG = rdmds('../MITgcm/verification/SO3_20190513/run/DYG');
-DXC = rdmds('../MITgcm/verification/SO3_20190513/run/DXC');
-DYC = rdmds('../MITgcm/verification/SO3_20190513/run/DYC');
-XC = rdmds('../MITgcm/verification/SO3_20190513/run/XC');
-YC = rdmds('../MITgcm/verification/SO3_20190513/run/YC');
-RAC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RAC'));
-RC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RC'));
-RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
-DRF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/DRF'));
-str = '../MITgcm/verification/SO3_20190513/diag/';
-strs = '../MITgcm/verification/SO3_20190513/diag_slice/';
-strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
-strsn = '../MITgcm/verification/SO3_20190513/diag_snaps/';
+% hFacC = rdmds('../MITgcm/verification/SO3_20190513/run/hFacC');
+% hFacW = rdmds('../MITgcm/verification/SO3_20190513/run/hFacW');
+% hFacS = rdmds('../MITgcm/verification/SO3_20190513/run/hFacS');
+% DXG = rdmds('../MITgcm/verification/SO3_20190513/run/DXG');
+% DYG = rdmds('../MITgcm/verification/SO3_20190513/run/DYG');
+% DXC = rdmds('../MITgcm/verification/SO3_20190513/run/DXC');
+% DYC = rdmds('../MITgcm/verification/SO3_20190513/run/DYC');
+% XC = rdmds('../MITgcm/verification/SO3_20190513/run/XC');
+% YC = rdmds('../MITgcm/verification/SO3_20190513/run/YC');
+% RAC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RAC'));
+% RC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RC'));
+% RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
+% DRF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/DRF'));
+% str = '../MITgcm/verification/SO3_20190513/diag/';
+% strs = '../MITgcm/verification/SO3_20190513/diag_slice/';
+% strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
+% strsn = '../MITgcm/verification/SO3_20190513/diag_snaps/';
 
 
 sec = 2628000;
@@ -25,75 +25,75 @@ dt = sec;
 
 %% heat, salt, carbon, nitrate, and phyto inventories
 
-heat_inv3_box_ab = zeros(396,1);
-salt_inv3_box_ab = zeros(396,1);
-carbon_inv3_box_ab = zeros(396,1);
-nitrate_inv3_box_ab = zeros(396,1);
-oxygen_inv3_box_ab = zeros(396,1);
-phyto_inv3_box_ab = zeros(396,1);
-
-tfield = 1;
-sfield = 2;
-cfield = 1;
-nfield = 4;
-phfield = 9;
-ofield = 3;
-
-ab_ind_w = 6;
-ab_ind_e = 170;
-ab_ind_s = 26;
-ab_ind_n = 119;
-
-lw = 2.6;
-
-cp_oce = 3994; % J/(kg deg C)
-rho = 1035; % kg/m^3
-
-
-
-for ii=1:396
-    charstate = [strs,'diag_state.',num2str(48*ii,'%010.f')];
-    THETA = rdmds(charstate,'rec',tfield);
-    heat_inv3_box_ab(ii) = sum(sum(sum(cp_oce*rho*THETA(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    SALT = rdmds(charstate,'rec',sfield);
-    salt_inv3_box_ab(ii) = sum(sum(sum(1000*rho*SALT(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    clear THETA
-    charbgc = [strs,'diag_bgc.',num2str(48*ii,'%010.f')];
-    CARBON = rdmds(charbgc,'rec',cfield);
-    carbon_inv3_box_ab(ii) = sum(sum(sum(CARBON(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    NITRATE = rdmds(charbgc,'rec',nfield);
-    nitrate_inv3_box_ab(ii) = sum(sum(sum(NITRATE(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    OXYGEN = rdmds(charbgc,'rec',ofield);
-    oxygen_inv3_box_ab(ii) = sum(sum(sum(OXYGEN(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    PHYTO = rdmds(charbgc,'rec',phfield);
-    phyto_inv3_box_ab(ii) = sum(sum(sum(PHYTO(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    clear CARBON NITRATE PHYTO
-end
-
-save carbon_inv3 carbon_inv3*
-save nitrate_inv3 nitrate_inv3*
-save phyto_inv3 phyto_inv3*
-save heat_inv3 heat_inv3*
-save salt_inv3 salt_inv3*
-save oxygen_inv3 oxygen_inv3*
+% heat_inv3_box_ab = zeros(396,1);
+% salt_inv3_box_ab = zeros(396,1);
+% carbon_inv3_box_ab = zeros(396,1);
+% nitrate_inv3_box_ab = zeros(396,1);
+% oxygen_inv3_box_ab = zeros(396,1);
+% phyto_inv3_box_ab = zeros(396,1);
+% 
+% tfield = 1;
+% sfield = 2;
+% cfield = 1;
+% nfield = 4;
+% phfield = 9;
+% ofield = 3;
+% 
+% ab_ind_w = 6;
+% ab_ind_e = 170;
+% ab_ind_s = 26;
+% ab_ind_n = 119;
+% 
+% lw = 2.6;
+% 
+% cp_oce = 3994; % J/(kg deg C)
+% rho = 1035; % kg/m^3
+% 
+% 
+% 
+% for ii=1:396
+%     charstate = [strs,'diag_state.',num2str(48*ii,'%010.f')];
+%     THETA = rdmds(charstate,'rec',tfield);
+%     heat_inv3_box_ab(ii) = sum(sum(sum(cp_oce*rho*THETA(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     SALT = rdmds(charstate,'rec',sfield);
+%     salt_inv3_box_ab(ii) = sum(sum(sum(1000*rho*SALT(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     clear THETA
+%     charbgc = [strs,'diag_bgc.',num2str(48*ii,'%010.f')];
+%     CARBON = rdmds(charbgc,'rec',cfield);
+%     carbon_inv3_box_ab(ii) = sum(sum(sum(CARBON(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     NITRATE = rdmds(charbgc,'rec',nfield);
+%     nitrate_inv3_box_ab(ii) = sum(sum(sum(NITRATE(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     OXYGEN = rdmds(charbgc,'rec',ofield);
+%     oxygen_inv3_box_ab(ii) = sum(sum(sum(OXYGEN(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     PHYTO = rdmds(charbgc,'rec',phfield);
+%     phyto_inv3_box_ab(ii) = sum(sum(sum(PHYTO(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     clear CARBON NITRATE PHYTO
+% end
+% 
+% save carbon_inv3 carbon_inv3*
+% save nitrate_inv3 nitrate_inv3*
+% save phyto_inv3 phyto_inv3*
+% save heat_inv3 heat_inv3*
+% save salt_inv3 salt_inv3*
+% save oxygen_inv3 oxygen_inv3*
 
 
 %% DIC Budgets
@@ -149,10 +149,7 @@ for t=2:13
     % surface flux (mol/m3/s)
     charairsea = [str,'diag_airsea.',num2str(1460*t,'%010.f')];
     flux = rdmds(charairsea,'rec',3);
-    fprintf('flux size: %g \n',size(flux))
-    fprintf('DRF*squeezehFacC size: %g \n',size((DRF(1)*squeeze(hFacC(:,:,1)))))
-    fprintf('dz size: %g \n',size(dz))
-    dicsurf(:,:,1,t-1) = flux(x,y)./(dz(:,:,1));
+    dicsurf(:,:,1,t-1) = flux(x,y)./(DRF(1)*squeeze(hFacC(:,:,1)));
     
     % tendency due to dilution
     % diagnostic: FORCTR01
@@ -214,8 +211,6 @@ for t=2:13
     dicadv_h(:,:,:,t-1) = -(adv_x + adv_y)+tracer.*(div_x + div_y);
     dicadv_v(:,:,:,t-1) = -(adv_z)+tracer.*(div_z);
     
-    dicadv(:,:,:,t-1) = dicadv_h(:,:,:,t-1) + dicadv_v(:,:,:,t-1);
-    
     % correction to vertical advection at z=0
     % diagnostic: WTRAC01
     tmp = rdmds(chardic,'rec',9);
@@ -271,14 +266,14 @@ res = dicadv+dicdiv+dicmix+dicbio+dicsurf+dicdilut-dictend;
 dicadv=dicadv+dicdiv;
 clear div;
 
-save DIC3_budget dic* XC YC RC res hFacC area* volume dz DRF
+save DIC3_budget dic* XC YC RC res
 
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
 
-fprintf('making 1st DIC budget at single point \n')
+fprintf('making 1st DIC budget at single point')
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -296,11 +291,11 @@ legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1)],...
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_dicbudget_box_3_1','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_dicbudget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
-fprintf('making 2nd DIC budget at single point \n')
+fprintf('making 2nd DIC budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-dictend(x1,y1,:,t)+dicadv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -315,7 +310,7 @@ legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'mat deriv','surf','mix','bio','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_dicbudget_box_3_2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_dicbudget_box_3_2','-dpng')
 
 
 
@@ -349,7 +344,7 @@ for z1=[17 32] % 150 m, 650 m
     adv_h_intz = squeeze(cumsum(dicadv_h.*dzt,3))*speryr; %clear adv_h
     res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
     
-    fprintf('making 9-plot DIC budget \n')
+    fprintf('making 9-plot DIC budget')
     figure()
     set(gcf, 'Position', [1, 1, 1600, 1000])
     subplot(3,3,1);
@@ -423,7 +418,7 @@ for z1=[17 32] % 150 m, 650 m
     contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
     caxis(c2); ylim(c2);
     set(gca,'xtick','')
-    set(gcf,'InvertHardCopy','off'); print('-r200','single_dicbudget_box_3_3','-dpng')
+    set(gcf,'InvertHardCopy','off'); print('-r300','single_dicbudget_box_3_3','-dpng')
     
 end % for z
 %% end DIC
@@ -507,8 +502,6 @@ for t=2:13
     no3adv_h(:,:,:,t-1) = -(adv_x + adv_y)+tracer.*(div_x + div_y);
     no3adv_v(:,:,:,t-1) = -(adv_z)+tracer.*(div_z);
     
-    no3adv(:,:,:,t-1) = no3adv_h(:,:,:,t-1) + no3adv_v(:,:,:,t-1);
-    
     % correction to vertical advection at z=0
     % diagnostic: WTRAC04
     tmp = rdmds(charno3,'rec',9);
@@ -564,14 +557,14 @@ res = no3adv+no3div+no3mix+no3bio-no3tend;
 no3adv=no3adv+no3div;
 clear div;
 
-save NO33_budget no3* XC YC RC res hFacC area* volume dz DRF
+save NO33_budget no3* XC YC RC res
 
 
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
-fprintf('making 1st NO3 budget at single point \n')
+fprintf('making 1st NO3 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(no3tend(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -585,12 +578,12 @@ legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'tend','mix','bio','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_no3budget_box_3_1','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_no3budget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
 
-fprintf('making 2nd NO3 budget at single point \n')
+fprintf('making 2nd NO3 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-no3tend(x1,y1,:,t)+no3adv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -604,7 +597,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],'mat deriv','mix','bio','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_no3budget_box_3_2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_no3budget_box_3_2','-dpng')
 
 
 
@@ -636,7 +629,7 @@ for z1=[17 32] % 150 m, 650 m
     res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
     
     
-    fprintf('making 9-plot NO3 budget \n')
+    fprintf('making 9-plot NO3 budget')
     figure()
     set(gcf, 'Position', [1, 1, 1600, 1000])
     subplot(3,3,1);
@@ -710,7 +703,7 @@ for z1=[17 32] % 150 m, 650 m
     contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
     caxis(c2); ylim(c2);
     set(gca,'xtick','')
-    set(gcf,'InvertHardCopy','off'); print('-r200','single_no3budget_box_3_3','-dpng')
+    set(gcf,'InvertHardCopy','off'); print('-r300','single_no3budget_box_3_3','-dpng')
     
 end % for z
 %% end NO3
@@ -812,7 +805,6 @@ for t=2:13
     heatadv_h(:,:,:,t-1) = -(adv_x + adv_y)+tracer.*(div_x + div_y);
     heatadv_v(:,:,:,t-1) = -(adv_z)+tracer.*(div_z);
     
-    heatadv(:,:,:,t-1) = heatadv_h(:,:,:,t-1) + heatadv_v(:,:,:,t-1);
     
     % mixing
     % diagnostics: DFxETr04, DFyETr04, DFrITr04
@@ -858,8 +850,8 @@ heatcorr(isnan(heatcorr)) = 0;
 
 
 % remove correction from advection
-heatadv = heatadv-heatcorr;
-heatadv_v = heatadv_v-heatcorr;
+% heatadv = heatadv-heatcorr;
+% heatadv_v = heatadv_v-heatcorr;
 
 
 % residual
@@ -869,10 +861,9 @@ heatres = tmp2+heatdiv+heatmix+tmp-heattend;
 heatres0 = tmp2+heatmix+tmp-heattend;
 heatres2 = tmp2+heatmix+tmp;
 heatres1 = heatadv+heatdiv+heatmix+heatairsea+heatsw-heatcorr-heattend_calc;
-
-
 % res = heatadv+heatdiv+heatmix+heatbio+heatdilut-heattend;
-save HEAT3_budget heat* XC YC RC hFacC area* volume dz DRF
+
+save HEAT3_budget heat* XC YC RC
 
 heatadv=heatadv+heatdiv;
 
@@ -880,28 +871,24 @@ heatadv=heatadv+heatdiv;
 % plot a single time, single location
 t=2; x1=88; y1=84;
 
-
-fprintf('making 1st heat budget at single point \n')
+fprintf('making 1st heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = plot(squeeze(heattend(x1,y1,:,t)),RC,'LineWidth',lw);
+h1 = plot(squeeze(heattend_calc(x1,y1,:,t)),RC,'LineWidth',lw);
 hold on
-h2 = plot(squeeze(heatairsea(x1,y1,:,t)),RC,'LineWidth',lw);
-h3 = plot(squeeze(heatsw(x1,y1,:,t)),RC,'LineWidth',lw);
-h4 = plot(squeeze(heatmix(x1,y1,:,t)),RC,'LineWidth',lw);
-h5 = plot(squeeze(heatcorr(x1,y1,:,t)),RC,'LineWidth',lw);
-h6 = plot(squeeze(heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
-h7 = plot(squeeze(heatres(x1,y1,:,t)),RC,'--k','LineWidth',lw);
+h2 = plot(squeeze(heatmix(x1,y1,:,t)),RC,'LineWidth',lw);
+h3 = plot(squeeze(heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
+h4 = plot(squeeze(heatres(x1,y1,:,t)),RC,'--k','LineWidth',lw);
 ylabel('depth'); xlabel('degC/s');
-legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1)],'tend','air sea','shortwave','mix','corr','adv','res')
+legend([h1(1),h2(1),h3(1),h4(1)],'tend','mix','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_heatbudget_box_3_1','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
-fprintf('making 2nd heat budget at single point \n')
+fprintf('making 2nd heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-heattend_calc(x1,y1,:,t)+heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -914,28 +901,26 @@ legend([h1(1),h2(1),h3(1)],'mat deriv','mix','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_heatbudget_box_3_2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_2','-dpng')
 
+fprintf('making 1st heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-h1 = plot(squeeze(heattend(x1,y1,:,t)),RC,'LineWidth',lw);
+h1 = plot(squeeze(heattend_calc(x1,y1,:,t)),RC,'LineWidth',lw);
 hold on
-h2 = plot(squeeze(heatairsea(x1,y1,:,t)),RC,'LineWidth',lw);
-h3 = plot(squeeze(heatsw(x1,y1,:,t)),RC,'LineWidth',lw);
-h4 = plot(squeeze(heatmix(x1,y1,:,t)),RC,'LineWidth',lw);
-h5 = plot(squeeze(heatcorr(x1,y1,:,t)),RC,'LineWidth',lw);
-h6 = plot(squeeze(heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
-h7 = plot(squeeze(heatres1(x1,y1,:,t)),RC,'--k','LineWidth',lw);
+h2 = plot(squeeze(heatmix(x1,y1,:,t)),RC,'LineWidth',lw);
+h3 = plot(squeeze(heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
+h4 = plot(squeeze(heatres1(x1,y1,:,t)),RC,'--k','LineWidth',lw);
 ylabel('depth'); xlabel('degC/s');
-legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1)],'tend','air sea','shortwave','mix','corr','adv','res')
+legend([h1(1),h2(1),h3(1),h4(1)],'tend','mix','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_heatbudget_box_3_3','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_3','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
-fprintf('making 2nd heat budget at single point \n')
+fprintf('making 2nd heat budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-heattend_calc(x1,y1,:,t)+heatadv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -948,7 +933,7 @@ legend([h1(1),h2(1),h3(1)],'mat deriv','mix','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_heatbudget_box_3_4','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_4','-dpng')
 
 
 for z1=[17 32] % 150 m, 650 m
@@ -977,7 +962,7 @@ for z1=[17 32] % 150 m, 650 m
     res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
     
     
-    fprintf('making 9-plot heat budget \n')
+    fprintf('making 9-plot heat budget')
     figure()
     set(gcf, 'Position', [1, 1, 1600, 1000])
     subplot(3,3,1);
@@ -1036,7 +1021,7 @@ for z1=[17 32] % 150 m, 650 m
     contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
     caxis(c2); ylim(c2);
     set(gca,'xtick','')
-    set(gcf,'InvertHardCopy','off'); print('-r200','single_heatbudget_box_3_3','-dpng')
+    set(gcf,'InvertHardCopy','off'); print('-r300','single_heatbudget_box_3_3','-dpng')
     
 end % for z
 
@@ -1078,14 +1063,11 @@ for t=2:13
     % diagnostic: oceSflux
     charairsea = [str,'diag_airsea.',num2str(1460*t,'%010.f')];
     oceSflux = rdmds(charairsea,'rec',8);
-    fprintf('sum of net surface salt flux: %g \n',sum(sum(oceSflux)))
-    saltsw(:,:,1,t-1) = oceSflux(x,y)./(dz(:,:,1))./rho;
+    saltsw(:,:,1,t-1) = oceSflux./(dz(:,:,1))./rho;
     
     % tendency due to air-sea flux
     % diagnostic: SFLUX
     flux = rdmds(charairsea,'rec',2);
-    fprintf('sum of total surface salt flux: %g \n',sum(sum(flux)))
-    
     % divide by thickness of first layer
     % (hFacC accounts for partial cells)
     saltairsea(:,:,1,t-1) = (flux(x,y)-oceSflux(x,y))./(dz(:,:,1))./rho;
@@ -1094,7 +1076,6 @@ for t=2:13
     % diagnostics: ADVx_TH, ADVy_TH, ADVr_TH
     charsalt = [strb,'diag_S_budget.',num2str(1460*t,'%010.f')];
     advflux = rdmds(charsalt,'rec',1:3);
-    
     % correction
     % diagnostic: WSLTMASS
     tmp = rdmds(charsalt,'rec',11);
@@ -1115,7 +1096,6 @@ for t=2:13
     % minus sign because advective flux is on lhs, moving to rhs
     saltadv(:,:,:,t-1) = -(adv_x + adv_y + adv_z);
     
-    fprintf('sum of total advective salt flux: %g \n',sum(sum(sum(saltadv))))
     
     % divergence
     % diagnostics: UVEL, VVEL, WVEL
@@ -1135,16 +1115,14 @@ for t=2:13
     div_z=-diff(W,1,3)./volume;
     
     % tracer field (deg C)
-    tmp = rdmds(charstate,'rec',2);
+    tmp = rdmds(charstate,'rec',1);
     tracer = tmp(x,y,z);
-    sum(sum(sum(tracer)))
     saltdiv(:,:,:,t-1) = tracer.*(div_x + div_y + div_z);
     
     % advection components
     saltadv_h(:,:,:,t-1) = -(adv_x + adv_y)+tracer.*(div_x + div_y);
     saltadv_v(:,:,:,t-1) = -(adv_z)+tracer.*(div_z);
     
-    saltadv(:,:,:,t-1) = saltadv_h(:,:,:,t-1) + saltadv_v(:,:,:,t-1);
     
     % mixing
     % diagnostics: DFxETr04, DFyETr04, DFrITr04
@@ -1165,18 +1143,13 @@ for t=2:13
     % minus sign because diffusive flux is on lhs, moving to rhs
     saltmix(:,:,:,t-1) = -(mix_x + mix_y + mix_z);
     
-    fprintf('sum of total salt mixing: %g \n',sum(sum(sum(saltmix(:,:,:,t-1)))))
-    
     % total tendency
     
     snap = rdmds([strsn,'diag_snaps'],[1460*(t-1) 1460*t],'rec',2);
     salttend_calc(:,:,:,t-1) = diff(snap(x,y,z,:),1,4)/dt;
-    fprintf('sum of calculated salt tendency: %g \n',sum(sum(sum(salttend_calc(:,:,:,t-1)))))
-    
     
     tmp = rdmds(charsalt,'rec',10);
     salttend(:,:,:,t-1) = tmp(x,y,z)./86400;
-    fprintf('sum of salt tendency: %g \n',sum(sum(sum(salttend(:,:,:,t-1)))))
     
 end % for t
 
@@ -1207,7 +1180,7 @@ saltres2 = tmp2+saltmix+tmp;
 saltres1 = saltadv+saltdiv+saltmix+saltairsea+saltsw-saltcorr-salttend_calc;
 % res = saltadv+saltdiv+saltmix+saltbio+saltdilut-salttend;
 
-save SALT3_budget salt* XC YC RC hFacC area* volume dz DRF
+save SALT3_budget salt* XC YC RC
 
 saltadv=saltadv+saltdiv;
 
@@ -1215,7 +1188,7 @@ saltadv=saltadv+saltdiv;
 % plot a single time, single location
 t=2; x1=88; y1=84;
 
-fprintf('making 1st salt budget at single point \n')
+fprintf('making 1st salt budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(salttend_calc(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1228,11 +1201,11 @@ legend([h1(1),h2(1),h3(1),h4(1)],'tend','mix','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_saltbudget_box_3_1','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_saltbudget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
-fprintf('making 2nd salt budget at single point \n')
+fprintf('making 2nd salt budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-salttend_calc(x1,y1,:,t)+saltadv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1245,9 +1218,9 @@ legend([h1(1),h2(1),h3(1)],'mat deriv','mix','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_saltbudget_box_3_2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_saltbudget_box_3_2','-dpng')
 
-fprintf('making 1st salt budget at single point \n')
+fprintf('making 1st salt budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(salttend_calc(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1260,11 +1233,11 @@ legend([h1(1),h2(1),h3(1),h4(1)],'tend','mix','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_saltbudget_box_3_3','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_saltbudget_box_3_3','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
-fprintf('making 2nd salt budget at single point \n \n')
+fprintf('making 2nd salt budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-salttend_calc(x1,y1,:,t)+saltadv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1277,7 +1250,7 @@ legend([h1(1),h2(1),h3(1)],'mat deriv','mix','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_saltbudget_box_3_4','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_saltbudget_box_3_4','-dpng')
 
 
 for z1=[17 32] % 150 m, 650 m
@@ -1306,7 +1279,7 @@ for z1=[17 32] % 150 m, 650 m
     res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
     
     
-    fprintf('making 9-plot salt budget \n')
+    fprintf('making 9-plot salt budget')
     figure()
     set(gcf, 'Position', [1, 1, 1600, 1000])
     subplot(3,3,1);
@@ -1365,7 +1338,7 @@ for z1=[17 32] % 150 m, 650 m
     contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
     caxis(c2); ylim(c2);
     set(gca,'xtick','')
-    set(gcf,'InvertHardCopy','off'); print('-r200','single_saltbudget_box_3_3','-dpng')
+    set(gcf,'InvertHardCopy','off'); print('-r300','single_saltbudget_box_3_3','-dpng')
     
 end % for z
 
@@ -1397,7 +1370,7 @@ for t=2:13
     charairsea = [str,'diag_airsea.',num2str(1460*t,'%010.f')];
     flux = rdmds(charairsea,'rec',4);
     
-    o2surf(:,:,1,t-1) = flux(x,y)./(dz(:,:,1));
+    o2surf(:,:,1,t-1) = flux(x,y)./(DRF(1)*squeeze(hFacC(:,:,1)));
     
     % tendency due to biology
     % diagnostic: BLGBIOO
@@ -1452,8 +1425,6 @@ for t=2:13
     o2adv_h(:,:,:,t-1) = -(adv_x + adv_y)+tracer.*(div_x + div_y);
     o2adv_v(:,:,:,t-1) = -(adv_z)+tracer.*(div_z);
     
-    o2adv(:,:,:,t-1) = o2adv_h(:,:,:,t-1) + o2adv_v(:,:,:,t-1);
-    
     % correction to vertical advection at z=0
     % diagnostic: WTRAC04
     tmp = rdmds(charo2,'rec',9);
@@ -1505,14 +1476,14 @@ o2adv_v = o2adv_v-o2corr;
 % residual
 o2res = o2adv+o2div+o2mix+o2bio+o2surf-o2tend;
 
-save O23_budget o2* XC YC RC res hFacC area* volume dz DRF
+save O23_budget o2* XC YC RC res
 
 
 
 % check that the terms balance locally
 % plot a single time, single location
 t=2; x1=88; y1=84;
-fprintf('making 1st O2 budget at single point \n')
+fprintf('making 1st O2 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(o2tend(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1526,12 +1497,12 @@ legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'tend','mix','bio','adv','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_o2budget_box_3_1','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_o2budget_box_3_1','-dpng')
 % top 150m
 % bundle tend and adv into "material derivative"
 
 
-fprintf('making 2nd O2 budget at single point \n')
+fprintf('making 2nd O2 budget at single point')
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 h1 = plot(squeeze(-o2tend(x1,y1,:,t)+o2adv(x1,y1,:,t)),RC,'LineWidth',lw);
@@ -1545,7 +1516,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],'mat deriv','mix','bio','res')
 acc_movie
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','single_o2budget_box_3_2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r300','single_o2budget_box_3_2','-dpng')
 
 
 for z1=[17 32] % 150 m, 650 m
@@ -1566,14 +1537,14 @@ for z1=[17 32] % 150 m, 650 m
     speryr = 86400*365.25;
     % units are then mol/m2/yr
     dzt = repmat(dz,[1 1 1 nt]);
-    tend_intz = squeeze(cumsum(o2tend.*dzt,3))*speryr; %clear tend
-    surf_intz = squeeze(cumsum(o2surf.*dzt,3))*speryr; %clear surf
-    bio_intz = squeeze(cumsum(o2bio.*dzt,3))*speryr; %clear bio
-    mix_intz = squeeze(cumsum(o2mix.*dzt,3))*speryr; %clear mix
-    adv_intz = squeeze(cumsum(o2adv.*dzt,3))*speryr; %clear adv
-    adv_v_intz = squeeze(cumsum(o2adv_v.*dzt,3))*speryr; %clear adv_v
-    adv_h_intz = squeeze(cumsum(o2adv_h.*dzt,3))*speryr; %clear adv_h
-    res_intz = squeeze(cumsum(o2res.*dzt,3))*speryr; %clear res
+    tend_intz = squeeze(cumsum(tend.*dzt,3))*speryr; %clear tend
+    surf_intz = squeeze(cumsum(surf.*dzt,3))*speryr; %clear surf
+    bio_intz = squeeze(cumsum(bio.*dzt,3))*speryr; %clear bio
+    mix_intz = squeeze(cumsum(mix.*dzt,3))*speryr; %clear mix
+    adv_intz = squeeze(cumsum(adv.*dzt,3))*speryr; %clear adv
+    adv_v_intz = squeeze(cumsum(adv_v.*dzt,3))*speryr; %clear adv_v
+    adv_h_intz = squeeze(cumsum(adv_h.*dzt,3))*speryr; %clear adv_h
+    res_intz = squeeze(cumsum(res.*dzt,3))*speryr; %clear res
     
     
     figure; set(gcf,'position',[182 1 630 701],'paperpositionmode','auto');
@@ -1648,7 +1619,7 @@ for z1=[17 32] % 150 m, 650 m
     contourf([0 1],c1,[c1;c1]',c1,'LineStyle','none');
     caxis(c2); ylim(c2);
     set(gca,'xtick','')
-    set(gcf,'InvertHardCopy','off'); print('-r200','single_o2budget_box_3_3','-dpng')
+    set(gcf,'InvertHardCopy','off'); print('-r300','single_o2budget_box_3_3','-dpng')
     
 end % for z
 %% end O2
@@ -1714,7 +1685,7 @@ end % for t
 
 clear vel charstate
 
-save VOLUME3_budget volume* XC YC RC hFacC area* dz DRF
+save VOLUME3_budget volume* XC YC RC
 
 %% end volume
 

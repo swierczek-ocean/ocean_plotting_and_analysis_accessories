@@ -55,13 +55,14 @@ for ii=1:num_floats
     spfloat = floats(ii);
     float_temp = SOCCOM_floats(SOCCOM_floats(:,1)==spfloat,:);
     float_temp = float_temp(float_temp(:,2)<numdate,:);
+    float_temp = float_temp(float_temp(:,2)>(numdate-90),:);
     scatter(float_temp(:,4),float_temp(:,3),fsz,'MarkerEdgeColor',[1 1 1],...
         'MarkerFaceColor',floats_color(ii,:),...
         'LineWidth',0.8)
 end
 ytickformat('degrees')
 xtickformat('degrees')
-title(['SOCCOM float profiles around the Drake Passage through ',...
+title(['SOCCOM float profiles around Drake Passage in 90 days prior to ',...
     datestr(numdate,'yyyy mmm dd')],'FontWeight','Normal','FontSize',18)
 axis(coords)
 acc_movie
@@ -80,25 +81,26 @@ for jj=3:2:num_days
     fprintf('iteration # %g \n',jj)
     contourf(XC12,YC12,Topo12,'LineStyle','none','LevelList',z)
     hold on
-%     for ii=1:num_floats
-%         spfloat = floats(ii);
-%         float_temp = SOCCOM_floats(SOCCOM_floats(:,1)==spfloat,:);
-%         float_temp = float_temp(float_temp(:,2)<numdate,:);
-%         points = [float_temp(:,4)';float_temp(:,3)'];
-%         points = fnplt(cscvn(points));
-%         plot(points(1,:),points(2,:),'LineWidth',2.7,'Color',floats_color(ii,:))
-%     end
+    %     for ii=1:num_floats
+    %         spfloat = floats(ii);
+    %         float_temp = SOCCOM_floats(SOCCOM_floats(:,1)==spfloat,:);
+    %         float_temp = float_temp(float_temp(:,2)<numdate,:);
+    %         points = [float_temp(:,4)';float_temp(:,3)'];
+    %         points = fnplt(cscvn(points));
+    %         plot(points(1,:),points(2,:),'LineWidth',2.7,'Color',floats_color(ii,:))
+    %     end
     for ii=1:num_floats
         spfloat = floats(ii);
         float_temp = SOCCOM_floats(SOCCOM_floats(:,1)==spfloat,:);
         float_temp = float_temp(float_temp(:,2)<numdate,:);
+        float_temp = float_temp(float_temp(:,2)>(numdate-90),:);
         scatter(float_temp(:,4),float_temp(:,3),fsz,'MarkerEdgeColor',[0 0 0],...
             'MarkerFaceColor',floats_color(ii,:),...
             'LineWidth',0.8)
     end
     ytickformat('degrees')
     xtickformat('degrees')
-    title(['SOCCOM float profiles around the Drake Passage through ',...
+    title(['SOCCOM float profiles around Drake Passage in 90 days prior to ',...
         datestr(numdate-1,'yyyy mmm dd')],'FontWeight','Normal','FontSize',18)
     axis(coords)
     acc_movie
