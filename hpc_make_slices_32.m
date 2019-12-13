@@ -5,6 +5,7 @@ tffield32 = 1;
 cfield32 = 3;
 drfield32 = 7;
 agfield32 = 10;
+efield32 = 1;
 
 AGE65_Series32 = zeros(192,132,396);
 AGE105_Series32 = zeros(192,132,396);
@@ -15,7 +16,7 @@ ETAN_Series32 = zeros(192,132,396);
 MLD_Series32 = zeros(192,132,396);
 
 HC = rdmds('../MITgcm/verification/SO3_20190513/run/hFacC');
-RF = rdmds('../MITgcm/verification/SO3_20190513/run/RF');
+RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
 depth32 = 1;
 str = '../MITgcm/verification/SO3_20190513/diag/';
 strs = '../MITgcm/verification/SO3_20190513/diag_slice/';

@@ -3,20 +3,21 @@ close all
 clc
 tic()
 
-hFacC = rdmds('../Grids/3/hFacC');
-hFacW = rdmds('../Grids/3/hFacW');
-hFacS = rdmds('../Grids/3/hFacS');
-DXG = rdmds('../Grids/3/DXG');
-DYG = rdmds('../Grids/3/DYG');
-DXC = rdmds('../Grids/3/DXC');
-DYC = rdmds('../Grids/3/DYC');
-XC = rdmds('../Grids/3/XC');
-YC = rdmds('../Grids/3/YC');
-RAC = squeeze(rdmds('../Grids/3/RAC'));
-RC = squeeze(rdmds('../Grids/3/RC'));
-RF = squeeze(rdmds('../Grids/3/RF'));
-DRF = squeeze(rdmds('../Grids/3/DRF'));
-str = 'Output/3/';
+hFacC = rdmds('../MITgcm/verification/SO3_20190513/run/hFacC');
+hFacW = rdmds('../MITgcm/verification/SO3_20190513/run/hFacW');
+hFacS = rdmds('../MITgcm/verification/SO3_20190513/run/hFacS');
+DXG = rdmds('../MITgcm/verification/SO3_20190513/run/DXG');
+DYG = rdmds('../MITgcm/verification/SO3_20190513/run/DYG');
+DXC = rdmds('../MITgcm/verification/SO3_20190513/run/DXC');
+DYC = rdmds('../MITgcm/verification/SO3_20190513/run/DYC');
+XC = rdmds('../MITgcm/verification/SO3_20190513/run/XC');
+YC = rdmds('../MITgcm/verification/SO3_20190513/run/YC');
+RAC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RAC'));
+RC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RC'));
+RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
+DRF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/DRF'));
+str = '../MITgcm/verification/SO3_20190513/diag/';
+strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
 
 %% prelim
 nt = 12;
@@ -88,7 +89,7 @@ heat_surf3 = zeros(nt,1);
 
 for t=2:13
 
-    charheat = [str,'diag_T_budget.',num2str(1460*t,'%010.f')];
+    charheat = [strb,'diag_T_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charheat,'rec',1:2);
     diff = rdmds(charheat,'rec',4:5);
     adv = adv([x x(end)+1],[y y(end)+1],:,:);
@@ -132,7 +133,7 @@ salt_surf3 = zeros(nt,1);
 
 for t=2:13
     
-    charsalt = [str,'diag_S_budget.',num2str(1460*t,'%010.f')];
+    charsalt = [strb,'diag_S_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charsalt,'rec',1:2);
     diff = rdmds(charsalt,'rec',4:5);
     adv = adv([x x(end)+1],[y y(end)+1],:,:);
@@ -163,7 +164,7 @@ carbon_surf3 = zeros(nt,1);
 
 for t=2:13
     
-    charcarbon = [str,'diag_dic_budget.',num2str(1460*t,'%010.f')];
+    charcarbon = [strb,'diag_dic_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charcarbon,'rec',1:2);
     diff = rdmds(charcarbon,'rec',4:5);
     adv = adv([x x(end)+1],[y y(end)+1],:,:);
@@ -194,7 +195,7 @@ oxygen_surf3 = zeros(nt,1);
 
 for t=2:13
     
-    charoxygen = [str,'diag_o2_budget.',num2str(1460*t,'%010.f')];
+    charoxygen = [strb,'diag_o2_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charoxygen,'rec',1:2);
     diff = rdmds(charoxygen,'rec',4:5);
     adv = adv([x x(end)+1],[y y(end)+1],:,:);
@@ -224,7 +225,7 @@ nitrate_W3 = zeros(nt,1);
 
 for t=2:13
     
-    charnitrate = [str,'diag_no3_budget.',num2str(1460*t,'%010.f')];
+    charnitrate = [strb,'diag_no3_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charnitrate,'rec',1:2);
     diff = rdmds(charnitrate,'rec',4:5);
     adv = adv([x x(end)+1],[y y(end)+1],:,:);
@@ -241,9 +242,9 @@ for t=2:13
 end % for t
 %% nitrate
 
+save Budgets3 
 
-
-
+clear
 
 
 

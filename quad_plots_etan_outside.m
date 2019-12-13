@@ -31,7 +31,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JJA_avg,...
     ETAN_34_JJA_avg,ETAN_64_JJA_avg,ETAN_124_JJA_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -99,7 +99,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JAS_avg,...
     ETAN_34_JAS_avg,ETAN_64_JAS_avg,ETAN_124_JAS_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -167,7 +167,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JJASON_avg,...
     ETAN_34_JJASON_avg,ETAN_64_JJASON_avg,ETAN_124_JJASON_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -235,7 +235,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JASOND_avg,...
     ETAN_34_JASOND_avg,ETAN_64_JASOND_avg,ETAN_124_JASOND_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -303,7 +303,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_DN_avg,...
     ETAN_32_DN_avg,ETAN_62_DN_avg,ETAN_122_DN_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -371,7 +371,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JD_avg,...
     ETAN_32_JD_avg,ETAN_62_JD_avg,ETAN_122_JD_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -439,7 +439,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_DJF_avg,...
     ETAN_32_DJF_avg,ETAN_62_DJF_avg,ETAN_122_DJF_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -507,7 +507,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JFM_avg,...
     ETAN_32_JFM_avg,ETAN_62_JFM_avg,ETAN_122_JFM_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -575,7 +575,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_JFMAMJ_avg,...
     ETAN_32_JFMAMJ_avg,ETAN_62_JFMAMJ_avg,ETAN_122_JFMAMJ_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -643,7 +643,7 @@ cm = acc_colormap('cmo_balance');
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance(ETAN_BSOSE_DJFMAM_avg,...
     ETAN_32_DJFMAM_avg,ETAN_62_DJFMAM_avg,ETAN_122_DJFMAM_avg,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()

@@ -21,7 +21,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JJA_avg,...
     THETA_BSOSE_JJA_avg,THETA_BSOSE_JJA_avg,THETA_BSOSE_JJA_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -99,7 +99,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JAS_avg,...
     THETA_BSOSE_JAS_avg,THETA_BSOSE_JAS_avg,THETA_BSOSE_JAS_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -177,7 +177,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JASOND_avg,...
     THETA_BSOSE_JASOND_avg,THETA_BSOSE_JASOND_avg,THETA_BSOSE_JASOND_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -255,7 +255,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JJASON_avg,...
     THETA_BSOSE_JJASON_avg,THETA_BSOSE_JJASON_avg,THETA_BSOSE_JJASON_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -333,7 +333,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_DJF_avg,...
     THETA_BSOSE_DJF_avg,THETA_BSOSE_DJF_avg,THETA_BSOSE_DJF_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -411,7 +411,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JFM_avg,...
     THETA_BSOSE_JFM_avg,THETA_BSOSE_JFM_avg,THETA_BSOSE_JFM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -489,7 +489,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_DJFMAM_avg,...
     THETA_BSOSE_DJFMAM_avg,THETA_BSOSE_DJFMAM_avg,THETA_BSOSE_DJFMAM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -567,7 +567,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JFMAMJ_avg,...
     THETA_BSOSE_JFMAMJ_avg,THETA_BSOSE_JFMAMJ_avg,THETA_BSOSE_JFMAMJ_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -645,7 +645,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_DN_avg,...
     THETA_BSOSE_DN_avg,THETA_BSOSE_DN_avg,THETA_BSOSE_DN_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -723,7 +723,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA_BSOSE_JD_avg,...
     THETA_BSOSE_JD_avg,THETA_BSOSE_JD_avg,THETA_BSOSE_JD_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -801,7 +801,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JJA_avg,...
     THETA105_BSOSE_JJA_avg,THETA105_BSOSE_JJA_avg,THETA105_BSOSE_JJA_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -879,7 +879,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JAS_avg,...
     THETA105_BSOSE_JAS_avg,THETA105_BSOSE_JAS_avg,THETA105_BSOSE_JAS_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -957,7 +957,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JASOND_avg,...
     THETA105_BSOSE_JASOND_avg,THETA105_BSOSE_JASOND_avg,THETA105_BSOSE_JASOND_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1035,7 +1035,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JJASON_avg,...
     THETA105_BSOSE_JJASON_avg,THETA105_BSOSE_JJASON_avg,THETA105_BSOSE_JJASON_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1113,7 +1113,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_DJF_avg,...
     THETA105_BSOSE_DJF_avg,THETA105_BSOSE_DJF_avg,THETA105_BSOSE_DJF_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1191,7 +1191,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JFM_avg,...
     THETA105_BSOSE_JFM_avg,THETA105_BSOSE_JFM_avg,THETA105_BSOSE_JFM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1269,7 +1269,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_DJFMAM_avg,...
     THETA105_BSOSE_DJFMAM_avg,THETA105_BSOSE_DJFMAM_avg,THETA105_BSOSE_DJFMAM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1347,7 +1347,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JFMAMJ_avg,...
     THETA105_BSOSE_JFMAMJ_avg,THETA105_BSOSE_JFMAMJ_avg,THETA105_BSOSE_JFMAMJ_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1425,7 +1425,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_DN_avg,...
     THETA105_BSOSE_DN_avg,THETA105_BSOSE_DN_avg,THETA105_BSOSE_DN_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1503,7 +1503,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA105_BSOSE_JD_avg,...
     THETA105_BSOSE_JD_avg,THETA105_BSOSE_JD_avg,THETA105_BSOSE_JD_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1581,7 +1581,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JJA_avg,...
     THETA200_BSOSE_JJA_avg,THETA200_BSOSE_JJA_avg,THETA200_BSOSE_JJA_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1659,7 +1659,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JAS_avg,...
     THETA200_BSOSE_JAS_avg,THETA200_BSOSE_JAS_avg,THETA200_BSOSE_JAS_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1737,7 +1737,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JASOND_avg,...
     THETA200_BSOSE_JASOND_avg,THETA200_BSOSE_JASOND_avg,THETA200_BSOSE_JASOND_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1815,7 +1815,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JJASON_avg,...
     THETA200_BSOSE_JJASON_avg,THETA200_BSOSE_JJASON_avg,THETA200_BSOSE_JJASON_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1893,7 +1893,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_DJF_avg,...
     THETA200_BSOSE_DJF_avg,THETA200_BSOSE_DJF_avg,THETA200_BSOSE_DJF_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -1971,7 +1971,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JFM_avg,...
     THETA200_BSOSE_JFM_avg,THETA200_BSOSE_JFM_avg,THETA200_BSOSE_JFM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2049,7 +2049,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_DJFMAM_avg,...
     THETA200_BSOSE_DJFMAM_avg,THETA200_BSOSE_DJFMAM_avg,THETA200_BSOSE_DJFMAM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2127,7 +2127,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JFMAMJ_avg,...
     THETA200_BSOSE_JFMAMJ_avg,THETA200_BSOSE_JFMAMJ_avg,THETA200_BSOSE_JFMAMJ_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2205,7 +2205,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_DN_avg,...
     THETA200_BSOSE_DN_avg,THETA200_BSOSE_DN_avg,THETA200_BSOSE_DN_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2283,7 +2283,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA200_BSOSE_JD_avg,...
     THETA200_BSOSE_JD_avg,THETA200_BSOSE_JD_avg,THETA200_BSOSE_JD_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2361,7 +2361,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JJA_avg,...
     THETA300_BSOSE_JJA_avg,THETA300_BSOSE_JJA_avg,THETA300_BSOSE_JJA_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2439,7 +2439,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JAS_avg,...
     THETA300_BSOSE_JAS_avg,THETA300_BSOSE_JAS_avg,THETA300_BSOSE_JAS_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2517,7 +2517,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JASOND_avg,...
     THETA300_BSOSE_JASOND_avg,THETA300_BSOSE_JASOND_avg,THETA300_BSOSE_JASOND_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2595,7 +2595,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JJASON_avg,...
     THETA300_BSOSE_JJASON_avg,THETA300_BSOSE_JJASON_avg,THETA300_BSOSE_JJASON_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2673,7 +2673,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_DJF_avg,...
     THETA300_BSOSE_DJF_avg,THETA300_BSOSE_DJF_avg,THETA300_BSOSE_DJF_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2751,7 +2751,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JFM_avg,...
     THETA300_BSOSE_JFM_avg,THETA300_BSOSE_JFM_avg,THETA300_BSOSE_JFM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2829,7 +2829,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_DJFMAM_avg,...
     THETA300_BSOSE_DJFMAM_avg,THETA300_BSOSE_DJFMAM_avg,THETA300_BSOSE_DJFMAM_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2907,7 +2907,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JFMAMJ_avg,...
     THETA300_BSOSE_JFMAMJ_avg,THETA300_BSOSE_JFMAMJ_avg,THETA300_BSOSE_JFMAMJ_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -2985,7 +2985,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_DN_avg,...
     THETA300_BSOSE_DN_avg,THETA300_BSOSE_DN_avg,THETA300_BSOSE_DN_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -3063,7 +3063,7 @@ cm = acc_colormap('es_coolwarm');
 [lb,ub,nlvls] = get_color_bounds_standard(THETA300_BSOSE_JD_avg,...
     THETA300_BSOSE_JD_avg,THETA300_BSOSE_JD_avg,THETA300_BSOSE_JD_avg,option);
 lb = lb - 1;
-z = linspace(lb,ub,nlvls+1);
+z = linspace(lb,ub,nlvls+1); z = [z(1)-100,z,z(end)+100];
 
 
 figure()

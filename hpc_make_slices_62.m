@@ -5,6 +5,7 @@ tffield62 = 1;
 cfield62 = 3;
 drfield62 = 7;
 agfield62 = 10;
+efield62 = 1;
 
 AGE65_Series62 = zeros(384,260,396);
 AGE105_Series62 = zeros(384,260,396);
@@ -15,7 +16,7 @@ ETAN_Series62 = zeros(384,260,396);
 MLD_Series62 = zeros(384,260,396);
 
 HC = rdmds('../MITgcm/verification/SO6_20190513/run/hFacC');
-RF = rdmds('../MITgcm/verification/SO6_20190513/run/RF');
+RF = squeeze(rdmds('../MITgcm/verification/SO6_20190513/run/RF'));
 depth62 = 1;
 str = '../MITgcm/verification/SO6_20190513/diag/';
 strs = '../MITgcm/verification/SO6_20190513/diag_slice/';
@@ -38,13 +39,13 @@ for ii=1:396
     clear temp62bgc
     char62as = [strs,'diag_airsea.',num2str(72*ii,'%010.f')];
     temp62as = rdmds(char62as);
-    TFLUX_Series62(:,:,ii) = temp62surf(:,:,tffield62);
-    CFLUX_Series62(:,:,ii) = temp62surf(:,:,cfield62);
+    TFLUX_Series62(:,:,ii) = temp62as(:,:,tffield62);
+    CFLUX_Series62(:,:,ii) = temp62as(:,:,cfield62);
     clear temp62as
 end
 
-parfor ii=1:192
-    for jj=1:162
+parfor ii=1:384
+    for jj=1:260
         if (HC(ii,jj,1)==0)
             ETAN_Series62(ii,jj,:) = NaN;
             MLD_Series62(ii,jj,:) = NaN;

@@ -41,6 +41,7 @@ function MLD = get_mld(ff, RF, hFacC)
         if I > 3 
           tmp2(I+1:NZ) = 0; %only look up
           J = find(tmp2 == max(tmp2));
+          J = min(J);
           I = min(I, J); %TAKE WHERE STRAT IS FASTEST INCREASING ABOVE PYCNOCLINE
           % 5. Strat should have been increasing (if it doesn't, we are leaving the mld!)
           if ( (tmp2(I)< 0.) & (I==J) ); %error: strat should increase or be flat

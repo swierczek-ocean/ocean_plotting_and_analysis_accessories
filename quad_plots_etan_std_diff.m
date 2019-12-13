@@ -21,7 +21,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJA_std,...
     ETAN_BSOSE_JJA_std,ETAN_BSOSE_JJA_std,ETAN_BSOSE_JJA_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -46,7 +46,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJA_std_diff,...
     ETAN_34_JJA_std_diff,ETAN_64_JJA_std_diff,ETAN_124_JJA_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_34_JJA_std_diff,'LineStyle','none','LevelList',z);
@@ -99,7 +99,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JAS_std,...
     ETAN_BSOSE_JAS_std,ETAN_BSOSE_JAS_std,ETAN_BSOSE_JAS_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -124,7 +124,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JAS_std_diff,...
     ETAN_34_JAS_std_diff,ETAN_64_JAS_std_diff,ETAN_124_JAS_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_34_JAS_std_diff,'LineStyle','none','LevelList',z);
@@ -177,7 +177,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JASOND_std,...
     ETAN_BSOSE_JASOND_std,ETAN_BSOSE_JASOND_std,ETAN_BSOSE_JASOND_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -202,7 +202,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JASOND_std_diff,...
     ETAN_34_JASOND_std_diff,ETAN_64_JASOND_std_diff,ETAN_124_JASOND_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_34_JASOND_std_diff,'LineStyle','none','LevelList',z);
@@ -255,7 +255,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JJASON_std,...
     ETAN_BSOSE_JJASON_std,ETAN_BSOSE_JJASON_std,ETAN_BSOSE_JJASON_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -280,7 +280,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_34_JJASON_std_diff,...
     ETAN_34_JJASON_std_diff,ETAN_64_JJASON_std_diff,ETAN_124_JJASON_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_34_JJASON_std_diff,'LineStyle','none','LevelList',z);
@@ -333,7 +333,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJF_std,...
     ETAN_BSOSE_DJF_std,ETAN_BSOSE_DJF_std,ETAN_BSOSE_DJF_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -358,7 +358,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJF_std_diff,...
     ETAN_32_DJF_std_diff,ETAN_62_DJF_std_diff,ETAN_122_DJF_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_DJF_std_diff,'LineStyle','none','LevelList',z);
@@ -411,7 +411,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFM_std,...
     ETAN_BSOSE_JFM_std,ETAN_BSOSE_JFM_std,ETAN_BSOSE_JFM_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -436,7 +436,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFM_std_diff,...
     ETAN_32_JFM_std_diff,ETAN_62_JFM_std_diff,ETAN_122_JFM_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_JFM_std_diff,'LineStyle','none','LevelList',z);
@@ -489,7 +489,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DJFMAM_std,...
     ETAN_BSOSE_DJFMAM_std,ETAN_BSOSE_DJFMAM_std,ETAN_BSOSE_DJFMAM_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -514,7 +514,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DJFMAM_std_diff,...
     ETAN_32_DJFMAM_std_diff,ETAN_62_DJFMAM_std_diff,ETAN_122_DJFMAM_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_DJFMAM_std_diff,'LineStyle','none','LevelList',z);
@@ -567,7 +567,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JFMAMJ_std,...
     ETAN_BSOSE_JFMAMJ_std,ETAN_BSOSE_JFMAMJ_std,ETAN_BSOSE_JFMAMJ_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -592,7 +592,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JFMAMJ_std_diff,...
     ETAN_32_JFMAMJ_std_diff,ETAN_62_JFMAMJ_std_diff,ETAN_122_JFMAMJ_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_JFMAMJ_std_diff,'LineStyle','none','LevelList',z);
@@ -645,7 +645,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_DN_std,...
     ETAN_BSOSE_DN_std,ETAN_BSOSE_DN_std,ETAN_BSOSE_DN_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -670,7 +670,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_DN_std_diff,...
     ETAN_32_DN_std_diff,ETAN_62_DN_std_diff,ETAN_122_DN_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_DN_std_diff,'LineStyle','none','LevelList',z);
@@ -723,7 +723,7 @@ cm = acc_colormap('cmo_amp');
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_BSOSE_JD_std,...
     ETAN_BSOSE_JD_std,ETAN_BSOSE_JD_std,ETAN_BSOSE_JD_std,option);
 
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 
 figure()
@@ -748,7 +748,7 @@ cm = acc_colormap('cmo_balance');
 
 [lb,ub,lbcb,ubcb,nlvls] = get_color_bounds_balance_alt(ETAN_32_JD_std_diff,...
     ETAN_32_JD_std_diff,ETAN_62_JD_std_diff,ETAN_122_JD_std_diff,option);
-z = linspace(lb,ub,nlvls);
+z = linspace(lb,ub,nlvls); z = [z(1)-100,z,z(end)+100];
 
 ax2 = subplot(2,2,2);
 contourf(XCS,YCS,ETAN_32_JD_std_diff,'LineStyle','none','LevelList',z);
