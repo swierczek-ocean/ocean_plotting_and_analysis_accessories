@@ -20,7 +20,7 @@ str = '../MITgcm/verification/SO3_20190513/diag/';
 strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
 
 %% prelim
-nt = 12;
+nt = 13;
 
 % select area
 x = 6:170;
@@ -55,7 +55,7 @@ volume_S3 = zeros(nt,1);
 volume_E3 = zeros(nt,1);
 volume_W3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
     
     charstate = [str,'diag_state.',num2str(1460*t,'%010.f')];
     vel = rdmds(charstate,'rec',3:5);
@@ -87,7 +87,7 @@ heatdiff_E3 = zeros(nt,1);
 heatdiff_W3 = zeros(nt,1);
 heat_surf3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
 
     charheat = [strb,'diag_T_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charheat,'rec',1:2);
@@ -131,7 +131,7 @@ salt_E3 = zeros(nt,1);
 salt_W3 = zeros(nt,1);
 salt_surf3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
     
     charsalt = [strb,'diag_S_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charsalt,'rec',1:2);
@@ -162,7 +162,7 @@ carbon_E3 = zeros(nt,1);
 carbon_W3 = zeros(nt,1);
 carbon_surf3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
     
     charcarbon = [strb,'diag_dic_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charcarbon,'rec',1:2);
@@ -193,7 +193,7 @@ oxygen_E3 = zeros(nt,1);
 oxygen_W3 = zeros(nt,1);
 oxygen_surf3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
     
     charoxygen = [strb,'diag_o2_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charoxygen,'rec',1:2);
@@ -223,7 +223,7 @@ nitrate_S3 = zeros(nt,1);
 nitrate_E3 = zeros(nt,1);
 nitrate_W3 = zeros(nt,1);
 
-for t=2:13
+for t=1:13
     
     charnitrate = [strb,'diag_no3_budget.',num2str(1460*t,'%010.f')];
     adv = rdmds(charnitrate,'rec',1:2);
