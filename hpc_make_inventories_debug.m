@@ -1,23 +1,20 @@
 
 %%
 
-hFacC = rdmds('../MITgcm/verification/SO3_20190513/run/hFacC');
-hFacW = rdmds('../MITgcm/verification/SO3_20190513/run/hFacW');
-hFacS = rdmds('../MITgcm/verification/SO3_20190513/run/hFacS');
-DXG = rdmds('../MITgcm/verification/SO3_20190513/run/DXG');
-DYG = rdmds('../MITgcm/verification/SO3_20190513/run/DYG');
-DXC = rdmds('../MITgcm/verification/SO3_20190513/run/DXC');
-DYC = rdmds('../MITgcm/verification/SO3_20190513/run/DYC');
-XC = rdmds('../MITgcm/verification/SO3_20190513/run/XC');
-YC = rdmds('../MITgcm/verification/SO3_20190513/run/YC');
-RAC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RAC'));
-RC = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RC'));
-RF = squeeze(rdmds('../MITgcm/verification/SO3_20190513/run/RF'));
-DRF = rdmds('../MITgcm/verification/SO3_20190513/run/DRF');
-str = '../MITgcm/verification/SO3_20190513/diag/';
-strs = '../MITgcm/verification/SO3_20190513/diag_slice/';
-strb = '../MITgcm/verification/SO3_20190513/diag_budgets/';
-strsn = '../MITgcm/verification/SO3_20190513/diag_snaps/';
+hFacC = rdmds('diag/hFacC');
+hFacW = rdmds('diag/hFacW');
+hFacS = rdmds('diag/hFacS');
+DXG = rdmds('diag/DXG');
+DYG = rdmds('diag/DYG');
+DXC = rdmds('diag/DXC');
+DYC = rdmds('diag/DYC');
+XC = rdmds('diag/XC');
+YC = rdmds('diag/YC');
+RAC = squeeze(rdmds('diag/RAC'));
+RC = squeeze(rdmds('diag/RC'));
+RF = squeeze(rdmds('diag/RF'));
+DRF = squeeze(rdmds('diag/DRF'));
+strs = 'diag/';
 
 
 sec = 2628000;
@@ -50,10 +47,10 @@ rho = 1035; % kg/m^3
 
 
 
-for ii=1:396
-    charstate = [strs,'diag_state.',num2str(48*ii,'%010.f')];
+for ii=1:13
+    charstate = [strs,'diag_state.',num2str(1460*ii,'%010.f')];
     THETA = rdmds(charstate,'rec',tfield);
-    heat_inv3_box_ab(ii) = sum(sum(sum(cp_oce*rho*THETA(ab_ind_w:ab_ind_e,...
+    heat_inv3_box_ab(ii) = sum(sum(sum(cp_oce*rho.*THETA(ab_ind_w:ab_ind_e,...
         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
         ab_ind_s:ab_ind_n,:))));
@@ -62,29 +59,29 @@ for ii=1:396
         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
         ab_ind_s:ab_ind_n,:))));
-    clear THETA
-    charbgc = [strs,'diag_bgc.',num2str(48*ii,'%010.f')];
-    CARBON = rdmds(charbgc,'rec',cfield);
-    carbon_inv3_box_ab(ii) = sum(sum(sum(CARBON(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    NITRATE = rdmds(charbgc,'rec',nfield);
-    nitrate_inv3_box_ab(ii) = sum(sum(sum(NITRATE(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    OXYGEN = rdmds(charbgc,'rec',ofield);
-    oxygen_inv3_box_ab(ii) = sum(sum(sum(OXYGEN(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    PHYTO = rdmds(charbgc,'rec',phfield);
-    phyto_inv3_box_ab(ii) = sum(sum(sum(PHYTO(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
-        ab_ind_s:ab_ind_n,:))));
-    clear CARBON NITRATE PHYTO
+    clear THETA SALT
+%     charbgc = [strs,'diag_bgc.',num2str(48*ii,'%010.f')];
+%     CARBON = rdmds(charbgc,'rec',cfield);
+%     carbon_inv3_box_ab(ii) = sum(sum(sum(CARBON(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     NITRATE = rdmds(charbgc,'rec',nfield);
+%     nitrate_inv3_box_ab(ii) = sum(sum(sum(NITRATE(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     OXYGEN = rdmds(charbgc,'rec',ofield);
+%     oxygen_inv3_box_ab(ii) = sum(sum(sum(OXYGEN(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     PHYTO = rdmds(charbgc,'rec',phfield);
+%     phyto_inv3_box_ab(ii) = sum(sum(sum(PHYTO(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:).*DRF.*RAC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n).*hFacC(ab_ind_w:ab_ind_e,...
+%         ab_ind_s:ab_ind_n,:))));
+%     clear CARBON NITRATE PHYTO
 end
 
 save carbon_inv3 carbon_inv3*
@@ -110,8 +107,8 @@ YC = rdmds('../MITgcm/verification/SO6_20190513/run/YC');
 RAC = squeeze(rdmds('../MITgcm/verification/SO6_20190513/run/RAC'));
 RC = squeeze(rdmds('../MITgcm/verification/SO6_20190513/run/RC'));
 RF = squeeze(rdmds('../MITgcm/verification/SO6_20190513/run/RF'));
-DRF = rdmds('../MITgcm/verification/SO6_20190513/run/DRF');
-str = '../MITgcm/verification/SO6_20190513/diag/';
+DRF = squeeze(rdmds('../MITgcm/verification/SO6_20190513/run/DRF'));
+strs = '../MITgcm/verification/SO6_20190513/diag/';
 strs = '../MITgcm/verification/SO6_20190513/diag_slice/';
 strb = '../MITgcm/verification/SO6_20190513/diag_budgets/';
 strsn = '../MITgcm/verification/SO6_20190513/diag_snaps/';
@@ -207,8 +204,8 @@ YC = rdmds('../MITgcm/verification/SO12_20190513/run/YC');
 RAC = squeeze(rdmds('../MITgcm/verification/SO12_20190513/run/RAC'));
 RC = squeeze(rdmds('../MITgcm/verification/SO12_20190513/run/RC'));
 RF = squeeze(rdmds('../MITgcm/verification/SO12_20190513/run/RF'));
-DRF = rdmds('../MITgcm/verification/SO12_20190513/run/DRF');
-str = '../MITgcm/verification/SO12_20190513/diag/';
+DRF = squeeze(rdmds('../MITgcm/verification/SO12_20190513/run/DRF'));
+strs = '../MITgcm/verification/SO12_20190513/diag/';
 strs = '../MITgcm/verification/SO12_20190513/diag_slice/';
 strb = '../MITgcm/verification/SO12_20190513/diag_budgets/';
 strsn = '../MITgcm/verification/SO12_20190513/diag_snaps/';

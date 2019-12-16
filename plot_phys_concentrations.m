@@ -15,6 +15,9 @@ load nitrate_inv3
 load nitrate_inv6
 load nitrate_inv12
 
+scale312 = volume12/volume3;
+scale612 = volume12/volume6;
+
 dates = [datenum('20161201','yyyymmdd'),...
     datenum('20170101','yyyymmdd'),datenum('20170201','yyyymmdd'),...
     datenum('20170301','yyyymmdd'),datenum('20170401','yyyymmdd'),...
@@ -28,9 +31,9 @@ xx = (1/1000000000000);
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,xx.*nitrate_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*xx.*nitrate_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,xx.*nitrate_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*xx.*nitrate_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,xx.*nitrate_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -44,7 +47,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_05_NO3','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_05_NO3','-dpng')
 
 clear nitrate*
 
@@ -54,9 +57,9 @@ load oxygen_inv12
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,xx.*oxygen_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*xx.*oxygen_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,xx.*oxygen_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*xx.*oxygen_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,xx.*oxygen_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -70,7 +73,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_04_O2','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_04_O2','-dpng')
 
 clear oxygen*
 
@@ -80,9 +83,9 @@ load carbon_inv12
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,xx.*carbon_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*xx.*carbon_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,xx.*carbon_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*xx.*carbon_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,xx.*carbon_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -96,7 +99,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_03_DIC','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_03_DIC','-dpng')
 
 clear carbon*
 
@@ -106,9 +109,9 @@ load salt_inv12
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,salt_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*salt_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,salt_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*salt_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,salt_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -122,7 +125,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_02_SALT','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_02_SALT','-dpng')
 
 clear salt*
 
@@ -132,9 +135,9 @@ load heat_inv12
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,heat_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*heat_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,heat_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*heat_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,heat_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -148,7 +151,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_01_HEAT','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_01_HEAT','-dpng')
 
 clear heat*
 
@@ -158,9 +161,9 @@ load phyto_inv12
 
 figure;
 set(gcf, 'Position', [1, 1, 1500, 850])
-h7 = plot(time,phyto_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
+h7 = plot(time,scale312*phyto_inv3_box_ab,'LineWidth',lw,'Color',Color(c3,:));
 hold on
-h8 = plot(time,phyto_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
+h8 = plot(time,scale612*phyto_inv6_box_ab,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(time,phyto_inv12_box_ab,'LineWidth',lw,'Color',Color(c12,:));
 
 xticks(dates)
@@ -174,7 +177,7 @@ legend([h7(1),h8(1),h9(1)],'1/3','1/6','1/12','Location','best')
 acc_movie_w
 acc_plots
 hold off
-set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_TIME_07_PHYTO','-dpng')
+set(gcf,'InvertHardCopy','off'); print('-r200','AB_INVENTORIES_ADJ_TIME_07_PHYTO','-dpng')
 
 clear phyto*
 
