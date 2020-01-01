@@ -25,11 +25,14 @@ inside_coords = [290.5 350.2 -58.7 -32];
 [XC6,YC6] = ndgrid(XC6,YC6);
 [XC12,YC12] = ndgrid(XC12,YC12);
 clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str *DYG* *DXG* *DRF*
+
+atten = linspace(0.2,1,256);
+atten = [atten',atten',atten'];
 %%
 
 %% AGE 65
 cm = acc_colormap('cmo_amp');
-
+cm = cm.^atten;
 lb = 0;
 ub = 1;
 
@@ -94,7 +97,7 @@ title('1/12 65m age','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v12
 hold off
-set(gcf,'InvertHardCopy','off');
+
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
 vidObj = VideoWriter('AGE65.avi');
@@ -160,7 +163,7 @@ for ii=2:396
     acc_movie
     acc_quad_plots_v12
     hold off
-    set(gcf,'InvertHardCopy','off');
+    
     
     drawnow()
     writeVideo(vidObj, getframe(gcf));
@@ -187,7 +190,7 @@ temp62 = AGE135_Series62(:,:,1)./scale62;
 temp122 = AGE135_Series122(:,:,1)./scale122;
 
 temp122(temp122==0) = NaN;
-
+numdate = datenum('12012016','mmddyyyy');
 figure()
 set(gcf, 'Position', [1, 1, 1500, 900])
 colormap(cm)
@@ -235,7 +238,7 @@ title('1/12 135m age','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v12
 hold off
-set(gcf,'InvertHardCopy','off');
+
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
 vidObj = VideoWriter('AGE135.avi');
@@ -301,7 +304,7 @@ for ii=2:396
     acc_movie
     acc_quad_plots_v12
     hold off
-    set(gcf,'InvertHardCopy','off');
+    
     
     drawnow()
     writeVideo(vidObj, getframe(gcf));
@@ -328,7 +331,7 @@ temp62 = AGE105_Series62(:,:,1)./scale62;
 temp122 = AGE105_Series122(:,:,1)./scale122;
 
 temp122(temp122==0) = NaN;
-
+numdate = datenum('12012016','mmddyyyy');
 figure()
 set(gcf, 'Position', [1, 1, 1500, 900])
 colormap(cm)
@@ -376,7 +379,7 @@ title('1/12 105m age','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v12
 hold off
-set(gcf,'InvertHardCopy','off');
+
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
 vidObj = VideoWriter('AGE105.avi');
@@ -442,7 +445,7 @@ for ii=2:396
     acc_movie
     acc_quad_plots_v12
     hold off
-    set(gcf,'InvertHardCopy','off');
+    
     
     drawnow()
     writeVideo(vidObj, getframe(gcf));
