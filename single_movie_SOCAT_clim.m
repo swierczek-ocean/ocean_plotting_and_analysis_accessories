@@ -46,7 +46,7 @@ for ii=1:12
 end
 
 figure()
-set(gcf, 'Position', [1, 1, 1400, 850])
+set(gcf, 'Position', [1, 1, 1400, 860])
 colormap(cm)
 pcolor(xlon,ylat,fco2_count_clim(:,:,1))
 % contour(XCm,YCm,mask(:,:,1),'Color','k')

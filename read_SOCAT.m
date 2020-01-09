@@ -14,7 +14,7 @@ xhi = find(xlon>-10,1);
 ylo = find(ylat>-60,1)-1;
 yhi = find(ylat>-30,1);
 
-xlon = xlon(xlo:xhi) + 360;;
+xlon = xlon(xlo:xhi) + 360;
 ylat = ylat(ylo:yhi);
 
 ncdisp(str)
