@@ -1,0 +1,899 @@
+clear
+close all
+clc
+tic()
+
+load Budgets3
+load Budgets6
+load Budgets12
+load 3_surf_avgs
+load 6_surf_avgs
+load 12_surf_avgs
+load Topo12
+TXC12 = XC12;
+TYC12 = YC12;
+
+load XY3 XC3 YC3
+[XC3,YC3] = ndgrid(XC3,YC3);
+load XY6 XC6 YC6
+[XC6,YC6] = ndgrid(XC6,YC6);
+load XY12 XC12 YC12
+[XC12,YC12] = ndgrid(XC12,YC12);
+
+XC3 = XC3 - 360;
+XC6 = XC6 - 360;
+XC12 = XC12 - 360;
+
+acc_colors
+
+lw = 2.9;
+ms = 20;
+cb = 85;
+cbd = 36;
+c3 = 86;
+c6 = 87;
+c12 = 88;
+c3 = 55;
+c6 = 56;
+c12 = 57;
+c1 = 61;
+c2 = 13;
+cs = 61;
+elw = 4;
+j3 = 3;
+qw = 7;
+oas = 17;
+ias = 14;
+oase = 17;
+iase = 14;
+cbsose = 37;
+
+
+%
+nn = 200;
+x1 = linspace(-70,-15.15,nn);
+y1 = -55.*ones(1,nn);
+y2 = -34.*ones(1,nn);
+x3 = -15.*ones(1,nn);
+x2 = linspace(-70,-15.1,nn);
+y3 = linspace(-55,-34,nn);
+y4 = linspace(-55.15,-33.85,nn);
+x4 = -70.*ones(1,nn);
+
+cm = flipud(acc_colormap('cmo_tempo'));
+z = 0:0.02:1.12;
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,speed12_2017,'LineStyle','none','LevelList',z)
+hold on
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-34.6,0,-0.454,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-34.6,0,-0.419,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-34.6,0,-0.428,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-34.6,0,-0.393,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-34.6,0,-0.4445,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-34.65,0,-0.41,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-34.6,0,-0.339,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-34.6,0,-0.304,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'41.9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'39.3','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'41.0','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'30.4','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-55,0,1.029,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-55,0,.994,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-55,0,1.124,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-55,0,1.089,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-55,0,1.116,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-55,0,1.081,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-55,0,1.238,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-55,0,1.203,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'102.9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'112.4','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'116.0','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'123.8','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-15,-38,1.371,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-38,1.336,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-42,1.436,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-42,1.401,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-46,1.484,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-46,1.449,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-50,1.484,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-50,1.449,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'144.7','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'151.7','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'157.0','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'154.2','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+m_grid('fontsize',16);
+title('volume budgets [Sv]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+% c = colorbar('southoutside','FontSize',16);
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_1_VOL','-dpng')
+close all
+%% volume
+
+%% heat
+cm = acc_colormap('es_coolwarm');
+z = -1.05:0.05:22.7;
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,theta12_2017,'LineStyle','none','LevelList',z)
+hold on
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-35,0,-1.49,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-35,0,-1.455,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-35,0,-1.43,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-35,0,-1.395,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-35,0,-1.53,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-35,0,-1.495,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-35,0,-1.1,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-35,0,-1.065,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'1.49','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'1.43','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'1.53','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'1.10','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-54.5,0,1.27,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-54.5,0,1.235,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-54.5,0,1.39,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-54.5,0,1.355,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-54.5,0,1.41,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-54.5,0,1.375,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-54.5,0,1.57,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-54.5,0,1.535,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'1.27','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'1.39','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'1.41','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'1.57','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-15,-38,2.46,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-38,2.425,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-42,2.53,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-42,2.495,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-46,2.66,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-46,2.625,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-50,2.58,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-50,2.545,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'2.46','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'2.53','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'2.66','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'2.58','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% surf
+m_vec(1,-55,-45.5,0.093,-0.093,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-55,-45.5,0.066,-0.066,Color(c3,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-48,-45.5,0.092,-0.092,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-48,-45.5,0.065,-0.065,Color(c6,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-41,-45.5,0.053,-0.053,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-3,'headlength',qw-3)
+m_vec(1,-41,-45.5,0.04,-0.04,Color(c12,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-4,'headlength',qw-4);
+m_vec(1,-34,-46,0.33,-0.33,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-34,-46,0.3,-0.3,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+
+m_text(-57,-44,'0.067','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-50,-44,'0.065','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-43,-44,'0.025','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-36,-44,'0.303','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+
+m_grid('fontsize',16);
+title('heat budgets [PW]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_2_HEAT_1','-dpng')
+close all
+%% heat
+
+%% salt
+cm = acc_colormap('cmo_haline');
+z = 32.8:0.05:36.8;
+z = [20,z];
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,salt12_2017,'LineStyle','none','LevelList',z)
+hold on
+caxis([z(2) z(end)])
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-35,0,-0.751,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-35,0,-0.716,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-35,0,-0.715,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-35,0,-0.68,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-35,0,-.745,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-35,0,-0.71,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-35,0,-0.55,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-35,0,-0.515,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'1.52e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'1.43e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'1.49e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'1.10e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-52.5,0,1.825,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-52.5,0,1.790,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-52.5,0,2,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-52.5,0,1.965,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-52.5,0,2.06,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-52.5,0,2.025,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-52.5,0,2.2,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-52.5,0,2.165,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'3.65e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'3.99e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'4.12e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'4.40e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-15,-38,2.585,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-38,2.55,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-42,2.71,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-42,2.675,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-46,2.55,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-46,2.515,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-50,2.75,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-50,2.715,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'5.17e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'5.42e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'5.61e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'5.51e9','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% surf
+m_vec(1,-55,-45.5,0.093,-0.093,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-55,-45.5,0.066,-0.066,Color(c3,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-48,-45.5,0.093,-0.093,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-48,-45.5,0.066,-0.066,Color(c6,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-41,-45.5,0.09,-0.09,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-41,-45.5,0.06,-0.06,Color(c12,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-34,-45.5,0.085,-0.085,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-34,-45.5,0.055,-0.055,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+
+m_text(-57,-44,'3.52e6','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-50,-44,'3.52e6','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-43,-44,'3.14e6','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-36,-44,'2.68e6','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+
+m_grid('fontsize',16);
+title('salt budgets [kg/s]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_3_SALT_1','-dpng')
+close all
+%% salt
+
+%% dic
+cm = flipud(acc_colormap('cmo_deep'));
+z = 2.1:0.002:2.27;
+z = [1.5,z];
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,dic12_2017,'LineStyle','none','LevelList',z)
+hold on
+caxis([z(2) z(end)])
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-34.5,0,-0.716,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-34.5,0,-0.681,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-34.5,0,-0.66,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-34.5,0,-0.625,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-34.5,0,-0.688,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-34.5,0,-0.653,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-34.5,0,-0.501,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-34.5,0,-0.466,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'35.08','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'32.97','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'34.34','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'25.46','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-53.5,0,1.76,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-53.5,0,1.725,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-53.5,0,1.91,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-53.5,0,1.875,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-53.5,0,1.98,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-53.5,0,1.955,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-53.5,0,2.12,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-53.5,0,2.085,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'88.03','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'96.21','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'99.27','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'106.09','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-15,-38,2.46,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-38,2.425,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-42,2.59,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-42,2.555,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-46,2.7,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-46,2.665,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-15,-50,2.62,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-15,-50,2.585,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'123.68','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'129.71','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'134.15','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'131.83','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% surf
+m_vec(1,-55,-45.5,0.091,-0.091,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-55,-45.5,0.064,-0.064,Color(c3,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-48,-45.5,0.092,-0.092,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-48,-45.5,0.065,-0.065,Color(c6,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-41,-45.5,0.093,-0.093,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-41,-45.5,0.066,-0.066,Color(c12,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-34,-45.5,0.096,-0.096,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-34,-45.5,0.068,-0.068,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+
+m_text(-57,-44,'0.225','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-50,-44,'0.226','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-43,-44,'0.229','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-36,-44,'0.233','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+
+m_grid('fontsize',16);
+title('DIC budgets [Gt C/yr]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_4_DIC','-dpng')
+close all
+%% dic
+
+%% o2
+cm = acc_colormap('cmo_dense');
+z = 0.21:0.001:0.36;
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,o212_2017,'LineStyle','none','LevelList',z)
+hold on
+caxis([z(2) z(end)])
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-34.5,0,-0.586,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-34.5,0,-0.551,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-34.5,0,-0.55,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-34.5,0,-0.515,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-34.5,0,-0.571,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-34.5,0,-0.536,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-34.5,0,-0.421,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-34.5,0,-0.386,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'4.69','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'4.40','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'4.57','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'3.37','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-54,0,1.54,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-54,0,1.505,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-54,0,1.678,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-54,0,1.643,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-54,0,1.739,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-54,0,1.704,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-54,0,1.85,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-54,0,1.815,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'12.35','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'13.42','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'13.91','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'14.80','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-14,-38,2.07,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-38,2.035,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-42,2.175,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-42,2.14,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-46,2.255,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-46,2.22,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-50,2.219,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-50,2.184,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'16.59','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'17.40','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'18.04','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'17.75','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% surf
+m_vec(1,-55,-45.5,0.093,-0.093,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-55,-45.5,0.066,-0.066,Color(c3,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-48,-45.5,0.094,-0.094,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-48,-45.5,0.067,-0.067,Color(c6,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-41,-45.5,0.087,-0.087,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-41,-45.5,0.06,-0.06,Color(c12,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+m_vec(1,-34,-45.5,0.08,-0.08,'w','centered', 'yes','shaftwidth',qw-4,...
+    'headwidth',qw-1,'headlength',qw-1)
+m_vec(1,-34,-45.5,0.055,-0.055,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-5,...
+    'headwidth',qw-3,'headlength',qw-3);
+
+m_text(-57,-44,'0.588','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-50,-44,'0.591','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-43,-44,'0.555','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-36,-44,'0.522','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+
+m_grid('fontsize',16);
+title('O2 budgets [Gt O/yr]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_5_O2','-dpng')
+close all
+%% o2
+
+%% no3
+cm = acc_colormap('cmo_speed');
+z = 0:0.0001:0.03;
+
+set(gcf, 'Position', [1, 1, 1300, 850])
+
+colormap(cm)
+m_proj('albers','longitudes',[-69.5 -9.8], ...
+           'latitudes',[-58.7 -31.1]);
+
+m_contourf(XC12,YC12,no312_2017,'LineStyle','none','LevelList',z)
+hold on
+caxis([z(2) z(end)])
+m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
+m_grid('fontsize',16);
+
+m_line(x4,y3,'Color','k','LineWidth',lw+3)
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x1,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
+m_line(x4,y3,'Color','w','LineWidth',lw)
+m_line(x2,y1,'Color','w','LineWidth',lw)
+m_line(x2,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+%% top of AB
+m_vec(1,-51,-34.6,0,-0.387,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h1 = m_vec(1,-51,-34.6,0,-0.352,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-44,-34.6,0,-0.363,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h2 = m_vec(1,-44,-34.6,0,-0.328,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-36,-34.6,0,-0.372,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h3 = m_vec(1,-36,-34.6,0,-0.337,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-29,-34.6,0,-0.29,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+h4 = m_vec(1,-29,-34.6,0,-0.255,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-49.8,-35.7,'0.352','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-42.8,-35.7,'0.328','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-34.8,-35.7,'.337','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-27.8,-35.7,'0.255','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% bottom of AB
+m_vec(1,-57,-54.5,0,1.375,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-57,-54.5,0,1.34,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-48,-54.5,0,1.505,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-48,-54.5,0,1.47,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-39,-54.5,0,1.555,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-39,-54.5,0,1.52,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-30,-54.5,0,1.645,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-30,-54.5,0,1.61,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-55.5,-53,'1.34','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-46.5,-53,'1.47','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-37.5,-53,'1.52','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-28.5,-53,'1.61','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+%% east of AB
+m_vec(1,-14,-38,1.785,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-38,1.75,0,Color(c3,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-42,1.885,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-42,1.85,0,Color(c6,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-46,1.945,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-46,1.91,0,Color(c12,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+m_vec(1,-14,-50,1.915,0,'w','centered', 'yes','shaftwidth',qw,...
+    'headwidth',qw+7,'headlength',qw+7)
+m_vec(1,-14,-50,1.88,0,Color(cbsose,:),'centered', 'yes','shaftwidth',qw-2,...
+    'headwidth',qw+4,'headlength',qw+5);
+
+m_text(-20,-36.5,'1.75','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c3,:),'LineWidth',elw)
+m_text(-20.5,-40.5,'1.85','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c6,:),'LineWidth',elw)
+m_text(-21,-44.5,'1.91','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
+m_text(-21.5,-48.5,'1.88','Color','k','FontSize',19,...
+    'BackgroundColor','w','EdgeColor',Color(cbsose,:),'LineWidth',elw)
+%% 
+
+
+m_grid('fontsize',16);
+title('NO3 budgets [Gt N/yr]','FontWeight','Normal','FontSize',19)
+legend([h1(1),h2(1),h3(1),h4(1)],' 1/3',' 1/6',' 1/12','B-SOSE','Location','southeast','FontSize',16)
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','AB_BUDGETS_BSOSE_6_NO3','-dpng')
+close all
+%% no3
+
+toc()

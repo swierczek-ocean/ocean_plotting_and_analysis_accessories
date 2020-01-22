@@ -246,7 +246,7 @@ for ii=1:12
     
 end
 
-
+save woa_misfits *_misfit* olon olat odepth nlon nlat ndepth
 save woa_rmse *woa_rmse*
 
 

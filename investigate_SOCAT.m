@@ -77,26 +77,40 @@ pco2_socat_clim = zeros(nn*mm,3,12);
 pco2_socat_clim_2 = NaN.*ones(nn,mm,12);
 
 
+% for ii=1:12
+%     for jj=1:nn
+%         for kk=1:mm
+%             temp = pco2_socat(jj,kk,ii:12:end);
+%             temp = mean(temp(temp~=0));
+%             if isnan(temp)==0
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),1,ii) = xlon(jj);
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),2,ii) = ylat(kk);
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),3,ii) = temp;
+%                 pco2_socat_clim_2(jj,kk,ii) = temp;
+%             else
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),1,ii) = NaN;
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),2,ii) = NaN;
+%                 pco2_socat_clim(sub2ind([nn,mm],jj,kk),3,ii) = NaN;
+%             end
+%         end
+%     end
+% end
+% save pco2_socat_clim_2 pco2_socat_clim_2 xlon ylat fco2_count_nobs
+% save pco2_socat_clim pco2_socat_clim*
+
+pco2_socat_2017 = NaN.*ones(nn,mm,12);
+
 for ii=1:12
     for jj=1:nn
         for kk=1:mm
-            temp = pco2_socat(jj,kk,ii:12:end);
+            temp = pco2_socat(jj,kk,83+ii);
             temp = mean(temp(temp~=0));
             if isnan(temp)==0
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),1,ii) = xlon(jj);
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),2,ii) = ylat(kk);
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),3,ii) = temp;
-                pco2_socat_clim_2(jj,kk,ii) = temp;
-            else
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),1,ii) = NaN;
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),2,ii) = NaN;
-                pco2_socat_clim(sub2ind([nn,mm],jj,kk),3,ii) = NaN;
+                pco2_socat_2017(jj,kk,ii) = temp;
             end
         end
     end
 end
-save pco2_socat_clim_2 pco2_socat_clim_2 xlon ylat fco2_count_nobs
-save pco2_socat_clim pco2_socat_clim*
-
+save pco2_socat_2017 pco2_socat_2017 xlon ylat fco2_count_nobs
 
 toc()
