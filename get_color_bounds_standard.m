@@ -128,7 +128,7 @@ end
 %% trim last 250 measurements
 if option==12
     lb = DIST(1); 
-    ub = DIST(len-1500);
+    ub = DIST(len-1250);
 end
 %%
 

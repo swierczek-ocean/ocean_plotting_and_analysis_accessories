@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -N 6_budget_250m
+#PBS -W group_list=jrussell
+#PBS -q standard
+#PBS -m bea
+#PBS -M swierczek@email.arizona.edu
+#PBS -l select=1:ncpus=28:mem=168gb:pcmem=6gb
+#PBS -l walltime=10:00:00
+#PBS -l cput=280:00:00
+
+module load matlab
+
+cd /rsgrps/jrussell/swierczek/2020_01_January_analysis/
+
+matlab -nodisplay -nosplash < hpc_bndry_fluxes_6_250m.m > output6b_250m.txt

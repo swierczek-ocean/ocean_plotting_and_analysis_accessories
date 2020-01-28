@@ -130,6 +130,23 @@ if option==12
 end
 %%
 
+%% 1st to 99th percentile range
+if option==13
+    ind1 = ceil(len*0.01);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+%% 1st to 99th percentile range
+if option==14
+    ind1 = ceil(len*0.02);
+    DIST2 = DIST(ind1:(len-ind1));
+    lb = DIST2(1);
+    ub = DIST2(end);
+end
+%%
+
 
 lbcb = lb;
 ubcb = ub;
