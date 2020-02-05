@@ -241,7 +241,7 @@ for t=1:12
 end % for t
 %% nitrate
 
-save Budgets12_60m
+save Budgets12_100m
 
 clear
 

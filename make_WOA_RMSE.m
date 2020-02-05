@@ -182,9 +182,16 @@ end
 do_woa_rmse3 = zeros(12,57,2);
 do_woa_rmse6 = zeros(12,57,2);
 do_woa_rmse12 = zeros(12,57,2);
-no3_woa_rmse3 = zeros(12,34,2);
-no3_woa_rmse6 = zeros(12,34,2);
-no3_woa_rmse12 = zeros(12,34,2);
+no3_woa_rmse3 = zeros(12,43,2);
+no3_woa_rmse6 = zeros(12,43,2);
+no3_woa_rmse12 = zeros(12,43,2);
+
+do_woa_sd3 = zeros(12,57);
+do_woa_sd6 = zeros(12,57);
+do_woa_sd12 = zeros(12,57);
+no3_woa_sd3 = zeros(12,43);
+no3_woa_sd6 = zeros(12,43);
+no3_woa_sd12 = zeros(12,43);
 
 for ii=1:12
     for jj=1:43
@@ -193,36 +200,42 @@ for ii=1:12
         n = length(temp);
         do_woa_rmse3(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse3(ii,jj,2) = n;
+        do_woa_sd3(ii,jj) = std(temp,0);
         
         temp = do_woa_misfit6(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         do_woa_rmse6(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse6(ii,jj,2) = n;
+        do_woa_sd6(ii,jj) = std(temp,0);
         
         temp = do_woa_misfit12(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         do_woa_rmse12(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse12(ii,jj,2) = n;
+        do_woa_sd12(ii,jj) = std(temp,0);
         
         temp = no3_woa_misfit3(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         no3_woa_rmse3(ii,jj,1) = norm(temp,2)./sqrt(n);
         no3_woa_rmse3(ii,jj,2) = n;
+        no3_woa_sd3(ii,jj) = std(temp,0);
         
         temp = no3_woa_misfit6(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         no3_woa_rmse6(ii,jj,1) = norm(temp,2)./sqrt(n);
         no3_woa_rmse6(ii,jj,2) = n;
+        no3_woa_sd6(ii,jj) = std(temp,0);
         
         temp = no3_woa_misfit12(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         no3_woa_rmse12(ii,jj,1) = norm(temp,2)./sqrt(n);
         no3_woa_rmse12(ii,jj,2) = n;
+        no3_woa_sd12(ii,jj) = std(temp,0);
     end
     for jj=44:57
         temp = do_woa_misfit3(:,:,jj,ii);
@@ -230,18 +243,21 @@ for ii=1:12
         n = length(temp);
         do_woa_rmse3(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse3(ii,jj,2) = n;
+        do_woa_sd3(ii,jj) = std(temp,0);
         
         temp = do_woa_misfit6(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         do_woa_rmse6(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse6(ii,jj,2) = n;
+        do_woa_sd6(ii,jj) = std(temp,0);
         
         temp = do_woa_misfit12(:,:,jj,ii);
         temp = temp(isnan(temp)==0);
         n = length(temp);
         do_woa_rmse12(ii,jj,1) = norm(temp,2)./sqrt(n);
         do_woa_rmse12(ii,jj,2) = n;
+        do_woa_sd12(ii,jj) = std(temp,0);
     end
     
 end
