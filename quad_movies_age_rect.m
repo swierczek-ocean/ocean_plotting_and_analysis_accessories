@@ -51,7 +51,7 @@ temp122 = AGE65_Series122(:,:,1)./scale122;
 temp122(temp122==0) = NaN;
 
 figure()
-set(gcf, 'Position', [1, 1, 1500, 900])
+set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
 
 subplot(2,2,1)

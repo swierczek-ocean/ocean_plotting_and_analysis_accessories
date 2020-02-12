@@ -44,6 +44,9 @@ for ii=1:nx
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
+        if hFacC(ii,jj,21)<1
+            hFacC_ind(ii,jj,:) = 0;
+        end
     end
 end
 
@@ -92,93 +95,93 @@ for ii=1:365
     charstate = [strs,'diag_state.',num2str(48*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_theta_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_theta_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_salt_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_salt_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_uvel_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_uvel_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_vvel_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_vvel_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_wvel_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_wvel_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_phihyd_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phihyd_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_drhodr_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_drhodr_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     charbgc = [strs,'diag_bgc.',num2str(48*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_carbon_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_carbon_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_alk_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_alk_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_oxygen_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_oxygen_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_nitrate_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_nitrate_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_phosphate_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phosphate_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_iron_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_iron_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_don_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_don_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',8);
     temp = temp(x,y,z).*areaTop;
-    vert_dop_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_dop_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',9);
     temp = temp(x,y,z).*areaTop;
-    vert_phyto_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phyto_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',10);
     temp = temp(x,y,z).*areaTop;
-    vert_age_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_age_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',11);
     temp = temp(x,y,z).*areaTop;
-    vert_ph_3(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_ph_3(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
 end
 
@@ -230,6 +233,9 @@ for ii=1:nx
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
+        if hFacC(ii,jj,21)<1
+            hFacC_ind(ii,jj,:) = 0;
+        end
     end
 end
 
@@ -278,93 +284,93 @@ for ii=1:365
     charstate = [strs,'diag_state.',num2str(72*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_theta_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_theta_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_salt_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_salt_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_uvel_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_uvel_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_vvel_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_vvel_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_wvel_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_wvel_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_phihyd_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phihyd_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_drhodr_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_drhodr_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     charbgc = [strs,'diag_bgc.',num2str(72*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_carbon_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_carbon_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_alk_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_alk_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_oxygen_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_oxygen_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_nitrate_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_nitrate_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_phosphate_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phosphate_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_iron_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_iron_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_don_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_don_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',8);
     temp = temp(x,y,z).*areaTop;
-    vert_dop_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_dop_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',9);
     temp = temp(x,y,z).*areaTop;
-    vert_phyto_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phyto_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',10);
     temp = temp(x,y,z).*areaTop;
-    vert_age_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_age_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',11);
     temp = temp(x,y,z).*areaTop;
-    vert_ph_6(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_ph_6(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
 end
 
@@ -416,6 +422,9 @@ for ii=1:nx
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
+        if hFacC(ii,jj,41)<1
+            hFacC_ind(ii,jj,:) = 0;
+        end
     end
 end
 
@@ -464,93 +473,93 @@ for ii=1:365
     charstate = [strs,'diag_state.',num2str(360*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_theta_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_theta_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_salt_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_salt_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_uvel_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_uvel_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_vvel_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_vvel_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_wvel_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_wvel_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_phihyd_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phihyd_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charstate,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_drhodr_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_drhodr_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     charbgc = [strs,'diag_bgc.',num2str(360*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     temp = temp(x,y,z).*areaTop;
-    vert_carbon_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_carbon_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',2);
     temp = temp(x,y,z).*areaTop;
-    vert_alk_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_alk_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',3);
     temp = temp(x,y,z).*areaTop;
-    vert_oxygen_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_oxygen_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',4);
     temp = temp(x,y,z).*areaTop;
-    vert_nitrate_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_nitrate_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',5);
     temp = temp(x,y,z).*areaTop;
-    vert_phosphate_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phosphate_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',6);
     temp = temp(x,y,z).*areaTop;
-    vert_iron_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_iron_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',7);
     temp = temp(x,y,z).*areaTop;
-    vert_don_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_don_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',8);
     temp = temp(x,y,z).*areaTop;
-    vert_dop_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_dop_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',9);
     temp = temp(x,y,z).*areaTop;
-    vert_phyto_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_phyto_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',10);
     temp = temp(x,y,z).*areaTop;
-    vert_age_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_age_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
     
     temp = rdmds(charbgc,'rec',11);
     temp = temp(x,y,z).*areaTop;
-    vert_ph_12(:,ii) = sum(temp,[1,2])./areaBox;
+    vert_ph_12(:,ii) = squeeze(sum(temp,[1,2]))./areaBox;
     clear temp
 end
 

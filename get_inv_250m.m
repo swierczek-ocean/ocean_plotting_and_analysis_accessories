@@ -84,26 +84,32 @@ for ii=1:365
     charstate = [strs3,'diag_state.',num2str(48*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     Heat_250m_TS_3(:,:,ii) = sum(temp(:,:,1:22).*volume3,3)./depth3;
+    clear temp
     
     charstate = [strs6,'diag_state.',num2str(72*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     Heat_250m_TS_6(:,:,ii) = sum(temp(:,:,1:22).*volume6,3)./depth6;
+    clear temp
     
     charstate = [strs12,'diag_state.',num2str(360*(ii+31),'%010.f')];
     temp = rdmds(charstate,'rec',1);
     Heat_250m_TS_12(:,:,ii) = sum(temp(:,:,1:44).*volume12,3)./depth12;
+    clear temp
     
     charbgc = [strs3,'diag_bgc.',num2str(48*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     Carbon_250m_TS_3(:,:,ii) = sum(temp(:,:,1:22).*volume3,3)./depth3;
+    clear temp
     
     charbgc = [strs6,'diag_bgc.',num2str(72*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     Carbon_250m_TS_6(:,:,ii) = sum(temp(:,:,1:22).*volume6,3)./depth6;
+    clear temp
     
     charbgc = [strs12,'diag_bgc.',num2str(360*(ii+31),'%010.f')];
     temp = rdmds(charbgc,'rec',1);
     Carbon_250m_TS_12(:,:,ii) = sum(temp(:,:,1:44).*volume12,3)./depth12;
+    clear temp
 end
 
 for ii=1:192

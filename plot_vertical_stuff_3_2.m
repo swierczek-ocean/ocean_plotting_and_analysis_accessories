@@ -20,6 +20,20 @@ vert_age_3 = normalize_age(vert_age_3);
 vert_age_6 = normalize_age(vert_age_6);
 vert_age_12 = normalize_age(vert_age_12);
 
+vert_wvel_3 = 100*86400.*vert_wvel_3;
+vert_uvel_3 = 100*86400.*vert_uvel_3;
+vert_vvel_3 = 100*86400.*vert_vvel_3;
+vert_wvel_6 = 100*86400.*vert_wvel_6;
+vert_uvel_6 = 100*86400.*vert_uvel_6;
+vert_vvel_6 = 100*86400.*vert_vvel_6;
+vert_wvel_12 = 100*86400.*vert_wvel_12;
+vert_uvel_12 = 100*86400.*vert_uvel_12;
+vert_vvel_12 = 100*86400.*vert_vvel_12;
+
+
+
+
+
 %% plot
 yfull = [-6000 15];
 y500 = [-500 10];
@@ -29,8 +43,6 @@ y250 = [-255 10];
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-
-
 subplot(1,2,1)
 h7 = plot(mean(vert_theta_3,2),RC3,'LineWidth',lw,'Color',Color(c3,:));
 hold on
@@ -387,7 +399,7 @@ h9 = plot(mean(vert_wvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
 title('mean vertical velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
@@ -406,7 +418,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
 title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
 acc_movie_w
@@ -429,7 +441,7 @@ xline(0)
 yline(0)
 grid on
 title('mean vertical velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
@@ -449,7 +461,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
 acc_movie_w
@@ -472,7 +484,7 @@ xline(0)
 yline(0)
 grid on
 title('mean vertical velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
@@ -492,7 +504,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
 acc_movie_w
@@ -514,7 +526,7 @@ xline(0)
 yline(0)
 grid on
 title('mean vertical velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y250)
@@ -534,7 +546,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y250)
 acc_movie_w
@@ -731,7 +743,7 @@ h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
 title('mean zonal velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 xlim([-0.01 0.12])
 ylim(yfull)
@@ -750,7 +762,7 @@ plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
 title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
 acc_movie_w
@@ -773,7 +785,7 @@ h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('mean zonal velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
@@ -793,7 +805,7 @@ plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
 acc_movie_w
@@ -816,7 +828,7 @@ h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('mean zonal velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
@@ -836,7 +848,7 @@ plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
 acc_movie_w
@@ -862,7 +874,7 @@ h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
 title('mean meridional velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 xlim([-0.005 0.04])
 ylim(yfull)
@@ -881,7 +893,7 @@ plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
 title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
 acc_movie_w
@@ -904,7 +916,7 @@ h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('mean meridional velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
@@ -924,7 +936,7 @@ plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
 acc_movie_w
@@ -947,7 +959,7 @@ h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('mean meridional velocity','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
@@ -967,7 +979,7 @@ plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
 grid on
 title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
-xlabel('[m/s]')
+xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
 acc_movie_w

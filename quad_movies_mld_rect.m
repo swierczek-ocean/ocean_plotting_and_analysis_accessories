@@ -179,9 +179,9 @@ nlvls = 201;
 z = linspace(lb,ub,nlvls);
 z = [z,2000];
 
-temp32 = MLD_Series32(:,:,1);
-temp62 = MLD_Series62(:,:,1);
-temp122 = MLD_Series122(:,:,1);
+mld32 = MLD_Series32(:,:,1);
+mld62 = MLD_Series62(:,:,1);
+mld122 = MLD_Series122(:,:,1);
 
 figure()
 set(gcf, 'Position', [1, 1, 1500, 900])
@@ -193,7 +193,7 @@ axis off
 
 
 ax2 = subplot(2,2,2);
-contourf(XC3,YC3,-temp32,'LineStyle','none','LevelList',z);
+contourf(XC3,YC3,-mld32,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,9),'Color','k')
 axis(inside_coords)
@@ -206,7 +206,7 @@ acc_quad_plots_v13
 hold off
 
 ax3 = subplot(2,2,3);
-contourf(XC6,YC6,-temp62,'LineStyle','none','LevelList',z);
+contourf(XC6,YC6,-mld62,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,9),'Color','k')
 axis(inside_coords)
@@ -219,7 +219,7 @@ acc_quad_plots_v14
 hold off
 
 ax4 = subplot(2,2,4);
-contourf(XC12,YC12,-temp122,'LineStyle','none','LevelList',z);
+contourf(XC12,YC12,-mld122,'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,9),'Color','k')
 axis(inside_coords)
@@ -242,9 +242,9 @@ writeVideo(vidObj, getframe(gcf));
 for ii=2:396
     numdate = numdate + 1;
     
-    temp32 = MLD_Series32(:,:,ii);
-    temp62 = MLD_Series62(:,:,ii);
-    temp122 = MLD_Series122(:,:,ii);
+    mld32 = MLD_Series32(:,:,ii);
+    mld62 = MLD_Series62(:,:,ii);
+    mld122 = MLD_Series122(:,:,ii);
     
     subplot(2,2,1)
     delete(ht)
@@ -252,7 +252,7 @@ for ii=2:396
     axis off
     
     ax2 = subplot(2,2,2);
-    contourf(XC3,YC3,-temp32,'LineStyle','none','LevelList',z);
+    contourf(XC3,YC3,-mld32,'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,9),'Color','k')
     axis(inside_coords)
@@ -265,7 +265,7 @@ for ii=2:396
     hold off
     
     ax3 = subplot(2,2,3);
-    contourf(XC6,YC6,-temp62,'LineStyle','none','LevelList',z);
+    contourf(XC6,YC6,-mld62,'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,9),'Color','k')
     axis(inside_coords)
@@ -278,7 +278,7 @@ for ii=2:396
     hold off
     
     ax4 = subplot(2,2,4);
-    contourf(XC12,YC12,-temp122,'LineStyle','none','LevelList',z);
+    contourf(XC12,YC12,-mld122,'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,9),'Color','k')
     axis(inside_coords)

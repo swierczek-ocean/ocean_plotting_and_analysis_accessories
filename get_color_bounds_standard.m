@@ -18,7 +18,7 @@ end
 
 %% 1st to 99th percentile range
 if option==2
-    ind1 = ceil(len*0.006);
+    ind1 = ceil(len*0.01);
     DIST2 = DIST(ind1:(len-ind1));
     lb = DIST2(1);
     ub = DIST2(end);

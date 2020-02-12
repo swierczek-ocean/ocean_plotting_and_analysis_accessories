@@ -1,5 +1,5 @@
 #!/bin/bash
-#PBS -N ADVr_TS
+#PBS -N SST
 #PBS -W group_list=jrussell
 #PBS -q standard
 #PBS -m bea
@@ -12,4 +12,4 @@ module load matlab
 
 cd /rsgrps/jrussell/swierczek/2020_02_February_analysis/
 
-matlab -nodisplay -nosplash < get_vert_flux_TS.m > output_advr_TS.txt
+matlab -nodisplay -nosplash < get_sst_stdev.m > output_sst.txt

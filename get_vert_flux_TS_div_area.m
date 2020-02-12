@@ -35,15 +35,20 @@ hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
 [nx,ny,nz] = size(hFacC);
 
-parfor ii=1:nx
+for ii=1:nx
     for jj=1:ny
         for kk=1:nz
             if hFacC(ii,jj,kk)>0
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
+        if hFacC(ii,jj,21)<1
+            hFacC_ind(ii,jj,:) = 0;
+        end
     end
 end
+
+
 
 dz = permute(repmat(DRF(z),[1,nx,ny]),[2,3,1]).*hFacC;
 
@@ -93,8 +98,8 @@ for ii=1:12
     temp2 = rdmds(charheat,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_heat_adv_3(:,ii) = cp_oce*rho*sum(temp1,[1,2])./areaBox;
-    vert_heat_dif_3(:,ii) = cp_oce*rho*sum(temp2,[1,2])./areaBox;
+    vert_heat_adv_3(:,ii) = cp_oce*rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_heat_dif_3(:,ii) = cp_oce*rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charsalt = [strb,'diag_S_budget.',num2str(1460*(ii+1),'%010.f')];
@@ -102,8 +107,8 @@ for ii=1:12
     temp2 = rdmds(charsalt,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_salt_adv_3(:,ii) = rho*sum(temp1,[1,2])./areaBox;
-    vert_salt_dif_3(:,ii) = rho*sum(temp2,[1,2])./areaBox;
+    vert_salt_adv_3(:,ii) = rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_salt_dif_3(:,ii) = rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charcarbon = [strb,'diag_dic_budget.',num2str(1460*(ii+1),'%010.f')];
@@ -111,8 +116,8 @@ for ii=1:12
     temp2 = rdmds(charcarbon,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_carbon_adv_3(:,ii) = ty*12.0107*sum(temp1,[1,2])./areaBox;
-    vert_carbon_dif_3(:,ii) = ty*12.0107*sum(temp2,[1,2])./areaBox;
+    vert_carbon_adv_3(:,ii) = ty*12.0107*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_carbon_dif_3(:,ii) = ty*12.0107*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charoxygen = [strb,'diag_o2_budget.',num2str(1460*(ii+1),'%010.f')];
@@ -120,8 +125,8 @@ for ii=1:12
     temp2 = rdmds(charoxygen,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_oxygen_adv_3(:,ii) = ty*15.9994*sum(temp1,[1,2])./areaBox;
-    vert_oxygen_dif_3(:,ii) = ty*15.9994*sum(temp2,[1,2])./areaBox;
+    vert_oxygen_adv_3(:,ii) = ty*15.9994*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_oxygen_dif_3(:,ii) = ty*15.9994*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charnitrate = [strb,'diag_no3_budget.',num2str(1460*(ii+1),'%010.f')];
@@ -129,8 +134,8 @@ for ii=1:12
     temp2 = rdmds(charnitrate,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_nitrate_adv_3(:,ii) = ty*14.0067*sum(temp1,[1,2])./areaBox;
-    vert_nitrate_dif_3(:,ii) = ty*14.0067*sum(temp2,[1,2])./areaBox;
+    vert_nitrate_adv_3(:,ii) = ty*14.0067*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_nitrate_dif_3(:,ii) = ty*14.0067*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
 end
 
@@ -172,12 +177,15 @@ hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
 [nx,ny,nz] = size(hFacC);
 
-parfor ii=1:nx
+for ii=1:nx
     for jj=1:ny
         for kk=1:nz
             if hFacC(ii,jj,kk)>0
                 hFacC_ind(ii,jj,kk) = 1;
             end
+        end
+        if hFacC(ii,jj,21)<1
+            hFacC_ind(ii,jj,:) = 0;
         end
     end
 end
@@ -228,8 +236,8 @@ for ii=1:12
     temp2 = rdmds(charheat,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_heat_adv_6(:,ii) = cp_oce*rho*sum(temp1,[1,2])./areaBox;
-    vert_heat_dif_6(:,ii) = cp_oce*rho*sum(temp2,[1,2])./areaBox;
+    vert_heat_adv_6(:,ii) = cp_oce*rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_heat_dif_6(:,ii) = cp_oce*rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charsalt = [strb,'diag_S_budget.',num2str(2190*(ii+1),'%010.f')];
@@ -237,8 +245,8 @@ for ii=1:12
     temp2 = rdmds(charsalt,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_salt_adv_6(:,ii) = rho*sum(temp1,[1,2])./areaBox;
-    vert_salt_dif_6(:,ii) = rho*sum(temp2,[1,2])./areaBox;
+    vert_salt_adv_6(:,ii) = rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_salt_dif_6(:,ii) = rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charcarbon = [strb,'diag_dic_budget.',num2str(2190*(ii+1),'%010.f')];
@@ -246,8 +254,8 @@ for ii=1:12
     temp2 = rdmds(charcarbon,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_carbon_adv_6(:,ii) = ty*12.0107*sum(temp1,[1,2])./areaBox;
-    vert_carbon_dif_6(:,ii) = ty*12.0107*sum(temp2,[1,2])./areaBox;
+    vert_carbon_adv_6(:,ii) = ty*12.0107*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_carbon_dif_6(:,ii) = ty*12.0107*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charoxygen = [strb,'diag_o2_budget.',num2str(2190*(ii+1),'%010.f')];
@@ -255,8 +263,8 @@ for ii=1:12
     temp2 = rdmds(charoxygen,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_oxygen_adv_6(:,ii) = ty*15.9994*sum(temp1,[1,2])./areaBox;
-    vert_oxygen_dif_6(:,ii) = ty*15.9994*sum(temp2,[1,2])./areaBox;
+    vert_oxygen_adv_6(:,ii) = ty*15.9994*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_oxygen_dif_6(:,ii) = ty*15.9994*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charnitrate = [strb,'diag_no3_budget.',num2str(2190*(ii+1),'%010.f')];
@@ -264,8 +272,8 @@ for ii=1:12
     temp2 = rdmds(charnitrate,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_nitrate_adv_6(:,ii) = ty*14.0067*sum(temp1,[1,2])./areaBox;
-    vert_nitrate_dif_6(:,ii) = ty*14.0067*sum(temp2,[1,2])./areaBox;
+    vert_nitrate_adv_6(:,ii) = ty*14.0067*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_nitrate_dif_6(:,ii) = ty*14.0067*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
 end
 
@@ -307,12 +315,15 @@ hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
 [nx,ny,nz] = size(hFacC);
 
-parfor ii=1:nx
+for ii=1:nx
     for jj=1:ny
         for kk=1:nz
             if hFacC(ii,jj,kk)>0
                 hFacC_ind(ii,jj,kk) = 1;
             end
+        end
+        if hFacC(ii,jj,41)<1
+            hFacC_ind(ii,jj,:) = 0;
         end
     end
 end
@@ -365,8 +376,8 @@ for ii=1:12
     temp2 = rdmds(charheat,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_heat_adv_12(:,ii) = cp_oce*rho*sum(temp1,[1,2])./areaBox;
-    vert_heat_dif_12(:,ii) = cp_oce*rho*sum(temp2,[1,2])./areaBox;
+    vert_heat_adv_12(:,ii) = cp_oce*rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_heat_dif_12(:,ii) = cp_oce*rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charsalt = [strb,'diag_S_budget.',num2str(10950*(ii+1),'%010.f')];
@@ -374,8 +385,8 @@ for ii=1:12
     temp2 = rdmds(charsalt,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_salt_adv_12(:,ii) = rho*sum(temp1,[1,2])./areaBox;
-    vert_salt_dif_12(:,ii) = rho*sum(temp2,[1,2])./areaBox;
+    vert_salt_adv_12(:,ii) = rho*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_salt_dif_12(:,ii) = rho*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charcarbon = [strb,'diag_dic_budget.',num2str(10950*(ii+1),'%010.f')];
@@ -383,8 +394,8 @@ for ii=1:12
     temp2 = rdmds(charcarbon,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_carbon_adv_12(:,ii) = ty*12.0107*sum(temp1,[1,2])./areaBox;
-    vert_carbon_dif_12(:,ii) = ty*12.0107*sum(temp2,[1,2])./areaBox;
+    vert_carbon_adv_12(:,ii) = ty*12.0107*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_carbon_dif_12(:,ii) = ty*12.0107*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charoxygen = [strb,'diag_o2_budget.',num2str(10950*(ii+1),'%010.f')];
@@ -392,8 +403,8 @@ for ii=1:12
     temp2 = rdmds(charoxygen,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_oxygen_adv_12(:,ii) = ty*15.9994*sum(temp1,[1,2])./areaBox;
-    vert_oxygen_dif_12(:,ii) = ty*15.9994*sum(temp2,[1,2])./areaBox;
+    vert_oxygen_adv_12(:,ii) = ty*15.9994*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_oxygen_dif_12(:,ii) = ty*15.9994*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
     
     charnitrate = [strb,'diag_no3_budget.',num2str(10950*(ii+1),'%010.f')];
@@ -401,8 +412,8 @@ for ii=1:12
     temp2 = rdmds(charnitrate,'rec',lvls(2));
     temp1 = temp1(x,y,z).*areaTop;
     temp2 = temp2(x,y,z).*areaTop;
-    vert_nitrate_adv_12(:,ii) = ty*14.0067*sum(temp1,[1,2])./areaBox;
-    vert_nitrate_dif_12(:,ii) = ty*14.0067*sum(temp2,[1,2])./areaBox;
+    vert_nitrate_adv_12(:,ii) = ty*14.0067*squeeze(sum(temp1,[1,2]))./areaBox;
+    vert_nitrate_dif_12(:,ii) = ty*14.0067*squeeze(sum(temp2,[1,2]))./areaBox;
     clear temp
 end
 

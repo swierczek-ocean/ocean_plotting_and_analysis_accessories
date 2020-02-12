@@ -15,3 +15,4 @@ bottom = outerpos(2) + ti(2) + 0.02;
 ax_width = outerpos(3) - ti(1) - ti(3) - 0.05;
 ax_height = outerpos(4) - ti(2) - ti(4) - 0.03;
 ax.Position = [left bottom ax_width ax_height];
+set(gcf,'color',Color(36,:)); 
