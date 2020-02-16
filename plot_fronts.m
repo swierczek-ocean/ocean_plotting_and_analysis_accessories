@@ -67,7 +67,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],'Orsi',' 1/3',' 1/6',' 1/12','Location','southe
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r300','front_locations','-dpng')
+print('-r100','front_locations','-dpng')
 % close all
 
 

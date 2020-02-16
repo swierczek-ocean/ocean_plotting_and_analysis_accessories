@@ -62,7 +62,7 @@ x4 = -70.*ones(1,nn);
 cm = flipud(acc_colormap('cmo_tempo'));
 z = 0:0.02:1.12;
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
@@ -71,7 +71,7 @@ m_proj('albers','longitudes',[-69.5 -9.8], ...
 m_contourf(XC12,YC12,speed12_2017,'LineStyle','none','LevelList',z)
 hold on
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -148,10 +148,10 @@ m_text(-17,-39,'151.7','Color','k','FontSize',19,...
 m_text(-17,-40.85,'157.0','Color','k','FontSize',19,...
     'BackgroundColor','w','EdgeColor',Color(c12,:),'LineWidth',elw)
 %% 
-m_grid('fontsize',16);
-title('volume budgets [Sv]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
-% c = colorbar('southoutside','FontSize',16);
+m_grid('fontsize',20);
+title('volume budgets [Sv]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
+% c = colorbar('southoutside','FontSize',22);
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
@@ -160,19 +160,21 @@ close all
 %% volume
 
 %% heat
-cm = acc_colormap('es_coolwarm');
-z = -1.05:0.05:22.7;
+load tflx12
+cm = acc_colormap('cmo_balance');
+z = -126:2:126;
+z = [-200,z,200];
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
            'latitudes',[-58.7 -31.1]);
 
-m_contourf(XC12,YC12,theta12_2017,'LineStyle','none','LevelList',z)
+m_contourf(XC12,YC12,TFLUX_122_JD_avg,'LineStyle','none','LevelList',z)
 hold on
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -272,9 +274,9 @@ m_text(-45,-45.85,'0.025','Color','k','FontSize',19,...
 %% 
 
 
-m_grid('fontsize',16);
-title('heat budgets [PW]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
+m_grid('fontsize',20);
+title('heat budgets [PW]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
@@ -287,7 +289,7 @@ cm = acc_colormap('cmo_haline');
 z = 32.8:0.05:36.8;
 z = [20,z];
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
@@ -297,7 +299,7 @@ m_contourf(XC12,YC12,salt12_2017,'LineStyle','none','LevelList',z)
 hold on
 caxis([z(2) z(end)])
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -397,9 +399,9 @@ m_text(-45,-45.85,'3.14e6','Color','k','FontSize',19,...
 %% 
 
 
-m_grid('fontsize',16);
-title('salt budgets [kg/s]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
+m_grid('fontsize',20);
+title('salt budgets [kg/s]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
@@ -412,7 +414,7 @@ cm = flipud(acc_colormap('cmo_deep'));
 z = 2.1:0.002:2.27;
 z = [1.5,z];
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
@@ -422,7 +424,7 @@ m_contourf(XC12,YC12,dic12_2017,'LineStyle','none','LevelList',z)
 hold on
 caxis([z(2) z(end)])
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -523,9 +525,9 @@ m_text(-45,-45.85,'0.229','Color','k','FontSize',19,...
 %% 
 
 
-m_grid('fontsize',16);
-title('DIC budgets [Gt C/yr]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
+m_grid('fontsize',20);
+title('DIC budgets [Gt C/yr]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
@@ -537,7 +539,7 @@ close all
 cm = acc_colormap('cmo_dense');
 z = 0.21:0.001:0.36;
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
@@ -547,7 +549,7 @@ m_contourf(XC12,YC12,o212_2017,'LineStyle','none','LevelList',z)
 hold on
 caxis([z(2) z(end)])
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -648,9 +650,9 @@ m_text(-45,-45.85,'0.555','Color','k','FontSize',19,...
 %% 
 
 
-m_grid('fontsize',16);
-title('O2 budgets [Gt O/yr]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
+m_grid('fontsize',20);
+title('O2 budgets [Gt O/yr]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 
@@ -662,7 +664,7 @@ close all
 cm = acc_colormap('cmo_speed');
 z = 0:0.0001:0.03;
 
-set(gcf, 'Position', [1, 1, 1300, 850])
+set(gcf, 'Position', [1, 1, 1600, 900])
 
 colormap(cm)
 m_proj('albers','longitudes',[-69.5 -9.8], ...
@@ -672,7 +674,7 @@ m_contourf(XC12,YC12,no312_2017,'LineStyle','none','LevelList',z)
 hold on
 caxis([z(2) z(end)])
 m_contour(XC12,YC12,1.*isnan(speed12_2017),'k')
-m_grid('fontsize',16);
+m_grid('fontsize',20);
 
 m_line(x4,y3,'Color','k','LineWidth',lw+3)
 m_line(x1,y1,'Color','k','LineWidth',lw+3)
@@ -751,9 +753,9 @@ m_text(-17,-40.85,'1.91','Color','k','FontSize',19,...
 %% 
 
 
-m_grid('fontsize',16);
-title('NO3 budgets [Gt N/yr]','FontWeight','Normal','FontSize',19)
-legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',16)
+m_grid('fontsize',20);
+title('NO3 budgets [Gt N/yr]','FontWeight','Normal','FontSize',26)
+legend([h1(1),h2(1),h3(1)],' 1/3',' 1/6',' 1/12','Location','southeast','FontSize',22)
 acc_mplots
 hold off
 set(gcf,'InvertHardCopy','off'); 

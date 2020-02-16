@@ -13,7 +13,7 @@ mask(mask<0) = 0;
 
 inside_coords = [290.5 350.2 -58.7 -32];
 numdate = datenum('01012017','mmddyyyy');
-cm = flipud(acc_colormap('bc_dawn'));
+cm = acc_colormap('cmo_thermal');
 lb = 0;
 ub = 26;
 z = linspace(lb,ub,100);
@@ -31,10 +31,10 @@ cbar = colorbar('eastoutside');
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('RSS OISST [deg C]','FontWeight','Normal','FontSize',18)
 acc_movie
+title('RSS OISST from TMI, AMSR-E, AMSR-2, WindSat, GMI [deg C]','FontWeight','Normal','FontSize',28)
 acc_plots
-text(291.7,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',25,'Color','k')
+text(291.7,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',25,'Color','w')
 hold off
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
@@ -55,9 +55,9 @@ for ii=2:365
     axis(inside_coords)
     xtickformat('degrees')
     ytickformat('degrees')
-    title('RSS OISST [deg C]','FontWeight','Normal','FontSize',18)
     acc_movie
-    text(291.7,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',25,'Color','k')
+    title('RSS OISST from TMI, AMSR-E, AMSR-2, WindSat, GMI [deg C]','FontWeight','Normal','FontSize',28)
+    text(291.7,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',25,'Color','w')
     hold off
     
     drawnow()

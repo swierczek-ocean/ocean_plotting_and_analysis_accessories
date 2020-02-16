@@ -112,7 +112,7 @@ text(291.3,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',28,'Color','w')
 hold off
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
-vidObj = VideoWriter('AVISO_currents.avi');
+vidObj = VideoWriter('AVISO_currents_2.avi');
 vidObj.Quality = 100;
 vidObj.FrameRate = 18;
 open(vidObj);

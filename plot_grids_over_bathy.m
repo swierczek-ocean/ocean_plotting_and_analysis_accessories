@@ -50,6 +50,21 @@ for ii=230:240
     m_line([XG12(ii) XG12(ii)],[YG12(289) YG12(299)],'LineWidth',lw,'Color','w')
 end
 
+% m_vec(1,-14,-45,0,-3.2,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+% m_vec(1,-14,-45,0,3.2,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+% 
+% m_vec(1,-40,-32,-4.5,0,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+% m_vec(1,-40,-32,4.5,0,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+% 
+% m_vec(1,-40,-57,-3.5,0,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+% m_vec(1,-40,-57,3.5,0,'w','shaftwidth',7,...
+%     'headwidth',13,'headlength',12)
+
 m_grid('fontsize',22);
 title('Argentine Basin with 3 grids shown','FontWeight','Normal','FontSize',28)
 acc_mplots

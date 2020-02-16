@@ -27,6 +27,78 @@ clear *field* *MASK* mm nn ii jj hix hiy lox loy *Fac* str
 
 %% ETAN
 cm = acc_colormap('cmo_amp');
+
+
+[lb,ub,nlvls] = get_color_bounds_standard(ETAN_32_JD_std,...
+    ETAN_32_JD_std,ETAN_62_JD_std,ETAN_122_JD_std,option);
+nlvls = 67;
+lb = 0; 
+ub = 0.33;
+z = linspace(lb,ub,nlvls);
+z = [z,10];
+D_AVISO_JD_std(D_AVISO_JD_std>100) = NaN;
+
+figure()
+set(gcf, 'Position', [1, 1, 1600, 900])
+colormap(cm)
+ax1 = subplot(2,2,1);
+contourf(XCA,YCA,D_AVISO_JD_std,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+ytickformat('degrees')
+title('1/4 AVISO 2017 SSH st dev [m]','FontWeight','Normal','FontSize',25)
+acc_movie
+acc_quad_plots_v1
+hold off
+
+ax2 = subplot(2,2,2);
+contourf(XC3,YC3,ETAN_32_JD_std,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/3 2017 SSH st dev [m]','FontWeight','Normal','FontSize',25)
+acc_movie
+acc_quad_plots_v2
+hold off
+
+ax3 = subplot(2,2,3);
+contourf(XC6,YC6,ETAN_62_JD_std,'LineStyle','none','LevelList',z);
+hold on
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/6 2017 SSH st dev [m]','FontWeight','Normal','FontSize',25)
+acc_movie
+acc_quad_plots_v3
+hold off
+
+ax4 = subplot(2,2,4);
+contourf(XC12,YC12,ETAN_122_JD_std,'LineStyle','none','LevelList',z);
+hold on
+cbar = colorbar('eastoutside');
+set(cbar,'XLim',[lb ub]);
+contour(XCm,YCm,mask(:,:,1),'Color','k')
+caxis([lb ub])
+axis(inside_coords)
+xtickformat('degrees')
+ytickformat('degrees')
+title('1/12 2017 SSH st dev [m]','FontWeight','Normal','FontSize',25)
+acc_movie
+acc_quad_plots_v4
+hold off
+set(gcf,'InvertHardCopy','off'); print('-r300','AVISO_ETAN_STD_2017','-dpng')
+close all
+%% END ETAN
+
+%% ETAN
+cm = acc_colormap('cmo_amp');
 % 
 
 [lb,ub,nlvls] = get_color_bounds_standard(ETAN_34_JJA_std,...
@@ -45,7 +117,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JJA 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -58,7 +130,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -71,7 +143,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -86,7 +158,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JJA 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -114,7 +186,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JAS 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -127,7 +199,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -140,7 +212,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -155,7 +227,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JAS 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -183,7 +255,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -196,7 +268,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -209,7 +281,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -224,7 +296,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JJASON 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -252,7 +324,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -265,7 +337,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -278,7 +350,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -293,7 +365,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JASOND 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -321,7 +393,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO DN 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -334,7 +406,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -347,7 +419,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -362,80 +434,11 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING DN 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
 set(gcf,'InvertHardCopy','off'); print('-r300','AVISO_ETAN_STD_09DN','-dpng')
-close all
-%% END ETAN
-
-%% ETAN
-cm = acc_colormap('cmo_amp');
-
-
-[lb,ub,nlvls] = get_color_bounds_standard(ETAN_32_JD_std,...
-    ETAN_32_JD_std,ETAN_62_JD_std,ETAN_122_JD_std,option);
-
-z = linspace(lb,ub,nlvls);
-
-
-figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
-colormap(cm)
-ax1 = subplot(2,2,1);
-contourf(XCA,YCA,D_AVISO_JD_std,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-ytickformat('degrees')
-title('1/4 AVISO JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v1
-hold off
-
-ax2 = subplot(2,2,2);
-contourf(XC3,YC3,ETAN_32_JD_std,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/3 MITgcm+BLING JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v2
-hold off
-
-ax3 = subplot(2,2,3);
-contourf(XC6,YC6,ETAN_62_JD_std,'LineStyle','none','LevelList',z);
-hold on
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/6 MITgcm+BLING JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v3
-hold off
-
-ax4 = subplot(2,2,4);
-contourf(XC12,YC12,ETAN_122_JD_std,'LineStyle','none','LevelList',z);
-hold on
-cbar = colorbar('eastoutside');
-set(cbar,'XLim',[lb ub]);
-contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
-axis(inside_coords)
-xtickformat('degrees')
-ytickformat('degrees')
-title('1/12 MITgcm+BLING JD 2017 SSH stdev','FontWeight','Normal','FontSize',16)
-acc_movie
-acc_quad_plots_v4
-hold off
-set(gcf,'InvertHardCopy','off'); print('-r300','AVISO_ETAN_STD_10JD','-dpng')
 close all
 %% END ETAN
 
@@ -459,7 +462,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO DJF 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -472,7 +475,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -485,7 +488,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -500,7 +503,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING DJF 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -528,7 +531,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JFM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -541,7 +544,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -554,7 +557,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -569,7 +572,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JFM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -597,7 +600,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -610,7 +613,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -623,7 +626,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -638,7 +641,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING JFMAMJ 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off
@@ -666,7 +669,7 @@ contour(XCm,YCm,mask(:,:,1),'Color','k')
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/4 AVISO DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/4 AVISO DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -679,7 +682,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/3 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -692,7 +695,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/6 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -707,7 +710,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',16)
+title('1/12 MITgcm+BLING DJFMAM 2017 SSH stdev','FontWeight','Normal','FontSize',25)
 acc_movie
 acc_quad_plots_v4
 hold off

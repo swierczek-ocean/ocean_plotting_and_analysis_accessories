@@ -1,4 +1,4 @@
-function acc_6plots(n,axn,cm,lbcb,ubcb)
+function acc_6plots_bal(n,axn,cm,lbcb,ubcb)
 %% plotting tool
 
 if n==1

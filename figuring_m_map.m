@@ -3,8 +3,12 @@ close all
 clc
 tic()
 
+acc_colors
 nn = 200;
-x1 = linspace(-70.15,-15.15,nn);
+x1 = linspace(-65,-15.15,nn);
+x5 = linspace(-65.15,-15.15,nn);
+x6 = linspace(-53.5,-15.15,nn);
+x7 = linspace(-53.65,-15.15,nn);
 y1 = -55.*ones(1,nn);
 y2 = -34.*ones(1,nn);
 x3 = -15.*ones(1,nn);
@@ -19,34 +23,46 @@ z = -6000:50:5000;
 cm = acc_colormap('cmo_topo');
 cm = cm(1:237,:);
 
+mx = XC12-360;
+my = YC12;
+
+my = my(1,:);
+mask = zeros(1201,1060);
+mask(Topo12>0) = 1;
+ylo = find(my>-55);
+yhi = find(my<-34);
+yind = intersect(ylo,yhi);
+my = YC12;
+mx = mx(:,yind);
+my = my(:,yind);
+mask = mask(:,yind);
 
 
-
-% set(gcf, 'Position', [1, 1, 1600, 900])
-% colormap(cm)
-% m_proj('albers','longitudes',[-71 -10], ...
-%            'latitudes',[-60 -30]);
-% m_contourf(XC12-360,YC12,Topo12,'LineStyle','none','LevelList',z)
-% hold on
-% % m_contour(conx,cony,cont200,'LineWidth',lw+3,'Color','k')
-% % m_contour(conx,cony,cont200,'LineWidth',lw,'Color','w')
+set(gcf, 'Position', [1, 1, 1600, 900])
+colormap(cm)
+m_proj('albers','longitudes',[-71 -10], ...
+           'latitudes',[-60 -30]);
+m_contourf(XC12-360,YC12,Topo12,'LineStyle','none','LevelList',z)
+hold on
+m_contour(mx,my,mask,'LineWidth',lw+3,'Color','k')
+m_contour(mx,my,mask,'LineWidth',lw,'Color','w')
 % m_line(x4,y3,'Color','k','LineWidth',lw+3)
-% m_line(x1,y1,'Color','k','LineWidth',lw+3)
-% m_line(x1,y2,'Color','k','LineWidth',lw+3)
-% m_line(x3,y4,'Color','k','LineWidth',lw+3)
-% 
+m_line(x1,y1,'Color','k','LineWidth',lw+3)
+m_line(x6,y2,'Color','k','LineWidth',lw+3)
+m_line(x3,y4,'Color','k','LineWidth',lw+3)
+
 % m_line(x4,y3,'Color','w','LineWidth',lw)
-% m_line(x2,y1,'Color','w','LineWidth',lw)
-% m_line(x2,y2,'Color','w','LineWidth',lw)
-% m_line(x3,y3,'Color','w','LineWidth',lw)
-% 
-% m_grid('fontsize',16);
-% cbar = colorbar('eastoutside');
-% cbar.FontSize = 16;
-% title('topography of Argentine Basin and surrounding area with budget box shown','FontWeight','Normal','FontSize',18)
-% acc_mplots
-% set(gcf,'InvertHardCopy','off');
-% print('-r200','AB_map_w_box','-dpng')
+m_line(x5,y1,'Color','w','LineWidth',lw)
+m_line(x7,y2,'Color','w','LineWidth',lw)
+m_line(x3,y3,'Color','w','LineWidth',lw)
+
+m_grid('fontsize',22);
+cbar = colorbar('eastoutside');
+cbar.FontSize = 20;
+title('Argentine Basin full budget box','FontWeight','Normal','FontSize',28)
+acc_mplots
+set(gcf,'InvertHardCopy','off');
+print('-r200','AB_map_w_box','-dpng')
 
 
 
@@ -97,10 +113,10 @@ m_line(x5,y1,'Color','w','LineWidth',lw)
 m_line(x7,y2,'Color','w','LineWidth',lw)
 m_line(x3,y3,'Color','w','LineWidth',lw)
 
-m_grid('fontsize',16);
+m_grid('fontsize',22);
 cbar = colorbar('eastoutside');
-cbar.FontSize = 16;
-title('topography of Argentine Basin and surrounding area with modified budget box shown','FontWeight','Normal','FontSize',18)
+cbar.FontSize = 20;
+title('Argentine Basin budget box','FontWeight','Normal','FontSize',28)
 acc_mplots
 set(gcf,'InvertHardCopy','off');
 print('-r200','AB_map_w_box_200m','-dpng')

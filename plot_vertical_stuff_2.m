@@ -34,12 +34,12 @@ hold on
 h8 = plot(mean(vert_theta_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_theta_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 grid on
-title('mean theta','FontWeight','Normal','FontSize',18)
+title('mean theta','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',18,'Location','southeast')
 acc_movie_w
 acc_4plots(1)
 hold off
@@ -50,7 +50,7 @@ hold on
 plot(std(vert_theta_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_theta_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 grid on
-title('theta st dev','FontWeight','Normal','FontSize',18)
+title('theta st dev','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 acc_movie_w
 acc_4plots(2)
@@ -62,10 +62,10 @@ hold on
 h8 = plot(mean(vert_salt_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_salt_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 grid on
-title('mean salinity','FontWeight','Normal','FontSize',18)
+title('mean salinity','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',18,'Location','southwest')
 acc_movie_w
 acc_4plots(3)
 hold off
@@ -76,7 +76,7 @@ hold on
 plot(std(vert_salt_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_salt_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 grid on
-title('salt st dev','FontWeight','Normal','FontSize',18)
+title('salt st dev','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 acc_movie_w
 acc_4plots(4)

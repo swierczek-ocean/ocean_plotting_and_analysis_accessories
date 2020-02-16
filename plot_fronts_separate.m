@@ -27,7 +27,7 @@ XCm = XCm - 360;
 
 acc_colors
 
-lw = 3.4;
+lw = 4;
 c3 = 55;
 c6 = 56;
 c12 = 57;
@@ -35,6 +35,45 @@ c12 = 57;
 z = -6000:25:5000;
 cm = acc_colormap('cmo_topo');
 cm = cm(1:237,:);
+
+STF_X = STF_X(60:200);
+STF_Y = STF_Y(60:200);
+SACCF_X = SACCF_X(200:700);
+SACCF_Y = SACCF_Y(200:700);
+
+
+set(gcf, 'Position', [1, 1, 1600, 900])
+
+colormap(cm)
+
+m_proj('albers','longitudes',[-71 -10], ...
+           'latitudes',[-60 -30]);
+m_contourf(XCt-360,YCt,Topo12+2,'LineStyle','none','LevelList',z)
+hold on
+m_contour(XCm,YCm,mask(:,:,1),'Color','k','LineWidth',lw-1)
+
+m_line(PF_X,PF_Y,'Color','w','LineWidth',lw+3);
+h3 = m_line(PF_X,PF_Y,'Color',Color(72,:),'LineWidth',lw);
+
+
+m_line(SAF_X,SAF_Y,'Color','w','LineWidth',lw+3);
+h2 = m_line(SAF_X,SAF_Y,'Color',Color(73,:),'LineWidth',lw);
+
+m_line(STF_X,STF_Y,'Color','w','LineWidth',lw+3);
+h1 = m_line(STF_X,STF_Y,'Color',Color(74,:),'LineWidth',lw);
+m_line(SBDY_X,SBDY_Y,'Color','w','LineWidth',lw+3);
+h5 = m_line(SBDY_X,SBDY_Y,'Color',Color(70,:),'LineWidth',lw);
+m_line(SACCF_X,SACCF_Y,'Color','w','LineWidth',lw+3);
+h4 = m_line(SACCF_X,SACCF_Y,'Color',Color(71,:),'LineWidth',lw);
+m_grid('fontsize',20);
+title('front locations','FontWeight','Normal','FontSize',28)
+legend([h1(1),h2(1),h3(1),h4(1),h5(1)],'STF','SAF','PF',...
+    'SACCF','SBDY','Location','southeast','FontSize',24,'Color',Color(91,:))
+acc_mplots
+hold off
+set(gcf,'InvertHardCopy','off'); 
+print('-r200','front_locations','-dpng')
+close all
 
 set(gcf, 'Position', [1, 1, 1600, 900])
 

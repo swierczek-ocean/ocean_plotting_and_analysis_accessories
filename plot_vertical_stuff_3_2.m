@@ -51,14 +51,14 @@ h9 = plot(mean(vert_theta_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean theta','FontWeight','Normal','FontSize',18)
+title('mean theta','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
 xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -71,7 +71,7 @@ plot(std(vert_theta_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('theta st dev','FontWeight','Normal','FontSize',18)
+title('theta st dev','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 xlim([-0.1 2])
 ylim(yfull)
@@ -94,14 +94,14 @@ h9 = plot(mean(vert_theta_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean theta','FontWeight','Normal','FontSize',18)
+title('mean theta','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
 xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -114,7 +114,7 @@ plot(std(vert_theta_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('theta st dev','FontWeight','Normal','FontSize',18)
+title('theta st dev','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 xlim([0 2])
 ylim(y1000)
@@ -137,14 +137,14 @@ h9 = plot(mean(vert_theta_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean theta','FontWeight','Normal','FontSize',18)
+title('mean theta','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
 xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -157,7 +157,7 @@ plot(std(vert_theta_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('theta st dev','FontWeight','Normal','FontSize',18)
+title('theta st dev','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 xlim([0 2])
 ylim(y500)
@@ -179,14 +179,14 @@ h9 = plot(mean(vert_theta_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean theta','FontWeight','Normal','FontSize',18)
+title('mean theta','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
 xlim([5.5 11.5])
 ylim(y250)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -199,7 +199,7 @@ plot(std(vert_theta_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('theta st dev','FontWeight','Normal','FontSize',18)
+title('theta st dev','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 xlim([0 2])
 ylim(y250)
@@ -225,14 +225,14 @@ h8 = plot(mean(vert_salt_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_salt_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean salinity','FontWeight','Normal','FontSize',18)
+title('mean salinity','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -244,7 +244,7 @@ plot(std(vert_salt_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_salt_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('salinity st dev','FontWeight','Normal','FontSize',18)
+title('salinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 xlim([-0.005 0.05])
 ylim(yfull)
@@ -267,14 +267,14 @@ h9 = plot(mean(vert_salt_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean salinity','FontWeight','Normal','FontSize',18)
+title('mean salinity','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -287,7 +287,7 @@ plot(std(vert_salt_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('salinity st dev','FontWeight','Normal','FontSize',18)
+title('salinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 % xlim([0 2])
 ylim(y1000)
@@ -310,14 +310,14 @@ h9 = plot(mean(vert_salt_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean salinity','FontWeight','Normal','FontSize',18)
+title('mean salinity','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -330,7 +330,7 @@ plot(std(vert_salt_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('salinity st dev','FontWeight','Normal','FontSize',18)
+title('salinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 % xlim([0 2])
 ylim(y500)
@@ -352,14 +352,14 @@ h9 = plot(mean(vert_salt_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean salinity','FontWeight','Normal','FontSize',18)
+title('mean salinity','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y250)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -372,7 +372,7 @@ plot(std(vert_salt_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('salinity st dev','FontWeight','Normal','FontSize',18)
+title('salinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[psu]')
 % xlim([0 2])
 ylim(y250)
@@ -398,14 +398,14 @@ h8 = plot(mean(vert_wvel_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_wvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('mean vertical velocity','FontWeight','Normal','FontSize',18)
+title('mean vertical velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -417,7 +417,7 @@ plot(std(vert_wvel_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
+title('vertical velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -440,14 +440,14 @@ h9 = plot(mean(vert_wvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical velocity','FontWeight','Normal','FontSize',18)
+title('mean vertical velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -460,7 +460,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
+title('vertical velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
@@ -483,14 +483,14 @@ h9 = plot(mean(vert_wvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical velocity','FontWeight','Normal','FontSize',18)
+title('mean vertical velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -503,7 +503,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
+title('vertical velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
@@ -525,14 +525,14 @@ h9 = plot(mean(vert_wvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical velocity','FontWeight','Normal','FontSize',18)
+title('mean vertical velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y250)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -545,7 +545,7 @@ plot(std(vert_wvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('vertical velocity st dev','FontWeight','Normal','FontSize',18)
+title('vertical velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y250)
@@ -570,14 +570,14 @@ h8 = plot(mean(vert_age_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_age_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean normalized age','FontWeight','Normal','FontSize',18)
+title('mean normalized age','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 xlim([0.625 1.01])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -589,7 +589,7 @@ plot(std(vert_age_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_age_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('normalized age st dev','FontWeight','Normal','FontSize',18)
+title('normalized age st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 xlim([-0.005 0.115])
 ylim(yfull)
@@ -612,14 +612,14 @@ h9 = plot(mean(vert_age_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean normalized age','FontWeight','Normal','FontSize',18)
+title('mean normalized age','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 xlim([0.625 1.01])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -632,7 +632,7 @@ plot(std(vert_age_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('normalized age st dev','FontWeight','Normal','FontSize',18)
+title('normalized age st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 xlim([-0.005 0.115])
 ylim(y1000)
@@ -655,14 +655,14 @@ h9 = plot(mean(vert_age_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean normalized age','FontWeight','Normal','FontSize',18)
+title('mean normalized age','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 xlim([0.625 1.01])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -675,7 +675,7 @@ plot(std(vert_age_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('normalized age st dev','FontWeight','Normal','FontSize',18)
+title('normalized age st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 xlim([-0.001 0.115])
 ylim(y500)
@@ -697,14 +697,14 @@ h9 = plot(mean(vert_age_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean normalized age','FontWeight','Normal','FontSize',18)
+title('mean normalized age','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 xlim([0.625 1])
 ylim(y250)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -717,7 +717,7 @@ plot(std(vert_age_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('normalized age st dev','FontWeight','Normal','FontSize',18)
+title('normalized age st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 % xlim([-0.001 0.115])
 ylim(y250)
@@ -742,14 +742,14 @@ h8 = plot(mean(vert_uvel_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('mean zonal velocity','FontWeight','Normal','FontSize',18)
+title('mean zonal velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 xlim([-0.01 0.12])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -761,7 +761,7 @@ plot(std(vert_uvel_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
+title('zonal velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -784,14 +784,14 @@ h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean zonal velocity','FontWeight','Normal','FontSize',18)
+title('mean zonal velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -804,7 +804,7 @@ plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
+title('zonal velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
@@ -827,14 +827,14 @@ h9 = plot(mean(vert_uvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean zonal velocity','FontWeight','Normal','FontSize',18)
+title('mean zonal velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -847,7 +847,7 @@ plot(std(vert_uvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('zonal velocity st dev','FontWeight','Normal','FontSize',18)
+title('zonal velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
@@ -873,14 +873,14 @@ h8 = plot(mean(vert_vvel_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('mean meridional velocity','FontWeight','Normal','FontSize',18)
+title('mean meridional velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 xlim([-0.005 0.04])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -892,7 +892,7 @@ plot(std(vert_vvel_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
+title('meridional velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -915,14 +915,14 @@ h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean meridional velocity','FontWeight','Normal','FontSize',18)
+title('mean meridional velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -935,7 +935,7 @@ plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
+title('meridional velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y1000)
@@ -958,14 +958,14 @@ h9 = plot(mean(vert_vvel_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean meridional velocity','FontWeight','Normal','FontSize',18)
+title('mean meridional velocity','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -978,7 +978,7 @@ plot(std(vert_vvel_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('meridional velocity st dev','FontWeight','Normal','FontSize',18)
+title('meridional velocity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[cm/day]')
 % xlim([0 2])
 ylim(y500)
@@ -1003,14 +1003,14 @@ h8 = plot(mean(vert_carbon_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_carbon_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',18)
+title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 ylabel('depth [m]')
 xlim([2.15 2.325])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1022,7 +1022,7 @@ plot(std(vert_carbon_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_carbon_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',18)
+title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 xlim([-0.001 0.013])
 ylim(yfull)
@@ -1045,14 +1045,14 @@ h9 = plot(mean(vert_carbon_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',18)
+title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1065,7 +1065,7 @@ plot(std(vert_carbon_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',18)
+title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1088,14 +1088,14 @@ h9 = plot(mean(vert_carbon_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',18)
+title('mean dissolved inorganic carbon','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1108,7 +1108,7 @@ plot(std(vert_carbon_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',18)
+title('dissolved inorganic carbon st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol C/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1133,14 +1133,14 @@ h8 = plot(mean(vert_oxygen_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_oxygen_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean dissolved oxygen','FontWeight','Normal','FontSize',18)
+title('mean dissolved oxygen','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 ylabel('depth [m]')
 xlim([0.2 0.29])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1152,7 +1152,7 @@ plot(std(vert_oxygen_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_oxygen_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('dissolved oxygen st dev','FontWeight','Normal','FontSize',18)
+title('dissolved oxygen st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 xlim([-0.0005 0.01])
 ylim(yfull)
@@ -1175,14 +1175,14 @@ h9 = plot(mean(vert_oxygen_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved oxygen','FontWeight','Normal','FontSize',18)
+title('mean dissolved oxygen','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 ylabel('depth [m]')
 xlim([0.205 0.29])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1195,7 +1195,7 @@ plot(std(vert_oxygen_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved oxygen st dev','FontWeight','Normal','FontSize',18)
+title('dissolved oxygen st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1218,14 +1218,14 @@ h9 = plot(mean(vert_oxygen_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved oxygen','FontWeight','Normal','FontSize',18)
+title('mean dissolved oxygen','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 ylabel('depth [m]')
 xlim([0.225 0.287])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1238,7 +1238,7 @@ plot(std(vert_oxygen_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved oxygen st dev','FontWeight','Normal','FontSize',18)
+title('dissolved oxygen st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol O/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1263,14 +1263,14 @@ h8 = plot(mean(vert_alk_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_alk_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean alkalinity','FontWeight','Normal','FontSize',18)
+title('mean alkalinity','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1282,7 +1282,7 @@ plot(std(vert_alk_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_alk_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('alkalinity st dev','FontWeight','Normal','FontSize',18)
+title('alkalinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -1305,14 +1305,14 @@ h9 = plot(mean(vert_alk_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean alkalinity','FontWeight','Normal','FontSize',18)
+title('mean alkalinity','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','northeast')
+    '1/12','FontSize',20,'Location','northeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1325,7 +1325,7 @@ plot(std(vert_alk_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('alkalinity st dev','FontWeight','Normal','FontSize',18)
+title('alkalinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1348,14 +1348,14 @@ h9 = plot(mean(vert_alk_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean alkalinity','FontWeight','Normal','FontSize',18)
+title('mean alkalinity','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1368,7 +1368,7 @@ plot(std(vert_alk_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('alkalinity st dev','FontWeight','Normal','FontSize',18)
+title('alkalinity st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol eq/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1394,14 +1394,14 @@ h8 = plot(mean(vert_nitrate_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_nitrate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean nitrate','FontWeight','Normal','FontSize',18)
+title('mean nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1413,7 +1413,7 @@ plot(std(vert_nitrate_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_nitrate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 grid on
-title('nitrate st dev','FontWeight','Normal','FontSize',18)
+title('nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 xlim([-0.1e-3 2e-3])
 ylim(yfull)
@@ -1436,14 +1436,14 @@ h9 = plot(mean(vert_nitrate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean nitrate','FontWeight','Normal','FontSize',18)
+title('mean nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1456,7 +1456,7 @@ plot(std(vert_nitrate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('nitrate st dev','FontWeight','Normal','FontSize',18)
+title('nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1479,14 +1479,14 @@ h9 = plot(mean(vert_nitrate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean nitrate','FontWeight','Normal','FontSize',18)
+title('mean nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1499,7 +1499,7 @@ plot(std(vert_nitrate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('nitrate st dev','FontWeight','Normal','FontSize',18)
+title('nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1524,14 +1524,14 @@ h8 = plot(mean(vert_iron_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_iron_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean dissolved iron','FontWeight','Normal','FontSize',18)
+title('mean dissolved iron','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1543,7 +1543,7 @@ plot(std(vert_iron_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_iron_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('dissolved iron st dev','FontWeight','Normal','FontSize',18)
+title('dissolved iron st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -1566,14 +1566,14 @@ h9 = plot(mean(vert_iron_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved iron','FontWeight','Normal','FontSize',18)
+title('mean dissolved iron','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1586,7 +1586,7 @@ plot(std(vert_iron_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved iron st dev','FontWeight','Normal','FontSize',18)
+title('dissolved iron st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1609,14 +1609,14 @@ h9 = plot(mean(vert_iron_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved iron','FontWeight','Normal','FontSize',18)
+title('mean dissolved iron','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1629,7 +1629,7 @@ plot(std(vert_iron_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved iron st dev','FontWeight','Normal','FontSize',18)
+title('dissolved iron st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol Fe/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1654,14 +1654,14 @@ h8 = plot(mean(vert_phosphate_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_phosphate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean phosphate','FontWeight','Normal','FontSize',18)
+title('mean phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1673,7 +1673,7 @@ plot(std(vert_phosphate_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_phosphate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('phosphate st dev','FontWeight','Normal','FontSize',18)
+title('phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -1696,14 +1696,14 @@ h9 = plot(mean(vert_phosphate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean phosphate','FontWeight','Normal','FontSize',18)
+title('mean phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1716,7 +1716,7 @@ plot(std(vert_phosphate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('phosphate st dev','FontWeight','Normal','FontSize',18)
+title('phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1739,14 +1739,14 @@ h9 = plot(mean(vert_phosphate_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean phosphate','FontWeight','Normal','FontSize',18)
+title('mean phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1759,7 +1759,7 @@ plot(std(vert_phosphate_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('phosphate st dev','FontWeight','Normal','FontSize',18)
+title('phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1784,14 +1784,14 @@ h8 = plot(mean(vert_dop_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_dop_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1803,7 +1803,7 @@ plot(std(vert_dop_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_dop_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -1826,14 +1826,14 @@ h9 = plot(mean(vert_dop_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1846,7 +1846,7 @@ plot(std(vert_dop_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -1869,14 +1869,14 @@ h9 = plot(mean(vert_dop_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic phosphate','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1889,7 +1889,7 @@ plot(std(vert_dop_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic phosphate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol P/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -1916,14 +1916,14 @@ h8 = plot(mean(vert_don_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_don_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1935,7 +1935,7 @@ plot(std(vert_don_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_don_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -1958,14 +1958,14 @@ h9 = plot(mean(vert_don_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -1978,7 +1978,7 @@ plot(std(vert_don_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 % xlim([0 2])
 ylim(y1000)
@@ -2001,14 +2001,14 @@ h9 = plot(mean(vert_don_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',18)
+title('mean dissolved organic nitrate','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2021,7 +2021,7 @@ plot(std(vert_don_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',18)
+title('dissolved organic nitrate st dev','FontWeight','Normal','FontSize',24)
 xlabel('[mol N/m^3]')
 % xlim([0 2])
 ylim(y500)
@@ -2046,14 +2046,14 @@ h8 = plot(mean(vert_phyto_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_phyto_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean phytoplankton biomass','FontWeight','Normal','FontSize',18)
+title('mean phytoplankton biomass','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2065,7 +2065,7 @@ plot(std(vert_phyto_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_phyto_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',18)
+title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -2088,14 +2088,14 @@ h9 = plot(mean(vert_phyto_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean phytoplankton biomass','FontWeight','Normal','FontSize',18)
+title('mean phytoplankton biomass','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2108,7 +2108,7 @@ plot(std(vert_phyto_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',18)
+title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 % xlim([0 2])
 ylim(y1000)
@@ -2131,14 +2131,14 @@ h9 = plot(mean(vert_phyto_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean phytoplankton biomass','FontWeight','Normal','FontSize',18)
+title('mean phytoplankton biomass','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2151,7 +2151,7 @@ plot(std(vert_phyto_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',18)
+title('phytoplankton biomass st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg]')
 % xlim([0 2])
 ylim(y500)
@@ -2177,14 +2177,14 @@ h8 = plot(mean(vert_ph_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_ph_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean pH','FontWeight','Normal','FontSize',18)
+title('mean pH','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2196,7 +2196,7 @@ plot(std(vert_ph_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_ph_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('pH st dev','FontWeight','Normal','FontSize',18)
+title('pH st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -2219,14 +2219,14 @@ h9 = plot(mean(vert_ph_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean pH','FontWeight','Normal','FontSize',18)
+title('mean pH','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2239,7 +2239,7 @@ plot(std(vert_ph_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('pH st dev','FontWeight','Normal','FontSize',18)
+title('pH st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 % xlim([0 2])
 ylim(y1000)
@@ -2262,14 +2262,14 @@ h9 = plot(mean(vert_ph_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean pH','FontWeight','Normal','FontSize',18)
+title('mean pH','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2282,7 +2282,7 @@ plot(std(vert_ph_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('pH st dev','FontWeight','Normal','FontSize',18)
+title('pH st dev','FontWeight','Normal','FontSize',24)
 xlabel('[dimensionless]')
 % xlim([0 2])
 ylim(y500)
@@ -2307,14 +2307,14 @@ h8 = plot(mean(vert_phihyd_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_phihyd_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',18)
+title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2326,7 +2326,7 @@ plot(std(vert_phihyd_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_phihyd_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',18)
+title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -2349,14 +2349,14 @@ h9 = plot(mean(vert_phihyd_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',18)
+title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2369,7 +2369,7 @@ plot(std(vert_phihyd_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',18)
+title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 % xlim([0 2])
 ylim(y1000)
@@ -2392,14 +2392,14 @@ h9 = plot(mean(vert_phihyd_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',18)
+title('mean hydrostatic pressure anomaly','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southeast')
+    '1/12','FontSize',20,'Location','southeast')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2412,7 +2412,7 @@ plot(std(vert_phihyd_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',18)
+title('hydrostatic pressure anomaly st dev','FontWeight','Normal','FontSize',24)
 xlabel('[m^2/s^2]')
 % xlim([0 2])
 ylim(y500)
@@ -2437,14 +2437,14 @@ h8 = plot(mean(vert_drhodr_6,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 h9 = plot(mean(vert_drhodr_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 ylabel('depth [m]')
 % xlim([-0.5 11.5])
 ylim(yfull)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2456,7 +2456,7 @@ plot(std(vert_drhodr_6,0,2),RC6,'LineWidth',lw,'Color',Color(c6,:));
 plot(std(vert_drhodr_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 grid on
-title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 % xlim([-0.1 2])
 ylim(yfull)
@@ -2479,14 +2479,14 @@ h9 = plot(mean(vert_drhodr_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 ylabel('depth [m]')
 % xlim([3 11.5])
 ylim(y1000)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2499,7 +2499,7 @@ plot(std(vert_drhodr_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 % xlim([0 2])
 ylim(y1000)
@@ -2522,14 +2522,14 @@ h9 = plot(mean(vert_drhodr_12,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) mean','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 ylabel('depth [m]')
 % xlim([5.5 11.5])
 ylim(y500)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h7(1),h8(1),h9(1)],'1/3','1/6',...
-    '1/12','Location','southwest')
+    '1/12','FontSize',20,'Location','southwest')
 acc_movie_w
 acc_2plots(1)
 hold off
@@ -2542,7 +2542,7 @@ plot(std(vert_drhodr_12,0,2),RC12,'LineWidth',lw,'Color',Color(c12,:));
 % xline(0)
 yline(0)
 grid on
-title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',18)
+title('stratification (drho/dr) st dev','FontWeight','Normal','FontSize',24)
 xlabel('[kg/m^4]')
 % xlim([0 2])
 ylim(y500)
