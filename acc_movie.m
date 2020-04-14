@@ -8,6 +8,7 @@ set(gca, 'defaultUipanelFontName', 'Ubuntu')
 % fig = gcf;
 % set(findall(fig, '-property', 'FontSize'), 'FontSize', 20)
 ax = gca;
-ax.FontSize = 16; 
-% set(gca, 'visible', 'on')
-% set(gca, 'color', Color(46,:))
+ax.FontSize = 18; 
+set(gca, 'visible', 'on')
+set(gca, 'color', Color(17,:))
+set(gcf,'color',Color(91,:)); 

@@ -40,7 +40,7 @@ h3 = plot(mean(vert_carbon_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(y500)

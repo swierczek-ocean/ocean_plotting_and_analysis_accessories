@@ -34,6 +34,7 @@ hold on
 h11 = plot(dates,heat_surf6/(1e15),'LineWidth',lw,'Color',Color(c6,:));
 h12 = plot(dates,heat_surf12/(1e15),'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
+grid on
 xticks(dates2)
 dateFormat = 'mmm yyyy';
 datetick('x',dateFormat,'keepticks')
@@ -43,7 +44,7 @@ xlim([datenum('20170101','yyyymmdd') datenum('20171230','yyyymmdd')])
 title('2017 surface heat flux [PW]','FontWeight','Normal','FontSize',18)
 legend([h10(1),h11(1),h12(1)],...
     '1/3','1/6','1/12',...
-    'Location','best')
+    'Location','southeast','FontSize',20)
 acc_movie_w
 acc_plots
 hold off
@@ -65,7 +66,7 @@ xlim([datenum('20170101','yyyymmdd') datenum('20171230','yyyymmdd')])
 title('2017 surface salt flux [kg/s]','FontWeight','Normal','FontSize',18)
 legend([h10(1),h11(1),h12(1)],...
     '1/3','1/6','1/12',...
-    'Location','best')
+    'Location','best','FontSize',18)
 acc_movie_w
 acc_plots
 hold off
@@ -80,6 +81,7 @@ hold on
 h11 = plot(dates,carbon_surf6,'LineWidth',lw,'Color',Color(c6,:));
 h12 = plot(dates,carbon_surf12,'LineWidth',lw,'Color',Color(c12,:));
 yline(0)
+grid on
 xticks(dates2)
 dateFormat = 'mmm yyyy';
 datetick('x',dateFormat,'keepticks')
@@ -89,7 +91,7 @@ xlim([datenum('20170101','yyyymmdd') datenum('20171230','yyyymmdd')])
 title('2017 surface carbon flux [Gt C/yr]','FontWeight','Normal','FontSize',18)
 legend([h10(1),h11(1),h12(1)],...
     '1/3','1/6','1/12',...
-    'Location','best')
+    'Location','southeast','FontSize',20)
 acc_movie_w
 acc_plots
 hold off
@@ -111,7 +113,7 @@ xlim([datenum('20170101','yyyymmdd') datenum('20171230','yyyymmdd')])
 title('2017 surface oxygen flux [Gt O/yr]','FontWeight','Normal','FontSize',18)
 legend([h10(1),h11(1),h12(1)],...
     '1/3','1/6','1/12',...
-    'Location','best')
+    'Location','best','FontSize',18)
 acc_movie_w
 acc_plots
 hold off

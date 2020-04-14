@@ -34,7 +34,7 @@ h3 = plot(mean(vert_heat_adv_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(y500)
@@ -74,7 +74,7 @@ h3 = plot(mean(vert_heat_adv_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -114,7 +114,7 @@ h3 = plot(mean(vert_heat_adv_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -153,7 +153,7 @@ h3 = plot(mean(vert_heat_dif_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(y500)
@@ -193,7 +193,7 @@ h3 = plot(mean(vert_heat_dif_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -233,7 +233,7 @@ h3 = plot(mean(vert_heat_dif_12,2).*86400*100,RF12,'LineWidth',lw,'Color',Color(
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive heat transport','FontWeight','Normal','FontSize',24)
 xlabel('[deg C cm/day]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -274,7 +274,7 @@ h3 = plot(mean(vert_carbon_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -314,7 +314,7 @@ h3 = plot(mean(vert_carbon_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -354,7 +354,7 @@ h3 = plot(mean(vert_carbon_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -393,7 +393,7 @@ h3 = plot(mean(vert_carbon_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -433,7 +433,7 @@ h3 = plot(mean(vert_carbon_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -473,7 +473,7 @@ h3 = plot(mean(vert_carbon_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive DIC transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt C/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -514,7 +514,7 @@ h3 = plot(mean(vert_oxygen_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -554,7 +554,7 @@ h3 = plot(mean(vert_oxygen_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -594,7 +594,7 @@ h3 = plot(mean(vert_oxygen_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -633,7 +633,7 @@ h3 = plot(mean(vert_oxygen_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -673,7 +673,7 @@ h3 = plot(mean(vert_oxygen_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -713,7 +713,7 @@ h3 = plot(mean(vert_oxygen_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive oxygen transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt O/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -754,7 +754,7 @@ h3 = plot(mean(vert_nitrate_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -794,7 +794,7 @@ h3 = plot(mean(vert_nitrate_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -834,7 +834,7 @@ h3 = plot(mean(vert_nitrate_adv_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -873,7 +873,7 @@ h3 = plot(mean(vert_nitrate_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(y500)
@@ -913,7 +913,7 @@ h3 = plot(mean(vert_nitrate_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -953,7 +953,7 @@ h3 = plot(mean(vert_nitrate_dif_12,2),RF12,'LineWidth',lw,'Color',Color(c12,:));
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive nitrate transport','FontWeight','Normal','FontSize',24)
 xlabel('[Gt N/yr]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -994,7 +994,7 @@ h3 = plot(mean(vert_salt_adv_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(y500)
@@ -1034,7 +1034,7 @@ h3 = plot(mean(vert_salt_adv_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -1074,7 +1074,7 @@ h3 = plot(mean(vert_salt_adv_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical advective salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical advective salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(yfull)
@@ -1113,7 +1113,7 @@ h3 = plot(mean(vert_salt_dif_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(y500)
@@ -1153,7 +1153,7 @@ h3 = plot(mean(vert_salt_dif_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(y1000)
@@ -1193,7 +1193,7 @@ h3 = plot(mean(vert_salt_dif_12,2).*86400./rho,RF12,'LineWidth',lw,'Color',Color
 xline(0)
 yline(0)
 grid on
-title('mean vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
+title('net vertical diffusive salt transport','FontWeight','Normal','FontSize',24)
 xlabel('[psu/m^2/day]')
 ylabel('depth [m]')
 ylim(yfull)
