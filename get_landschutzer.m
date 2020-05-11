@@ -15,10 +15,15 @@ ylo = find(YC==YC6(1));
 yhi = find(YC==YC6(260));
 XC = XC(xlo:xhi);
 YC = YC(ylo:yhi);
+XCL = XC;
+YCL = YC;
 
 load landschutzer2018_sose_grid6 co2flux_interp % time_land
 
 co2flux_2017 = co2flux_interp(xlo:xhi,ylo:yhi,421:432);
+
+save co2fluxm co2flux_2017 XCL YCL
+
 
 clear co2flux_interp
 

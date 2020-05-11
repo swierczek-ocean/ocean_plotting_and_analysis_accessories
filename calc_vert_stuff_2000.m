@@ -8,6 +8,8 @@ load ../2020_03_March_analysis/eddyc3 wdic3
 RAC = rdmds('../Grids/3/RAC');
 hFacC = rdmds('../Grids/3/hFacC');
 
+mask3 = zeros(192,132);
+
 eddyt3calc = wtheta3;
 eddyc3calc = wdic3;
 
@@ -37,6 +39,9 @@ for ii=1:nx
     end
 end
 
+mask3(x,y) = hFacC_ind(:,:,1);
+save mask3 mask3
+
 areaTop = zeros(nx,ny,nz);
 areaBox = zeros(1,nz);
 
@@ -59,6 +64,7 @@ load ../2020_03_March_analysis/eddyt6 wtheta6
 load ../2020_03_March_analysis/eddyc6 wdic6
 RAC = rdmds('../Grids/6/RAC');
 hFacC = rdmds('../Grids/6/hFacC');
+mask6 = zeros(384,260);
 
 eddyt6calc = wtheta6;
 eddyc6calc = wdic6;
@@ -89,6 +95,9 @@ for ii=1:nx
     end
 end
 
+mask6(x,y) = hFacC_ind(:,:,1);
+save mask6 mask6
+
 areaTop = zeros(nx,ny,nz);
 areaBox = zeros(nz,1);
 
@@ -111,6 +120,7 @@ load ../2020_03_March_analysis/eddyt12 wtheta12
 load ../2020_03_March_analysis/eddyc12 wdic12
 RAC = rdmds('../Grids/12/RAC');
 hFacC = rdmds('../Grids/12/hFacC');
+mask12 = zeros(756,512);
 
 eddyt12calc = wtheta12;
 eddyc12calc = wdic12;
@@ -140,6 +150,8 @@ for ii=1:nx
         end
     end
 end
+mask12(x,y) = hFacC_ind(:,:,1);
+save mask12 mask12
 
 areaTop = zeros(nx,ny,nz);
 areaBox = zeros(nz,1);

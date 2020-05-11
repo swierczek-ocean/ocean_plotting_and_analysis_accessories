@@ -11,4 +11,4 @@ ax_width = outerpos(3) + 0.089;
 ax_height = outerpos(4) - ti(2) - ti(4) + 0.07;
 ax.Position = [left bottom ax_width ax_height];
 cbar = colorbar('Position', [left+ax_width+0.015 bottom 0.02 2.12*ax_height]);
-set(cbar,'XLim',[lbcb ubcb]);
+set(cbar,'XLim',[lb ub]);

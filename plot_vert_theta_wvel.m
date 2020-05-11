@@ -143,7 +143,7 @@ grid on
 title('temperature profile','FontWeight','Normal','FontSize',24)
 xlabel('[deg C]')
 ylabel('depth [m]')
-ylim(y500)
+ylim(y250)
 set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
 legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1)],...
 '1/3','1/6','1/12','R&G Argo','GFDL ODA','WOA18',...
