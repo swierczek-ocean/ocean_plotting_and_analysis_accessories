@@ -7,7 +7,6 @@ if n==1
     cbar = colorbar('eastoutside');
     set(cbar,'XLim',[lb1 ub1]);
     xticklabels({})
-    ytickformat('degrees')
     outerpos = ax.OuterPosition;
     ti = ax.TightInset;
     left = outerpos(1) + ti(1) - 0.09;
@@ -43,7 +42,6 @@ elseif n==4
     ax = gca;
     colormap(axn,cm2)
     xtickformat('degrees')
-    ytickformat('degrees')
     outerpos = ax.OuterPosition;
     ti = ax.TightInset;
     left = outerpos(1) + ti(1) - 0.09;
@@ -73,10 +71,24 @@ elseif n==6
     ti = ax.TightInset;
     left = outerpos(1) + ti(1) - 0.04;
     bottom = outerpos(2) + ti(2) - 0.05;
-    ax_width = outerpos(3) - ti(1) - ti(3) + 0.04;
+    ax_width = outerpos(3) - ti(1) - ti(3) + 0.083;
     ax_height = outerpos(4) - ti(2) - ti(4) + 0.065;
     ax.Position = [left bottom ax_width ax_height];
-    colorbar('Position', [left+ax_width+0.015 bottom 0.02 2.18*ax_height])
+    colorbar('Position', [left+ax_width+0.010 bottom 0.015 2.18*ax_height])
+elseif n==7
+    ax = gca;
+    colormap(axn,cm2)
+    caxis([lb2 ub2])
+    xtickformat('degrees')
+    yticklabels({})
+    outerpos = ax.OuterPosition;
+    ti = ax.TightInset;
+    left = outerpos(1) + ti(1) - 0.04;
+    bottom = outerpos(2) + ti(2) - 0.05;
+    ax_width = outerpos(3) - ti(1) - ti(3) + 0.11;
+    ax_height = outerpos(4) - ti(2) - ti(4) + 0.065;
+    ax.Position = [left bottom ax_width ax_height];
+    colorbar('Position', [left+ax_width+0.010 bottom 0.015 2.18*ax_height])
 end
 
 end

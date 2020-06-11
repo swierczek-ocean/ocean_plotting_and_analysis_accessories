@@ -41,7 +41,7 @@ for ii=1:nx
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
-        if hFacC(ii,jj,21)<1
+        if hFacC(ii,jj,41)<1
             hFacC_ind(ii,jj,:) = 0;
         end
     end
@@ -87,7 +87,7 @@ for ii=1:12
     charbgc = [strb,'diag_dic_budget.',num2str(1460*(ii+1),'%010.f')];
     temp = rdmds(charbgc,'rec',3);
     advrdic(:,:,:,ii) = temp(x,y,z).*DRF;
-    fprintf('size of temp: %g %g %g   size of DRF: %g %g \n',size(temp(x,y,z)),...
+    fprintf('size of temp: %g %g %g   size of DRF: %g %g %g \n',size(temp(x,y,z)),...
         size(DRF))
     clear temp
     charheat = [strb,'diag_T_budget.',num2str(1460*(ii+1),'%010.f')];
@@ -118,14 +118,22 @@ eddydic23 = zeros(52,17);
 spd = 86400;
 
 for ii=1:12
-    advrth3(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrth(:,:,:,ii),[1,2]))./areaBox;
-    advrdic3(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrdic(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A1 \n')
+    advrth3(:,ii) = spd.*squeeze(sum(areaTop.*advrth(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A2 \n')
+    advrdic3(:,ii) = spd.*squeeze(sum(areaTop.*advrdic(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A3 \n')
     mwtheta3(:,ii) = spd.*squeeze(sum(areaTop.*wt(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A4 \n')
     mwdic3(:,ii) = spd.*squeeze(sum(areaTop.*wdic(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A5 \n')
     eddyth3(:,ii) = spd.*squeeze(sum(areaTop.*eddyth(:,:,:,ii),[1,2]))./areaBox;
-    eddyth23(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddyth2(:,:,:,ii),[1,2]));
+    fprintf('A6 \n')
+    eddyth23(:,ii) = spd.*squeeze(sum(areaTop.*eddyth2(:,:,:,ii),[1,2]))./areaBox;
+    fprintf('A7 \n')
     eddydic3(:,ii) = spd.*squeeze(sum(areaTop.*eddydic(:,:,:,ii),[1,2]))./areaBox;
-    eddydic23(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddydic2(:,:,:,ii),[1,2]));
+    fprintf('A8 \n')
+    eddydic23(:,ii) = spd.*squeeze(sum(areaTop.*eddydic2(:,:,:,ii),[1,2]))./areaBox;
 end
 A = [1,2,3;4,5,6;7,8,9;10,11,12];
 
@@ -195,7 +203,7 @@ for ii=1:nx
                 hFacC_ind(ii,jj,kk) = 1;
             end
         end
-        if hFacC(ii,jj,21)<1
+        if hFacC(ii,jj,41)<1
             hFacC_ind(ii,jj,:) = 0;
         end
     end
@@ -239,7 +247,7 @@ for ii=1:12
     charbgc = [strb,'diag_dic_budget.',num2str(2190*(ii+1),'%010.f')];
     temp = rdmds(charbgc,'rec',3);
     advrdic(:,:,:,ii) = temp(x,y,z).*DRF;
-    fprintf('size of temp: %g %g %g   size of DRF: %g %g \n',size(temp(x,y,z)),...
+    fprintf('size of temp: %g %g %g   size of DRF: %g %g %g \n',size(temp(x,y,z)),...
         size(DRF))
     clear temp
     charheat = [strb,'diag_T_budget.',num2str(2190*(ii+1),'%010.f')];
@@ -270,14 +278,14 @@ eddydic26 = zeros(52,17);
 spd = 86400;
 
 for ii=1:12
-    advrth6(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrth(:,:,:,ii),[1,2]))./areaBox;
-    advrdic6(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrdic(:,:,:,ii),[1,2]))./areaBox;
+    advrth6(:,ii) = spd.*squeeze(sum(areaTop.*advrth(:,:,:,ii),[1,2]))./areaBox;
+    advrdic6(:,ii) = spd.*squeeze(sum(areaTop.*advrdic(:,:,:,ii),[1,2]))./areaBox;
     mwtheta6(:,ii) = spd.*squeeze(sum(areaTop.*wt(:,:,:,ii),[1,2]))./areaBox;
     mwdic6(:,ii) = spd.*squeeze(sum(areaTop.*wdic(:,:,:,ii),[1,2]))./areaBox;
     eddyth6(:,ii) = spd.*squeeze(sum(areaTop.*eddyth(:,:,:,ii),[1,2]))./areaBox;
-    eddyth26(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddyth2(:,:,:,ii),[1,2]));
+    eddyth26(:,ii) = spd.*squeeze(sum(areaTop.*eddyth2(:,:,:,ii),[1,2]))./areaBox;
     eddydic6(:,ii) = spd.*squeeze(sum(areaTop.*eddydic(:,:,:,ii),[1,2]))./areaBox;
-    eddydic26(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddydic2(:,:,:,ii),[1,2]));
+    eddydic26(:,ii) = spd.*squeeze(sum(areaTop.*eddydic2(:,:,:,ii),[1,2]))./areaBox;
 end
 
 A = [1,2,3;4,5,6;7,8,9;10,11,12];
@@ -393,7 +401,7 @@ for ii=1:12
     charbgc = [strb,'diag_dic_budget.',num2str(10950*(ii+1),'%010.f')];
     temp = rdmds(charbgc,'rec',3);
     advrdic(:,:,:,ii) = temp(x,y,z).*DRF;
-    fprintf('size of temp: %g %g %g   size of DRF: %g %g \n',size(temp(x,y,z)),...
+    fprintf('size of temp: %g %g %g   size of DRF: %g %g %g \n',size(temp(x,y,z)),...
         size(DRF))
     clear temp
     charheat = [strb,'diag_T_budget.',num2str(10950*(ii+1),'%010.f')];
@@ -424,14 +432,14 @@ eddydic212 = zeros(104,17);
 spd = 86400;
 
 for ii=1:12
-    advrth12(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrth(:,:,:,ii),[1,2]))./areaBox;
-    advrdic12(:,ii) = spd.*squeeze(sum(hFacC_ind.*advrdic(:,:,:,ii),[1,2]))./areaBox;
+    advrth12(:,ii) = spd.*squeeze(sum(areaTop.*advrth(:,:,:,ii),[1,2]))./areaBox;
+    advrdic12(:,ii) = spd.*squeeze(sum(areaTop.*advrdic(:,:,:,ii),[1,2]))./areaBox;
     mwtheta12(:,ii) = spd.*squeeze(sum(areaTop.*wt(:,:,:,ii),[1,2]))./areaBox;
     mwdic12(:,ii) = spd.*squeeze(sum(areaTop.*wdic(:,:,:,ii),[1,2]))./areaBox;
     eddyth12(:,ii) = spd.*squeeze(sum(areaTop.*eddyth(:,:,:,ii),[1,2]))./areaBox;
-    eddyth212(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddyth2(:,:,:,ii),[1,2]));
+    eddyth212(:,ii) = spd.*squeeze(sum(areaTop.*eddyth2(:,:,:,ii),[1,2]))./areaBox;
     eddydic12(:,ii) = spd.*squeeze(sum(areaTop.*eddydic(:,:,:,ii),[1,2]))./areaBox;
-    eddydic212(:,ii) = spd.*squeeze(sum(hFacC_ind.*eddydic2(:,:,:,ii),[1,2]));
+    eddydic212(:,ii) = spd.*squeeze(sum(areaTop.*eddydic2(:,:,:,ii),[1,2]))./areaBox;
 end
 
 A = [1,2,3;4,5,6;7,8,9;10,11,12];
@@ -457,7 +465,7 @@ eddydic12(:,17) = mean(eddydic12(:,1:12),2);
 eddydic212(:,17) = mean(eddydic212(:,1:12),2);
 
 RC12 = RC;
-RF12 = RF(1:52);
+RF12 = squeeze(RF(1:104));
 DRF12 = squeeze(DRF);
 
 save eddy12new advr*12 mw*12 eddy*12 RF12 DRF12
