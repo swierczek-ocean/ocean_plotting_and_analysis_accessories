@@ -10,6 +10,6 @@
 
 module load matlab
 
-cd /rsgrps/jrussell/swierczek/2020_02_February_analysis/
+cd /xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/2020_02_February_analysis/
 
 matlab -nodisplay -nosplash < get_currents.m > output_currents.txt

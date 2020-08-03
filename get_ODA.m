@@ -7,11 +7,11 @@ load ODA
 
 XCt = XCt(6:60);
 XGt = XGt(6:60);
-YCt = XCt(6:33);
-YGt = XGt(6:33);
+YCt = YCt(11:32);
+YGt = YGt(11:32);
 
-oda_theta = oda_theta(6:60,6:31,:,:);
-oda_wvel = oda_wvel(6:60,6:31,:,:);
+oda_theta = oda_theta(6:60,11:32,:,:);
+oda_wvel = oda_wvel(6:60,11:32,:,:);
 
 oda_mwt = oda_theta.*oda_wvel;
 
@@ -30,7 +30,7 @@ area = zeros(size(mask));
 total_area = zeros(50,1);
 
 for ii=1:55
-    for jj=1:26
+    for jj=1:22
         if mask(ii,jj,40)==0
             mask(ii,jj,:) = 0;
         end

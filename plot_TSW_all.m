@@ -21,187 +21,187 @@ dates = [datenum('20170115','yyyymmdd'),datenum('20170215','yyyymmdd'),...
     ];
 %%
 
-% %%
-% load month_3 RC3 theta312
-% load month_6 theta612
-% load month_12 theta1212
-% load ODAmonthly odat RCt
-% load ECCOvert ecdepth eccoth12
-% load SODAvert sodath12 sodadepc
-% load WOAvert wdepth woth12
-% load rgt rgt depthrg
-% depthrg = -depthrg;
-% wdepth = -wdepth;
-% sodadepc = -sodadepc;
-% load theta_season_anom
-% text = ['JFM';'AMJ';'JAS';'OND'];
-% %%
-% 
-% for jj=4:4
-%     figure()
-%     set(gcf, 'Position', [1, 1, 1600, 900])
-%     subplot(1,2,1)
-%     h1 = plot(mean(theta312,2),RC3,'LineWidth',lw,'Color',Color(c3,:));
-%     hold on
-%     h2 = plot(mean(theta612,2),RC3,'LineWidth',lw,'Color',Color(c6,:));
-%     h3 = plot(mean(theta1212,2),RC3,'LineWidth',lw,'Color',Color(c12,:));
-%     h4 = plot(mean(rgt,2),depthrg,'LineWidth',lw,'Color','k');
-%     h5 = plot(mean(woth12,2),wdepth,'--','LineWidth',lw,'Color','k');
-%     h6 = plot(mean(odat,2),RCt,'-.','LineWidth',lw,'Color','k');
-%     h7 = plot(mean(eccoth12,2),ecdepth,'--o','LineWidth',lw,'Color','k');
-%     h8 = plot(mean(sodath12,2),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
-%     yline(0)
-%     grid on
-%     title('mean 2017 temperature profile','FontWeight','Normal','FontSize',24)
-%     xlabel('[deg C]')
-%     ylabel('depth [m]')
-%     ylim([ylimlo(jj) 3])
-%     set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
-%     legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%         '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%         'FontSize',20,'Location','southeast')
-%     acc_movie_w
-%     acc_2plots(1)
-%     hold off
-%     
-%     subplot(1,2,2)
-%     h1 = plot(mean(int3t,2),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
-%     hold on
-%     h2 = plot(mean(int6t,2),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
-%     h3 = plot(mean(int12t,2),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
-%     h4 = plot(mean(intrgt,2),anom_depth,'LineWidth',lw,'Color','k');
-%     h5 = plot(mean(intwoat,2),anom_depth,'--','LineWidth',lw,'Color','k');
-%     h6 = plot(mean(intodat,2),anom_depth,'-.','LineWidth',lw,'Color','k');
-%     h7 = plot(mean(inteccot,2),anom_depth,'--o','LineWidth',lw,'Color','k');
-%     h8 = plot(mean(intsodat,2),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
-%     xline(0)
-%     yline(0)
-%     grid on
-%     title('mean 2017 temperature anomaly from R&G','FontWeight','Normal','FontSize',24)
-%     xlabel('[deg C]')
-%     ylim([ylimlo(jj) 3])
-%     legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%         '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%         'FontSize',20,'Location','southwest')
-%     acc_movie_w
-%     acc_2plots(2)
-%     hold off
-%     
-%     set(gcf,'InvertHardCopy','off');
-%     print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_MEAN_',num2str(abs(ylimlo(jj)))],'-dpng')
-%     close all
-%     for ii=1:16
-%         if ii<13
-%             figure()
-%             set(gcf, 'Position', [1, 1, 1600, 900])
-%             subplot(1,2,1)
-%             h1 = plot(theta312(:,ii),RC3,'LineWidth',lw,'Color',Color(c3,:));
-%             hold on
-%             h2 = plot(theta612(:,ii),RC3,'LineWidth',lw,'Color',Color(c6,:));
-%             h3 = plot(theta1212(:,ii),RC3,'LineWidth',lw,'Color',Color(c12,:));
-%             h4 = plot(rgt(:,ii),depthrg,'LineWidth',lw,'Color','k');
-%             h5 = plot(woth12(:,ii),wdepth,'--','LineWidth',lw,'Color','k');
-%             h6 = plot(odat(:,ii),RCt,'-.','LineWidth',lw,'Color','k');
-%             h7 = plot(eccoth12(:,ii),ecdepth,'--o','LineWidth',lw,'Color','k');
-%             h8 = plot(sodath12(:,ii),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
-%             yline(0)
-%             grid on
-%             title([datestr(dates(ii),'mmm yyyy'),' temperature profile'],'FontWeight','Normal','FontSize',24)
-%             xlabel('[deg C]')
-%             ylabel('depth [m]')
-%             ylim([ylimlo(jj) 3])
-%             set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
-%             legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%                 '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%                 'FontSize',20,'Location','southeast')
-%             acc_movie_w
-%             acc_2plots(1)
-%             hold off
-%             
-%             subplot(1,2,2)
-%             h1 = plot(int3t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
-%             hold on
-%             h2 = plot(int6t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
-%             h3 = plot(int12t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
-%             h4 = plot(intrgt(:,ii),anom_depth,'LineWidth',lw,'Color','k');
-%             h5 = plot(intwoat(:,ii),anom_depth,'--','LineWidth',lw,'Color','k');
-%             h6 = plot(intodat(:,ii),anom_depth,'-.','LineWidth',lw,'Color','k');
-%             h7 = plot(inteccot(:,ii),anom_depth,'--o','LineWidth',lw,'Color','k');
-%             h8 = plot(intsodat(:,ii),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
-%             xline(0)
-%             yline(0)
-%             grid on
-%             title([datestr(dates(ii),'mmm yyyy'),' temperature anomaly from R&G'],'FontWeight','Normal','FontSize',24)
-%             xlabel('[deg C]')
-%             ylim([ylimlo(jj) 3])
-%             legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%                 '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%                 'FontSize',20,'Location','southwest')
-%             acc_movie_w
-%             acc_2plots(2)
-%             hold off
-%             
-%             set(gcf,'InvertHardCopy','off');
-%             print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_',num2str(ii,'%02.f'),'_',datestr(dates(ii),'mmm'),'_',num2str(abs(ylimlo(jj)))],'-dpng')
-%             close all
-%         else
-%             figure()
-%             set(gcf, 'Position', [1, 1, 1600, 900])
-%             subplot(1,2,1)
-%             h1 = plot(theta3s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c3,:));
-%             hold on
-%             h2 = plot(theta6s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c6,:));
-%             h3 = plot(theta12s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c12,:));
-%             h4 = plot(rgts(:,ii-12),depthrg,'LineWidth',lw,'Color','k');
-%             h5 = plot(woth12s(:,ii-12),wdepth,'--','LineWidth',lw,'Color','k');
-%             h6 = plot(odats(:,ii-12),RCt,'-.','LineWidth',lw,'Color','k');
-%             h7 = plot(eccoth12s(:,ii-12),ecdepth,'--o','LineWidth',lw,'Color','k');
-%             h8 = plot(sodath12s(:,ii-12),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
-%             yline(0)
-%             grid on
-%             title([text(ii-12,:),' ',datestr(dates(ii-12),'yyyy'),' temperature profile'],'FontWeight','Normal','FontSize',24)
-%             xlabel('[deg C]')
-%             ylabel('depth [m]')
-%             ylim([ylimlo(jj) 3])
-%             set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
-%             legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%                 '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%                 'FontSize',20,'Location','southeast')
-%             acc_movie_w
-%             acc_2plots(1)
-%             hold off
-%             
-%             subplot(1,2,2)
-%             h1 = plot(int3ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
-%             hold on
-%             h2 = plot(int6ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
-%             h3 = plot(int12ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
-%             h4 = plot(intrgts(:,ii-12),anom_depth,'LineWidth',lw,'Color','k');
-%             h5 = plot(intwoats(:,ii-12),anom_depth,'--','LineWidth',lw,'Color','k');
-%             h6 = plot(intodats(:,ii-12),anom_depth,'-.','LineWidth',lw,'Color','k');
-%             h7 = plot(inteccots(:,ii-12),anom_depth,'--o','LineWidth',lw,'Color','k');
-%             h8 = plot(intsodats(:,ii-12),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
-%             xline(0)
-%             yline(0)
-%             grid on
-%             title([text(ii-12,:),' ',datestr(dates(ii-12),'yyyy'),' temperature anomaly from R&G'],'FontWeight','Normal','FontSize',24)
-%             xlabel('[deg C]')
-%             ylim([ylimlo(jj) 3])
-%             legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
-%                 '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
-%                 'FontSize',20,'Location','southwest')
-%             acc_movie_w
-%             acc_2plots(2)
-%             hold off
-%             
-%             set(gcf,'InvertHardCopy','off');
-%             print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_',num2str(ii,'%02.f'),'_',text(ii-12,:),'_',num2str(abs(ylimlo(jj)))],'-dpng')
-%             close all
-%         end
-%     end
-% end
-% 
-% clear
+%%
+load month_3 RC3 theta312
+load month_6 theta612
+load month_12 theta1212
+load ODAmonthly odat RCt
+load ECCOvert ecdepth eccoth12
+load SODAvert sodath12 sodadepc
+load WOAvert wdepth woth12
+load rgt rgt depthrg
+depthrg = -depthrg;
+wdepth = -wdepth;
+sodadepc = -sodadepc;
+load theta_season_anom
+text = ['JFM';'AMJ';'JAS';'OND'];
+%%
+
+for jj=4:4
+    figure()
+    set(gcf, 'Position', [1, 1, 1600, 900])
+    subplot(1,2,1)
+    h1 = plot(mean(theta312,2),RC3,'LineWidth',lw,'Color',Color(c3,:));
+    hold on
+    h2 = plot(mean(theta612,2),RC3,'LineWidth',lw,'Color',Color(c6,:));
+    h3 = plot(mean(theta1212,2),RC3,'LineWidth',lw,'Color',Color(c12,:));
+    h4 = plot(mean(rgt,2),depthrg,'LineWidth',lw,'Color','k');
+    h5 = plot(mean(woth12,2),wdepth,'--','LineWidth',lw,'Color','k');
+    h6 = plot(mean(odat,2),RCt,'-.','LineWidth',lw,'Color','k');
+    h7 = plot(mean(eccoth12,2),ecdepth,'--o','LineWidth',lw,'Color','k');
+    h8 = plot(mean(sodath12,2),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
+    yline(0)
+    grid on
+    title('mean 2017 temperature profile','FontWeight','Normal','FontSize',24)
+    xlabel('[deg C]')
+    ylabel('depth [m]')
+    ylim([ylimlo(jj) 3])
+    set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
+    legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+        '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+        'FontSize',20,'Location','southeast')
+    acc_movie_w
+    acc_2plots(1)
+    hold off
+    
+    subplot(1,2,2)
+    h1 = plot(mean(int3t,2),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
+    hold on
+    h2 = plot(mean(int6t,2),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
+    h3 = plot(mean(int12t,2),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
+    h4 = plot(mean(intrgt,2),anom_depth,'LineWidth',lw,'Color','k');
+    h5 = plot(mean(intwoat,2),anom_depth,'--','LineWidth',lw,'Color','k');
+    h6 = plot(mean(intodat,2),anom_depth,'-.','LineWidth',lw,'Color','k');
+    h7 = plot(mean(inteccot,2),anom_depth,'--o','LineWidth',lw,'Color','k');
+    h8 = plot(mean(intsodat,2),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
+    xline(0)
+    yline(0)
+    grid on
+    title('mean 2017 temperature anomaly from R&G','FontWeight','Normal','FontSize',24)
+    xlabel('[deg C]')
+    ylim([ylimlo(jj) 3])
+    legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+        '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+        'FontSize',20,'Location','southwest')
+    acc_movie_w
+    acc_2plots(2)
+    hold off
+    
+    set(gcf,'InvertHardCopy','off');
+    print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_MEAN_',num2str(abs(ylimlo(jj)))],'-dpng')
+    close all
+    for ii=1:16
+        if ii<13
+            figure()
+            set(gcf, 'Position', [1, 1, 1600, 900])
+            subplot(1,2,1)
+            h1 = plot(theta312(:,ii),RC3,'LineWidth',lw,'Color',Color(c3,:));
+            hold on
+            h2 = plot(theta612(:,ii),RC3,'LineWidth',lw,'Color',Color(c6,:));
+            h3 = plot(theta1212(:,ii),RC3,'LineWidth',lw,'Color',Color(c12,:));
+            h4 = plot(rgt(:,ii),depthrg,'LineWidth',lw,'Color','k');
+            h5 = plot(woth12(:,ii),wdepth,'--','LineWidth',lw,'Color','k');
+            h6 = plot(odat(:,ii),RCt,'-.','LineWidth',lw,'Color','k');
+            h7 = plot(eccoth12(:,ii),ecdepth,'--o','LineWidth',lw,'Color','k');
+            h8 = plot(sodath12(:,ii),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
+            yline(0)
+            grid on
+            title([datestr(dates(ii),'mmm yyyy'),' temperature profile'],'FontWeight','Normal','FontSize',24)
+            xlabel('[deg C]')
+            ylabel('depth [m]')
+            ylim([ylimlo(jj) 3])
+            set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
+            legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+                '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+                'FontSize',20,'Location','southeast')
+            acc_movie_w
+            acc_2plots(1)
+            hold off
+            
+            subplot(1,2,2)
+            h1 = plot(int3t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
+            hold on
+            h2 = plot(int6t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
+            h3 = plot(int12t(:,ii),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
+            h4 = plot(intrgt(:,ii),anom_depth,'LineWidth',lw,'Color','k');
+            h5 = plot(intwoat(:,ii),anom_depth,'--','LineWidth',lw,'Color','k');
+            h6 = plot(intodat(:,ii),anom_depth,'-.','LineWidth',lw,'Color','k');
+            h7 = plot(inteccot(:,ii),anom_depth,'--o','LineWidth',lw,'Color','k');
+            h8 = plot(intsodat(:,ii),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
+            xline(0)
+            yline(0)
+            grid on
+            title([datestr(dates(ii),'mmm yyyy'),' temperature anomaly from R&G'],'FontWeight','Normal','FontSize',24)
+            xlabel('[deg C]')
+            ylim([ylimlo(jj) 3])
+            legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+                '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+                'FontSize',20,'Location','southwest')
+            acc_movie_w
+            acc_2plots(2)
+            hold off
+            
+            set(gcf,'InvertHardCopy','off');
+            print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_',num2str(ii,'%02.f'),'_',datestr(dates(ii),'mmm'),'_',num2str(abs(ylimlo(jj)))],'-dpng')
+            close all
+        else
+            figure()
+            set(gcf, 'Position', [1, 1, 1600, 900])
+            subplot(1,2,1)
+            h1 = plot(theta3s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c3,:));
+            hold on
+            h2 = plot(theta6s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c6,:));
+            h3 = plot(theta12s(:,ii-12),RC3,'LineWidth',lw,'Color',Color(c12,:));
+            h4 = plot(rgts(:,ii-12),depthrg,'LineWidth',lw,'Color','k');
+            h5 = plot(woth12s(:,ii-12),wdepth,'--','LineWidth',lw,'Color','k');
+            h6 = plot(odats(:,ii-12),RCt,'-.','LineWidth',lw,'Color','k');
+            h7 = plot(eccoth12s(:,ii-12),ecdepth,'--o','LineWidth',lw,'Color','k');
+            h8 = plot(sodath12s(:,ii-12),sodadepc,':','LineWidth',lw,'Color',Color(cg,:));
+            yline(0)
+            grid on
+            title([text(ii-12,:),' ',datestr(dates(ii-12),'yyyy'),' temperature profile'],'FontWeight','Normal','FontSize',24)
+            xlabel('[deg C]')
+            ylabel('depth [m]')
+            ylim([ylimlo(jj) 3])
+            set(gca,'yticklabel',num2str(abs(get(gca,'ytick').')))
+            legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+                '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+                'FontSize',20,'Location','southeast')
+            acc_movie_w
+            acc_2plots(1)
+            hold off
+            
+            subplot(1,2,2)
+            h1 = plot(int3ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c3,:));
+            hold on
+            h2 = plot(int6ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c6,:));
+            h3 = plot(int12ts(:,ii-12),anom_depth,'LineWidth',lw,'Color',Color(c12,:));
+            h4 = plot(intrgts(:,ii-12),anom_depth,'LineWidth',lw,'Color','k');
+            h5 = plot(intwoats(:,ii-12),anom_depth,'--','LineWidth',lw,'Color','k');
+            h6 = plot(intodats(:,ii-12),anom_depth,'-.','LineWidth',lw,'Color','k');
+            h7 = plot(inteccots(:,ii-12),anom_depth,'--o','LineWidth',lw,'Color','k');
+            h8 = plot(intsodats(:,ii-12),anom_depth,':','LineWidth',lw,'Color',Color(cg,:));
+            xline(0)
+            yline(0)
+            grid on
+            title([text(ii-12,:),' ',datestr(dates(ii-12),'yyyy'),' temperature anomaly from R&G'],'FontWeight','Normal','FontSize',24)
+            xlabel('[deg C]')
+            ylim([ylimlo(jj) 3])
+            legend([h1(1),h2(1),h3(1),h4(1),h5(1),h6(1),h7(1),h8(1)],...
+                '1/3','1/6','1/12','R&G Argo','WOA18','GFDL ECDA3.1','ECCO4v4','SODA3.4.2',...
+                'FontSize',20,'Location','southwest')
+            acc_movie_w
+            acc_2plots(2)
+            hold off
+            
+            set(gcf,'InvertHardCopy','off');
+            print('-r200',['monthly_vert/',num2str(abs(ylimlo(jj))),'/THETA_',num2str(ii,'%02.f'),'_',text(ii-12,:),'_',num2str(abs(ylimlo(jj)))],'-dpng')
+            close all
+        end
+    end
+end
+
+clear
 
 %%
 acc_colors

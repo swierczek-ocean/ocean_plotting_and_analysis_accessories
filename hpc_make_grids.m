@@ -3,7 +3,7 @@ close all
 clc
 tic()
 
-str = '/rsgrps/jrussell/swierczek/MITgcm/verification/';
+str = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/';
 
 str32 = 'SO3_20190513/run/';
 str34 = 'SO3_20190515/run/';

@@ -10,6 +10,6 @@
 
 module load matlab
 
-cd /rsgrps/jrussell/swierczek/2020_01_January_analysis/
+cd /xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/2020_01_January_analysis/
 
 matlab -nodisplay -nosplash < hpc_bndry_fluxes_6_100m.m > output6b_100m.txt

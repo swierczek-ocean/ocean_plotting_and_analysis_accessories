@@ -23,7 +23,7 @@ ii = find(x>(360-42.45),1)-1;
 jj = find(y>-42.92,1);
 
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -33,7 +33,7 @@ ERA5_dsw_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -43,7 +43,7 @@ ERA5_dsw_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY

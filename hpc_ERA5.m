@@ -23,7 +23,7 @@ ii = find(x>(360-42.45),1)-1;
 jj = find(y>-42.92,1);
 
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -33,7 +33,7 @@ ERA5_v10m_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -43,7 +43,7 @@ ERA5_v10m_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_v10m_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -62,7 +62,7 @@ str_exp = 'hourly data from 2015 through 2017';
 save ERA5_v10m lat lon
 
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -72,7 +72,7 @@ ERA5_u10m_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -82,7 +82,7 @@ ERA5_u10m_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -96,7 +96,7 @@ ERA5_u10m = [ERA5_u10m_2015;ERA5_u10m_2016;ERA5_u10m_2017];
 
 save ERA5_u10m lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -106,7 +106,7 @@ ERA5_dlw_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -116,7 +116,7 @@ ERA5_dlw_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dlw_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -130,7 +130,7 @@ ERA5_dlw = [ERA5_dlw_2015;ERA5_dlw_2016;ERA5_dlw_2017];
 
 save ERA5_dlw lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -140,7 +140,7 @@ ERA5_dsw_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -150,7 +150,7 @@ ERA5_dsw_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_dsw_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -164,7 +164,7 @@ ERA5_dsw = [ERA5_dsw_2015;ERA5_dsw_2016;ERA5_dsw_2017];
 
 save ERA5_dsw lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -174,7 +174,7 @@ ERA5_pres_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -184,7 +184,7 @@ ERA5_pres_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_pres_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -198,7 +198,7 @@ ERA5_pres = [ERA5_pres_2015;ERA5_pres_2016;ERA5_pres_2017];
 
 save ERA5_pres lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -208,7 +208,7 @@ ERA5_rain_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -218,7 +218,7 @@ ERA5_rain_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_rain_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -232,7 +232,7 @@ ERA5_rain = [ERA5_rain_2015;ERA5_rain_2016;ERA5_rain_2017];
 
 save ERA5_rain lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -242,7 +242,7 @@ ERA5_spfh2m_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -252,7 +252,7 @@ ERA5_spfh2m_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_spfh2m_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -266,7 +266,7 @@ ERA5_spfh2m = [ERA5_spfh2m_2015;ERA5_spfh2m_2016;ERA5_spfh2m_2017];
 
 save ERA5_spfh2m lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -276,7 +276,7 @@ ERA5_tmp2m_degC_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -286,7 +286,7 @@ ERA5_tmp2m_degC_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_tmp2m_degC_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -300,7 +300,7 @@ ERA5_tmp2m_degC = [ERA5_tmp2m_degC_2015;ERA5_tmp2m_degC_2016;ERA5_tmp2m_degC_201
 
 save ERA5_tmp2m_degC lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -310,7 +310,7 @@ ERA5_ustr_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -320,7 +320,7 @@ ERA5_ustr_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_ustr_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -334,7 +334,7 @@ ERA5_ustr = [ERA5_ustr_2015;ERA5_ustr_2016;ERA5_ustr_2017];
 
 save ERA5_ustr lat lon
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -344,7 +344,7 @@ ERA5_vstr_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -354,7 +354,7 @@ ERA5_vstr_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_vstr_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY

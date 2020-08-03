@@ -28,7 +28,7 @@ lon = x(ii);
 str_exp = 'hourly data from 2015 through 2017';
 
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2015','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2015','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -38,7 +38,7 @@ ERA5_u10m_2015 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2016','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2016','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY
@@ -48,7 +48,7 @@ ERA5_u10m_2016 = squeeze(Q(ii,jj,:));
 
 clear Q
 
-fid = fopen('/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2017','r','b');
+fid = fopen('/xdisk/jrussell/mig2020/rsgrps/jrussell/SOSE/SO6/ERA5/ERA5_u10m_2017','r','b');
 Q = single(fread(fid,inf,'single'));
 fclose(fid);
 NT = length(Q)/NX/NY

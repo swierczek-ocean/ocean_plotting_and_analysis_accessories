@@ -285,7 +285,7 @@ mask = permute(mask,[2,1,3]);
 
 %% surf
 load Topo12
-coords = [XC12(1) XC12(end) YC12(1) YC12(end) -10000 10000];
+coords = [XC12(350,1) XC12(end) YC12(1) YC12(end) -10000 10000];
 XCL = XC12(223,:);
 YCL = YC12(223,:);
 ZCL = Topo12(223,:) + 10;
@@ -305,7 +305,7 @@ ZCM = linspace(-6000,0,1000);
 
 
 cm = acc_colormap('cmo_topo');
-cm = cm(1:237,:);
+cm = cm(1:248,:);
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
 colormap(cm)
