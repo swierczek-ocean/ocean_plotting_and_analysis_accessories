@@ -5,7 +5,7 @@ tic()
 
 %%
 acc_colors
-lw = 2.9;
+lw = 3.6;
 c3 = 55;
 c6 = 56;
 c12 = 57;
@@ -18,12 +18,13 @@ load eddy_TSCO3
 load eddy_TSCO6
 load eddy_TSCO12
 
-for jj=1:6
+for jj=3:3
     figure()
     set(gcf, 'Position', [1, 1, 1900, 900])
-    subplot(1,2,1)
-    plot(cmd.*vttheta3,RF3,'LineWidth',lw,'Color',Color(c3,:));
+    ax1 = subplot(1,2,1);
+    xline(0,'LineWidth',1.6)
     hold on
+    plot(cmd.*vttheta3,RF3,'LineWidth',lw,'Color',Color(c3,:));
     plot(cmd.*vttheta6,RF3,'LineWidth',lw,'Color',Color(c6,:));
     plot(cmd.*vttheta12,RF12,'LineWidth',lw,'Color',Color(c12,:));
     plot(cmd.*vmtheta3,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
@@ -35,6 +36,7 @@ for jj=1:6
     xline(0)
     yline(0)
     grid on
+    ax1.GridAlpha = 0.5;
     title('vertical heat transport','FontWeight','Normal','FontSize',26)
     ylabel('depth [m]')
     xlabel('[deg C cm/day]')
@@ -45,9 +47,10 @@ for jj=1:6
     acc_2plots_j(1)
     hold off
     
-    subplot(1,2,2)
-    h1 = plot(kgcm*cmd.*vtdic3,RF3,'LineWidth',lw,'Color',Color(c3,:));
+    ax2 = subplot(1,2,2);
+    xline(0,'LineWidth',1.6)
     hold on
+    h1 = plot(kgcm*cmd.*vtdic3,RF3,'LineWidth',lw,'Color',Color(c3,:));
     h2 = plot(kgcm*cmd.*vtdic6,RF3,'LineWidth',lw,'Color',Color(c6,:));
     h3 = plot(kgcm*cmd.*vtdic12,RF12,'LineWidth',lw,'Color',Color(c12,:));
     h4 = plot(kgcm*cmd.*vmdic3,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
@@ -56,9 +59,9 @@ for jj=1:6
     h7 = plot(kgcm*cmd.*vedic3,RF3,':','LineWidth',lw,'Color',Color(c3,:));
     h8 = plot(kgcm*cmd.*vedic6,RF3,':','LineWidth',lw,'Color',Color(c6,:));
     h9 = plot(kgcm*cmd.*vedic12,RF12,':','LineWidth',lw,'Color',Color(c12,:));
-    xline(0)
     yline(0)
     grid on
+    ax2.GridAlpha = 0.5;
     title('vertical carbon transport','FontWeight','Normal','FontSize',26)
     xlabel('[kg C cm/day]')
     ylim([ylimlo(jj) 3])
@@ -94,7 +97,7 @@ load eddy_TSCO6
 load eddy_TSCO12
 DRF = squeeze(rdmds('../Grids/3/DRF'));
 
-for jj=1:6
+for jj=3:3
     figure()
     set(gcf, 'Position', [1, 1, 1900, 900])
     subplot(1,2,1)

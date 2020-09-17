@@ -20,11 +20,11 @@ Xh = fliplr([23.12,17.53,7.88,7.86,6.93,6.16,5.71,4.62,...
     3.67,3.59,1.82,0.38,-1.10,-1.53]);
 Xc = fliplr([.0172,.0202,.0117,.0119,.0112,.0159,0.0218,.0182...
     .0147,.0252,.0159,.0106,.0107,.0162,.0180,.0169,.0156,...
-    .0146,.0138,.0138,.0106,.0072]);
+    .0146,.0138,.0138,.0106,-.0072]);
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
-subplot(1,2,1)
+ax1 = subplot(1,2,1);
 barh(Yh,Xh,'FaceColor',Color(58,:),'LineWidth',1)
 hold on
 barh(Yb,Xbh,'FaceColor',Color(60,:),'LineWidth',2)
@@ -40,26 +40,28 @@ yticklabels({'INM-CM5-0','ACCESS-ESM1-5',...
     'NorCPM1','\color{black}\bf BSOSE 2013-8',...
     '\color{black}\bf BSOSE 2013-4','\color{black}\bf BSOSE 2017'})
 grid on
+ax1.GridAlpha = 1;
 ylim([0 29])
 xlim([-3 32])
 % text(10.5,1,'not reported','FontSize',20);
-plot(15.*ones(100,1),linspace(0.6,7.2,100),'LineWidth',2.3,'Color','k')
-text(10.3,8,'not reported','FontSize',20);
+plot(13.*ones(100,1),linspace(0.6,6.9,100),'LineWidth',2.3,'Color','k')
+text(8,7.53,'not reported','FontSize',20);
 xlabel('heat [W/m^2]')
 acc_movie_w
 acc_2plots(1)
 title('2010-2014 CMIP6 mean annual downward surface fluxes','FontWeight','Normal','FontSize',22)
 hold off
 
-subplot(1,2,2)
+ax2 = subplot(1,2,2);
 barh(Yc,Xc,'FaceColor',Color(58,:),'LineWidth',1)
 hold on
 barh(Yb,Xbc,'FaceColor',Color(60,:),'LineWidth',2)
 barh(Ya,Xac,0.25,'FaceColor',Color(59,:),'LineWidth',2)
 grid on
+ax2.GridAlpha = 1;
 yticks(X)
 ylim([0 29])
-xlim([0 0.03])
+xlim([-0.008 0.026])
 yticklabels({})
 xlabel('carbon [kg C/m^2/yr]')
 acc_movie_w
