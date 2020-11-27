@@ -3,61 +3,69 @@ close all
 clc
 tic()
 
-plot_vertical_stuff_3_2
+make_movie_SST
 
 clear
 close all
-clc
 
-plot_advr_vs_depth_2
-
-clear
-close all
-clc
-
-six_panel_movie
+make_movie_SSH
 
 clear
 close all
-clc
 
-six_panel_movie_sst_currents_2
-
-clear
-close all
-clc
-
-% movie_sst_microwave
+% make_movie_SSS
 % 
 % clear
 % close all
-% clc
-
-movie_aviso
-
-clear
-close all
-clc
-
-six_panel_plots
-
-clear
-close all
-clc
-
-six_panel_movie_sst_currents
-
-clear
-close all
-clc
-
-six_panel_movie_fluxes
-
-clear
-close all
-clc
-
-
-
+% 
+% make_movie_DIC
+% 
+% clear
+% close all
+% 
+% make_movie_TFLUX
+% 
+% clear
+% close all
+% 
+% make_movie_CFLUX
+% 
+% clear
+% close all
+% 
+% make_movie_DO
+% 
+% clear
+% close all
+% 
+% make_movie_NO
+% 
+% clear
+% close all
+% 
+% make_movie_MLD
+% 
+% clear
+% close all
+% 
+% make_movie_NCP
+% 
+% clear
+% close all
+% 
+% make_movie_CHL
+% 
+% clear
+% close all
+% 
+% make_movie_POC
+% 
+% clear
+% close all
+% 
+% make_movie_NPP
+% 
+% clear
+% close all
 
 toc()
