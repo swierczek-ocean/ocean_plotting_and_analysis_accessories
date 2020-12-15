@@ -9,6 +9,10 @@ load PERT_RESPONSE
 
 load MLD3
 
+mld3c(isnan(mld3c)==1) = 0;
+mld3p(isnan(mld3p)==1) = 0;
+mld3n(isnan(mld3n)==1) = 0;
+
 fprintf('1/3 MLD \n')
 [lin_mld3,nonlin_mld3] = pert_response(mld3c(36:140,18:100,:),...
     mld3p(36:140,18:100,:),mld3n(36:140,18:100,:));
@@ -16,6 +20,10 @@ fprintf('1/3 MLD \n')
 clear mld3*
 
 load MLD12
+
+mld12c(isnan(mld12c)==1) = 0;
+mld12p(isnan(mld12p)==1) = 0;
+mld12n(isnan(mld12n)==1) = 0;
 
 fprintf('1/12 MLD \n')
 [lin_mld12,nonlin_mld12] = pert_response(mld12c(137:556,63:391,:),...

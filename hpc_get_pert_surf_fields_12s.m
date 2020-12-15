@@ -4,8 +4,8 @@ clc
 tic()
 
 str3c = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_02_ctrl/';
-str3p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_03_pert/';
-str3n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_04_npert/';
+str3p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_05_pert/';
+str3n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_06_npert/';
 hFacC = rdmds([str3c,'run/hFacC']);
 RF = squeeze(rdmds([str3c,'run/RF']));
 
@@ -141,21 +141,21 @@ for ii=1:488
     clear temp
 end
 
-save SST3 sst3*
-save SSS3 sss3*
-save SSH3 ssh3*
-save TF3 tf3*
-save CF3 cf3*
-save DIC3 dic3*
-save DO3 do3*
-save NO3 no3*
-save MLD3 mld3*
+save sSST3 sst3*
+save sSSS3 sss3*
+save sSSH3 ssh3*
+save sTF3 tf3*
+save sCF3 cf3*
+save sDIC3 dic3*
+save sDO3 do3*
+save sNO3 no3*
+save sMLD3 mld3*
 
 clear
 
 str3c = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_02_ctrl/';
-str3p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_03_pert/';
-str3n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_04_npert/';
+str3p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_05_pert/';
+str3n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB3_06_npert/';
 
 chl3c = zeros(192,132,122);
 chl3p = zeros(192,132,122);
@@ -215,10 +215,10 @@ for ii=1:122
     clear temp
 end
 
-save CHL3 chl3*
-save NCP3 ncp3*
-save NPP3 npp3*
-save POC3 poc3*
+save sCHL3 chl3*
+save sNCP3 ncp3*
+save sNPP3 npp3*
+save sPOC3 poc3*
 
 clear
 
@@ -235,7 +235,7 @@ parfor ii=1:488
     ssh12c(:,:,ii) = rdmds([str12c,'diag_surf.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_surf/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_surf/';
 
 ssh12p = zeros(756,512,488);
 
@@ -244,7 +244,7 @@ parfor ii=1:488
     ssh12p(:,:,ii) = rdmds([str12p,'diag_surf.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_surf/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_surf/';
 
 ssh12n = zeros(756,512,488);
 
@@ -253,7 +253,7 @@ parfor ii=1:488
     ssh12n(:,:,ii) = rdmds([str12n,'diag_surf.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-save SSH12 ssh12*
+save sSSH12 ssh12*
 
 clear
 %% END SSH
@@ -269,7 +269,7 @@ parfor ii=1:488
     tf12c(:,:,ii) = rdmds([str12c,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_airsea/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_airsea/';
 
 tf12p = zeros(756,512,488);
 
@@ -278,7 +278,7 @@ parfor ii=1:488
     tf12p(:,:,ii) = rdmds([str12p,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_airsea/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_airsea/';
 
 tf12n = zeros(756,512,488);
 
@@ -287,7 +287,7 @@ parfor ii=1:488
     tf12n(:,:,ii) = rdmds([str12n,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',1);
 end
 
-save TF12 tf12*
+save sTF12 tf12*
 
 clear
 
@@ -304,7 +304,7 @@ parfor ii=1:488
     cf12c(:,:,ii) = rdmds([str12c,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',3);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_airsea/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_airsea/';
 
 cf12p = zeros(756,512,488);
 
@@ -313,7 +313,7 @@ parfor ii=1:488
     cf12p(:,:,ii) = rdmds([str12p,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',3);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_airsea/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_airsea/';
 
 cf12n = zeros(756,512,488);
 
@@ -322,7 +322,7 @@ parfor ii=1:488
     cf12n(:,:,ii) = rdmds([str12n,'diag_airsea.',num2str(180*ii+21780,'%010.f')],'rec',3);
 end
 
-save CF12 cf12*
+save sCF12 cf12*
 
 clear
 
@@ -341,7 +341,7 @@ parfor ii=1:488
     sst12c(:,:,ii) = temp(:,:,1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_state/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_state/';
 
 sst12p = zeros(756,512,488);
 
@@ -352,7 +352,7 @@ parfor ii=1:488
     sst12p(:,:,ii) = temp(:,:,1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_state/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_state/';
 
 sst12n = zeros(756,512,488);
 
@@ -363,7 +363,7 @@ parfor ii=1:488
     sst12n(:,:,ii) = temp(:,:,1);
 end
 
-save SST12 sst12*
+save sSST12 sst12*
 
 clear
 
@@ -382,7 +382,7 @@ parfor ii=1:488
     dic12c(:,:,ii) = temp(:,:,1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bgc/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bgc/';
 
 dic12p = zeros(756,512,488);
 
@@ -393,7 +393,7 @@ parfor ii=1:488
     dic12p(:,:,ii) = temp(:,:,1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bgc/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bgc/';
 
 dic12n = zeros(756,512,488);
 
@@ -404,7 +404,7 @@ parfor ii=1:488
     dic12n(:,:,ii) = temp(:,:,1);
 end
 
-save DIC12 dic12*
+save sDIC12 dic12*
 
 clear
 
@@ -423,7 +423,7 @@ parfor ii=1:488
     sss12c(:,:,ii) = temp(:,:,1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_state/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_state/';
 
 sss12p = zeros(756,512,488);
 
@@ -434,7 +434,7 @@ parfor ii=1:488
     sss12p(:,:,ii) = temp(:,:,1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_state/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_state/';
 
 sss12n = zeros(756,512,488);
 
@@ -445,7 +445,7 @@ parfor ii=1:488
     sss12n(:,:,ii) = temp(:,:,1);
 end
 
-save SSS12 sss12*
+save sSSS12 sss12*
 
 clear
 
@@ -464,7 +464,7 @@ parfor ii=1:488
     do12c(:,:,ii) = temp(:,:,1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bgc/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bgc/';
 
 do12p = zeros(756,512,488);
 
@@ -475,7 +475,7 @@ parfor ii=1:488
     do12p(:,:,ii) = temp(:,:,1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bgc/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bgc/';
 
 do12n = zeros(756,512,488);
 
@@ -486,7 +486,7 @@ parfor ii=1:488
     do12n(:,:,ii) = temp(:,:,1);
 end
 
-save DO12 do12*
+save sDO12 do12*
 
 clear
 
@@ -505,7 +505,7 @@ parfor ii=1:488
     no12c(:,:,ii) = temp(:,:,1);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bgc/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bgc/';
 
 no12p = zeros(756,512,488);
 
@@ -516,7 +516,7 @@ parfor ii=1:488
     no12p(:,:,ii) = temp(:,:,1);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bgc/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bgc/';
 
 no12n = zeros(756,512,488);
 
@@ -527,7 +527,7 @@ parfor ii=1:488
     no12n(:,:,ii) = temp(:,:,1);
 end
 
-save NO12 no12*
+save sNO12 no12*
 
 clear
 
@@ -546,7 +546,7 @@ parfor ii=1:488
         num2str(180*ii+21780,'%010.f')],'rec',7),RF,hFacC);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_state/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_state/';
 
 mld12p = zeros(756,512,488);
 
@@ -556,7 +556,7 @@ parfor ii=1:488
         num2str(180*ii+21780,'%010.f')],'rec',7),RF,hFacC);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_state/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_state/';
 
 mld12n = zeros(756,512,488);
 
@@ -566,7 +566,7 @@ parfor ii=1:488
         num2str(180*ii+21780,'%010.f')],'rec',7),RF,hFacC);
 end
 
-save MLD12 mld12*
+save sMLD12 mld12*
 
 clear
 
@@ -585,7 +585,7 @@ parfor ii=1:122
     poc12c(:,:,ii) = temp(:,:,dd);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bio/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bio/';
 
 poc12p = zeros(756,512,122);
 
@@ -596,7 +596,7 @@ parfor ii=1:122
     poc12p(:,:,ii) = temp(:,:,dd);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bio/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bio/';
 
 poc12n = zeros(756,512,122);
 
@@ -607,7 +607,7 @@ parfor ii=1:122
     poc12n(:,:,ii) = temp(:,:,dd);
 end
 
-save POC12 poc12*
+save sPOC12 poc12*
 
 clear
 
@@ -626,7 +626,7 @@ parfor ii=1:122
     chl12c(:,:,ii) = temp(:,:,dd);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bio/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bio/';
 
 chl12p = zeros(756,512,122);
 
@@ -637,7 +637,7 @@ parfor ii=1:122
     chl12p(:,:,ii) = temp(:,:,dd);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bio/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bio/';
 
 chl12n = zeros(756,512,122);
 
@@ -648,7 +648,7 @@ parfor ii=1:122
     chl12n(:,:,ii) = temp(:,:,dd);
 end
 
-save CHL12 chl12*
+save sCHL12 chl12*
 
 clear
 
@@ -667,7 +667,7 @@ parfor ii=1:122
     npp12c(:,:,ii) = temp(:,:,dd);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bio/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bio/';
 
 npp12p = zeros(756,512,122);
 
@@ -678,7 +678,7 @@ parfor ii=1:122
     npp12p(:,:,ii) = temp(:,:,dd);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bio/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bio/';
 
 npp12n = zeros(756,512,122);
 
@@ -689,7 +689,7 @@ parfor ii=1:122
     npp12n(:,:,ii) = temp(:,:,dd);
 end
 
-save NPP12 npp12*
+save sNPP12 npp12*
 
 clear
 
@@ -708,7 +708,7 @@ parfor ii=1:122
     ncp12c(:,:,ii) = temp(:,:,dd);
 end
 
-str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_03_pert/diag_bio/';
+str12p = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_05_pert/diag_bio/';
 
 ncp12p = zeros(756,512,122);
 
@@ -719,7 +719,7 @@ parfor ii=1:122
     ncp12p(:,:,ii) = temp(:,:,dd);
 end
 
-str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_04_npert/diag_bio/';
+str12n = '/xdisk/jrussell/mig2020/rsgrps/jrussell/swierczek/MITgcm/verification/AB12_06_npert/diag_bio/';
 
 ncp12n = zeros(756,512,122);
 
@@ -730,7 +730,7 @@ parfor ii=1:122
     ncp12n(:,:,ii) = temp(:,:,dd);
 end
 
-save NCP12 ncp12*
+save sNCP12 ncp12*
 
 clear
 

@@ -3,25 +3,17 @@ close all
 clc
 tic()
 
-make_movie_SST
+
+make_movie_SSTsm
 
 clear
 close all
 
-make_movie_SSH
+make_movie_DICsm
 
 clear
 close all
 
-% make_movie_SSS
-% 
-% clear
-% close all
-% 
-% make_movie_DIC
-% 
-% clear
-% close all
 % 
 % make_movie_TFLUX
 % 
@@ -33,17 +25,7 @@ close all
 % clear
 % close all
 % 
-% make_movie_DO
-% 
-% clear
-% close all
-% 
-% make_movie_NO
-% 
-% clear
-% close all
-% 
-% make_movie_MLD
+% make_movie_CHL
 % 
 % clear
 % close all
@@ -52,13 +34,33 @@ close all
 % 
 % clear
 % close all
+
+% make_movie_POC
 % 
-% make_movie_CHL
+% clear
+% close all
+
+make_movie_SSHsm
+
+clear
+close all
+
+% make_movie_MLD
+% 
+% clear
+% close all
+
+make_movie_DOsm
+
+clear
+close all
+
+% make_movie_NO
 % 
 % clear
 % close all
 % 
-% make_movie_POC
+% make_movie_SSS
 % 
 % clear
 % close all

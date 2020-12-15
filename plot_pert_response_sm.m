@@ -3,27 +3,7 @@ close all
 clc
 tic()
 
-load PERT_RESPONSE
-
-
-% lin_sss12(123) = NaN;
-% nonlin_sss12(123) = NaN;
-% lin_dic12(123) = NaN;
-% nonlin_dic12(123) = NaN;
-% lin_no12(123) = NaN;
-% nonlin_no12(123) = NaN;
-% lin_do12(123) = NaN;
-% nonlin_do12(123) = NaN;
-% lin_ssh12(123) = NaN;
-% nonlin_ssh12(123) = NaN;
-% lin_sst12(123) = NaN;
-% nonlin_sst12(123) = NaN;
-% lin_mld12(123) = NaN;
-% nonlin_mld12(123) = NaN;
-% lin_tf12(123) = NaN;
-% nonlin_tf12(123) = NaN;
-% lin_cf12(123) = NaN;
-% nonlin_cf12(123) = NaN;
+load sPERT_RESPONSE
 
 
 acc_colors
@@ -63,7 +43,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_01_SST','-dpng')
+print('-r200','plots/sm_pert_response_01_SST','-dpng')
 
 close all
 
@@ -90,7 +70,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_02_SSH','-dpng')
+print('-r200','plots/sm_pert_response_02_SSH','-dpng')
 
 close all
 
@@ -117,7 +97,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_03_TF','-dpng')
+print('-r200','plots/sm_pert_response_03_TF','-dpng')
 
 close all
 
@@ -140,16 +120,15 @@ xlim([0 120])
 xlabel('days')
 acc_movie_wh
 acc_plots
-title('carbon flux response to finite wind perturbation [mol C/m^2/s]','FontWeight','Normal','FontSize',20)
+title('carbon flux response to finite wind perturbation [mol C/m^2/yr]','FontWeight','Normal','FontSize',20)
 legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/3 linear','1/12 linear','1/3 nonlinear',...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_04_CF','-dpng')
+print('-r200','plots/sm_pert_response_04_CF','-dpng')
 
 close all
-
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 900])
@@ -174,7 +153,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_05_DIC','-dpng')
+print('-r200','plots/sm_pert_response_05_DIC','-dpng')
 
 close all
 
@@ -201,7 +180,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_06_DO','-dpng')
+print('-r200','plots/sm_pert_response_06_DO','-dpng')
 
 close all
 
@@ -228,7 +207,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_07_NO','-dpng')
+print('-r200','plots/sm_pert_response_07_NO','-dpng')
 
 close all
 
@@ -255,7 +234,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_08_MLD','-dpng')
+print('-r200','plots/sm_pert_response_08_MLD','-dpng')
 
 close all
 
@@ -282,7 +261,7 @@ legend([h1(1),h2(1),h3(1),h4(1)],...
     '1/12 nonlinear','Location','eastoutside','FontSize',16)
 hold off
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','plots/pert_response_09_SSS','-dpng')
+print('-r200','plots/sm_pert_response_09_SSS','-dpng')
 
 close all
 

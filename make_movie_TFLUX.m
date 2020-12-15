@@ -13,13 +13,21 @@ tf12c(tf12c==0) = NaN;
 tf12p(tf12p==0) = NaN;
 tf12n(tf12n==0) = NaN;
 
-dh1_3 = tf3p - tf3c;
-dh2_3 = tf3n - tf3c;
+dH1_3 = (tf3p - tf3c);
+dH2_3 = (tf3n - tf3c);
 
-dh1_12 = tf12p - tf12c;
-dh2_12 = tf12n - tf12c;
+dH1_12 = (tf12p - tf12c);
+dH2_12 = (tf12n - tf12c);
 
 clear tf*
+
+dh1_3 = 0.5.*(dH1_3 - dH2_3);
+dh2_3 = 0.5.*(dH1_3 + dH2_3);
+
+dh1_12 = 0.5.*(dH1_12 - dH2_12);
+dh2_12 = 0.5.*(dH1_12 + dH2_12);
+
+clear dH*
 
 %%
 load mask
@@ -36,11 +44,16 @@ numdate = datenum('01012017','mmddyyyy');
 
 %% TF
 cm = acc_colormap('cmo_balance');
-ub = 0.08;
+ub = 4;
 lb = -ub;
-nlvls = 50;
+nlvls = 41;
 z = linspace(lb,ub,nlvls);
-z = [-3,-1,z,1,3];
+z = [-900,-500,-100,-90,-80,-70,-60,-55,-50,-45,-40,...
+    -35,-30,-25,-20,-15,-10,-8,-6,-5,...
+    z,5,6,8,10,15,20,25,30,35,...
+    40,45,50,55,60,70,80,90,100,500,900];
+z = 0.5.*z;
+
 
 figure()
 set(gcf, 'Position', [1, 1, 1600, 901])
@@ -49,10 +62,10 @@ ax1 = subplot(2,2,1);
 contourf(XC3,YC3,dh1_3(:,:,1),'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
+caxis([0.5*lb 0.5*ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('1/3 PP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+title('1/3 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
 acc_movie_w
 acc_quad_movies(1)
 text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -62,11 +75,11 @@ ax2 = subplot(2,2,2);
 contourf(XC3,YC3,dh2_3(:,:,1),'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
+caxis([0.5*lb 0.5*ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 NP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+title('1/3 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
 acc_movie_w
 acc_quad_movies(2)
 text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -76,11 +89,11 @@ ax3 = subplot(2,2,3);
 contourf(XC12,YC12,dh1_12(:,:,1),'LineStyle','none','LevelList',z);
 hold on
 contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
+caxis([0.5*lb 0.5*ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 PP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+title('1/12 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
 acc_movie_w
 acc_quad_movies(3)
 text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -91,11 +104,11 @@ contourf(XC12,YC12,dh2_12(:,:,1),'LineStyle','none','LevelList',z);
 hold on
 cbar = colorbar('eastoutside');
 contour(XCm,YCm,mask(:,:,1),'Color','k')
-caxis([lb ub])
+caxis([0.5*lb 0.5*ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 NP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+title('1/12 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
 acc_movie_w
 acc_quad_movies(4)
 text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -104,21 +117,21 @@ hold off
 set(gca, 'nextplot','replacechildren', 'Visible','on');
 vidObj = VideoWriter('movie_TF_pert.avi');
 vidObj.Quality = 100;
-vidObj.FrameRate = 17;
+vidObj.FrameRate = 10;
 open(vidObj);
 writeVideo(vidObj, getframe(gcf));
 
-for ii=2:488
+for ii=2:122
     numdate = numdate + 0.25;
     
     ax1 = subplot(2,2,1);
     contourf(XC3,YC3,dh1_3(:,:,ii),'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,1),'Color','k')
-    caxis([lb ub])
+    caxis([0.5*lb 0.5*ub])
     axis(inside_coords)
     ytickformat('degrees')
-    title('1/3 PP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    title('1/3 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
     acc_movie_w
     acc_quad_movies(1)
     text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -128,11 +141,11 @@ for ii=2:488
     contourf(XC3,YC3,dh2_3(:,:,ii),'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,1),'Color','k')
-    caxis([lb ub])
+    caxis([0.5*lb 0.5*ub])
     axis(inside_coords)
     xtickformat('degrees')
     ytickformat('degrees')
-    title('1/3 NP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    title('1/3 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
     acc_movie_w
     acc_quad_movies(2)
     text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -142,11 +155,11 @@ for ii=2:488
     contourf(XC12,YC12,dh1_12(:,:,ii),'LineStyle','none','LevelList',z);
     hold on
     contour(XCm,YCm,mask(:,:,1),'Color','k')
-    caxis([lb ub])
+    caxis([0.5*lb 0.5*ub])
     axis(inside_coords)
     xtickformat('degrees')
     ytickformat('degrees')
-    title('1/12 PP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    title('1/12 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
     acc_movie_w
     acc_quad_movies(3)
     text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
@@ -157,11 +170,76 @@ for ii=2:488
     hold on
     cbar = colorbar('eastoutside');
     contour(XCm,YCm,mask(:,:,1),'Color','k')
-    caxis([lb ub])
+    caxis([0.5*lb 0.5*ub])
     axis(inside_coords)
     xtickformat('degrees')
     ytickformat('degrees')
-    title('1/12 NP-CTRL TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    title('1/12 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    acc_movie_w
+    acc_quad_movies(4)
+    text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
+    hold off
+    
+    drawnow()
+    writeVideo(vidObj, getframe(gcf));
+end
+
+numdate = numdate + 0.25;
+
+for ii=124:488
+    numdate = numdate + 0.25;
+    
+    ax1 = subplot(2,2,1);
+    contourf(XC3,YC3,dh1_3(:,:,ii),'LineStyle','none','LevelList',z);
+    hold on
+    contour(XCm,YCm,mask(:,:,1),'Color','k')
+    caxis([0.5*lb 0.5*ub])
+    axis(inside_coords)
+    ytickformat('degrees')
+    title('1/3 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    acc_movie_w
+    acc_quad_movies(1)
+    text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
+    hold off
+    
+    ax2 = subplot(2,2,2);
+    contourf(XC3,YC3,dh2_3(:,:,ii),'LineStyle','none','LevelList',z);
+    hold on
+    contour(XCm,YCm,mask(:,:,1),'Color','k')
+    caxis([0.5*lb 0.5*ub])
+    axis(inside_coords)
+    xtickformat('degrees')
+    ytickformat('degrees')
+    title('1/3 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    acc_movie_w
+    acc_quad_movies(2)
+    text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
+    hold off
+    
+    ax3 = subplot(2,2,3);
+    contourf(XC12,YC12,dh1_12(:,:,ii),'LineStyle','none','LevelList',z);
+    hold on
+    contour(XCm,YCm,mask(:,:,1),'Color','k')
+    caxis([0.5*lb 0.5*ub])
+    axis(inside_coords)
+    xtickformat('degrees')
+    ytickformat('degrees')
+    title('1/12 LIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
+    acc_movie_w
+    acc_quad_movies(3)
+    text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
+    hold off
+    
+    ax4 = subplot(2,2,4);
+    contourf(XC12,YC12,dh2_12(:,:,ii),'LineStyle','none','LevelList',z);
+    hold on
+    cbar = colorbar('eastoutside');
+    contour(XCm,YCm,mask(:,:,1),'Color','k')
+    caxis([0.5*lb 0.5*ub])
+    axis(inside_coords)
+    xtickformat('degrees')
+    ytickformat('degrees')
+    title('1/12 NONLIN RESPONSE TFLUX [W/m^2]','FontWeight','Normal','FontSize',16)
     acc_movie_w
     acc_quad_movies(4)
     text(291,-33.7,datestr(numdate,'yyyy mmm dd'),'FontSize',21,'Color','w')
