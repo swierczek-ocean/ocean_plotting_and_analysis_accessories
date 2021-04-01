@@ -10,7 +10,7 @@ nn = length(prof_lat);
 theta_mf_3_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdif(ii,22:24);
+    temp = prof_Tdif(ii,61:63);
     theta_mf_3_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -20,7 +20,7 @@ theta_mf_3_temp = theta_mf_3_temp(isnan(theta_mf_3_temp)==0);
 
 theta_mf_3 = [prof_lon;prof_lat;theta_mf_3_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mf_3 theta_mf_3
+save MIST_PROFILES/Misfits/processed_2/theta_mf_3 theta_mf_3
 
 clear
 
@@ -31,7 +31,7 @@ nn = length(prof_lat);
 theta_mf_6_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdif(ii,22:24);
+    temp = prof_Tdif(ii,61:63);
     theta_mf_6_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -41,7 +41,7 @@ theta_mf_6_temp = theta_mf_6_temp(isnan(theta_mf_6_temp)==0);
 
 theta_mf_6 = [prof_lon;prof_lat;theta_mf_6_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mf_6 theta_mf_6
+save MIST_PROFILES/Misfits/processed_2/theta_mf_6 theta_mf_6
 
 clear
 
@@ -52,7 +52,7 @@ nn = length(prof_lat);
 theta_mf_12_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdif(ii,22:24);
+    temp = prof_Tdif(ii,61:63);
     theta_mf_12_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -62,7 +62,7 @@ theta_mf_12_temp = theta_mf_12_temp(isnan(theta_mf_12_temp)==0);
 
 theta_mf_12 = [prof_lon;prof_lat;theta_mf_12_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mf_12 theta_mf_12
+save MIST_PROFILES/Misfits/processed_2/theta_mf_12 theta_mf_12
 
 clear
 
@@ -73,7 +73,7 @@ nn = length(prof_lat);
 dic_mf_3_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdif(ii,22:24);
+    temp = prof_DICdif(ii,61:63);
     dic_mf_3_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -83,7 +83,7 @@ dic_mf_3_temp = ufac.*dic_mf_3_temp(isnan(dic_mf_3_temp)==0);
 
 dic_mf_3 = [prof_lon;prof_lat;dic_mf_3_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mf_3 dic_mf_3
+save MIST_PROFILES/Misfits/processed_2/dic_mf_3 dic_mf_3
 
 clear
 
@@ -94,7 +94,7 @@ nn = length(prof_lat);
 dic_mf_6_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdif(ii,22:24);
+    temp = prof_DICdif(ii,61:63);
     dic_mf_6_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -104,7 +104,7 @@ dic_mf_6_temp = ufac.*dic_mf_6_temp(isnan(dic_mf_6_temp)==0);
 
 dic_mf_6 = [prof_lon;prof_lat;dic_mf_6_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mf_6 dic_mf_6
+save MIST_PROFILES/Misfits/processed_2/dic_mf_6 dic_mf_6
 
 clear
 
@@ -115,7 +115,7 @@ nn = length(prof_lat);
 dic_mf_12_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdif(ii,22:24);
+    temp = prof_DICdif(ii,61:63);
     dic_mf_12_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -125,7 +125,7 @@ dic_mf_12_temp = ufac.*dic_mf_12_temp(isnan(dic_mf_12_temp)==0);
 
 dic_mf_12 = [prof_lon;prof_lat;dic_mf_12_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mf_12 dic_mf_12
+save MIST_PROFILES/Misfits/processed_2/dic_mf_12 dic_mf_12
 
 clear
 
@@ -146,7 +146,7 @@ nn = length(prof_lat);
 theta_mfn_3_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdifn(ii,22:24);
+    temp = prof_Tdifn(ii,61:63);
     theta_mfn_3_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -156,7 +156,7 @@ theta_mfn_3_temp = theta_mfn_3_temp(isnan(theta_mfn_3_temp)==0);
 
 theta_mfn_3 = [prof_lon;prof_lat;theta_mfn_3_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mfn_3 theta_mfn_3
+save MIST_PROFILES/Misfits/processed_2/theta_mfn_3 theta_mfn_3
 
 clear
 
@@ -167,7 +167,7 @@ nn = length(prof_lat);
 theta_mfn_6_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdifn(ii,22:24);
+    temp = prof_Tdifn(ii,61:63);
     theta_mfn_6_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -177,7 +177,7 @@ theta_mfn_6_temp = theta_mfn_6_temp(isnan(theta_mfn_6_temp)==0);
 
 theta_mfn_6 = [prof_lon;prof_lat;theta_mfn_6_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mfn_6 theta_mfn_6
+save MIST_PROFILES/Misfits/processed_2/theta_mfn_6 theta_mfn_6
 
 clear
 
@@ -188,7 +188,7 @@ nn = length(prof_lat);
 theta_mfn_12_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_Tdifn(ii,22:24);
+    temp = prof_Tdifn(ii,61:63);
     theta_mfn_12_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -198,7 +198,7 @@ theta_mfn_12_temp = theta_mfn_12_temp(isnan(theta_mfn_12_temp)==0);
 
 theta_mfn_12 = [prof_lon;prof_lat;theta_mfn_12_temp];
 
-save MIST_PROFILES/Misfits/processed/theta_mfn_12 theta_mfn_12
+save MIST_PROFILES/Misfits/processed_2/theta_mfn_12 theta_mfn_12
 
 clear
 
@@ -209,7 +209,7 @@ nn = length(prof_lat);
 dic_mfn_3_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdifn(ii,22:24);
+    temp = prof_DICdifn(ii,61:63);
     dic_mfn_3_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -219,7 +219,7 @@ dic_mfn_3_temp = dic_mfn_3_temp(isnan(dic_mfn_3_temp)==0);
 
 dic_mfn_3 = [prof_lon;prof_lat;dic_mfn_3_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mfn_3 dic_mfn_3
+save MIST_PROFILES/Misfits/processed_2/dic_mfn_3 dic_mfn_3
 
 clear
 
@@ -230,7 +230,7 @@ nn = length(prof_lat);
 dic_mfn_6_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdifn(ii,22:24);
+    temp = prof_DICdifn(ii,61:63);
     dic_mfn_6_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -240,7 +240,7 @@ dic_mfn_6_temp = dic_mfn_6_temp(isnan(dic_mfn_6_temp)==0);
 
 dic_mfn_6 = [prof_lon;prof_lat;dic_mfn_6_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mfn_6 dic_mfn_6
+save MIST_PROFILES/Misfits/processed_2/dic_mfn_6 dic_mfn_6
 
 clear
 
@@ -251,7 +251,7 @@ nn = length(prof_lat);
 dic_mfn_12_temp = zeros(1,nn);
 
 for ii=1:nn
-    temp = prof_DICdifn(ii,22:24);
+    temp = prof_DICdifn(ii,61:63);
     dic_mfn_12_temp(ii) = mean(temp(isnan(temp)==0));
 end
 
@@ -261,7 +261,7 @@ dic_mfn_12_temp = dic_mfn_12_temp(isnan(dic_mfn_12_temp)==0);
 
 dic_mfn_12 = [prof_lon;prof_lat;dic_mfn_12_temp];
 
-save MIST_PROFILES/Misfits/processed/dic_mfn_12 dic_mfn_12
+save MIST_PROFILES/Misfits/processed_2/dic_mfn_12 dic_mfn_12
 
 clear
 

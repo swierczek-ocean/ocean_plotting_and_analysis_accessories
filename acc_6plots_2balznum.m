@@ -1,17 +1,16 @@
-function acc_6plots_2bal(n,axn,cm,lbcb1,ubcb1,lbcb2,ubcb2)
+function acc_6plots_2balznum(n,axn,cm,lbcb1,ubcb1,lbcb2,ubcb2)
 %% plotting tool
 
 if n==1
     ax = gca;
     colormap(axn,cm)
     xticklabels({})
-    ytickformat('degrees')
     outerpos = ax.OuterPosition;
     ti = ax.TightInset;
     left = outerpos(1) + ti(1) - 0.09;
-    bottom = outerpos(2) + ti(2) - 0.03;
+    bottom = outerpos(2) + ti(2) - 0.045;
     ax_width = outerpos(3) - ti(1) - ti(3) + 0.073;
-    ax_height = outerpos(4) - ti(2) - ti(4) + 0.055;
+    ax_height = outerpos(4) - ti(2) - ti(4) + 0.07;
     ax.Position = [left bottom ax_width ax_height];
 elseif n==2
     ax = gca;
@@ -40,13 +39,11 @@ elseif n==3
     cbar = colorbar('Position', [left+ax_width+0.015 bottom 0.02 1.00*ax_height]);    
     set(cbar,'XLim',[lbcb1 ubcb1]);
     cbar.LineWidth = 2;
-    cbar.FontSize = 21;
-    set(cbar,'YTick',-6:6)
+    cbar.FontSize = 19;
 elseif n==4
     ax = gca;
     colormap(axn,cm)
     xtickformat('degrees')
-    ytickformat('degrees')
     outerpos = ax.OuterPosition;
     ti = ax.TightInset;
     left = outerpos(1) + ti(1) - 0.09;
@@ -81,9 +78,12 @@ elseif n==6
     cbar = colorbar('Position', [left+ax_width+0.015 bottom 0.02 1.00*ax_height]);
     set(cbar,'XLim',[lbcb2 ubcb2]);
     cbar.LineWidth = 2;
-    cbar.FontSize = 21;
-    set(cbar,'YTick',-60:10:60)
+    cbar.FontSize = 19;
 end
 
 end
+
+
+
+
 

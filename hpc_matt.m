@@ -28,8 +28,8 @@ y = 29:119;
 z = 1:52; %
 % z = 1:36; % top 1000 m
 
-XC = XC(x,y);
-YC = YC(x,y);
+XC3 = XC(x,y);
+YC3 = YC(x,y);
 RC3 = RC(z);
 hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
@@ -65,7 +65,6 @@ for kk=1:nz
 end
 
 area = RAC(x,y);
-
 
 wvel3 = zeros(165,91,52,365);
 theta3 = zeros(165,91,52,365);
@@ -113,6 +112,19 @@ end
 
 clear char*
 
+vol1000t = sum(volume(:,:,1:36),[1,2,3]);
+vol1000 = volume(:,:,1:36);
+A = (sum(mean(theta3(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+B = (sum(mean(salt3(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+C = (sum(mean(dic3(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+D = (sum(mean(do3(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+theta3 = theta3 - A;
+salt3 = salt3 - B;
+dic3 = dic3 - C;
+do3 = do3 - D;
+save mean_value_3 A B C D
+
+
 for ii=1:165
     for jj=1:91
         for kk=1:52
@@ -151,6 +163,28 @@ vesalt3 = spd.*squeeze(sum(areaTop.*esalt3,[1,2]))./areaBox;
 vedic3 = spd.*squeeze(sum(areaTop.*edic3,[1,2]))./areaBox;
 vedo3 = spd.*squeeze(sum(areaTop.*edo3,[1,2]))./areaBox;
 
+mwtheta3 = mwtheta3(:,:,20);
+etheta3 = etheta3(:,:,20);
+wtheta3 = wtheta3(:,:,20);
+wctheta3 = wctheta3(:,:,20);
+
+mwsalt3 = mwsalt3(:,:,20);
+esalt3 = esalt3(:,:,20);
+wsalt3 = wsalt3(:,:,20);
+wcsalt3 = wcsalt3(:,:,20);
+
+mwdic3 = mwdic3(:,:,20);
+edic3 = edic3(:,:,20);
+wdic3 = wdic3(:,:,20);
+wcdic3 = wcdic3(:,:,20);
+
+mwdo3 = mwdo3(:,:,20);
+edo3 = edo3(:,:,20);
+wdo3 = wdo3(:,:,20);
+wcdo3 = wcdo3(:,:,20);
+
+save eddy_TSCO3_190m_sm mw*3 e*3 w*3 XC3 YC3
+
 RF3 = RF3(1:52);
 save eddy_TSCO3 v*3 RC3 RF3
 
@@ -181,8 +215,8 @@ y = 54:235;
 z = 1:52; %
 % z = 1:36; % top 1000 m
 
-XC = XC(x,y);
-YC = YC(x,y);
+XC6 = XC(x,y);
+YC6 = YC(x,y);
 RC6 = RC(z);
 hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
@@ -264,6 +298,18 @@ end
 
 clear char*
 
+vol1000t = sum(volume(:,:,1:36),[1,2,3]);
+vol1000 = volume(:,:,1:36);
+A = (sum(mean(theta6(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+B = (sum(mean(salt6(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+C = (sum(mean(dic6(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+D = (sum(mean(do6(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+theta6 = theta6 - A;
+salt6 = salt6 - B;
+dic6 = dic6 - C;
+do6 = do6 - D;
+save mean_value_6 A B C D
+
 for ii=1:330
     for jj=1:182
         for kk=1:52
@@ -301,6 +347,29 @@ vetheta6 = spd.*squeeze(sum(areaTop.*etheta6,[1,2]))./areaBox;
 vesalt6 = spd.*squeeze(sum(areaTop.*esalt6,[1,2]))./areaBox;
 vedic6 = spd.*squeeze(sum(areaTop.*edic6,[1,2]))./areaBox;
 vedo6 = spd.*squeeze(sum(areaTop.*edo6,[1,2]))./areaBox;
+
+mwtheta6 = mwtheta6(:,:,20);
+etheta6 = etheta6(:,:,20);
+wtheta6 = wtheta6(:,:,20);
+wctheta6 = wctheta6(:,:,20);
+
+mwsalt6 = mwsalt6(:,:,20);
+esalt6 = esalt6(:,:,20);
+wsalt6 = wsalt6(:,:,20);
+wcsalt6 = wcsalt6(:,:,20);
+
+mwdic6 = mwdic6(:,:,20);
+edic6 = edic6(:,:,20);
+wdic6 = wdic6(:,:,20);
+wcdic6 = wcdic6(:,:,20);
+
+mwdo6 = mwdo6(:,:,20);
+edo6 = edo6(:,:,20);
+wdo6 = wdo6(:,:,20);
+wcdo6 = wcdo6(:,:,20);
+
+save eddy_TSCO6_190m_sm mw*6 e*6 w*6 XC6 YC6
+
 
 RF6 = RF6(1:52);
 save eddy_TSCO6 v*6 RC6 RF6

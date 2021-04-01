@@ -56,6 +56,12 @@ end
 
 clear char*
 
+load mean_value_3
+theta3 = theta3 - A;
+salt3 = salt3 - B;
+dic3 = dic3 - C;
+do3 = do3 - D;
+
 for ii=1:192
     for jj=1:132
         [mwtheta3(ii,jj),etheta3(ii,jj),wtheta3(ii,jj),...
@@ -132,6 +138,12 @@ for jj=1:396
 end
 
 clear char*
+
+load mean_value_6
+theta6 = theta6 - A;
+salt6 = salt6 - B;
+dic6 = dic6 - C;
+do6 = do6 - D;
 
 for ii=1:384
     for jj=1:260
@@ -212,6 +224,12 @@ for jj=1:396
 end
 
 clear char*
+
+load mean_value_12
+theta12 = theta12 - A;
+salt12 = salt12 - B;
+dic12 = dic12 - C;
+do12 = do12 - D;
 
 for ii=1:756
     for jj=1:512

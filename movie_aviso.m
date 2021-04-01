@@ -54,7 +54,7 @@ ytickformat('degrees')
 acc_movie_s
 title('surface currents from AVISO satellite altimetry [m/s]','FontWeight','Normal','FontSize',28)
 acc_plots
-text(291.3,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',28,'Color','w')
+text(291.3,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',30,'Color','w')
 hold off
 
 set(gca, 'nextplot','replacechildren', 'Visible','on');
@@ -77,7 +77,7 @@ for ii=2:365
     ytickformat('degrees')
     acc_movie_s
     title('surface currents from AVISO satellite altimetry [m/s]','FontWeight','Normal','FontSize',28)
-    text(291.3,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',28,'Color','w')
+    text(291.3,-37,datestr(numdate,'yyyy mmm dd'),'FontSize',30,'Color','w')
     hold off
     
     drawnow()

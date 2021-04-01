@@ -28,8 +28,8 @@ y = 106:467;
 z = 1:2:104; %
 % z = 1:36; % top 1000 m
 
-XC = XC(x,y);
-YC = YC(x,y);
+XC12 = XC(x,y);
+YC12 = YC(x,y);
 RC12 = RC(z);
 hFacC = hFacC(x,y,z);
 hFacC_ind = hFacC;
@@ -89,7 +89,7 @@ mwdo12 = single(zeros(660,362,52));
 
 
 for jj=1:365
-    fprintf('1/6 model daily fields iter %g of 365 \n',jj)
+    fprintf('1/12 model daily fields iter %g of 365 \n',jj)
     charstate = [strs,'diag_state.',num2str(360*(jj+31),'%010.f')];
     temp = rdmds(charstate,'rec',5);
     temp_wvel = single(temp(x,y,z));
@@ -112,6 +112,18 @@ end
 
 clear char*
 
+vol1000t = sum(volume(:,:,1:36),[1,2,3]);
+vol1000 = volume(:,:,1:36);
+A = (sum(mean(theta12(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+B = (sum(mean(salt12(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+C = (sum(mean(dic12(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+D = (sum(mean(do12(:,:,1:36,:),4).*vol1000,[1,2,3])./vol1000t);
+theta12 = theta12 - A;
+salt12 = salt12 - B;
+dic12 = dic12 - C;
+do12 = do12 - D;
+save mean_value_12 A B C D
+
 for ii=1:660
     for jj=1:362
         for kk=1:52
@@ -127,6 +139,7 @@ for ii=1:660
             [mwdo12(ii,jj,kk),edo12(ii,jj,kk),wdo12(ii,jj,kk),...
                 wcdo12(ii,jj,kk)] = hilo_pass(squeeze(wvel12(ii,jj,kk,:)),...
                 squeeze(do12(ii,jj,kk,:)));
+            fprintf('1/12 model hilo pass  ii = %g of 660, jj = %g of 362, kk = %g of 52 \n',ii,jj,kk)
         end
     end
 end
@@ -151,6 +164,28 @@ vetheta12 = spd.*squeeze(sum(areaTop.*etheta12,[1,2]))./areaBox;
 vesalt12 = spd.*squeeze(sum(areaTop.*esalt12,[1,2]))./areaBox;
 vedic12 = spd.*squeeze(sum(areaTop.*edic12,[1,2]))./areaBox;
 vedo12 = spd.*squeeze(sum(areaTop.*edo12,[1,2]))./areaBox;
+
+mwtheta12 = mwtheta12(:,:,20);
+etheta12 = etheta12(:,:,20);
+wtheta12 = wtheta12(:,:,20);
+wctheta12 = wctheta12(:,:,20);
+
+mwsalt12 = mwsalt12(:,:,20);
+esalt12 = esalt12(:,:,20);
+wsalt12 = wsalt12(:,:,20);
+wcsalt12 = wcsalt12(:,:,20);
+
+mwdic12 = mwdic12(:,:,20);
+edic12 = edic12(:,:,20);
+wdic12 = wdic12(:,:,20);
+wcdic12 = wcdic12(:,:,20);
+
+mwdo12 = mwdo12(:,:,20);
+edo12 = edo12(:,:,20);
+wdo12 = wdo12(:,:,20);
+wcdo12 = wcdo12(:,:,20);
+
+save eddy_TSCO3_190m_sm mw*12 e*12 w*12 XC12 YC12
 
 RF12 = RF12(1:2:104);
 save eddy_TSCO12 v*12 RC12 RF12

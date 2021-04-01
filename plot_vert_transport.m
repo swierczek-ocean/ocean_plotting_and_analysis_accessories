@@ -12,7 +12,7 @@ c12 = 57;
 cg = 10;
 ylimlo = [-250,-500,-1000,-1500,-2000,-5500];
 cmd = 100;
-kgcm = 12/1000;
+gcm = 12;
 %%
 load eddy_TSCO3
 load eddy_TSCO6
@@ -50,15 +50,15 @@ for jj=3:3
     ax2 = subplot(1,2,2);
     xline(0,'LineWidth',1.6)
     hold on
-    h1 = plot(kgcm*cmd.*vtdic3,RF3,'LineWidth',lw,'Color',Color(c3,:));
-    h2 = plot(kgcm*cmd.*vtdic6,RF3,'LineWidth',lw,'Color',Color(c6,:));
-    h3 = plot(kgcm*cmd.*vtdic12,RF12,'LineWidth',lw,'Color',Color(c12,:));
-    h4 = plot(kgcm*cmd.*vmdic3,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
-    h5 = plot(kgcm*cmd.*vmdic6,RF3,'--','LineWidth',lw,'Color',Color(c6,:));
-    h6 = plot(kgcm*cmd.*vmdic12,RF12,'--','LineWidth',lw,'Color',Color(c12,:));
-    h7 = plot(kgcm*cmd.*vedic3,RF3,':','LineWidth',lw,'Color',Color(c3,:));
-    h8 = plot(kgcm*cmd.*vedic6,RF3,':','LineWidth',lw,'Color',Color(c6,:));
-    h9 = plot(kgcm*cmd.*vedic12,RF12,':','LineWidth',lw,'Color',Color(c12,:));
+    h1 = plot(gcm*cmd.*vtdic3,RF3,'LineWidth',lw,'Color',Color(c3,:));
+    h2 = plot(gcm*cmd.*vtdic6,RF3,'LineWidth',lw,'Color',Color(c6,:));
+    h3 = plot(gcm*cmd.*vtdic12,RF12,'LineWidth',lw,'Color',Color(c12,:));
+    h4 = plot(gcm*cmd.*vmdic3,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
+    h5 = plot(gcm*cmd.*vmdic6,RF3,'--','LineWidth',lw,'Color',Color(c6,:));
+    h6 = plot(gcm*cmd.*vmdic12,RF12,'--','LineWidth',lw,'Color',Color(c12,:));
+    h7 = plot(gcm*cmd.*vedic3,RF3,':','LineWidth',lw,'Color',Color(c3,:));
+    h8 = plot(gcm*cmd.*vedic6,RF3,':','LineWidth',lw,'Color',Color(c6,:));
+    h9 = plot(gcm*cmd.*vedic12,RF12,':','LineWidth',lw,'Color',Color(c12,:));
     yline(0)
     grid on
     ax2.GridAlpha = 0.5;
@@ -75,7 +75,7 @@ for jj=3:3
     hold off
 
     set(gcf,'InvertHardCopy','off');
-    print('-r200',['paper/vert_TC_',num2str(abs(ylimlo(jj)))],'-dpng')
+    print('-r300',['paper2/vert_TC_',num2str(abs(ylimlo(jj)))],'-dpng')
     close all
 end
 
@@ -90,7 +90,7 @@ c12 = 57;
 cg = 10;
 ylimlo = [-250,-500,-1000,-1500,-2000,-5500];
 cmd = 1;
-kgcm = 12/1000;
+gcm = 12/1000;
 %%
 load eddy_TSCO3
 load eddy_TSCO6
@@ -124,16 +124,16 @@ for jj=3:3
     hold off
     
     subplot(1,2,2)
-    h1 = plot(kgcm*cmd.*vtdic3./DRF,RF3,'LineWidth',lw,'Color',Color(c3,:));
+    h1 = plot(gcm*cmd.*vtdic3./DRF,RF3,'LineWidth',lw,'Color',Color(c3,:));
     hold on
-    h2 = plot(kgcm*cmd.*vtdic6./DRF,RF3,'LineWidth',lw,'Color',Color(c6,:));
-    h3 = plot(kgcm*cmd.*vtdic12./DRF,RF12,'LineWidth',lw,'Color',Color(c12,:));
-    h4 = plot(kgcm*cmd.*vmdic3./DRF,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
-    h5 = plot(kgcm*cmd.*vmdic6./DRF,RF3,'--','LineWidth',lw,'Color',Color(c6,:));
-    h6 = plot(kgcm*cmd.*vmdic12./DRF,RF12,'--','LineWidth',lw,'Color',Color(c12,:));
-    h7 = plot(kgcm*cmd.*vedic3./DRF,RF3,':','LineWidth',lw,'Color',Color(c3,:));
-    h8 = plot(kgcm*cmd.*vedic6./DRF,RF3,':','LineWidth',lw,'Color',Color(c6,:));
-    h9 = plot(kgcm*cmd.*vedic12./DRF,RF12,':','LineWidth',lw,'Color',Color(c12,:));
+    h2 = plot(gcm*cmd.*vtdic6./DRF,RF3,'LineWidth',lw,'Color',Color(c6,:));
+    h3 = plot(gcm*cmd.*vtdic12./DRF,RF12,'LineWidth',lw,'Color',Color(c12,:));
+    h4 = plot(gcm*cmd.*vmdic3./DRF,RF3,'--','LineWidth',lw,'Color',Color(c3,:));
+    h5 = plot(gcm*cmd.*vmdic6./DRF,RF3,'--','LineWidth',lw,'Color',Color(c6,:));
+    h6 = plot(gcm*cmd.*vmdic12./DRF,RF12,'--','LineWidth',lw,'Color',Color(c12,:));
+    h7 = plot(gcm*cmd.*vedic3./DRF,RF3,':','LineWidth',lw,'Color',Color(c3,:));
+    h8 = plot(gcm*cmd.*vedic6./DRF,RF3,':','LineWidth',lw,'Color',Color(c6,:));
+    h9 = plot(gcm*cmd.*vedic12./DRF,RF12,':','LineWidth',lw,'Color',Color(c12,:));
     xline(0)
     yline(0)
     grid on
@@ -150,7 +150,7 @@ for jj=3:3
     hold off
 
     set(gcf,'InvertHardCopy','off');
-    print('-r200',['paper/grif_vert_TC_',num2str(abs(ylimlo(jj)))],'-dpng')
+    print('-r300',['paper2/grif_vert_TC_',num2str(abs(ylimlo(jj)))],'-dpng')
     close all
 end
 

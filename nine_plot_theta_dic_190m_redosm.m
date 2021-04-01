@@ -7,14 +7,14 @@ acc_settings
 
 %%
 load mask
-load eddy_TSCO12_190m
-load eddy_TSCO6_190m
-load eddy_TSCO3_190m
+load eddy_TSCO12_190m_sm
+load eddy_TSCO6_190m_sm
+load eddy_TSCO3_190m_sm
 
 
 mask = permute(mask,[2,1,3]);
 mask = mask(:,:,20);
-inside_coords = [290.5 350.2 -58.7 -32];
+inside_coords = [290.2 344.8 -54.85 -33.9];
 nlvls = 200;
 %%
 
@@ -23,12 +23,12 @@ nlvls = 200;
 
 cm = acc_colormap('cmo_balance');
 
-lb = -2.8e-3;
-ub = 2.8e-3;
+lb = -3.5e-5;
+ub = 3.5e-5;
 z = linspace(lb,ub,nlvls);
 
-z2 = -12e-3:0.0008:-2.80008e-3;
-z = [z2,z,-z2];
+
+z = [-20,z,20];
 
 cmd = 86400;
 z = cmd.*z;
@@ -148,7 +148,7 @@ hold off
 
 
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','nine_plots_2/lr_salt','-dtiff')
+print('-r100','nine_plots_3/lr_salt','-dpng')
 close all
 
 
@@ -158,12 +158,12 @@ close all
 
 cm = acc_colormap('cmo_balance');
 
-lb = -2.2e-5;
-ub = 2.2e-5;
+lb = -1.8e-6;
+ub = 1.8e-6;
 z = linspace(lb,ub,nlvls);
 
-z2 = -10e-5:5e-6:-2.20008e-5;
-z = [z2,z,-z2];
+
+z = [-20,z,20];
 
 cmd = 15.9994*86400/1000;
 z = cmd.*z;
@@ -283,7 +283,7 @@ hold off
 
 
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','nine_plots_2/lr_do','-dtiff')
+print('-r100','nine_plots_3/lr_do','-dpng')
 close all
 
 
@@ -294,12 +294,11 @@ close all
 
 cm = acc_colormap('cmo_balance');
 
-lb = -2.4e-4;
-ub = 2.4e-4;
+lb = -1.8e-6;
+ub = 1.8e-6;
 z = linspace(lb,ub,nlvls);
 
-z2 = -8e-4:5e-5:-2.40002e-4;
-z = [z2,z,-z2];
+z = [-20,z,20];
 
 cmd = 12.0107*86400/1000;
 z = cmd.*z;
@@ -419,19 +418,18 @@ hold off
 
 
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','nine_plots_2/lr_dic','-dtiff')
+print('-r100','nine_plots_3/lr_dic','-dpng')
 close all
 
 %% 
 cm = acc_colormap('cmo_balance');
 
-lb = -3e-4;
-ub = 3e-4;
+lb = -2.5e-4;
+ub = 2.5e-4;
 z = linspace(lb,ub,nlvls);
 
-z1 = -2e-3:0.0001:-6e-4;
-z2 = -5.9e-4:0.00001:-3.00001e-4;
-z = [z1,z2,z,-z2,-z1];
+
+z = [-20,z,20];
 
 cmd = 86400;
 z = cmd.*z;
@@ -551,7 +549,7 @@ hold off
 
 
 set(gcf,'InvertHardCopy','off'); 
-print('-r200','nine_plots_2/lr_theta','-dtiff')
+print('-r100','nine_plots_3/lr_theta','-dpng')
 close all
 
 %%

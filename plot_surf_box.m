@@ -88,7 +88,7 @@ plot3(X1,Y1,Z1,'Color','k','LineWidth',lwb)
 plot3(X2,Y2,Z1,'Color','k','LineWidth',lwb)
 plot3(X3,Y3,Z1,'Color','k','LineWidth',lwb)
 plot3(X4,Y3,Z1,'Color','k','LineWidth',lwb)
-quiver3(X,Y,Z,U,V,Z,2,'Color',Color(11,:))
+% quiver3(X,Y,Z,U,V,Z,2,'Color',Color(11,:))
 h1 = plot3(PX,P,1.*ones(1,120),'Color',Color(79,:),'LineWidth',cw+4);
 h2 = plot3(BCX,BCY,1.*ones(1,13),'Color',Color(75,:),'LineWidth',cw+4);
 h3 = plot3(MCX,MCY,1.*ones(1,22),'Color',Color(78,:),'LineWidth',cw+4);
@@ -111,7 +111,7 @@ axis(coords)
 xtickformat('degrees')
 ytickformat('degrees')
 xlabel('longitude')
-% ylabel('latitude')
+ylabel('latitude')
 zticks([-6000,-4000,-2000,0])
 zticklabels({'6km','4km','2km','0'})
 xticks([290,300,310,320,330,340,350])
@@ -122,6 +122,9 @@ yticklabels({'60\circS','50\circS','40\circS','30\circS'})
 legend([h2(1),h4(1),h3(1),h1(1)],'Brazil Current','Zapiola Anticyclone','Malvinas Current','Antarctic Circumpolar Current','Location','northeast')
 % acc_plots
 acc_movie_w
+ax = gca;
+ax.LineWidth = 2;
+ax.GridAlpha = 1;
 set(gcf,'InvertHardCopy','off');
 print('-r200','AB_surf_currents','-dpng')
 close all

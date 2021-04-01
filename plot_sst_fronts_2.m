@@ -101,7 +101,7 @@ z = [-2,-1.75,-1.5,-1.25,z,21.25,21.5,21.75,22,...
 lw = 2.7;
 
 figure()
-set(gcf, 'Position', [1, 1, 1600, 900])
+set(gcf, 'Position', [1, 1, 1680, 900])
 colormap(cm)
 ax1 = subplot(2,2,1);
 contourf(murlon,murlat,sst_mur_ss,'LineStyle','none','LevelList',z);
@@ -113,7 +113,7 @@ line(STF_X+360,STF_Y,'Color','w','LineWidth',lw+1)
 caxis([lb ub])
 axis(inside_coords)
 ytickformat('degrees')
-title('MUR June 21 2017 SST [deg C]','FontWeight','Normal','FontSize',16)
+title('MUR June 21 2017 SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v1
 hold off
@@ -130,7 +130,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/3 June 21 2017 SST [deg C]','FontWeight','Normal','FontSize',16)
+title('1/3  June 21 2017 SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v2
 hold off
@@ -147,7 +147,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/6 June 21 2017 SST [deg C]','FontWeight','Normal','FontSize',16)
+title('1/6  June 21 2017 SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v3
 hold off
@@ -165,7 +165,7 @@ caxis([lb ub])
 axis(inside_coords)
 xtickformat('degrees')
 ytickformat('degrees')
-title('1/12 June 21 2017 SST [deg C]','FontWeight','Normal','FontSize',16)
+title('1/12  June 21 2017 SST','FontWeight','Normal','FontSize',16)
 acc_movie
 acc_quad_plots_v4
 hold off

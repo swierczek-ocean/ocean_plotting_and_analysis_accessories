@@ -10,5 +10,5 @@ set(gca, 'defaultUipanelFontName', 'Ubuntu')
 ax = gca;
 ax.FontSize = 25; 
 set(gca, 'visible', 'on')
-set(gca, 'color', Color(46,:))
-set(gcf,'color',Color(36,:)); 
+set(gca, 'color', [0.6,0.6,0.6])
+set(gcf,'color','w'); 
